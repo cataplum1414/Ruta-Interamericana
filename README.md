@@ -28,7 +28,7 @@ Proyecto educativo independiente, editado por Sukima Labs. No es una publicació
 - Diccionario buscable de siglas y conceptos conectado con las explicaciones, las etapas y las fuentes oficiales.
 - Orientador «¿En qué momento está el caso?» con rutas hacia los pasos relevantes.
 - Recorrido guiado por el procedimiento interamericano con filtros por fase y un patrón común: qué pasa, quién actúa, documento, plazo y siguiente paso.
-- Mapa de funciones y etapas ante la CIDH y la Corte IDH.
+- P?ginas independientes para la CIDH y la Corte IDH, adem?s de una p?gina puente que explica c?mo puede pasar un asunto de un ?rgano al otro.
 - Reloj de plazos orientativos.
 - Caso académico ficticio con hitos procesales.
 - Selección didáctica de casos clave junto con el índice de referencias del proyecto, sin presentarlo como catálogo exhaustivo.

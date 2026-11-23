@@ -12,7 +12,7 @@
 <script>
 (()=>{let choice='auto';try{choice=localStorage.getItem('ri-theme')||'auto'}catch(e){}if(!['auto','light','dark'].includes(choice))choice='auto';const media=matchMedia('(prefers-color-scheme: light)');const apply=()=>{const theme=choice==='auto'?(media.matches?'light':'dark'):choice;document.documentElement.dataset.theme=theme;document.documentElement.dataset.themeChoice=choice;const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=theme==='light'?'#F5F4F0':'#10131C';document.querySelector('meta[name="color-scheme"]').content=theme};window.riTheme={get:()=>choice,set:value=>{choice=['auto','light','dark'].includes(value)?value:'auto';try{choice==='auto'?localStorage.removeItem('ri-theme'):localStorage.setItem('ri-theme',choice)}catch(e){}apply()}};media.addEventListener?.('change',()=>{if(choice==='auto')apply()});apply()})();
 </script>
-<link rel="stylesheet" href="assets/styles.css?v=route-pages-1">
+<link rel="stylesheet" href="assets/styles.css?v=organ-pages-2">
 <link rel="manifest" href="./manifest.webmanifest">
 </head>
 <body>
@@ -28,7 +28,8 @@
   <div class="side-top"><div class="side-identity"><strong>RUTA INTERAMERICANA</strong><span>PROCEDIMIENTO Y DERECHOS HUMANOS</span></div><button class="close-menu" id="closeMenu" type="button" aria-label="Cerrar menú">×</button></div>
   <div class="theme-picker" role="group" aria-label="Modo de color"><span>Modo de color</span><button type="button" data-theme-choice="auto" aria-pressed="true">Automático</button><button type="button" data-theme-choice="light" aria-pressed="false">Claro</button><button type="button" data-theme-choice="dark" aria-pressed="false">Oscuro</button></div>
   <nav class="nav-groups" aria-label="Secciones de Ruta Interamericana">
-    <div class="nav-group"><h2>Orientarse</h2><a href="#inicio"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>Panorama</a><a href="#orientador"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8z"/></svg>Ubica tu etapa</a><a href="#sistema"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="m11 7-5 9m7-9 5 9M7 18h10"/></svg>Comisión y Corte</a></div>
+    <div class="nav-group"><h2>Orientarse</h2><a href="#inicio"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>Panorama</a><a href="#orientador"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8z"/></svg>Ubica tu etapa</a></div>
+    <div class="nav-group"><h2>Entender los órganos</h2><a href="#comision"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20c.7-3.5 3-5 7-5s6.3 1.5 7 5M4 4h3M17 4h3"/></svg>Comisión (CIDH)</a><a href="#corte"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 18h14M6 9h12M4 7l8-4 8 4M7 10v7m5-7v7m5-7v7"/></svg>Corte IDH</a><a href="#sistema"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h5l2 5h5l2 5h2M3 7h2m12 10h4"/><circle cx="4" cy="7" r="1.5"/><circle cx="20" cy="17" r="1.5"/></svg>Cómo se conectan</a></div>
     <div class="nav-group"><h2>Seguir el procedimiento</h2><a href="#recorrido"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v4a4 4 0 0 0 4 4h6a4 4 0 0 1 4 4v4M2 4h6M16 20h6"/></svg>Las 18 estaciones</a><a href="#reloj"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Plazos y escritos</a><a href="#arcadia"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h10l4 4v14H5zM15 3v5h4M8 13h8M8 17h8"/></svg>Caso de práctica</a></div>
     <div class="nav-group"><h2>Casos y actualidad</h2><a href="#jurisprudencia"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a3 3 0 0 0-3-3H4zM20 4h-4a3 3 0 0 0-3 3v14a3 3 0 0 1 3-3h4z"/></svg>Casos clave y jurisprudencia</a><a href="#opiniones"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4.4 1.6c-1.1 1.2-1.9 1.4-1.9 3.4M12 17.5v.1"/></svg>Opiniones consultivas</a><a href="#actualidad"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM7 9h10M7 12h10M7 15h6"/></svg>Noticias y novedades</a></div>
     <div class="nav-group"><h2>Aprender y verificar</h2><a href="#diccionario"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 1 4 17.5zM4 6h13M8 9h8M8 12h6M8 15h7"/></svg>Diccionario y siglas</a><a href="#laboratorio"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M8 15h8"/></svg>Práctica interactiva</a><a href="#biblioteca"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>Normas y fuentes</a></div>
@@ -71,14 +72,35 @@
   </div>
 </section>
 
-<section id="sistema" data-route-page class="page-section section-block section-alt">
-  <div class="section-heading"><div><p class="section-tag">EL MAPA GENERAL</p><h2>Comisión y Corte:<br>funciones distintas</h2><p>Primero ubica quién hace qué. Después será más fácil comprender cada escrito y cada plazo.</p></div><span class="section-index">02</span></div>
-  <div class="institution-map">
-    <article class="institution-card commission"><span class="institution-number">A</span><p class="section-tag">PETICIÓN Y TRÁMITE</p><h3>Comisión Interamericana<br>de Derechos Humanos</h3><p>Recibe peticiones individuales, analiza competencia y admisibilidad, estudia el fondo y puede facilitar una solución amistosa. Si se cumplen los requisitos, puede someter el caso a la Corte.</p><div class="ask"><b>Pregunta que orienta</b><span>¿Puede examinarse esta petición y qué respuesta corresponde?</span></div><a href="#recorrido" data-open-step="2">Ir a la etapa de petición</a></article>
-    <div class="institution-bridge"><span>INFORME Y SOMETIMIENTO</span><b aria-hidden="true">→</b><small>El enlace entre órganos es una decisión procesal, no un traslado automático.</small></div>
-    <article class="institution-card court"><span class="institution-number">B</span><p class="section-tag">LITIGIO CONTENCIOSO</p><h3>Corte Interamericana<br>de Derechos Humanos</h3><p>Conoce casos sometidos por la Comisión o por un Estado con competencia reconocida. Tramita escritos, excepciones, prueba y audiencia; puede decidir sobre responsabilidad, reparaciones y cumplimiento.</p><div class="ask"><b>Pregunta que orienta</b><span>¿Tiene competencia para decidir y qué debe resolver?</span></div><a href="#recorrido" data-open-step="10">Ir al sometimiento del caso</a></article>
+<section id="comision" data-route-page class="page-section section-block section-alt">
+  <div class="section-heading"><div><p class="section-tag">&Oacute;RGANO DE PETICIONES Y PROMOCI&Oacute;N</p><h2>Comisi&oacute;n Interamericana<br>de Derechos Humanos</h2><p>La CIDH recibe peticiones individuales, examina sus requisitos y estudia si hubo violaciones. No dicta las sentencias de la Corte.</p></div><span class="section-index">02</span></div>
+  <div class="institution-map commission-page">
+    <article class="institution-card commission"><span class="institution-number">A</span><p class="section-tag">QU&Eacute; HACE LA CIDH</p><h3>Examina la petici&oacute;n<br>y el fondo</h3><p>Puede analizar competencia y admisibilidad, facilitar una soluci&oacute;n amistosa, evaluar las alegaciones de fondo y formular conclusiones y recomendaciones. Tambi&eacute;n tramita medidas cautelares cuando se cumplen sus requisitos.</p><div class="ask"><b>Pregunta que orienta</b><span>&iquest;Puede la Comisi&oacute;n conocer la petici&oacute;n y qu&eacute; respuesta corresponde a los hechos?</span></div><a href="#recorrido" data-open-step="1">Ver c&oacute;mo empieza la petici&oacute;n &rarr;</a></article>
+    <article class="institution-card commission"><span class="institution-number">B</span><p class="section-tag">QU&Eacute; PUEDE OCURRIR</p><h3>Informe, recomendaciones<br>y posible sometimiento</h3><p>La CIDH puede emitir informes y recomendaciones. Si el asunto re&uacute;ne las condiciones aplicables y la Corte tiene competencia, la Comisi&oacute;n puede someterlo a ese tribunal. Ese paso no significa que ya exista una sentencia.</p><div class="ask"><b>Distinci&oacute;n clave</b><span>El informe de fondo de la CIDH no es una decisi&oacute;n judicial de la Corte.</span></div><a href="#sistema">Entender el paso entre &oacute;rganos &rarr;</a></article>
   </div>
+  <div class="organ-links"><a href="#corte">Conocer la funci&oacute;n de la Corte IDH &rarr;</a><a href="#biblioteca">Consultar el Reglamento de la CIDH &rarr;</a></div>
+</section>
+
+<section id="corte" data-route-page class="page-section section-block">
+  <div class="section-heading"><div><p class="section-tag">TRIBUNAL REGIONAL</p><h2>Corte Interamericana<br>de Derechos Humanos</h2><p>La Corte resuelve los casos que puede conocer conforme a las reglas de competencia. Su funci&oacute;n contenciosa es distinta del tr&aacute;mite de peticiones ante la CIDH.</p></div><span class="section-index">03</span></div>
+  <div class="institution-map court-page">
+    <article class="institution-card court"><span class="institution-number">C</span><p class="section-tag">FUNCI&Oacute;N CONTENCIOSA</p><h3>Tramita y decide<br>casos sometidos</h3><p>En la fase contenciosa recibe el caso, oye a las partes, examina excepciones y pruebas, celebra audiencias cuando corresponde y dicta sentencia. Puede ordenar reparaciones y supervisar su cumplimiento.</p><div class="ask"><b>Pregunta que orienta</b><span>&iquest;Tiene la Corte competencia para conocer este caso y qu&eacute; debe resolver?</span></div><a href="#recorrido" data-open-step="9">Recorrer la fase ante la Corte &rarr;</a></article>
+    <article class="institution-card court"><span class="institution-number">D</span><p class="section-tag">FUNCI&Oacute;N CONSULTIVA</p><h3>Responde consultas<br>sobre derechos humanos</h3><p>La Corte tambi&eacute;n interpreta tratados y responde consultas de Estados miembros de la OEA y &oacute;rganos de la Organizaci&oacute;n. Una opini&oacute;n consultiva no resuelve el litigio de una persona.</p><div class="ask"><b>Distinci&oacute;n clave</b><span>Una sentencia contenciosa y una opini&oacute;n consultiva son productos distintos.</span></div><a href="#opiniones">Explorar las 32 opiniones emitidas &rarr;</a></article>
+  </div>
+  <div class="institution-note"><strong>La Corte no es una instancia ordinaria de apelacion.</strong><span>Su competencia contenciosa depende del consentimiento estatal y de las reglas aplicables; no toda peticion individual llega hasta este tribunal.</span></div>
+  <div class="organ-links"><a href="#comision">Conocer la funci&oacute;n de la CIDH &rarr;</a><a href="#sistema">Ver c&oacute;mo se conecta el procedimiento &rarr;</a></div>
+</section>
+
+<section id="sistema" data-route-page class="page-section section-block section-alt">
+  <div class="section-heading"><div><p class="section-tag">EL ENLACE ENTRE LOS DOS &Oacute;RGANOS</p><h2>Del tr&aacute;mite ante la CIDH<br>a un caso ante la Corte</h2><p>Hay continuidad entre las etapas, pero no un traslado autom&aacute;tico. Cada &oacute;rgano toma decisiones distintas y produce documentos distintos.</p></div><span class="section-index">04</span></div>
+  <div class="institution-map handoff-map">
+    <article class="institution-card commission"><span class="institution-number">1</span><p class="section-tag">ANTE LA CIDH</p><h3>Informe de fondo<br>y decisi&oacute;n de sometimiento</h3><p>La Comisi&oacute;n eval&uacute;a el caso, sus recomendaciones y el tr&aacute;mite aplicable. Si se cumplen las condiciones pertinentes, puede someterlo a la Corte.</p><a href="#recorrido" data-open-step="7">Ver informe de fondo &rarr;</a></article>
+    <div class="institution-bridge"><span>NO ES AUTOM&Aacute;TICO</span><b aria-hidden="true">&rarr;</b><small>La CIDH presenta el caso; la Corte verifica su competencia y abre su propio procedimiento.</small></div>
+    <article class="institution-card court"><span class="institution-number">2</span><p class="section-tag">ANTE LA CORTE</p><h3>Escritos, prueba,<br>sentencia y cumplimiento</h3><p>Si conoce el asunto, la Corte tramita las actuaciones de las partes y decide mediante sentencia. Despu&eacute;s puede supervisar las reparaciones ordenadas.</p><a href="#recorrido" data-open-step="9">Ver el sometimiento del caso &rarr;</a></article>
+  </div>
+  <div class="handoff-rule"><strong>Qui&eacute;n presenta cada cosa</strong><p>Una persona puede presentar una petici&oacute;n ante la CIDH, pero no somete directamente un caso contencioso ante la Corte. El paso a la Corte sigue las reglas de la Convenci&oacute;n y de los reglamentos correspondientes.</p></div>
   <div class="concept-pairs" id="contrasts" aria-label="Distinciones importantes"></div>
+  <div class="organ-links"><a href="#comision">Volver a la p&aacute;gina de la CIDH &rarr;</a><a href="#corte">Continuar a la p&aacute;gina de la Corte &rarr;</a></div>
 </section>
 
 <section id="recorrido" data-route-page class="page-section section-block">
@@ -90,20 +112,20 @@
 </section>
 
 <section id="reloj" data-route-page class="page-section section-block section-alt">
-  <div class="section-heading"><div><p class="section-tag">PLAZOS Y ESCRITOS</p><h2>¿Qué reloj está<br>corriendo?</h2><p>Un plazo empieza por un acto procesal concreto: una decisión, una notificación, un traslado o la recepción de un escrito. Distingue el plazo para actuar del tiempo que tarda todo el procedimiento.</p></div><span class="section-index">04</span></div>
+  <div class="section-heading"><div><p class="section-tag">PLAZOS Y ESCRITOS</p><h2>¿Qué reloj está<br>corriendo?</h2><p>Un plazo empieza por un acto procesal concreto: una decisión, una notificación, un traslado o la recepción de un escrito. Distingue el plazo para actuar del tiempo que tarda todo el procedimiento.</p></div><span class="section-index">05</span></div>
   <div class="clock"><div class="clock-inputs"><label for="clockRule">Selecciona la actuación</label><select id="clockRule"></select><label for="clockStart">Fecha del acto que activa el plazo</label><input id="clockStart" type="date" value="2026-11-23"><button id="clockGo" class="button primary" type="button">Ver cálculo orientativo</button><p class="small muted">Herramienta de aprendizaje. Usa días naturales y meses calendario como aproximación; no resuelve notificaciones, suspensiones, prórrogas ni reglas especiales. No calcula vencimientos reales.</p></div><div class="clock-result" aria-live="polite"><p class="section-tag">RESULTADO ORIENTATIVO</p><strong id="clockDate">—</strong><h3 id="clockTitle"></h3><p id="clockExplanation"></p><p class="clock-authority" id="clockAuthority"></p></div></div>
   <div class="deadline-list" id="deadlineList"></div>
   <details class="method-note"><summary>Cómo leer un plazo</summary><p>Localiza la regla aplicable, identifica el acto inicial que el texto nombra, comprueba la fecha de notificación o recepción y revisa si existe una excepción. El mismo número de días puede empezar a correr en fechas distintas para partes diferentes.</p></details>
 </section>
 
 <section id="arcadia" data-route-page class="page-section section-block case-section">
-  <div class="section-heading"><div><p class="section-tag">APRENDER APLICANDO</p><h2>Un caso para<br>poner la ruta a prueba</h2><p>Emilio Acosta vs. Arcadia es un expediente académico ficticio. Sigue sus hitos y decide qué pregunta debe resolverse en cada etapa.</p></div><span class="section-index">05</span></div>
+  <div class="section-heading"><div><p class="section-tag">APRENDER APLICANDO</p><h2>Un caso para<br>poner la ruta a prueba</h2><p>Emilio Acosta vs. Arcadia es un expediente académico ficticio. Sigue sus hitos y decide qué pregunta debe resolverse en cada etapa.</p></div><span class="section-index">06</span></div>
   <div class="case-layout"><nav class="case-list" id="caseList" aria-label="Hitos del caso"></nav><article class="case-detail" id="caseDetail" aria-live="polite"></article></div>
   <div class="case-warning"><strong>Lee la cronología con cuidado.</strong><span>El material presenta discrepancias entre la fecha de sometimiento y la de notificación, y entre el número de excepciones anunciado y enumerado. La guía las señala sin inventar datos para resolverlas.</span></div>
 </section>
 
 <section id="jurisprudencia" data-route-page class="page-section section-block section-alt">
-  <div class="section-heading"><div><p class="section-tag">VOLVER A LA FUENTE</p><h2>Jurisprudencia<br>para cada pregunta</h2><p>Busca por caso, país o tema. Las fichas ayudan a encontrar decisiones relevantes; confirma los hechos, la fecha, el párrafo y el alcance en el texto oficial antes de citarlos.</p></div><span class="section-index">06</span></div>
+  <div class="section-heading"><div><p class="section-tag">VOLVER A LA FUENTE</p><h2>Jurisprudencia<br>para cada pregunta</h2><p>Busca por caso, país o tema. Las fichas ayudan a encontrar decisiones relevantes; confirma los hechos, la fecha, el párrafo y el alcance en el texto oficial antes de citarlos.</p></div><span class="section-index">07</span></div>
   <div class="featured-intro"><div><p class="section-tag">SELECCIÓN PARA EMPEZAR</p><h3>Casos clave, conectados con la ruta</h3><p>Una selección educativa de decisiones conocidas por su aporte a temas distintos. No representa un ranking ni sustituye el catálogo oficial completo.</p></div><a href="https://jurisprudencia.corteidh.or.cr/" target="_blank" rel="noopener noreferrer">Explorar jurisprudencia oficial ↗</a></div>
   <div class="featured-cases" id="featuredCases"></div>
   <div class="all-cases-heading"><h3>Índice de referencias del proyecto</h3><p>El buscador reúne referencias de estudio a sentencias y decisiones. Revisa siempre el texto oficial para confirmar el criterio aplicable.</p></div>
@@ -113,7 +135,7 @@
 </section>
 
 <section id="opiniones" data-route-page class="page-section section-block section-alt">
-  <div class="section-heading"><div><p class="section-tag">FUNCIÓN CONSULTIVA DE LA CORTE IDH</p><h2>Opiniones consultivas:<br>las 32 respuestas</h2><p>Explora las opiniones emitidas, desde la OC-1 hasta la OC-32. Filtra por número o tema y abre el texto oficial para estudiar el alcance de cada respuesta.</p></div><span class="section-index">07</span></div>
+  <div class="section-heading"><div><p class="section-tag">FUNCIÓN CONSULTIVA DE LA CORTE IDH</p><h2>Opiniones consultivas:<br>las 32 respuestas</h2><p>Explora las opiniones emitidas, desde la OC-1 hasta la OC-32. Filtra por número o tema y abre el texto oficial para estudiar el alcance de cada respuesta.</p></div><span class="section-index">08</span></div>
   <div class="opinion-explainer"><strong>¿Qué es una opinión consultiva?</strong><p>Es una respuesta de la Corte a consultas de Estados miembros de la OEA o de órganos de la Organización sobre interpretación de tratados de derechos humanos o compatibilidad de normas internas. No resuelve un caso contencioso individual.</p><a href="https://www.corteidh.or.cr/que_son_las_opiniones_consultivas.cfm?lang=es" target="_blank" rel="noopener noreferrer">Explicación oficial de la Corte ↗</a></div>
   <div class="opinion-controls"><label for="opinionSearch">Busca por número o tema</label><input id="opinionSearch" type="search" placeholder="Ej.: OC-18, migración, ambiente, cuidado" autocomplete="off"><div class="opinion-filters" id="opinionFilters" role="group" aria-label="Filtrar opiniones por periodo"></div><p id="opinionCount" class="muted small" aria-live="polite"></p></div>
   <div class="opinion-grid" id="opinionGrid" aria-live="polite"></div>
@@ -122,7 +144,7 @@
 </section>
 
 <section id="actualidad" data-route-page class="page-section section-block">
-  <div class="section-heading"><div><p class="section-tag">ACTUALIDAD INTERAMERICANA</p><h2>Noticias que ayudan<br>a entender el sistema</h2><p>Una selección breve de novedades institucionales y procesales. Las noticias explican lo que está pasando; no sustituyen una sentencia, una opinión consultiva ni la norma aplicable.</p></div><span class="section-index">08</span></div>
+  <div class="section-heading"><div><p class="section-tag">ACTUALIDAD INTERAMERICANA</p><h2>Noticias que ayudan<br>a entender el sistema</h2><p>Una selección breve de novedades institucionales y procesales. Las noticias explican lo que está pasando; no sustituyen una sentencia, una opinión consultiva ni la norma aplicable.</p></div><span class="section-index">09</span></div>
   <div class="news-guidance"><strong>Cómo leer esta sección</strong><span>Identifica el órgano, la fecha y el acto procesal. Si una noticia anuncia que un caso fue presentado ante la Corte, eso inicia la fase contenciosa: todavía no es una sentencia.</span></div>
   <div class="news-filters" id="newsFilters" role="group" aria-label="Filtrar novedades por órgano"></div>
   <div class="news-grid" id="newsGrid"></div>
@@ -130,20 +152,20 @@
 </section>
 
 <section id="diccionario" data-route-page class="page-section section-block section-alt">
-  <div class="section-heading"><div><p class="section-tag">CONSULTA CONECTADA</p><h2>Diccionario<br>y siglas</h2><p>Busca una palabra o sigla, o tócala cuando aparezca subrayada en la guía. Cada ficha explica el concepto en lenguaje claro y te lleva a la etapa y la norma relacionadas.</p></div><span class="section-index">09</span></div>
+  <div class="section-heading"><div><p class="section-tag">CONSULTA CONECTADA</p><h2>Diccionario<br>y siglas</h2><p>Busca una palabra o sigla, o tócala cuando aparezca subrayada en la guía. Cada ficha explica el concepto en lenguaje claro y te lleva a la etapa y la norma relacionadas.</p></div><span class="section-index">10</span></div>
   <div class="glossary-controls"><label for="glossarySearch">Buscar término o sigla</label><div class="glossary-search-row"><input id="glossarySearch" type="search" placeholder="Ej.: CADH, admisibilidad, ESAP" autocomplete="off"><button id="glossaryClear" class="button secondary" type="button">Limpiar</button></div><div id="glossaryFilters" class="glossary-filters" role="group" aria-label="Filtrar términos"></div><p id="glossaryCount" class="muted small" aria-live="polite"></p></div>
   <div id="glossaryGrid" class="glossary-grid" aria-live="polite"></div>
   <p class="glossary-note">Las fichas son explicaciones educativas. Para determinar una regla aplicable, consulta el instrumento y su texto oficial.</p>
 </section>
 
 <section id="laboratorio" data-route-page class="page-section section-block">
-  <div class="section-heading"><div><p class="section-tag">PRACTICAR PARA COMPRENDER</p><h2>Elige, comprueba,<br>explica por qué</h2><p>Practica con preguntas breves. Después de responder verás qué regla opera y por qué importa en el procedimiento.</p></div><span class="section-index">10</span></div>
+  <div class="section-heading"><div><p class="section-tag">PRACTICAR PARA COMPRENDER</p><h2>Elige, comprueba,<br>explica por qué</h2><p>Practica con preguntas breves. Después de responder verás qué regla opera y por qué importa en el procedimiento.</p></div><span class="section-index">11</span></div>
   <article class="quiz" aria-label="Práctica de procedimiento"><div class="quiz-top"><span id="quizIndex"></span><strong id="quizScore"></strong></div><div class="quiz-bar"><div id="quizBar"></div></div><h3 id="quizQuestion"></h3><div id="quizOptions" class="quiz-options"></div><div id="quizFeedback" class="quiz-feedback" aria-live="polite"></div><button id="quizNext" class="button primary" disabled type="button">Siguiente pregunta</button></article>
   <section class="scenario" aria-labelledby="scenarioTitle"><div><p class="section-tag">ESCENARIO DE DECISIÓN</p><h3 id="scenarioTitle">El Estado presenta una excepción preliminar</h3><p>¿Qué conviene hacer primero para analizarla?</p></div><div class="scenario-actions" role="group" aria-label="Elegir respuesta"><button type="button" data-scenario="appeal">Tratar cualquier desacuerdo como una apelación</button><button type="button" data-scenario="nature">Identificar su naturaleza, el momento y el efecto procesal alegado</button></div><div class="scenario-result" id="scenarioResult" aria-live="polite">Selecciona una respuesta para ver qué elemento debes examinar.</div></section>
 </section>
 
 <section id="biblioteca" data-route-page class="page-section section-block section-alt">
-  <div class="section-heading"><div><p class="section-tag">NORMAS Y FUENTES OFICIALES</p><h2>Norma, artículo<br>y función</h2><p>Usa esta sección para volver al texto vigente y separar la regla escrita de la explicación didáctica.</p></div><span class="section-index">11</span></div>
+  <div class="section-heading"><div><p class="section-tag">NORMAS Y FUENTES OFICIALES</p><h2>Norma, artículo<br>y función</h2><p>Usa esta sección para volver al texto vigente y separar la regla escrita de la explicación didáctica.</p></div><span class="section-index">12</span></div>
   <div class="sources" id="sources"></div>
   <div class="independence-note"><strong>Sobre esta guía</strong><p>Proyecto editorial independiente de Sukima Labs. No es una publicación oficial ni está afiliado o avalado por la CIDH, la Corte Interamericana, la OEA, ONU Mujeres o la Universidad de Alcalá. Los documentos académicos locales no se publican.</p></div>
 </section>
@@ -158,6 +180,6 @@
 <script src="assets/jurisprudencia.js" defer></script>
 <script src="assets/opiniones.js" defer></script>
 <script src="assets/glosario.js?v=editorial-2" defer></script>
-<script src="assets/app.js?v=route-pages-1" defer></script>
+<script src="assets/app.js?v=organ-pages-2" defer></script>
 </body>
 </html>

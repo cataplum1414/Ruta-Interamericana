@@ -30,8 +30,12 @@ if (opinionCount !== 32 || opinionNumbers.some((number, index) => number !== ind
   throw new Error(`Expected each issued advisory opinion from OC-1 to OC-32 exactly once; found ${opinionNumbers.join(', ')}.`);
 }
 const routeCount = (html.match(/data-route-page/g) || []).length;
-if (routeCount < 12 || !html.includes('href="#opiniones"') || !html.includes('href="#actualidad"')) {
-  throw new Error('Menu-driven route pages or the cases, advisory opinions, and news pages are incomplete.');
+if (routeCount < 14 || !html.includes('href="#comision"') || !html.includes('href="#corte"') || !html.includes('href="#sistema"') || !html.includes('href="#opiniones"') || !html.includes('href="#actualidad"')) {
+  throw new Error('The 14 menu-driven pages, separate CIDH and Court pages, bridge page, cases, advisory opinions, and news pages must be present.');
+}
+for (const id of ['comision', 'corte', 'sistema']) {
+  const page = html.match(new RegExp(`<section id=\"${id}\" data-route-page[\\s\\S]*?</section>`))?.[0];
+  if (!page || !page.includes('section-index')) throw new Error(`The ${id} learning page is incomplete.`);
 }
 for (const name of ['questionStages', 'caseStations']) {
   const values = app.match(new RegExp(`const ${name}=\\[([^\\]]+)\\]`))?.[1]
