@@ -24,7 +24,7 @@ Proyecto educativo independiente, editado por Sukima Labs. No es una publicació
 ## Contenido
 
 - Página extensa con menú agrupado por orientación, procedimiento y práctica, más barra inferior de cinco accesos en móvil.
-- Búsqueda global de etapas, preguntas procesales, decisiones, siglas y conceptos, con ejemplos listos para abrir.
+- Búsqueda global de etapas, preguntas procesales, decisiones, plazos, fuentes, ejercicios, siglas y conceptos, con ejemplos listos para abrir.
 - Diccionario buscable de siglas y conceptos conectado con las explicaciones, las etapas y las fuentes oficiales.
 - Orientador «¿En qué momento está el caso?» con rutas hacia los pasos relevantes.
 - Recorrido guiado por el procedimiento interamericano con filtros por fase y un patrón común: qué pasa, quién actúa, documento, plazo y siguiente paso.
