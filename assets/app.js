@@ -133,6 +133,7 @@ const menuToggle=el('menuToggle'),closeMenu=el('closeMenu'),navScrim=el('navScri
 function setMenu(open){document.body.classList.toggle('menu-open',open);menuToggle.setAttribute('aria-expanded',String(open));if(open)document.querySelector('#sideNav a')?.focus();else menuToggle.focus();}
 menuToggle.addEventListener('click',()=>setMenu(!document.body.classList.contains('menu-open')));
 closeMenu.addEventListener('click',()=>setMenu(false));navScrim.addEventListener('click',()=>setMenu(false));
+el('mobileMenuButton')?.addEventListener('click',()=>setMenu(true));
 document.querySelectorAll('#sideNav a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('menu-open'))setMenu(false);});
 
@@ -142,8 +143,8 @@ themeSelect.addEventListener('change',()=>window.riTheme.set(themeSelect.value))
 themeButtons.forEach(b=>b.addEventListener('click',()=>window.riTheme.set(b.dataset.themeChoice)));
 syncThemeControls();
 
-const allSections=[...document.querySelectorAll('main section[id]')],sidebarLinks=[...document.querySelectorAll('#sideNav a')];
-function markSection(id){sidebarLinks.forEach(a=>{if(a.hash==='#'+id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}
+const allSections=[...document.querySelectorAll('main section[id]')],sidebarLinks=[...document.querySelectorAll('#sideNav a')],mobileLinks=[...document.querySelectorAll('[data-mobile-section]')];
+function markSection(id){sidebarLinks.forEach(a=>{if(a.hash==='#'+id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});const groups={inicio:['inicio','orientador','sistema'],recorrido:['recorrido','reloj','arcadia'],diccionario:['diccionario'],jurisprudencia:['jurisprudencia','laboratorio','biblioteca']};const active=Object.entries(groups).find(([,ids])=>ids.includes(id))?.[0];mobileLinks.forEach(a=>{if(a.dataset.mobileSection===active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}
 if('IntersectionObserver'in window){const sectionObserver=new IntersectionObserver(entries=>{const visible=entries.filter(x=>x.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(visible)markSection(visible.target.id);},{rootMargin:'-18% 0px -64% 0px',threshold:[0,.15,.4]});allSections.forEach(s=>sectionObserver.observe(s));}
 
 const atlasSearch=el('atlasSearch'),searchResults=el('searchResults');
@@ -155,7 +156,7 @@ function makeSearchIndex(){return[
 ];}
 const searchIndex=makeSearchIndex();
 function renderSearch(){const q=normalizeSearch(atlasSearch.value);if(q.length<2){searchResults.hidden=true;searchResults.innerHTML='';return;}const terms=q.split(/\s+/).filter(Boolean),exact=x=>Boolean(normalizeSearch(x.title)===q||x.aliases?.some(a=>normalizeSearch(a)===q));const found=searchIndex.filter(x=>{const hay=normalizeSearch(x.haystack);return terms.every(t=>hay.includes(t));}).sort((a,b)=>Number(exact(b))-Number(exact(a))).slice(0,12);searchResults.innerHTML=found.length?found.map(x=>'<a class="search-result" href="'+x.url+'"'+(x.step!==undefined?' data-open-step="'+x.step+'"':'')+(x.caseIndex!==undefined?' data-open-case="'+x.caseIndex+'"':'')+(x.termId!==undefined?' data-open-term="'+escape(x.termId)+'"':'')+'><strong>'+escape(x.title)+'</strong><small>'+escape(x.detail)+'</small></a>').join(''):'<p class="search-empty">No hay coincidencias. Prueba con el nombre de una etapa, un órgano o un tema.</p>';searchResults.hidden=false;searchResults.querySelectorAll('[data-open-step]').forEach(a=>a.addEventListener('click',()=>stage(Number(a.dataset.openStep))));searchResults.querySelectorAll('[data-open-case]').forEach(a=>a.addEventListener('click',()=>viewCase(Number(a.dataset.openCase))));searchResults.querySelectorAll('[data-open-term]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();const item=glossaryById.get(a.dataset.openTerm);if(!item)return;searchResults.hidden=true;glossarySearch.value=item.label;activeGlossaryCategory='Todas';renderGlossaryFilters();renderGlossary();location.hash='diccionario';requestAnimationFrame(()=>{const card=el('term-'+item.id),button=card?.querySelector('[data-glossary-open]');card?.scrollIntoView({behavior:'smooth',block:'center'});if(button)openGlossaryPopover(item.id,button);});}));}
-atlasSearch.addEventListener('input',renderSearch);el('atlasSearchClear').addEventListener('click',()=>{atlasSearch.value='';searchResults.hidden=true;searchResults.innerHTML='';atlasSearch.focus();});
+const atlasSearchClear=el('atlasSearchClear');atlasSearch.addEventListener('input',()=>{atlasSearchClear.hidden=!atlasSearch.value.trim();renderSearch();});el('atlasSearchGo').addEventListener('click',()=>{renderSearch();atlasSearch.focus();});atlasSearchClear.addEventListener('click',()=>{atlasSearch.value='';atlasSearchClear.hidden=true;searchResults.hidden=true;searchResults.innerHTML='';atlasSearch.focus();});document.querySelectorAll('[data-search-example]').forEach(b=>b.addEventListener('click',()=>{atlasSearch.value=b.dataset.searchExample;atlasSearchClear.hidden=false;renderSearch();atlasSearch.focus();}));
 document.addEventListener('click',e=>{if(!e.target.closest('.atlas-search'))searchResults.hidden=true;});
 
 const scenarioResult=el('scenarioResult');

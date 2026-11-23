@@ -21,8 +21,8 @@ Proyecto educativo independiente, editado por Sukima Labs. No es una publicació
 
 ## Contenido
 
-- Página extensa con menú persistente agrupado por orientación, procedimiento y práctica; navegación compacta en móvil.
-- Búsqueda global de etapas, preguntas procesales y decisiones.
+- Página extensa con menú agrupado por orientación, procedimiento y práctica, más barra inferior de cinco accesos en móvil.
+- Búsqueda global de etapas, preguntas procesales, decisiones, siglas y conceptos, con ejemplos listos para abrir.
 - Diccionario buscable de siglas y conceptos conectado con las explicaciones, las etapas y las fuentes oficiales.
 - Orientador «¿En qué momento está el caso?» con rutas hacia los pasos relevantes.
 - Recorrido guiado por el procedimiento interamericano con filtros por fase y un patrón común: qué pasa, quién actúa, documento, plazo y siguiente paso.
@@ -58,7 +58,7 @@ Los documentos fuente locales no forman parte de la publicación. No añadirlos 
 
 ## Arquitectura didáctica y referencias
 
-La arquitectura de [Atlas ONU, de Sukima Labs](https://github.com/sukima-labs/atlasonu) se traslada a una guía de desplazamiento largo: barra superior fija, menú lateral modal con grupos e iconos, estado activo según la sección, selector de tema Automático/Claro/Oscuro y cierre accesible del menú. El patrón de siglas y glosario de Atlas también se adapta: las primeras apariciones por bloque se pueden activar, abren una explicación breve y enlazan con la ficha del diccionario, el tema de la guía y la fuente oficial. Se conservan anclas para que cada fase del procedimiento permanezca visible y enlazable. La página usa lectura fácil, explicación progresiva y fuentes a la vista.
+La arquitectura editorial de [Atlas ONU, de Sukima Labs](https://github.com/sukima-labs/atlasonu) se adapta a la materia interamericana: misma familia DejaVu Sans distribuida por el manual de marca, escala tipográfica compacta, franja de contexto, portada alineada arriba, lectura fácil, búsqueda con ejemplos y navegación inferior móvil. La ruta mantiene su propio mapa de Comisión, Corte, escritos y plazos. El patrón de siglas y glosario de Atlas también se adapta: las primeras apariciones por bloque se pueden activar, abren una explicación breve y enlazan con la ficha del diccionario, el tema de la guía y la fuente oficial.
 
 Para la práctica se estudiaron patrones públicos de [Learn Git Branching](https://github.com/pcottle/learnGitBranching) (acción con respuesta visual), [WiseCases](https://github.com/ihkarise/wisecases) (caso por etapas y pistas) y [Choices](https://github.com/drhycheung/Choices) (decisiones con consecuencias y explicación). Se adaptan las ideas pedagógicas, no se copia código ni contenido de esos proyectos.
 

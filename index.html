@@ -12,7 +12,7 @@
 <script>
 (()=>{let choice='auto';try{choice=localStorage.getItem('ri-theme')||'auto'}catch(e){}if(!['auto','light','dark'].includes(choice))choice='auto';const media=matchMedia('(prefers-color-scheme: light)');const apply=()=>{const theme=choice==='auto'?(media.matches?'light':'dark'):choice;document.documentElement.dataset.theme=theme;document.documentElement.dataset.themeChoice=choice;const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=theme==='light'?'#F5F4F0':'#10131C';document.querySelector('meta[name="color-scheme"]').content=theme};window.riTheme={get:()=>choice,set:value=>{choice=['auto','light','dark'].includes(value)?value:'auto';try{choice==='auto'?localStorage.removeItem('ri-theme'):localStorage.setItem('ri-theme',choice)}catch(e){}apply()}};media.addEventListener?.('change',()=>{if(choice==='auto')apply()});apply()})();
 </script>
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/styles.css?v=editorial-2">
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -37,11 +37,13 @@
 
 <main id="contenido" class="atlas-main">
 <section id="inicio" class="hero page-section">
+  <div class="hero-overview" aria-label="Estructura de la guía"><span><strong>18</strong> estaciones</span><i aria-hidden="true"></i><span>Comisión <b>→</b> Corte</span><i aria-hidden="true"></i><span>Normas y jurisprudencia</span></div>
   <div class="hero-copy">
     <p class="section-tag">SISTEMA INTERAMERICANO DE DERECHOS HUMANOS</p>
     <h1>Entiende el camino<br>del <span>hecho a la sentencia.</span></h1>
     <p class="hero-lead">Una guía para saber qué ocurre ante la Comisión Interamericana, cuándo un caso puede llegar a la Corte y qué debe hacer cada parte en cada etapa.</p>
-    <div class="atlas-search"><label for="atlasSearch">Busca una etapa, un concepto o un caso</label><div class="search-row"><input id="atlasSearch" type="search" placeholder="Ej.: admisibilidad, plazo de dos meses, ESAP" autocomplete="off"><button class="button primary" id="atlasSearchClear" type="button">Limpiar</button></div><div id="searchResults" class="search-results" aria-live="polite" hidden></div><p class="search-hint">También puedes escribir una pregunta sencilla y te mostraremos coincidencias de la guía y de la jurisprudencia.</p></div>
+    <details class="easy-read hero-easy-read"><summary>Lectura fácil: qué explica esta guía</summary><ul><li>La Comisión estudia peticiones individuales y puede, bajo ciertas condiciones, enviar un caso a la Corte.</li><li>La Corte resuelve el litigio que recibe. No es una apelación de todos los juicios nacionales.</li><li>Cada etapa tiene personas responsables, documentos y plazos diferentes.</li></ul></details>
+    <div class="atlas-search"><label for="atlasSearch">Busca una etapa, una sigla o una pregunta</label><div class="search-row"><input id="atlasSearch" type="search" placeholder="Ej.: ¿qué es admisibilidad?, ESAP, plazo de dos meses" autocomplete="off"><button class="button primary" id="atlasSearchGo" type="button">Buscar</button><button class="button secondary" id="atlasSearchClear" type="button" hidden>Limpiar</button></div><div class="search-suggestions" aria-label="Búsquedas de ejemplo"><span>Prueba:</span><button type="button" data-search-example="admisibilidad">admisibilidad</button><button type="button" data-search-example="ESAP">ESAP</button><button type="button" data-search-example="agotamiento">agotamiento</button><button type="button" data-search-example="reparaciones">reparaciones</button></div><div id="searchResults" class="search-results" aria-live="polite" hidden></div><p class="search-hint">Escribe como hablarías. La búsqueda encuentra explicaciones, etapas, siglas y jurisprudencia.</p></div>
     <div class="hero-actions"><a class="button primary" href="#recorrido">Recorrer el procedimiento</a><a class="button secondary" href="#orientador">Encontrar mi etapa</a></div>
   </div>
   <div class="route-art" aria-label="Secuencia general: recursos internos, Comisión, Corte y cumplimiento">
@@ -64,7 +66,6 @@
     </div>
     <article id="orientationResult" class="orientation-result" aria-live="polite"></article>
   </div>
-  <details class="easy-read"><summary>Lectura fácil: qué explica esta guía</summary><ul><li>Una persona puede presentar una petición ante la Comisión Interamericana si se cumplen las reglas.</li><li>La Comisión estudia la petición y puede, bajo ciertas condiciones, enviar el caso a la Corte.</li><li>La Corte resuelve el litigio que recibe. No es una apelación de todos los juicios nacionales.</li><li>Cada etapa tiene personas responsables, documentos y plazos diferentes.</li><li>Las decisiones de la Corte y de la Comisión se consultan en sus fuentes oficiales.</li></ul></details>
 </section>
 
 <section id="sistema" class="page-section section-block section-alt">
@@ -127,10 +128,12 @@
 <footer class="atlas-footer"><a class="brand footer-brand" href="#inicio" aria-label="Ruta Interamericana, volver al inicio"><img class="brandmark brandmark-light" src="assets/brand/isotipo_color.svg" alt="Sukima Labs, símbolo de umbrales anidados con abertura cian" width="39" height="39"><img class="brandmark brandmark-dark" src="assets/brand/isotipo_white.svg" alt="Sukima Labs, símbolo de umbrales anidados con abertura cian" width="39" height="39"><span>RUTA<br>INTERAMERICANA</span></a><p>Una guía de estudio para comprender el procedimiento, practicar su aplicación y verificar cada regla en la fuente.</p><a href="#inicio">Volver al inicio ↑</a></footer>
 </main>
 
+<nav class="mobile-bar" id="mobileBar" aria-label="Accesos rápidos"><a href="#inicio" data-mobile-section="inicio" aria-current="location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg><span>Inicio</span></a><a href="#recorrido" data-mobile-section="recorrido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v4a4 4 0 0 0 4 4h6a4 4 0 0 1 4 4v4M2 4h6M16 20h6"/></svg><span>Ruta</span></a><a href="#diccionario" data-mobile-section="diccionario"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 1 4 17.5zM4 6h13M8 9h8M8 12h6"/></svg><span>Siglas</span></a><a href="#jurisprudencia" data-mobile-section="jurisprudencia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a3 3 0 0 0-3-3H4zM20 4h-4a3 3 0 0 0-3 3v14a3 3 0 0 1 3-3h4z"/></svg><span>Casos</span></a><button id="mobileMenuButton" type="button" aria-label="Abrir menú"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menú</span></button></nav>
+
 <aside id="glossaryPopover" class="glossary-popover" role="dialog" aria-modal="false" aria-label="Explicación del diccionario" hidden></aside>
 
 <script src="assets/jurisprudencia.js" defer></script>
-<script src="assets/glosario.js" defer></script>
-<script src="assets/app.js" defer></script>
+<script src="assets/glosario.js?v=editorial-2" defer></script>
+<script src="assets/app.js?v=editorial-2" defer></script>
 </body>
 </html>
