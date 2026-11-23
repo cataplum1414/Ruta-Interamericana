@@ -1,4 +1,4 @@
-const CACHE_NAME = 'atlas-oea-shell-v1';
+const CACHE_NAME = 'atlas-oea-shell-v2';
 const APP_SHELL = [
   './',
   './index.html',
@@ -24,7 +24,7 @@ self.addEventListener('install', event => {
 
 self.addEventListener('activate', event => {
   event.waitUntil(caches.keys().then(keys => Promise.all(
-    keys.filter(key => key.startsWith('ruta-interamericana-') && key !== CACHE_NAME)
+    keys.filter(key => (key.startsWith('ruta-interamericana-') || key.startsWith('atlas-oea-shell-')) && key !== CACHE_NAME)
       .map(key => caches.delete(key))
   )).then(() => self.clients.claim()));
 });

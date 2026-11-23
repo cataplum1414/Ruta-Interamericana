@@ -18,11 +18,15 @@ if (missingTargets.length) {
 }
 
 const stages = app.match(/const stages=\[([\s\S]*?)\r?\n\];\r?\nconst stationGuide/)?.[1];
-const stationGuide = app.match(/const stationGuide=\[([\s\S]*?)\r?\n\];\r?\nconst contrasts/)?.[1];
+const stationGuide = app.match(/const stationGuide=\[([\s\S]*?)\r?\n\];\r?\nconst stageChecks/)?.[1];
+const stageChecks = app.match(/const stageChecks=\[([\s\S]*?)\r?\n\];\r?\nconst contrasts/)?.[1];
 const questions = app.match(/const questions=\[([\s\S]*?)\r?\n\];\r?\nconst resources/)?.[1];
 const countRows = block => (block?.match(/^\r?\[/gm) || []).length;
 if (countRows(stages) !== 18 || countRows(stationGuide) !== 18) {
   throw new Error('The 18 procedural stations and their guides must remain paired.');
+}
+if ((stageChecks?.match(/\{prompt:/g) || []).length !== 18 || !app.includes('stage-check-feedback') || !styles.includes('.stage-challenge-options button.is-correct')) {
+  throw new Error('Each procedural station needs an interactive decision with explanatory feedback.');
 }
 if (countRows(questions) !== 10) throw new Error('The expected 10 practice questions were not found.');
 const opinionNumbers = [...opinions.matchAll(/^  \[(\d+),/gm)].map(match => Number(match[1]));
@@ -65,4 +69,4 @@ const cachedFiles = [...serviceWorker.matchAll(/'\.(\/[^']+)'/g)]
   .filter(path => path !== '/');
 for (const file of cachedFiles) await access(file.slice(1));
 
-console.log(`Validated ${ids.length} unique page ids, ${routeCount} route pages, ${opinionCount} advisory opinions, 18 stations, 10 practice questions, and ${cachedFiles.length} offline assets.`);
+console.log(`Validated ${ids.length} unique page ids, ${routeCount} route pages, ${opinionCount} advisory opinions, 18 procedural stations with decision checks, 10 practice questions, and ${cachedFiles.length} offline assets.`);
