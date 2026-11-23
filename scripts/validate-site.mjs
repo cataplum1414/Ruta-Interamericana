@@ -42,6 +42,9 @@ if (routeStops.length !== 4 || /Interamericana/.test(routeMap) || !routeMap.incl
 if (!styles.includes('.principle-strip .glossary-trigger{color:inherit;text-decoration-color:currentColor}')) {
   throw new Error('Glossary links in the cyan principle strip need an inheriting, contrasting text color.');
 }
+if (!styles.includes('.mobile-bar{position:fixed;z-index:60;right:0;bottom:0;left:0;') || !styles.includes('height:calc(68px + env(safe-area-inset-bottom))') || !styles.includes('body{padding-bottom:calc(68px + env(safe-area-inset-bottom))}') || !html.includes('viewport-fit=cover')) {
+  throw new Error('The mobile navigation must stay fixed, keep its labels visible, and respect the device safe area.');
+}
 for (const id of ['comision', 'corte', 'sistema']) {
   const page = html.match(new RegExp(`<section id=\"${id}\" data-route-page[\\s\\S]*?</section>`))?.[0];
   if (!page || !page.includes('section-index')) throw new Error(`The ${id} learning page is incomplete.`);

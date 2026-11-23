@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ruta-interamericana-shell-v4';
+const CACHE_NAME = 'ruta-interamericana-shell-v6';
 const APP_SHELL = [
   './',
   './index.html',
