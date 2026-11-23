@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#102332">
+<meta name="description" content="Atlas visual e interactivo del litigio ante la Comisión y Corte Interamericanas de Derechos Humanos.">
+<title>Ruta Interamericana | Del hecho a la sentencia</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="masthead">
+  <a class="brand" href="#inicio"><span class="brandmark">RI<span>.</span></span><span>RUTA<br>INTERAMERICANA</span></a>
+  <nav aria-label="Principal"><a href="#recorrido">Recorrido</a><a href="#docentes">Dante y Andrés</a><a href="#reloj">Reloj de plazos</a><a href="#arcadia">Caso Arcadia</a><a href="#laboratorio">Laboratorio</a><a href="#biblioteca">Fuentes</a></nav>
+  <span class="edition">ATLAS JURÍDICO · 2026</span>
+</header>
+<main id="contenido">
+<section id="inicio" class="hero">
+<div class="eyebrow">01 / CARTOGRAFÍA DE UN PROCEDIMIENTO</div>
+<div class="hero-grid"><div>
+<h1>Del hecho a<br><em>la sentencia.</em></h1>
+<p class="lead">Una ruta para comprender, paso a paso, cómo una petición individual viaja desde los tribunales nacionales hasta la Comisión y, eventualmente, hasta la Corte Interamericana de Derechos Humanos.</p>
+<div class="actions"><a class="btn primary" href="#recorrido">Iniciar el recorrido <span>↗</span></a><a class="btn quiet" href="#docentes">¿Qué explicó cada profesor?</a></div>
+</div><div class="hero-graphic" aria-label="Esquema del procedimiento"><div class="orbit orbit-1"></div><div class="orbit orbit-2"></div><div class="node top"><small>01 / ORIGEN</small><strong>Justicia interna</strong></div><div class="track">↓</div><div class="node middle"><small>02 / PETICIÓN</small><strong>CIDH</strong></div><div class="track">↓</div><div class="node bottom"><small>03 / LITIGIO</small><strong>Corte IDH</strong></div><div class="tiny">Un expediente · dos órganos · varios relojes</div></div></div>
+<div class="hero-bottom"><span>MAESTRÍA · PROTECCIÓN INTERNACIONAL DE LOS DERECHOS HUMANOS</span><span>ALCALÁ DE HENARES · EDICIÓN ACADÉMICA</span></div>
+</section>
+<section class="manifest"><p><strong>Una regla para orientarse:</strong> la CIDH tramita la petición individual y decide si somete el caso; la Corte conoce del litigio contencioso una vez sometido. <em>Admisibilidad no significa responsabilidad; informe de fondo no significa sentencia.</em></p></section>
+<section id="recorrido" class="section">
+<div class="section-head"><div><div class="eyebrow">02 / EXPLORADOR PROCESAL</div><h2>Dieciocho estaciones.<br><em>Un procedimiento.</em></h2><p>Selecciona cualquier estación. Cada una muestra quién interviene, qué puede hacer, qué documento presenta, qué plazo rige y qué sucede en Arcadia.</p></div><div class="counter"><strong id="stepCount">01</strong><span>/ 18</span></div></div>
+<div class="explorer"><aside class="rail" id="stepRail" aria-label="Etapas del recorrido"></aside><article class="stage" id="stepDetail" aria-live="polite"></article></div>
+<div class="step-controls"><button id="prevStep" class="btn quiet" type="button">← Anterior</button><div id="stepProgress" class="progress" aria-hidden="true"></div><button id="nextStep" class="btn primary" type="button">Siguiente →</button></div>
+</section>
+<section id="docentes" class="section shade"><div class="eyebrow">03 / UN SISTEMA, DOS PERSPECTIVAS</div><h2>Lo que explica Dante.<br><em>Lo que desarrolla Andrés.</em></h2>
+<div class="teacher-grid"><article class="teacher"><div class="teacher-number">I</div><h3>Ante la Comisión</h3><p class="teacher-by">DANTE NEGRO · SISTEMA INTERAMERICANO</p><p>Legitimación del artículo 44, Declaración frente a Convención, competencia de la CIDH, agotamiento, plazo de seis meses, excepciones, admisibilidad, fondo, medidas cautelares y decisión de remitir un caso.</p><div class="teacher-footer">Pregunta rectora: <strong>¿Puede tramitarse la petición?</strong></div></article><article class="teacher"><div class="teacher-number">II</div><h3>Ante la Corte</h3><p class="teacher-by">ANDRÉS GONZÁLEZ SERRANO · LITIGIO ESTRATÉGICO</p><p>Artículo 61, cláusula facultativa del 62, sometimiento, víctimas del artículo 35, ESAP, contestación estatal, excepciones preliminares, prueba, audiencia, sentencia, reparaciones y supervisión.</p><div class="teacher-footer">Pregunta rectora: <strong>¿Puede la Corte juzgar y qué debe decidir?</strong></div></article></div>
+<div class="bridge"><div class="bridge-line"><span>ESTADO</span><span>→</span><span>COMISIÓN</span><span>→</span><span>CORTE</span></div><h3>El puente que une las dos clases</h3><p>Cuando la CIDH emite su informe de fondo (artículo 50 CADH), todavía no existe una sentencia judicial. En el período convencional siguiente, puede someter el caso a la Corte si se cumplen los requisitos. A partir de ese sometimiento empieza otro procedimiento: los representantes presentan el ESAP y el Estado lo contesta. Los relojes cambian porque los actos que los activan también cambian.</p></div>
+<div class="contrast" id="contrasts"></div>
+</section>
+<section id="reloj" class="section"><div class="eyebrow">04 / TALLER DE PLAZOS</div><h2>¿Qué reloj está<br><em>corriendo?</em></h2><p class="section-intro">Un plazo no empieza por el simple hecho de que exista un caso. Empieza a partir de un acto jurídico concreto: decisión interna definitiva, traslado, notificación o recepción de un escrito.</p>
+<div class="clock"><div class="clock-inputs"><label for="clockRule">Selecciona la actuación procesal</label><select id="clockRule"></select><label for="clockStart">Fecha del acto que activa el plazo</label><input id="clockStart" type="date" value="2026-11-23"><button id="clockGo" class="btn primary" type="button">Explorar plazo →</button><p class="muted small">Herramienta de aprendizaje: los cálculos usan días naturales y meses calendario como aproximación, sin resolver suspensiones, prórrogas, notificaciones ni reglas especiales de cómputo. No sirve para calcular un vencimiento real.</p></div><div class="clock-result" aria-live="polite"><div class="eyebrow">RESULTADO ORIENTATIVO</div><strong id="clockDate">—</strong><h3 id="clockTitle"></h3><p id="clockExplanation"></p><p class="clock-authority" id="clockAuthority"></p></div></div>
+<div class="deadline-list" id="deadlineList"></div></section>
+<section id="arcadia" class="section dark"><div class="eyebrow">05 / EXPEDIENTE HIPOTÉTICO</div><h2>Emilio Acosta<br><em>vs. Arcadia.</em></h2><p class="section-intro">El mismo recorrido, pero ahora con fechas y controversias del caso preparado para la simulación académica. Arcadia es un Estado ficticio.</p>
+<div class="case-layout"><div class="case-list" id="caseList"></div><article class="case-detail" id="caseDetail" aria-live="polite"></article></div>
+<div class="case-warning"><strong>Dos detalles del expediente merecen consulta:</strong> el supuesto sitúa el sometimiento el 10 de enero de 2024 y su notificación el 9 de febrero de 2025; además, anuncia cuatro excepciones preliminares pero enumera tres. No deben inventarse actos ni fechas para llenar esos vacíos.</div>
+</section>
+<section id="laboratorio" class="section"><div class="eyebrow">06 / PRACTICAR PARA COMPRENDER</div><h2>¿Podrías defender<br><em>tu respuesta?</em></h2><p class="section-intro">No se trata de memorizar artículos aislados. Cada respuesta explica la razón jurídica y el momento procesal.</p><div class="quiz" id="quiz"><div class="quiz-top"><span id="quizIndex"></span><strong id="quizScore"></strong></div><div class="quiz-bar"><div id="quizBar"></div></div><h3 id="quizQuestion"></h3><div id="quizOptions" class="quiz-options"></div><div id="quizFeedback" class="quiz-feedback" aria-live="polite"></div><button id="quizNext" class="btn primary" disabled type="button">Siguiente pregunta →</button></div></section>
+<section id="biblioteca" class="section shade"><div class="eyebrow">07 / BIBLIOTECA RAZONADA</div><h2>Norma, artículo,<br><em>y función.</em></h2><p class="section-intro">Consulta siempre el texto normativo. La guía traduce el procedimiento a lenguaje accesible, pero no sustituye al reglamento ni a la jurisprudencia aplicable.</p><div class="sources" id="sources"></div><div class="source-note">Los apuntes, presentaciones y el caso hipotético del curso se han utilizado como contexto de estudio, sin reproducir archivos docentes de terceros. La descripción de las clases corresponde a los temas trabajados, no a una transcripción literal de sus intervenciones.</div></section>
+</main>
+<footer><div class="foot-logo">RUTA INTERAMERICANA<span>.</span></div><p>Un atlas editorial de aprendizaje jurídico. Edición académica independiente. No constituye asesoramiento legal.</p><span>© 2026 · Documento educativo de acceso abierto.</span></footer>
+<script src="assets/app.js" defer></script>
+</body></html>
