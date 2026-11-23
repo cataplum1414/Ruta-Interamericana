@@ -18,6 +18,8 @@ Proyecto educativo independiente, editado por Sukima Labs. No es una publicació
 5. Explora el caso ficticio de Emilio Acosta vs. Arcadia y practica con preguntas explicadas.
 6. Busca en la biblioteca de jurisprudencia por nombre, país o tema y abre la fuente oficial disponible.
 7. Busca siglas y conceptos en el diccionario; también puedes tocar los términos subrayados para abrir su explicación y seguir los enlaces relacionados.
+8. Marca las estaciones que ya estudiaste. La guía recuerda tu última estación y tu avance en este navegador, sin crear una cuenta.
+9. En un navegador compatible, abre el menú para instalar la guía. Tras la primera carga, el contenido y los ejercicios disponibles se pueden consultar sin conexión; las fuentes oficiales externas requieren internet.
 
 ## Contenido
 
@@ -31,6 +33,7 @@ Proyecto educativo independiente, editado por Sukima Labs. No es una publicació
 - Caso académico ficticio con hitos procesales.
 - Biblioteca de decisiones identificadas en los materiales de estudio disponibles para este proyecto. Los enlaces conducen al buscador oficial de la Corte cuando no se ha verificado un enlace directo a la sentencia.
 - Preguntas de práctica y un escenario de decisión con consecuencias explicadas.
+- Continuidad de lectura privada en el dispositivo y versión instalable con caché sin conexión.
 - Fuentes normativas oficiales.
 
 La cronología del caso Arcadia identifica sus discrepancias internas y no inventa hechos para resolverlas. Las referencias de la biblioteca son una ayuda de estudio; comprueba el texto, fecha y alcance de cada decisión en la fuente oficial antes de citarla.
@@ -45,6 +48,8 @@ python3 -m http.server 8000
 
 Después visita http://localhost:8000.
 
+El modo sin conexión y la instalación requieren servir la guía por `localhost` o HTTPS; abrir el archivo directamente no activa el service worker.
+
 ## Archivos principales
 
 - `index.html`: estructura y contenido de la guía.
@@ -52,6 +57,8 @@ Después visita http://localhost:8000.
 - `assets/app.js`: recorrido, caso, reloj, práctica, búsquedas y enlaces contextuales del diccionario.
 - `assets/glosario.js`: siglas y conceptos con explicaciones claras, relaciones internas y fuentes oficiales.
 - `assets/jurisprudencia.js`: referencias jurisprudenciales estructuradas.
+- `manifest.webmanifest` y `sw.js`: instalación y caché local para lectura sin conexión.
+- `scripts/validate-site.mjs`: verifica rutas internas, número de estaciones, preguntas y archivos de la caché.
 - `.github/workflows/pages.yml`: publicación en GitHub Pages.
 
 Los documentos fuente locales no forman parte de la publicación. No añadirlos al repositorio.

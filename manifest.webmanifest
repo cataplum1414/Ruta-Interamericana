@@ -1,0 +1,15 @@
+{
+  "id": "./",
+  "name": "Ruta Interamericana · Sukima Labs",
+  "short_name": "Ruta Interamericana",
+  "description": "Guía interactiva para comprender el procedimiento ante la CIDH y la Corte Interamericana.",
+  "lang": "es",
+  "start_url": "./#inicio",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F5F4F0",
+  "theme_color": "#F5F4F0",
+  "icons": [
+    {"src": "./assets/brand/manifest-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}
+  ]
+}

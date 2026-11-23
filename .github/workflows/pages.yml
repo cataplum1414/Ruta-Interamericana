@@ -19,6 +19,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Validate application and offline shell
+        run: |
+          node --check assets/app.js
+          node --check assets/glosario.js
+          node --check assets/jurisprudencia.js
+          node --check sw.js
+          node scripts/validate-site.mjs
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
         with:
