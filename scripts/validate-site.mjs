@@ -2,6 +2,7 @@ import {access, readFile} from 'node:fs/promises';
 
 const html = await readFile('index.html', 'utf8');
 const app = await readFile('assets/app.js', 'utf8');
+const styles = await readFile('assets/styles.css', 'utf8');
 const opinions = await readFile('assets/opiniones.js', 'utf8');
 const manifest = JSON.parse(await readFile('manifest.webmanifest', 'utf8'));
 const serviceWorker = await readFile('sw.js', 'utf8');
@@ -32,6 +33,14 @@ if (opinionCount !== 32 || opinionNumbers.some((number, index) => number !== ind
 const routeCount = (html.match(/data-route-page/g) || []).length;
 if (routeCount < 14 || !html.includes('href="#comision"') || !html.includes('href="#corte"') || !html.includes('href="#sistema"') || !html.includes('href="#opiniones"') || !html.includes('href="#actualidad"')) {
   throw new Error('The 14 menu-driven pages, separate CIDH and Court pages, bridge page, cases, advisory opinions, and news pages must be present.');
+}
+const routeMap = html.match(/<div class="route-line">([\s\S]*?)<\/div>/)?.[1] || '';
+const routeStops = [...routeMap.matchAll(/<span class="route-stop"><b>\d+<\/b><small>([\s\S]*?)<\/small><\/span>/g)];
+if (routeStops.length !== 4 || /Interamericana/.test(routeMap) || !routeMap.includes('Reparar y<br>cumplir')) {
+  throw new Error('The mobile overview map must keep four short, readable stage labels.');
+}
+if (!styles.includes('.principle-strip .glossary-trigger{color:inherit;text-decoration-color:currentColor}')) {
+  throw new Error('Glossary links in the cyan principle strip need an inheriting, contrasting text color.');
 }
 for (const id of ['comision', 'corte', 'sistema']) {
   const page = html.match(new RegExp(`<section id=\"${id}\" data-route-page[\\s\\S]*?</section>`))?.[0];
