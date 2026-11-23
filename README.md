@@ -17,11 +17,13 @@ Proyecto educativo independiente, editado por Sukima Labs. No es una publicació
 4. Usa el reloj de plazos como orientación y verifica cada término en la norma aplicable.
 5. Explora el caso ficticio de Emilio Acosta vs. Arcadia y practica con preguntas explicadas.
 6. Busca en la biblioteca de jurisprudencia por nombre, país o tema y abre la fuente oficial disponible.
+7. Busca siglas y conceptos en el diccionario; también puedes tocar los términos subrayados para abrir su explicación y seguir los enlaces relacionados.
 
 ## Contenido
 
 - Página extensa con menú persistente agrupado por orientación, procedimiento y práctica; navegación compacta en móvil.
 - Búsqueda global de etapas, preguntas procesales y decisiones.
+- Diccionario buscable de siglas y conceptos conectado con las explicaciones, las etapas y las fuentes oficiales.
 - Orientador «¿En qué momento está el caso?» con rutas hacia los pasos relevantes.
 - Recorrido guiado por el procedimiento interamericano con filtros por fase y un patrón común: qué pasa, quién actúa, documento, plazo y siguiente paso.
 - Mapa de funciones y etapas ante la CIDH y la Corte IDH.
@@ -47,7 +49,8 @@ Después visita http://localhost:8000.
 
 - `index.html`: estructura y contenido de la guía.
 - `assets/styles.css`: identidad visual, diseño adaptable y estados accesibles.
-- `assets/app.js`: recorrido, caso, reloj, práctica y búsqueda jurisprudencial.
+- `assets/app.js`: recorrido, caso, reloj, práctica, búsquedas y enlaces contextuales del diccionario.
+- `assets/glosario.js`: siglas y conceptos con explicaciones claras, relaciones internas y fuentes oficiales.
 - `assets/jurisprudencia.js`: referencias jurisprudenciales estructuradas.
 - `.github/workflows/pages.yml`: publicación en GitHub Pages.
 
@@ -55,7 +58,7 @@ Los documentos fuente locales no forman parte de la publicación. No añadirlos 
 
 ## Arquitectura didáctica y referencias
 
-La arquitectura de [Atlas ONU, de Sukima Labs](https://github.com/sukima-labs/atlasonu) se traslada a una guía de desplazamiento largo: barra superior fija, menú lateral modal con grupos e iconos, estado activo según la sección, selector de tema Automático/Claro/Oscuro y cierre accesible del menú. Se conservan anclas para que cada fase del procedimiento permanezca visible y enlazable. La página usa lectura fácil, explicación progresiva y fuentes a la vista.
+La arquitectura de [Atlas ONU, de Sukima Labs](https://github.com/sukima-labs/atlasonu) se traslada a una guía de desplazamiento largo: barra superior fija, menú lateral modal con grupos e iconos, estado activo según la sección, selector de tema Automático/Claro/Oscuro y cierre accesible del menú. El patrón de siglas y glosario de Atlas también se adapta: las primeras apariciones por bloque se pueden activar, abren una explicación breve y enlazan con la ficha del diccionario, el tema de la guía y la fuente oficial. Se conservan anclas para que cada fase del procedimiento permanezca visible y enlazable. La página usa lectura fácil, explicación progresiva y fuentes a la vista.
 
 Para la práctica se estudiaron patrones públicos de [Learn Git Branching](https://github.com/pcottle/learnGitBranching) (acción con respuesta visual), [WiseCases](https://github.com/ihkarise/wisecases) (caso por etapas y pistas) y [Choices](https://github.com/drhycheung/Choices) (decisiones con consecuencias y explicación). Se adaptan las ideas pedagógicas, no se copia código ni contenido de esos proyectos.
 

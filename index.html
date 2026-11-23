@@ -29,7 +29,7 @@
   <nav class="nav-groups" aria-label="Secciones de Ruta Interamericana">
     <div class="nav-group"><h2>Orientarse</h2><a href="#inicio"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>Panorama</a><a href="#orientador"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8z"/></svg>Ubica tu etapa</a><a href="#sistema"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="m11 7-5 9m7-9 5 9M7 18h10"/></svg>Comisión y Corte</a></div>
     <div class="nav-group"><h2>Seguir el procedimiento</h2><a href="#recorrido"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v4a4 4 0 0 0 4 4h6a4 4 0 0 1 4 4v4M2 4h6M16 20h6"/></svg>Las 18 estaciones</a><a href="#reloj"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Plazos y escritos</a><a href="#arcadia"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h10l4 4v14H5zM15 3v5h4M8 13h8M8 17h8"/></svg>Caso de práctica</a></div>
-    <div class="nav-group"><h2>Aprender y verificar</h2><a href="#jurisprudencia"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a3 3 0 0 0-3-3H4zM20 4h-4a3 3 0 0 0-3 3v14a3 3 0 0 1 3-3h4z"/></svg>Jurisprudencia</a><a href="#laboratorio"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M8 15h8"/></svg>Práctica interactiva</a><a href="#biblioteca"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>Normas y fuentes</a></div>
+    <div class="nav-group"><h2>Aprender y verificar</h2><a href="#jurisprudencia"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a3 3 0 0 0-3-3H4zM20 4h-4a3 3 0 0 0-3 3v14a3 3 0 0 1 3-3h4z"/></svg>Jurisprudencia</a><a href="#diccionario"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 1 4 17.5zM4 6h13M8 9h8M8 12h6M8 15h7"/></svg>Diccionario y siglas</a><a href="#laboratorio"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M8 15h8"/></svg>Práctica interactiva</a><a href="#biblioteca"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>Normas y fuentes</a></div>
   </nav>
   <div class="side-footer"><div class="side-signature"><img class="brandmark brandmark-light" src="assets/brand/isotipo_color.svg" alt="Sukima Labs, símbolo de umbrales anidados con abertura cian" width="44" height="44"><img class="brandmark brandmark-dark" src="assets/brand/isotipo_white.svg" alt="Sukima Labs, símbolo de umbrales anidados con abertura cian" width="44" height="44"><div><strong>Proyecto de Sukima Labs</strong><span>Guía educativa independiente.</span></div></div><a href="https://sukimalabs.com" target="_blank" rel="noopener noreferrer">Sukima Labs ↗</a><p>Consulta siempre la fuente oficial.</p></div>
 </aside>
@@ -105,14 +105,21 @@
   <p class="source-note">Índice elaborado a partir de referencias encontradas en los documentos de estudio locales. No contiene transcripciones de clases ni textos completos de terceros. Cuando no se verificó un enlace directo, abre el buscador oficial de la institución.</p>
 </section>
 
+<section id="diccionario" class="page-section section-block section-alt">
+  <div class="section-heading"><div><p class="section-tag">CONSULTA CONECTADA</p><h2>Diccionario<br>y siglas</h2><p>Busca una palabra o sigla, o tócala cuando aparezca subrayada en la guía. Cada ficha explica el concepto en lenguaje claro y te lleva a la etapa y la norma relacionadas.</p></div><span class="section-index">07</span></div>
+  <div class="glossary-controls"><label for="glossarySearch">Buscar término o sigla</label><div class="glossary-search-row"><input id="glossarySearch" type="search" placeholder="Ej.: CADH, admisibilidad, ESAP" autocomplete="off"><button id="glossaryClear" class="button secondary" type="button">Limpiar</button></div><div id="glossaryFilters" class="glossary-filters" role="group" aria-label="Filtrar términos"></div><p id="glossaryCount" class="muted small" aria-live="polite"></p></div>
+  <div id="glossaryGrid" class="glossary-grid" aria-live="polite"></div>
+  <p class="glossary-note">Las fichas son explicaciones educativas. Para determinar una regla aplicable, consulta el instrumento y su texto oficial.</p>
+</section>
+
 <section id="laboratorio" class="page-section section-block">
-  <div class="section-heading"><div><p class="section-tag">PRACTICAR PARA COMPRENDER</p><h2>Elige, comprueba,<br>explica por qué</h2><p>Practica con preguntas breves. Después de responder verás qué regla opera y por qué importa en el procedimiento.</p></div><span class="section-index">07</span></div>
+  <div class="section-heading"><div><p class="section-tag">PRACTICAR PARA COMPRENDER</p><h2>Elige, comprueba,<br>explica por qué</h2><p>Practica con preguntas breves. Después de responder verás qué regla opera y por qué importa en el procedimiento.</p></div><span class="section-index">08</span></div>
   <article class="quiz" aria-label="Práctica de procedimiento"><div class="quiz-top"><span id="quizIndex"></span><strong id="quizScore"></strong></div><div class="quiz-bar"><div id="quizBar"></div></div><h3 id="quizQuestion"></h3><div id="quizOptions" class="quiz-options"></div><div id="quizFeedback" class="quiz-feedback" aria-live="polite"></div><button id="quizNext" class="button primary" disabled type="button">Siguiente pregunta</button></article>
   <section class="scenario" aria-labelledby="scenarioTitle"><div><p class="section-tag">ESCENARIO DE DECISIÓN</p><h3 id="scenarioTitle">El Estado presenta una excepción preliminar</h3><p>¿Qué conviene hacer primero para analizarla?</p></div><div class="scenario-actions" role="group" aria-label="Elegir respuesta"><button type="button" data-scenario="appeal">Tratar cualquier desacuerdo como una apelación</button><button type="button" data-scenario="nature">Identificar su naturaleza, el momento y el efecto procesal alegado</button></div><div class="scenario-result" id="scenarioResult" aria-live="polite">Selecciona una respuesta para ver qué elemento debes examinar.</div></section>
 </section>
 
 <section id="biblioteca" class="page-section section-block section-alt">
-  <div class="section-heading"><div><p class="section-tag">NORMAS Y FUENTES OFICIALES</p><h2>Norma, artículo<br>y función</h2><p>Usa esta sección para volver al texto vigente y separar la regla escrita de la explicación didáctica.</p></div><span class="section-index">08</span></div>
+  <div class="section-heading"><div><p class="section-tag">NORMAS Y FUENTES OFICIALES</p><h2>Norma, artículo<br>y función</h2><p>Usa esta sección para volver al texto vigente y separar la regla escrita de la explicación didáctica.</p></div><span class="section-index">09</span></div>
   <div class="sources" id="sources"></div>
   <div class="independence-note"><strong>Sobre esta guía</strong><p>Proyecto editorial independiente de Sukima Labs. No es una publicación oficial ni está afiliado o avalado por la CIDH, la Corte Interamericana, la OEA, ONU Mujeres o la Universidad de Alcalá. Los documentos académicos locales no se publican.</p></div>
 </section>
@@ -120,7 +127,10 @@
 <footer class="atlas-footer"><a class="brand footer-brand" href="#inicio" aria-label="Ruta Interamericana, volver al inicio"><img class="brandmark brandmark-light" src="assets/brand/isotipo_color.svg" alt="Sukima Labs, símbolo de umbrales anidados con abertura cian" width="39" height="39"><img class="brandmark brandmark-dark" src="assets/brand/isotipo_white.svg" alt="Sukima Labs, símbolo de umbrales anidados con abertura cian" width="39" height="39"><span>RUTA<br>INTERAMERICANA</span></a><p>Una guía de estudio para comprender el procedimiento, practicar su aplicación y verificar cada regla en la fuente.</p><a href="#inicio">Volver al inicio ↑</a></footer>
 </main>
 
+<aside id="glossaryPopover" class="glossary-popover" role="dialog" aria-modal="false" aria-label="Explicación del diccionario" hidden></aside>
+
 <script src="assets/jurisprudencia.js" defer></script>
+<script src="assets/glosario.js" defer></script>
 <script src="assets/app.js" defer></script>
 </body>
 </html>
