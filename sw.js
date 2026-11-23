@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ruta-interamericana-shell-v1';
+const CACHE_NAME = 'ruta-interamericana-shell-v2';
 const APP_SHELL = [
   './',
   './index.html',
@@ -7,6 +7,7 @@ const APP_SHELL = [
   './assets/app.js',
   './assets/glosario.js',
   './assets/jurisprudencia.js',
+  './assets/opiniones.js',
   './assets/brand/dejavu-sans-regular.woff2',
   './assets/brand/dejavu-sans-bold.woff2',
   './assets/brand/isotipo_color.svg',

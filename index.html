@@ -12,7 +12,7 @@
 <script>
 (()=>{let choice='auto';try{choice=localStorage.getItem('ri-theme')||'auto'}catch(e){}if(!['auto','light','dark'].includes(choice))choice='auto';const media=matchMedia('(prefers-color-scheme: light)');const apply=()=>{const theme=choice==='auto'?(media.matches?'light':'dark'):choice;document.documentElement.dataset.theme=theme;document.documentElement.dataset.themeChoice=choice;const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=theme==='light'?'#F5F4F0':'#10131C';document.querySelector('meta[name="color-scheme"]').content=theme};window.riTheme={get:()=>choice,set:value=>{choice=['auto','light','dark'].includes(value)?value:'auto';try{choice==='auto'?localStorage.removeItem('ri-theme'):localStorage.setItem('ri-theme',choice)}catch(e){}apply()}};media.addEventListener?.('change',()=>{if(choice==='auto')apply()});apply()})();
 </script>
-<link rel="stylesheet" href="assets/styles.css?v=ux-3">
+<link rel="stylesheet" href="assets/styles.css?v=route-pages-1">
 <link rel="manifest" href="./manifest.webmanifest">
 </head>
 <body>
@@ -30,14 +30,15 @@
   <nav class="nav-groups" aria-label="Secciones de Ruta Interamericana">
     <div class="nav-group"><h2>Orientarse</h2><a href="#inicio"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>Panorama</a><a href="#orientador"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8z"/></svg>Ubica tu etapa</a><a href="#sistema"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="m11 7-5 9m7-9 5 9M7 18h10"/></svg>Comisión y Corte</a></div>
     <div class="nav-group"><h2>Seguir el procedimiento</h2><a href="#recorrido"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v4a4 4 0 0 0 4 4h6a4 4 0 0 1 4 4v4M2 4h6M16 20h6"/></svg>Las 18 estaciones</a><a href="#reloj"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Plazos y escritos</a><a href="#arcadia"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h10l4 4v14H5zM15 3v5h4M8 13h8M8 17h8"/></svg>Caso de práctica</a></div>
-    <div class="nav-group"><h2>Aprender y verificar</h2><a href="#jurisprudencia"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a3 3 0 0 0-3-3H4zM20 4h-4a3 3 0 0 0-3 3v14a3 3 0 0 1 3-3h4z"/></svg>Jurisprudencia</a><a href="#diccionario"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 1 4 17.5zM4 6h13M8 9h8M8 12h6M8 15h7"/></svg>Diccionario y siglas</a><a href="#laboratorio"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M8 15h8"/></svg>Práctica interactiva</a><a href="#biblioteca"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>Normas y fuentes</a></div>
+    <div class="nav-group"><h2>Casos y actualidad</h2><a href="#jurisprudencia"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a3 3 0 0 0-3-3H4zM20 4h-4a3 3 0 0 0-3 3v14a3 3 0 0 1 3-3h4z"/></svg>Casos clave y jurisprudencia</a><a href="#opiniones"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4.4 1.6c-1.1 1.2-1.9 1.4-1.9 3.4M12 17.5v.1"/></svg>Opiniones consultivas</a><a href="#actualidad"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM7 9h10M7 12h10M7 15h6"/></svg>Noticias y novedades</a></div>
+    <div class="nav-group"><h2>Aprender y verificar</h2><a href="#diccionario"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 1 4 17.5zM4 6h13M8 9h8M8 12h6M8 15h7"/></svg>Diccionario y siglas</a><a href="#laboratorio"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3M8 15h8"/></svg>Práctica interactiva</a><a href="#biblioteca"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg>Normas y fuentes</a></div>
   </nav>
   <div class="side-footer"><button class="install-app" id="installApp" type="button" hidden>Instalar guía para usarla sin conexión</button><div class="side-signature"><img class="brandmark brandmark-light" src="assets/brand/isotipo_color.svg" alt="Sukima Labs, símbolo de umbrales anidados con abertura cian" width="44" height="44"><img class="brandmark brandmark-dark" src="assets/brand/isotipo_white.svg" alt="Sukima Labs, símbolo de umbrales anidados con abertura cian" width="44" height="44"><div><strong>Proyecto de Sukima Labs</strong><span>Guía educativa independiente.</span></div></div><a href="https://sukimalabs.com" target="_blank" rel="noopener noreferrer">Sukima Labs ↗</a><p id="offlineStatus">Consulta siempre la fuente oficial.</p></div>
 </aside>
 <button class="nav-scrim" id="navScrim" type="button" aria-label="Cerrar menú"></button>
 
 <main id="contenido" class="atlas-main">
-<section id="inicio" class="hero page-section">
+<section id="inicio" data-route-page class="hero page-section">
   <div class="hero-overview" aria-label="Estructura de la guía"><span><strong>18</strong> estaciones</span><i aria-hidden="true"></i><span>Comisión <b>→</b> Corte</span><i aria-hidden="true"></i><span>Normas y jurisprudencia</span></div>
   <div class="hero-copy">
     <p class="section-tag">SISTEMA INTERAMERICANO DE DERECHOS HUMANOS</p>
@@ -57,7 +58,7 @@
 
 <section class="principle-strip" aria-label="Regla clave"><p><strong>Dos órganos, dos momentos.</strong> La admisibilidad no decide si hubo una violación. El informe de fondo de la Comisión no es una sentencia de la Corte.</p><a href="#sistema">Entender la diferencia</a></section>
 
-<section id="orientador" class="page-section section-block">
+<section id="orientador" data-route-page class="page-section section-block">
   <div class="section-heading"><div><p class="section-tag">EMPIEZA POR AQUÍ</p><h2>¿En qué momento<br>está el caso?</h2><p>Elige la situación que más se parece a la tuya. Te mostraremos qué pregunta procesal toca resolver y dónde continuar en esta guía.</p></div><span class="section-index">01</span></div>
   <div class="orientation-grid">
     <div class="orientation-controls" role="group" aria-label="Elegir situación procesal">
@@ -70,7 +71,7 @@
   </div>
 </section>
 
-<section id="sistema" class="page-section section-block section-alt">
+<section id="sistema" data-route-page class="page-section section-block section-alt">
   <div class="section-heading"><div><p class="section-tag">EL MAPA GENERAL</p><h2>Comisión y Corte:<br>funciones distintas</h2><p>Primero ubica quién hace qué. Después será más fácil comprender cada escrito y cada plazo.</p></div><span class="section-index">02</span></div>
   <div class="institution-map">
     <article class="institution-card commission"><span class="institution-number">A</span><p class="section-tag">PETICIÓN Y TRÁMITE</p><h3>Comisión Interamericana<br>de Derechos Humanos</h3><p>Recibe peticiones individuales, analiza competencia y admisibilidad, estudia el fondo y puede facilitar una solución amistosa. Si se cumplen los requisitos, puede someter el caso a la Corte.</p><div class="ask"><b>Pregunta que orienta</b><span>¿Puede examinarse esta petición y qué respuesta corresponde?</span></div><a href="#recorrido" data-open-step="2">Ir a la etapa de petición</a></article>
@@ -80,7 +81,7 @@
   <div class="concept-pairs" id="contrasts" aria-label="Distinciones importantes"></div>
 </section>
 
-<section id="recorrido" class="page-section section-block">
+<section id="recorrido" data-route-page class="page-section section-block">
   <div class="section-heading"><div><p class="section-tag">RECORRIDO GUIADO</p><h2>Las 18 estaciones<br>del procedimiento</h2><p>En cada estación responde cinco preguntas: qué pasa, quién actúa, qué presenta, qué plazo puede aplicar y qué viene después. Selecciona una fase o avanza paso a paso.</p></div><div class="step-counter"><strong id="stepCount">01</strong><span>de 18</span></div></div>
   <div class="phase-tabs" role="group" aria-label="Filtrar estaciones por fase"><button class="active" type="button" data-phase="Todas" aria-pressed="true">Todo el recorrido</button><button type="button" data-phase="JUSTICIA INTERNA" aria-pressed="false">Antes de la CIDH</button><button type="button" data-phase="CIDH" aria-pressed="false">Comisión</button><button type="button" data-phase="TRANSICIÓN" aria-pressed="false">Paso a la Corte</button><button type="button" data-phase="CORTE IDH" aria-pressed="false">Corte</button></div>
   <div class="explorer"><nav class="rail" id="stepRail" aria-label="Estaciones del procedimiento"></nav><article class="stage" id="stepDetail" aria-live="polite"></article></div>
@@ -88,41 +89,61 @@
   <div class="learning-loop"><span class="loop-icon" aria-hidden="true">↻</span><p><strong>Cómo usar el recorrido:</strong> lee primero la explicación, identifica el documento y su fundamento, y luego contrasta tu respuesta con el caso ficticio. Si una fecha depende de una notificación concreta, verifica esa notificación antes de contar días.</p></div>
 </section>
 
-<section id="reloj" class="page-section section-block section-alt">
+<section id="reloj" data-route-page class="page-section section-block section-alt">
   <div class="section-heading"><div><p class="section-tag">PLAZOS Y ESCRITOS</p><h2>¿Qué reloj está<br>corriendo?</h2><p>Un plazo empieza por un acto procesal concreto: una decisión, una notificación, un traslado o la recepción de un escrito. Distingue el plazo para actuar del tiempo que tarda todo el procedimiento.</p></div><span class="section-index">04</span></div>
   <div class="clock"><div class="clock-inputs"><label for="clockRule">Selecciona la actuación</label><select id="clockRule"></select><label for="clockStart">Fecha del acto que activa el plazo</label><input id="clockStart" type="date" value="2026-11-23"><button id="clockGo" class="button primary" type="button">Ver cálculo orientativo</button><p class="small muted">Herramienta de aprendizaje. Usa días naturales y meses calendario como aproximación; no resuelve notificaciones, suspensiones, prórrogas ni reglas especiales. No calcula vencimientos reales.</p></div><div class="clock-result" aria-live="polite"><p class="section-tag">RESULTADO ORIENTATIVO</p><strong id="clockDate">—</strong><h3 id="clockTitle"></h3><p id="clockExplanation"></p><p class="clock-authority" id="clockAuthority"></p></div></div>
   <div class="deadline-list" id="deadlineList"></div>
   <details class="method-note"><summary>Cómo leer un plazo</summary><p>Localiza la regla aplicable, identifica el acto inicial que el texto nombra, comprueba la fecha de notificación o recepción y revisa si existe una excepción. El mismo número de días puede empezar a correr en fechas distintas para partes diferentes.</p></details>
 </section>
 
-<section id="arcadia" class="page-section section-block case-section">
+<section id="arcadia" data-route-page class="page-section section-block case-section">
   <div class="section-heading"><div><p class="section-tag">APRENDER APLICANDO</p><h2>Un caso para<br>poner la ruta a prueba</h2><p>Emilio Acosta vs. Arcadia es un expediente académico ficticio. Sigue sus hitos y decide qué pregunta debe resolverse en cada etapa.</p></div><span class="section-index">05</span></div>
   <div class="case-layout"><nav class="case-list" id="caseList" aria-label="Hitos del caso"></nav><article class="case-detail" id="caseDetail" aria-live="polite"></article></div>
   <div class="case-warning"><strong>Lee la cronología con cuidado.</strong><span>El material presenta discrepancias entre la fecha de sometimiento y la de notificación, y entre el número de excepciones anunciado y enumerado. La guía las señala sin inventar datos para resolverlas.</span></div>
 </section>
 
-<section id="jurisprudencia" class="page-section section-block section-alt">
+<section id="jurisprudencia" data-route-page class="page-section section-block section-alt">
   <div class="section-heading"><div><p class="section-tag">VOLVER A LA FUENTE</p><h2>Jurisprudencia<br>para cada pregunta</h2><p>Busca por caso, país o tema. Las fichas ayudan a encontrar decisiones relevantes; confirma los hechos, la fecha, el párrafo y el alcance en el texto oficial antes de citarlos.</p></div><span class="section-index">06</span></div>
+  <div class="featured-intro"><div><p class="section-tag">SELECCIÓN PARA EMPEZAR</p><h3>Casos clave, conectados con la ruta</h3><p>Una selección educativa de decisiones conocidas por su aporte a temas distintos. No representa un ranking ni sustituye el catálogo oficial completo.</p></div><a href="https://jurisprudencia.corteidh.or.cr/" target="_blank" rel="noopener noreferrer">Explorar jurisprudencia oficial ↗</a></div>
+  <div class="featured-cases" id="featuredCases"></div>
+  <div class="all-cases-heading"><h3>Índice de referencias del proyecto</h3><p>El buscador reúne referencias de estudio a sentencias y decisiones. Revisa siempre el texto oficial para confirmar el criterio aplicable.</p></div>
   <div class="juris-controls"><label for="jurisSearch">Buscar nombre, país o tema</label><input id="jurisSearch" type="search" placeholder="Ej.: agotamiento, víctimas, reparaciones" autocomplete="off"><div class="juris-filters" id="jurisFilters" role="group" aria-label="Filtrar por órgano"></div><p id="jurisCount" class="muted small" aria-live="polite"></p></div>
   <div class="juris-grid" id="jurisGrid" aria-live="polite"></div>
   <p class="source-note">Índice elaborado a partir de referencias encontradas en los documentos de estudio locales. No contiene transcripciones de clases ni textos completos de terceros. Cuando no se verificó un enlace directo, abre el buscador oficial de la institución.</p>
 </section>
 
-<section id="diccionario" class="page-section section-block section-alt">
-  <div class="section-heading"><div><p class="section-tag">CONSULTA CONECTADA</p><h2>Diccionario<br>y siglas</h2><p>Busca una palabra o sigla, o tócala cuando aparezca subrayada en la guía. Cada ficha explica el concepto en lenguaje claro y te lleva a la etapa y la norma relacionadas.</p></div><span class="section-index">07</span></div>
+<section id="opiniones" data-route-page class="page-section section-block section-alt">
+  <div class="section-heading"><div><p class="section-tag">FUNCIÓN CONSULTIVA DE LA CORTE IDH</p><h2>Opiniones consultivas:<br>las 32 respuestas</h2><p>Explora las opiniones emitidas, desde la OC-1 hasta la OC-32. Filtra por número o tema y abre el texto oficial para estudiar el alcance de cada respuesta.</p></div><span class="section-index">07</span></div>
+  <div class="opinion-explainer"><strong>¿Qué es una opinión consultiva?</strong><p>Es una respuesta de la Corte a consultas de Estados miembros de la OEA o de órganos de la Organización sobre interpretación de tratados de derechos humanos o compatibilidad de normas internas. No resuelve un caso contencioso individual.</p><a href="https://www.corteidh.or.cr/que_son_las_opiniones_consultivas.cfm?lang=es" target="_blank" rel="noopener noreferrer">Explicación oficial de la Corte ↗</a></div>
+  <div class="opinion-controls"><label for="opinionSearch">Busca por número o tema</label><input id="opinionSearch" type="search" placeholder="Ej.: OC-18, migración, ambiente, cuidado" autocomplete="off"><div class="opinion-filters" id="opinionFilters" role="group" aria-label="Filtrar opiniones por periodo"></div><p id="opinionCount" class="muted small" aria-live="polite"></p></div>
+  <div class="opinion-grid" id="opinionGrid" aria-live="polite"></div>
+  <p class="source-note">Catálogo de las 32 opiniones emitidas hasta la OC-32/25, según las publicaciones oficiales disponibles. La OC-33 sobre democracia es una solicitud en trámite, no una opinión emitida, por eso se explica en Noticias y novedades. Consulta también el índice oficial para revisar si hay publicaciones posteriores.</p>
+  <p class="opinion-official-link"><a href="https://www.corteidh.or.cr/opiniones_consultivas.cfm?lang=es" target="_blank" rel="noopener noreferrer">Abrir el catálogo oficial de opiniones consultivas ↗</a></p>
+</section>
+
+<section id="actualidad" data-route-page class="page-section section-block">
+  <div class="section-heading"><div><p class="section-tag">ACTUALIDAD INTERAMERICANA</p><h2>Noticias que ayudan<br>a entender el sistema</h2><p>Una selección breve de novedades institucionales y procesales. Las noticias explican lo que está pasando; no sustituyen una sentencia, una opinión consultiva ni la norma aplicable.</p></div><span class="section-index">08</span></div>
+  <div class="news-guidance"><strong>Cómo leer esta sección</strong><span>Identifica el órgano, la fecha y el acto procesal. Si una noticia anuncia que un caso fue presentado ante la Corte, eso inicia la fase contenciosa: todavía no es una sentencia.</span></div>
+  <div class="news-filters" id="newsFilters" role="group" aria-label="Filtrar novedades por órgano"></div>
+  <div class="news-grid" id="newsGrid"></div>
+  <div class="news-archives"><a href="https://www.oas.org/es/cidh/prensa/comunicados.asp" target="_blank" rel="noopener noreferrer">Archivo de comunicados de la CIDH ↗</a><a href="https://www.corteidh.or.cr/comunicados_prensa.cfm?lang=es" target="_blank" rel="noopener noreferrer">Archivo de comunicados de la Corte IDH ↗</a></div>
+</section>
+
+<section id="diccionario" data-route-page class="page-section section-block section-alt">
+  <div class="section-heading"><div><p class="section-tag">CONSULTA CONECTADA</p><h2>Diccionario<br>y siglas</h2><p>Busca una palabra o sigla, o tócala cuando aparezca subrayada en la guía. Cada ficha explica el concepto en lenguaje claro y te lleva a la etapa y la norma relacionadas.</p></div><span class="section-index">09</span></div>
   <div class="glossary-controls"><label for="glossarySearch">Buscar término o sigla</label><div class="glossary-search-row"><input id="glossarySearch" type="search" placeholder="Ej.: CADH, admisibilidad, ESAP" autocomplete="off"><button id="glossaryClear" class="button secondary" type="button">Limpiar</button></div><div id="glossaryFilters" class="glossary-filters" role="group" aria-label="Filtrar términos"></div><p id="glossaryCount" class="muted small" aria-live="polite"></p></div>
   <div id="glossaryGrid" class="glossary-grid" aria-live="polite"></div>
   <p class="glossary-note">Las fichas son explicaciones educativas. Para determinar una regla aplicable, consulta el instrumento y su texto oficial.</p>
 </section>
 
-<section id="laboratorio" class="page-section section-block">
-  <div class="section-heading"><div><p class="section-tag">PRACTICAR PARA COMPRENDER</p><h2>Elige, comprueba,<br>explica por qué</h2><p>Practica con preguntas breves. Después de responder verás qué regla opera y por qué importa en el procedimiento.</p></div><span class="section-index">08</span></div>
+<section id="laboratorio" data-route-page class="page-section section-block">
+  <div class="section-heading"><div><p class="section-tag">PRACTICAR PARA COMPRENDER</p><h2>Elige, comprueba,<br>explica por qué</h2><p>Practica con preguntas breves. Después de responder verás qué regla opera y por qué importa en el procedimiento.</p></div><span class="section-index">10</span></div>
   <article class="quiz" aria-label="Práctica de procedimiento"><div class="quiz-top"><span id="quizIndex"></span><strong id="quizScore"></strong></div><div class="quiz-bar"><div id="quizBar"></div></div><h3 id="quizQuestion"></h3><div id="quizOptions" class="quiz-options"></div><div id="quizFeedback" class="quiz-feedback" aria-live="polite"></div><button id="quizNext" class="button primary" disabled type="button">Siguiente pregunta</button></article>
   <section class="scenario" aria-labelledby="scenarioTitle"><div><p class="section-tag">ESCENARIO DE DECISIÓN</p><h3 id="scenarioTitle">El Estado presenta una excepción preliminar</h3><p>¿Qué conviene hacer primero para analizarla?</p></div><div class="scenario-actions" role="group" aria-label="Elegir respuesta"><button type="button" data-scenario="appeal">Tratar cualquier desacuerdo como una apelación</button><button type="button" data-scenario="nature">Identificar su naturaleza, el momento y el efecto procesal alegado</button></div><div class="scenario-result" id="scenarioResult" aria-live="polite">Selecciona una respuesta para ver qué elemento debes examinar.</div></section>
 </section>
 
-<section id="biblioteca" class="page-section section-block section-alt">
-  <div class="section-heading"><div><p class="section-tag">NORMAS Y FUENTES OFICIALES</p><h2>Norma, artículo<br>y función</h2><p>Usa esta sección para volver al texto vigente y separar la regla escrita de la explicación didáctica.</p></div><span class="section-index">09</span></div>
+<section id="biblioteca" data-route-page class="page-section section-block section-alt">
+  <div class="section-heading"><div><p class="section-tag">NORMAS Y FUENTES OFICIALES</p><h2>Norma, artículo<br>y función</h2><p>Usa esta sección para volver al texto vigente y separar la regla escrita de la explicación didáctica.</p></div><span class="section-index">11</span></div>
   <div class="sources" id="sources"></div>
   <div class="independence-note"><strong>Sobre esta guía</strong><p>Proyecto editorial independiente de Sukima Labs. No es una publicación oficial ni está afiliado o avalado por la CIDH, la Corte Interamericana, la OEA, ONU Mujeres o la Universidad de Alcalá. Los documentos académicos locales no se publican.</p></div>
 </section>
@@ -130,12 +151,13 @@
 <footer class="atlas-footer"><a class="brand footer-brand" href="#inicio" aria-label="Ruta Interamericana, volver al inicio"><img class="brandmark brandmark-light" src="assets/brand/isotipo_color.svg" alt="Sukima Labs, símbolo de umbrales anidados con abertura cian" width="39" height="39"><img class="brandmark brandmark-dark" src="assets/brand/isotipo_white.svg" alt="Sukima Labs, símbolo de umbrales anidados con abertura cian" width="39" height="39"><span>RUTA<br>INTERAMERICANA</span></a><p>Una guía de estudio para comprender el procedimiento, practicar su aplicación y verificar cada regla en la fuente.</p><a href="#inicio">Volver al inicio ↑</a></footer>
 </main>
 
-<nav class="mobile-bar" id="mobileBar" aria-label="Accesos rápidos"><a href="#inicio" data-mobile-section="inicio" aria-current="location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg><span>Inicio</span></a><a href="#recorrido" data-mobile-section="recorrido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v4a4 4 0 0 0 4 4h6a4 4 0 0 1 4 4v4M2 4h6M16 20h6"/></svg><span>Ruta</span></a><a href="#diccionario" data-mobile-section="diccionario"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 1 4 17.5zM4 6h13M8 9h8M8 12h6"/></svg><span>Siglas</span></a><a href="#jurisprudencia" data-mobile-section="jurisprudencia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a3 3 0 0 0-3-3H4zM20 4h-4a3 3 0 0 0-3 3v14a3 3 0 0 1 3-3h4z"/></svg><span>Casos</span></a><button id="mobileMenuButton" type="button" aria-label="Abrir menú"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menú</span></button></nav>
+<nav class="mobile-bar" id="mobileBar" aria-label="Accesos rápidos"><a href="#inicio" data-mobile-section="inicio" aria-current="location"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg><span>Inicio</span></a><a href="#recorrido" data-mobile-section="recorrido"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v4a4 4 0 0 0 4 4h6a4 4 0 0 1 4 4v4M2 4h6M16 20h6"/></svg><span>Ruta</span></a><a href="#jurisprudencia" data-mobile-section="jurisprudencia"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6a3 3 0 0 1 3 3v14a3 3 0 0 0-3-3H4zM20 4h-4a3 3 0 0 0-3 3v14a3 3 0 0 1 3-3h4z"/></svg><span>Casos</span></a><a href="#opiniones" data-mobile-section="opiniones"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 4.4 1.6c-1.1 1.2-1.9 1.4-1.9 3.4M12 17.5v.1"/></svg><span>Opiniones</span></a><button id="mobileMenuButton" type="button" aria-label="Abrir menú"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menú</span></button></nav>
 
 <aside id="glossaryPopover" class="glossary-popover" role="dialog" aria-modal="false" aria-label="Explicación del diccionario" hidden></aside>
 
 <script src="assets/jurisprudencia.js" defer></script>
+<script src="assets/opiniones.js" defer></script>
 <script src="assets/glosario.js?v=editorial-2" defer></script>
-<script src="assets/app.js?v=ux-3" defer></script>
+<script src="assets/app.js?v=route-pages-1" defer></script>
 </body>
 </html>

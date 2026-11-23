@@ -24,6 +24,7 @@ jobs:
           node --check assets/app.js
           node --check assets/glosario.js
           node --check assets/jurisprudencia.js
+          node --check assets/opiniones.js
           node --check sw.js
           node scripts/validate-site.mjs
       - name: Configure GitHub Pages

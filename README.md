@@ -23,7 +23,7 @@ Proyecto educativo independiente, editado por Sukima Labs. No es una publicació
 
 ## Contenido
 
-- Página extensa con menú agrupado por orientación, procedimiento y práctica, más barra inferior de cinco accesos en móvil.
+- Vistas independientes por tema, navegables desde el menú y con accesos directos a Ruta, Casos y Opiniones en móvil.
 - Búsqueda global de etapas, preguntas procesales, decisiones, plazos, fuentes, ejercicios, siglas y conceptos, con ejemplos listos para abrir.
 - Diccionario buscable de siglas y conceptos conectado con las explicaciones, las etapas y las fuentes oficiales.
 - Orientador «¿En qué momento está el caso?» con rutas hacia los pasos relevantes.
@@ -31,7 +31,7 @@ Proyecto educativo independiente, editado por Sukima Labs. No es una publicació
 - Mapa de funciones y etapas ante la CIDH y la Corte IDH.
 - Reloj de plazos orientativos.
 - Caso académico ficticio con hitos procesales.
-- Biblioteca de decisiones identificadas en los materiales de estudio disponibles para este proyecto. Los enlaces conducen al buscador oficial de la Corte cuando no se ha verificado un enlace directo a la sentencia.
+- Selección didáctica de casos clave junto con el índice de referencias del proyecto, sin presentarlo como catálogo exhaustivo.
 - Preguntas de práctica y un escenario de decisión con consecuencias explicadas.
 - Continuidad de lectura privada en el dispositivo y versión instalable con caché sin conexión.
 - Fuentes normativas oficiales.
@@ -57,6 +57,7 @@ El modo sin conexión y la instalación requieren servir la guía por `localhost
 - `assets/app.js`: recorrido, caso, reloj, práctica, búsquedas y enlaces contextuales del diccionario.
 - `assets/glosario.js`: siglas y conceptos con explicaciones claras, relaciones internas y fuentes oficiales.
 - `assets/jurisprudencia.js`: referencias jurisprudenciales estructuradas.
+- `assets/opiniones.js`: catálogo de opiniones consultivas emitidas con enlaces a las Series A oficiales.
 - `manifest.webmanifest` y `sw.js`: instalación y caché local para lectura sin conexión.
 - `scripts/validate-site.mjs`: verifica rutas internas, número de estaciones, preguntas y archivos de la caché.
 - `.github/workflows/pages.yml`: publicación en GitHub Pages.
@@ -75,6 +76,7 @@ Para la práctica se estudiaron patrones públicos de [Learn Git Branching](http
 - [Reglamento de la Corte IDH](https://www.corteidh.or.cr/reglamento.cfm)
 - [Reglamento de la CIDH](https://www.oas.org/es/cidh/jsForm/?File=%2Fes%2Fcidh%2Fmandato%2Fbasicos%2Freglamentocidh.asp)
 - [Buscador de casos y sentencias de la Corte IDH](https://www.corteidh.or.cr/casos_sentencias.cfm)
+- [Catálogo oficial de opiniones consultivas de la Corte IDH](https://www.corteidh.or.cr/opiniones_consultivas.cfm?lang=es)
 
 ## Licencia
 
@@ -85,3 +87,10 @@ MIT para el código y el contenido original del proyecto. No cubre normas, sente
 La interfaz aplica las reglas digitales pertinentes de la [entrega de marca v1.1](https://github.com/sukima-labs/sukima-labs.github.io/tree/main/marca): DejaVu Sans alojada en este repositorio, paleta oficial grafito `#10131C`, cian `#14C6D4`, violeta `#7148F5` y marfil `#F5F4F0`, e isotipos oficiales sin alterar. El tema claro usa violeta para texto, enlaces, acciones y foco; reserva el cian para detalles decorativos. El tema oscuro usa cian con texto grafito para esos estados. Se conserva espacio libre alrededor del isotipo y su tamaño no baja de 32 px.
 
 La escala de espaciado, radios y componentes no está definida por el manual de marca; se establece para esta guía y se comprueba en sus estados interactivos. La tipografía y los isotipos se sirven desde `assets/brand/`; la licencia de DejaVu Sans acompaña los archivos.
+
+
+## Navegación y contenidos nuevos
+
+La aplicación muestra una vista temática a la vez: Panorama, Orientador, Sistema, Procedimiento, Plazos, Caso guiado, Casos clave, Opiniones consultivas, Noticias, Diccionario, Practicar y Fuentes. La barra lateral conserva el menú completo y la barra móvil prioriza las rutas que se usan con más frecuencia.
+
+Las opiniones emitidas están separadas de las solicitudes en curso. Las noticias enlazan al comunicado original y explican su relevancia procesal. La selección de casos es para estudiar; el buscador oficial sigue siendo el catálogo completo de sentencias.
