@@ -68,4 +68,10 @@ Para la práctica se estudiaron patrones públicos de [Learn Git Branching](http
 
 ## Licencia
 
-MIT para el código y el contenido original del proyecto. Esta licencia no cubre normas, sentencias ni materiales de terceros.
+MIT para el código y el contenido original del proyecto. No cubre normas, sentencias ni materiales de terceros. Los archivos de identidad en `assets/brand/` se rigen por las reglas de marca de Sukima Labs; la licencia incluida allí se aplica a las fuentes DejaVu Sans.
+
+## Identidad visual Sukima Labs
+
+La interfaz aplica las reglas digitales pertinentes de la [entrega de marca v1.1](https://github.com/sukima-labs/sukima-labs.github.io/tree/main/marca): DejaVu Sans alojada en este repositorio, paleta oficial grafito `#10131C`, cian `#14C6D4`, violeta `#7148F5` y marfil `#F5F4F0`, e isotipos oficiales sin alterar. El tema claro usa violeta para texto, enlaces, acciones y foco; reserva el cian para detalles decorativos. El tema oscuro usa cian con texto grafito para esos estados. Se conserva espacio libre alrededor del isotipo y su tamaño no baja de 32 px.
+
+La escala de espaciado, radios y componentes no está definida por el manual de marca; se establece para esta guía y se comprueba en sus estados interactivos. La tipografía y los isotipos se sirven desde `assets/brand/`; la licencia de DejaVu Sans acompaña los archivos.

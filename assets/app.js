@@ -138,7 +138,7 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.class
 window.addEventListener('resize',()=>{if(!window.matchMedia('(max-width: 800px)').matches)document.body.classList.remove('menu-open');});
 
 const themeToggle=el('themeToggle'),themeRoot=document.documentElement;
-function setTheme(theme){themeRoot.dataset.theme=theme;const light=theme==='light';themeToggle.textContent=light?'Modo oscuro':'Modo claro';themeToggle.setAttribute('aria-pressed',String(light));try{localStorage.setItem('ri-theme',theme);}catch(e){}}
+function setTheme(theme){themeRoot.dataset.theme=theme;const light=theme==='light';themeToggle.textContent=light?'Modo oscuro':'Modo claro';themeToggle.setAttribute('aria-pressed',String(!light));document.querySelector('meta[name="theme-color"]')?.setAttribute('content',light?'#F5F4F0':'#10131C');try{localStorage.setItem('ri-theme',theme);}catch(e){}}
 try{const saved=localStorage.getItem('ri-theme');if(saved==='light'||saved==='dark')themeRoot.dataset.theme=saved;}catch(e){}
 setTheme(themeRoot.dataset.theme==='light'?'light':'dark');themeToggle.addEventListener('click',()=>setTheme(themeRoot.dataset.theme==='dark'?'light':'dark'));
 
