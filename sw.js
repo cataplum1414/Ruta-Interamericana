@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ruta-interamericana-shell-v6';
+const CACHE_NAME = 'atlas-oea-shell-v1';
 const APP_SHELL = [
   './',
   './index.html',

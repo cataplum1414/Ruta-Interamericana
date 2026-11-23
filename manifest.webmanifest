@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "Ruta Interamericana · Sukima Labs",
-  "short_name": "Ruta Interamericana",
-  "description": "Guía interactiva para comprender el procedimiento ante la CIDH y la Corte Interamericana.",
+  "name": "Atlas OEA - Sukima Labs",
+  "short_name": "Atlas OEA",
+  "description": "Atlas interactivo de la Organizaci\u00f3n de los Estados Americanos y el Sistema Interamericano de Derechos Humanos.",
   "lang": "es",
   "start_url": "./#inicio",
   "scope": "./",

@@ -1,13 +1,13 @@
-# Ruta Interamericana
+# Atlas OEA
 
-## Del hecho a la sentencia
+## Organizaci&oacute;n de los Estados Americanos
 
-Guía visual e interactiva para aprender el procedimiento de petición individual ante la Comisión Interamericana de Derechos Humanos (CIDH) y el trámite contencioso ante la Corte Interamericana de Derechos Humanos.
+Atlas educativo de la Organizaci&oacute;n de los Estados Americanos (OEA). Presenta sus cuatro pilares, &oacute;rganos y estructura; desarrolla con detalle el Sistema Interamericano de Derechos Humanos y la ruta ante la CIDH y la Corte IDH.
 
 **Sitio:** https://cataplum1414.github.io/Ruta-Interamericana/
 **Repositorio:** https://github.com/cataplum1414/Ruta-Interamericana
 
-Proyecto educativo independiente, editado por Sukima Labs. No es una publicación oficial ni está afiliado a la CIDH, la Corte IDH, la OEA, ONU Mujeres o la Universidad de Alcalá. No sustituye la Convención Americana, los reglamentos ni la asesoría jurídica para casos reales.
+Atlas OEA es un proyecto educativo independiente, editado por Sukima Labs. No es una publicación oficial ni está afiliado a la CIDH, la Corte IDH, la OEA, ONU Mujeres o la Universidad de Alcalá. No sustituye la Convención Americana, los reglamentos ni la asesoría jurídica para casos reales.
 
 ## Cómo usar la guía
 
@@ -66,7 +66,7 @@ Los documentos fuente locales no forman parte de la publicación. No añadirlos 
 
 ## Arquitectura didáctica y referencias
 
-La arquitectura editorial de [Atlas ONU, de Sukima Labs](https://github.com/sukima-labs/atlasonu) se adapta a la materia interamericana: misma familia DejaVu Sans distribuida por el manual de marca, escala tipográfica compacta, franja de contexto, portada alineada arriba, lectura fácil, búsqueda con ejemplos y navegación inferior móvil. La ruta mantiene su propio mapa de Comisión, Corte, escritos y plazos. El patrón de siglas y glosario de Atlas también se adapta: las primeras apariciones por bloque se pueden activar, abren una explicación breve y enlazan con la ficha del diccionario, el tema de la guía y la fuente oficial.
+La arquitectura editorial de [Atlas ONU, de Sukima Labs](https://github.com/sukima-labs/atlasonu) inspira este atlas hermano: misma familia DejaVu Sans distribuida por el manual de marca, escala tipográfica compacta, franja de contexto, portada alineada arriba, lectura fácil, búsqueda con ejemplos y navegación inferior móvil. La ruta mantiene su propio mapa de Comisión, Corte, escritos y plazos. El patrón de siglas y glosario de Atlas también se adapta: las primeras apariciones por bloque se pueden activar, abren una explicación breve y enlazan con la ficha del diccionario, el tema de la guía y la fuente oficial.
 
 Para la práctica se estudiaron patrones públicos de [Learn Git Branching](https://github.com/pcottle/learnGitBranching) (acción con respuesta visual), [WiseCases](https://github.com/ihkarise/wisecases) (caso por etapas y pistas) y [Choices](https://github.com/drhycheung/Choices) (decisiones con consecuencias y explicación). Se adaptan las ideas pedagógicas, no se copia código ni contenido de esos proyectos.
 
@@ -91,6 +91,6 @@ La escala de espaciado, radios y componentes no está definida por el manual de 
 
 ## Navegación y contenidos nuevos
 
-La aplicación muestra una vista temática a la vez: Panorama, Orientador, Sistema, Procedimiento, Plazos, Caso guiado, Casos clave, Opiniones consultivas, Noticias, Diccionario, Practicar y Fuentes. La barra lateral conserva el menú completo y la barra móvil prioriza las rutas que se usan con más frecuencia.
+La aplicación muestra una vista temática a la vez: Panorama, OEA, Orientador, Sistema, Procedimiento, Plazos, Caso guiado, Casos clave, Opiniones consultivas, Noticias, Diccionario, Practicar y Fuentes. La barra lateral conserva el menú completo y la barra móvil prioriza las rutas que se usan con más frecuencia.
 
 Las opiniones emitidas están separadas de las solicitudes en curso. Las noticias enlazan al comunicado original y explican su relevancia procesal. La selección de casos es para estudiar; el buscador oficial sigue siendo el catálogo completo de sentencias.
