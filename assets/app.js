@@ -130,20 +130,20 @@ stage=function(n){originalStage(n);const all=[...el('stepRail').querySelectorAll
 document.querySelectorAll('[data-phase]').forEach(b=>b.addEventListener('click',()=>{activeStepPhase=b.dataset.phase;document.querySelectorAll('[data-phase]').forEach(x=>{const active=x===b;x.classList.toggle('active',active);x.setAttribute('aria-pressed',String(active));});stage(current);}));
 
 const menuToggle=el('menuToggle'),closeMenu=el('closeMenu'),navScrim=el('navScrim');
-function setMenu(open){if(window.matchMedia('(max-width: 800px)').matches){document.body.classList.toggle('menu-open',open);menuToggle.setAttribute('aria-expanded',String(open));}else{document.body.classList.toggle('nav-collapsed',!open);menuToggle.setAttribute('aria-expanded',String(open));}}
-menuToggle.addEventListener('click',()=>{const mobile=window.matchMedia('(max-width: 800px)').matches;const open=mobile?!document.body.classList.contains('menu-open'):document.body.classList.contains('nav-collapsed');setMenu(open);});
+function setMenu(open){document.body.classList.toggle('menu-open',open);menuToggle.setAttribute('aria-expanded',String(open));if(open)document.querySelector('#sideNav a')?.focus();else menuToggle.focus();}
+menuToggle.addEventListener('click',()=>setMenu(!document.body.classList.contains('menu-open')));
 closeMenu.addEventListener('click',()=>setMenu(false));navScrim.addEventListener('click',()=>setMenu(false));
-document.querySelectorAll('#sideNav a').forEach(a=>a.addEventListener('click',()=>{if(window.matchMedia('(max-width: 800px)').matches)setMenu(false);}));
+document.querySelectorAll('#sideNav a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.body.classList.contains('menu-open'))setMenu(false);});
-window.addEventListener('resize',()=>{if(!window.matchMedia('(max-width: 800px)').matches)document.body.classList.remove('menu-open');});
 
-const themeToggle=el('themeToggle'),themeRoot=document.documentElement;
-function setTheme(theme){themeRoot.dataset.theme=theme;const light=theme==='light';themeToggle.textContent=light?'Modo oscuro':'Modo claro';themeToggle.setAttribute('aria-pressed',String(!light));document.querySelector('meta[name="theme-color"]')?.setAttribute('content',light?'#F5F4F0':'#10131C');try{localStorage.setItem('ri-theme',theme);}catch(e){}}
-try{const saved=localStorage.getItem('ri-theme');if(saved==='light'||saved==='dark')themeRoot.dataset.theme=saved;}catch(e){}
-setTheme(themeRoot.dataset.theme==='light'?'light':'dark');themeToggle.addEventListener('click',()=>setTheme(themeRoot.dataset.theme==='dark'?'light':'dark'));
+const themeSelect=el('themeSelect'),themeButtons=[...document.querySelectorAll('[data-theme-choice]')];
+function syncThemeControls(){const choice=window.riTheme?.get?.()||'auto';themeSelect.value=choice;themeButtons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.themeChoice===choice)));}
+themeSelect.addEventListener('change',()=>window.riTheme.set(themeSelect.value));
+themeButtons.forEach(b=>b.addEventListener('click',()=>window.riTheme.set(b.dataset.themeChoice)));
+syncThemeControls();
 
-const allSections=[...document.querySelectorAll('main section[id]')],sidebarLinks=[...document.querySelectorAll('#sideNav a')],mobileLinks=[...document.querySelectorAll('.mobile-bar a')];
-function markSection(id){[...sidebarLinks,...mobileLinks].forEach(a=>{if(a.hash==='#'+id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}
+const allSections=[...document.querySelectorAll('main section[id]')],sidebarLinks=[...document.querySelectorAll('#sideNav a')];
+function markSection(id){sidebarLinks.forEach(a=>{if(a.hash==='#'+id)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});}
 if('IntersectionObserver'in window){const sectionObserver=new IntersectionObserver(entries=>{const visible=entries.filter(x=>x.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];if(visible)markSection(visible.target.id);},{rootMargin:'-18% 0px -64% 0px',threshold:[0,.15,.4]});allSections.forEach(s=>sectionObserver.observe(s));}
 
 const atlasSearch=el('atlasSearch'),searchResults=el('searchResults');

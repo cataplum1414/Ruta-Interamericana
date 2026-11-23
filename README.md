@@ -55,7 +55,7 @@ Los documentos fuente locales no forman parte de la publicación. No añadirlos 
 
 ## Arquitectura didáctica y referencias
 
-La navegación por áreas y la identidad editorial toman como referencia la arquitectura de [Atlas ONU, de Sukima Labs](https://github.com/sukima-labs/atlasonu), adaptada como recorrido largo con anclas para que cada fase permanezca visible y enlazable. La página usa lectura fácil, explicación progresiva y fuentes a la vista.
+La arquitectura de [Atlas ONU, de Sukima Labs](https://github.com/sukima-labs/atlasonu) se traslada a una guía de desplazamiento largo: barra superior fija, menú lateral modal con grupos e iconos, estado activo según la sección, selector de tema Automático/Claro/Oscuro y cierre accesible del menú. Se conservan anclas para que cada fase del procedimiento permanezca visible y enlazable. La página usa lectura fácil, explicación progresiva y fuentes a la vista.
 
 Para la práctica se estudiaron patrones públicos de [Learn Git Branching](https://github.com/pcottle/learnGitBranching) (acción con respuesta visual), [WiseCases](https://github.com/ihkarise/wisecases) (caso por etapas y pistas) y [Choices](https://github.com/drhycheung/Choices) (decisiones con consecuencias y explicación). Se adaptan las ideas pedagógicas, no se copia código ni contenido de esos proyectos.
 
