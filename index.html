@@ -1,53 +1,120 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#102332">
-<meta name="description" content="Atlas visual e interactivo del litigio ante la Comisión y Corte Interamericanas de Derechos Humanos.">
-<title>Ruta Interamericana | Del hecho a la sentencia</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10131C">
+<meta name="description" content="Guía visual, progresiva e interactiva para comprender y aplicar el procedimiento ante la CIDH y la Corte Interamericana.">
+<title>Ruta Interamericana | Guía paso a paso</title>
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
-<header class="masthead">
-  <a class="brand" href="#inicio"><span class="brandmark">RI<span>.</span></span><span>RUTA<br>INTERAMERICANA</span></a>
-  <nav aria-label="Principal"><a href="#recorrido">Recorrido</a><a href="#mapa">Cómo funciona</a><a href="#reloj">Reloj de plazos</a><a href="#arcadia">Caso Arcadia</a><a href="#jurisprudencia">Jurisprudencia</a><a href="#laboratorio">Practicar</a><a href="#biblioteca">Fuentes</a></nav>
-  <span class="edition">ATLAS JURÍDICO · 2026</span>
+<header class="appbar">
+  <button class="menu-toggle" id="menuToggle" type="button" aria-controls="sideNav" aria-expanded="false">Menú</button>
+  <a class="brand" href="#inicio" aria-label="Ruta Interamericana, inicio"><span class="brandmark">RI<span>.</span></span><span>RUTA<br>INTERAMERICANA</span></a>
+  <div class="appbar-context"><span>Guía práctica</span><span aria-hidden="true">/</span><span>Del hecho a la sentencia</span></div>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">Modo claro</button>
 </header>
-<main id="contenido">
-<section id="inicio" class="hero">
-<div class="eyebrow">01 / CARTOGRAFÍA DE UN PROCEDIMIENTO</div>
-<div class="hero-grid"><div>
-<h1>Del hecho a<br><em>la sentencia.</em></h1>
-<p class="lead">Una ruta para comprender, paso a paso, cómo una petición individual viaja desde los tribunales nacionales hasta la Comisión y, eventualmente, hasta la Corte Interamericana de Derechos Humanos.</p>
-<div class="actions"><a class="btn primary" href="#recorrido">Iniciar el recorrido <span>↗</span></a><a class="btn quiet" href="#mapa">Ver el mapa del sistema</a></div>
-</div><div class="hero-graphic" aria-label="Esquema del procedimiento"><div class="orbit orbit-1"></div><div class="orbit orbit-2"></div><div class="node top"><small>01 / ORIGEN</small><strong>Justicia interna</strong></div><div class="track">↓</div><div class="node middle"><small>02 / PETICIÓN</small><strong>CIDH</strong></div><div class="track">↓</div><div class="node bottom"><small>03 / LITIGIO</small><strong>Corte IDH</strong></div><div class="tiny">Un expediente · dos órganos · varios relojes</div></div></div>
-<div class="hero-bottom"><span>MAESTRÍA · PROTECCIÓN INTERNACIONAL DE LOS DERECHOS HUMANOS</span><span>ALCALÁ DE HENARES · EDICIÓN ACADÉMICA</span></div>
+
+<aside class="side" id="sideNav" aria-label="Menú principal">
+  <div class="side-top"><span class="side-kicker">RUTA DE APRENDIZAJE</span><button class="close-menu" id="closeMenu" type="button" aria-label="Cerrar menú">×</button></div>
+  <nav class="nav-groups">
+    <div class="nav-group"><h2>Orientarse</h2><a href="#inicio">Inicio</a><a href="#orientador">¿Dónde está el caso?</a><a href="#sistema">Cómo funciona el sistema</a></div>
+    <div class="nav-group"><h2>Seguir el procedimiento</h2><a href="#recorrido">Las 18 estaciones</a><a href="#reloj">Plazos y escritos</a><a href="#arcadia">Caso de práctica</a></div>
+    <div class="nav-group"><h2>Aprender y verificar</h2><a href="#jurisprudencia">Jurisprudencia</a><a href="#laboratorio">Practicar</a><a href="#biblioteca">Normas y fuentes</a></div>
+  </nav>
+  <div class="side-footer"><span class="side-mark">SUKIMA LABS</span><p>Proyecto editorial independiente. Consulta siempre la fuente oficial.</p></div>
+</aside>
+<button class="nav-scrim" id="navScrim" type="button" tabindex="-1" aria-label="Cerrar menú"></button>
+
+<main id="contenido" class="atlas-main">
+<section id="inicio" class="hero page-section">
+  <div class="hero-copy">
+    <p class="section-tag">SISTEMA INTERAMERICANO DE DERECHOS HUMANOS</p>
+    <h1>Entiende el camino<br>del <span>hecho a la sentencia.</span></h1>
+    <p class="hero-lead">Una guía para saber qué ocurre ante la Comisión Interamericana, cuándo un caso puede llegar a la Corte y qué debe hacer cada parte en cada etapa.</p>
+    <div class="atlas-search"><label for="atlasSearch">Busca una etapa, un concepto o un caso</label><div class="search-row"><input id="atlasSearch" type="search" placeholder="Ej.: admisibilidad, plazo de dos meses, ESAP" autocomplete="off"><button class="button primary" id="atlasSearchClear" type="button">Limpiar</button></div><div id="searchResults" class="search-results" aria-live="polite" hidden></div><p class="search-hint">También puedes escribir una pregunta sencilla y te mostraremos coincidencias de la guía y de la jurisprudencia.</p></div>
+    <div class="hero-actions"><a class="button primary" href="#recorrido">Recorrer el procedimiento</a><a class="button secondary" href="#orientador">Encontrar mi etapa</a></div>
+  </div>
+  <div class="route-art" aria-label="Secuencia general: recursos internos, Comisión, Corte y cumplimiento">
+    <div class="route-line"><span class="route-stop"><b>1</b><small>Recursos<br>internos</small></span><i></i><span class="route-stop"><b>2</b><small>Comisión<br>Interamericana</small></span><i></i><span class="route-stop"><b>3</b><small>Corte<br>Interamericana</small></span><i></i><span class="route-stop"><b>4</b><small>Reparación y<br>cumplimiento</small></span></div>
+    <p>La petición individual empieza ante la CIDH. La Corte conoce el caso si llega a ser sometido conforme a las reglas aplicables.</p>
+  </div>
+  <div class="hero-bottom"><span>18 estaciones · mapas · caso guiado · jurisprudencia</span><span>Lectura clara · fuentes oficiales · práctica interactiva</span></div>
 </section>
-<section class="manifest"><p><strong>Una regla para orientarse:</strong> la CIDH tramita la petición individual y decide si somete el caso; la Corte conoce del litigio contencioso una vez sometido. <em>Admisibilidad no significa responsabilidad; informe de fondo no significa sentencia.</em></p></section>
-<section id="recorrido" class="section">
-<div class="section-head"><div><div class="eyebrow">02 / EXPLORADOR PROCESAL</div><h2>Dieciocho estaciones.<br><em>Un procedimiento.</em></h2><p>Selecciona cualquier estación. Cada una muestra quién interviene, qué puede hacer, qué documento presenta, qué plazo rige y qué sucede en Arcadia.</p></div><div class="counter"><strong id="stepCount">01</strong><span>/ 18</span></div></div>
-<div class="explorer"><aside class="rail" id="stepRail" aria-label="Etapas del recorrido"></aside><article class="stage" id="stepDetail" aria-live="polite"></article></div>
-<div class="step-controls"><button id="prevStep" class="btn quiet" type="button">← Anterior</button><div id="stepProgress" class="progress" aria-hidden="true"></div><button id="nextStep" class="btn primary" type="button">Siguiente →</button></div>
+
+<section class="principle-strip" aria-label="Regla clave"><p><strong>Dos órganos, dos momentos.</strong> La admisibilidad no decide si hubo una violación. El informe de fondo de la Comisión no es una sentencia de la Corte.</p><a href="#sistema">Entender la diferencia</a></section>
+
+<section id="orientador" class="page-section section-block">
+  <div class="section-heading"><div><p class="section-tag">EMPIEZA POR AQUÍ</p><h2>¿En qué momento<br>está el caso?</h2><p>Elige la situación que más se parece a la tuya. Te mostraremos qué pregunta procesal toca resolver y dónde continuar en esta guía.</p></div><span class="section-index">01</span></div>
+  <div class="orientation-grid">
+    <div class="orientation-controls" role="group" aria-label="Elegir situación procesal">
+      <button class="orientation-choice active" type="button" data-orient="interno" aria-pressed="true"><span>01</span><span><strong>Los hechos ocurrieron</strong><small>Estoy revisando pruebas y recursos internos.</small></span></button>
+      <button class="orientation-choice" type="button" data-orient="peticion" aria-pressed="false"><span>02</span><span><strong>Quiero presentar una petición</strong><small>Necesito entender competencia, plazo y requisitos.</small></span></button>
+      <button class="orientation-choice" type="button" data-orient="comision" aria-pressed="false"><span>03</span><span><strong>La CIDH ya está tramitando</strong><small>Quiero distinguir admisibilidad, fondo e informe.</small></span></button>
+      <button class="orientation-choice" type="button" data-orient="corte" aria-pressed="false"><span>04</span><span><strong>El caso llegó a la Corte</strong><small>Necesito seguir escritos, prueba, audiencia y sentencia.</small></span></button>
+    </div>
+    <article id="orientationResult" class="orientation-result" aria-live="polite"></article>
+  </div>
+  <details class="easy-read"><summary>Lectura fácil: qué explica esta guía</summary><ul><li>Una persona puede presentar una petición ante la Comisión Interamericana si se cumplen las reglas.</li><li>La Comisión estudia la petición y puede, bajo ciertas condiciones, enviar el caso a la Corte.</li><li>La Corte resuelve el litigio que recibe. No es una apelación de todos los juicios nacionales.</li><li>Cada etapa tiene personas responsables, documentos y plazos diferentes.</li><li>Las decisiones de la Corte y de la Comisión se consultan en sus fuentes oficiales.</li></ul></details>
 </section>
-<section id="mapa" class="section shade"><div class="eyebrow">03 / MAPA DEL SISTEMA</div><h2>Dos órganos.<br><em>Funciones distintas.</em></h2>
-<p class="section-intro">La ruta combina una fase ante la Comisión y, si el caso se somete, un litigio ante la Corte. Cada órgano cumple una función y cada transición tiene un acto procesal propio.</p>
-<div class="system-map" aria-label="Mapa general del procedimiento"><article><span class="map-kicker">01 · PETICIÓN</span><h3>Comisión Interamericana</h3><p>Recibe peticiones, analiza competencia y admisibilidad, estudia el fondo y puede facilitar una solución amistosa. Si se cumplen los requisitos, puede someter el caso a la Corte.</p><strong>Pregunta guía</strong><p>¿Puede examinarse la petición y qué respuesta corresponde?</p></article><div class="map-connector" aria-hidden="true"><span>informe y decisión de sometimiento</span><b>→</b></div><article><span class="map-kicker">02 · LITIGIO</span><h3>Corte Interamericana</h3><p>Conoce casos que le presentan la Comisión o los Estados con competencia reconocida. Tramita escritos, excepciones, prueba y audiencia; decide sobre responsabilidad, reparaciones y cumplimiento.</p><strong>Pregunta guía</strong><p>¿Tiene competencia para decidir y qué debe resolver?</p></article></div>
-<div class="bridge"><div class="bridge-line"><span>HECHOS</span><span>→</span><span>CIDH</span><span>→</span><span>CORTE IDH</span><span>→</span><span>REPARACIÓN</span></div><h3>El paso entre Comisión y Corte</h3><p>Una petición individual no llega directamente a la Corte. El informe de fondo de la Comisión no es una sentencia. El sometimiento abre una fase judicial distinta: las presuntas víctimas presentan su escrito autónomo de solicitudes, argumentos y pruebas (ESAP), y el Estado contesta. La identificación de las presuntas víctimas y el marco fáctico tienen reglas propias.</p></div>
-<div class="contrast" id="contrasts"></div>
+
+<section id="sistema" class="page-section section-block section-alt">
+  <div class="section-heading"><div><p class="section-tag">EL MAPA GENERAL</p><h2>Comisión y Corte:<br>funciones distintas</h2><p>Primero ubica quién hace qué. Después será más fácil comprender cada escrito y cada plazo.</p></div><span class="section-index">02</span></div>
+  <div class="institution-map">
+    <article class="institution-card commission"><span class="institution-number">A</span><p class="section-tag">PETICIÓN Y TRÁMITE</p><h3>Comisión Interamericana<br>de Derechos Humanos</h3><p>Recibe peticiones individuales, analiza competencia y admisibilidad, estudia el fondo y puede facilitar una solución amistosa. Si se cumplen los requisitos, puede someter el caso a la Corte.</p><div class="ask"><b>Pregunta que orienta</b><span>¿Puede examinarse esta petición y qué respuesta corresponde?</span></div><a href="#recorrido" data-open-step="2">Ir a la etapa de petición</a></article>
+    <div class="institution-bridge"><span>INFORME Y SOMETIMIENTO</span><b aria-hidden="true">→</b><small>El enlace entre órganos es una decisión procesal, no un traslado automático.</small></div>
+    <article class="institution-card court"><span class="institution-number">B</span><p class="section-tag">LITIGIO CONTENCIOSO</p><h3>Corte Interamericana<br>de Derechos Humanos</h3><p>Conoce casos sometidos por la Comisión o por un Estado con competencia reconocida. Tramita escritos, excepciones, prueba y audiencia; puede decidir sobre responsabilidad, reparaciones y cumplimiento.</p><div class="ask"><b>Pregunta que orienta</b><span>¿Tiene competencia para decidir y qué debe resolver?</span></div><a href="#recorrido" data-open-step="10">Ir al sometimiento del caso</a></article>
+  </div>
+  <div class="concept-pairs" id="contrasts" aria-label="Distinciones importantes"></div>
 </section>
-<section id="reloj" class="section"><div class="eyebrow">04 / TALLER DE PLAZOS</div><h2>¿Qué reloj está<br><em>corriendo?</em></h2><p class="section-intro">Un plazo no empieza por el simple hecho de que exista un caso. Empieza a partir de un acto jurídico concreto: decisión interna definitiva, traslado, notificación o recepción de un escrito.</p>
-<div class="clock"><div class="clock-inputs"><label for="clockRule">Selecciona la actuación procesal</label><select id="clockRule"></select><label for="clockStart">Fecha del acto que activa el plazo</label><input id="clockStart" type="date" value="2026-11-23"><button id="clockGo" class="btn primary" type="button">Explorar plazo →</button><p class="muted small">Herramienta de aprendizaje: los cálculos usan días naturales y meses calendario como aproximación, sin resolver suspensiones, prórrogas, notificaciones ni reglas especiales de cómputo. No sirve para calcular un vencimiento real.</p></div><div class="clock-result" aria-live="polite"><div class="eyebrow">RESULTADO ORIENTATIVO</div><strong id="clockDate">—</strong><h3 id="clockTitle"></h3><p id="clockExplanation"></p><p class="clock-authority" id="clockAuthority"></p></div></div>
-<div class="deadline-list" id="deadlineList"></div></section>
-<section id="arcadia" class="section dark"><div class="eyebrow">05 / EXPEDIENTE HIPOTÉTICO</div><h2>Emilio Acosta<br><em>vs. Arcadia.</em></h2><p class="section-intro">El mismo recorrido, pero ahora con fechas y controversias del caso preparado para la simulación académica. Arcadia es un Estado ficticio.</p>
-<div class="case-layout"><div class="case-list" id="caseList"></div><article class="case-detail" id="caseDetail" aria-live="polite"></article></div>
-<div class="case-warning"><strong>Dos detalles del expediente merecen consulta:</strong> el supuesto sitúa el sometimiento el 10 de enero de 2024 y su notificación el 9 de febrero de 2025; además, anuncia cuatro excepciones preliminares pero enumera tres. No deben inventarse actos ni fechas para llenar esos vacíos.</div>
+
+<section id="recorrido" class="page-section section-block">
+  <div class="section-heading"><div><p class="section-tag">RECORRIDO GUIADO</p><h2>Las 18 estaciones<br>del procedimiento</h2><p>En cada estación responde cinco preguntas: qué pasa, quién actúa, qué presenta, qué plazo puede aplicar y qué viene después. Selecciona una fase o avanza paso a paso.</p></div><div class="step-counter"><strong id="stepCount">01</strong><span>de 18</span></div></div>
+  <div class="phase-tabs" role="group" aria-label="Filtrar estaciones por fase"><button class="active" type="button" data-phase="Todas" aria-pressed="true">Todo el recorrido</button><button type="button" data-phase="JUSTICIA INTERNA" aria-pressed="false">Antes de la CIDH</button><button type="button" data-phase="CIDH" aria-pressed="false">Comisión</button><button type="button" data-phase="TRANSICIÓN" aria-pressed="false">Paso a la Corte</button><button type="button" data-phase="CORTE IDH" aria-pressed="false">Corte</button></div>
+  <div class="explorer"><nav class="rail" id="stepRail" aria-label="Estaciones del procedimiento"></nav><article class="stage" id="stepDetail" aria-live="polite"></article></div>
+  <div class="step-controls"><button id="prevStep" class="button secondary" type="button">Estación anterior</button><div id="stepProgress" class="progress" aria-hidden="true"></div><button id="nextStep" class="button primary" type="button">Siguiente estación</button></div>
+  <div class="learning-loop"><span class="loop-icon" aria-hidden="true">↻</span><p><strong>Cómo usar el recorrido:</strong> lee primero la explicación, identifica el documento y su fundamento, y luego contrasta tu respuesta con el caso ficticio. Si una fecha depende de una notificación concreta, verifica esa notificación antes de contar días.</p></div>
 </section>
-<section id="jurisprudencia" class="section shade"><div class="eyebrow">06 / JURISPRUDENCIA PARA EL RECORRIDO</div><h2>Busca por tema.<br><em>Vuelve a la fuente.</em></h2><p class="section-intro">Índice de decisiones citadas en el material académico local, organizadas por la cuestión que ayudan a estudiar. Cada ficha separa el dato del caso, la idea procesal y el enlace a la fuente oficial. La referencia no sustituye la lectura de la sentencia completa.</p><div class="juris-controls"><label for="jurisSearch">Buscar nombre, país o tema</label><input id="jurisSearch" type="search" placeholder="Ej.: agotamiento, víctimas, reparaciones" autocomplete="off"><div class="juris-filters" id="jurisFilters" role="group" aria-label="Filtrar jurisprudencia"></div><p id="jurisCount" class="muted small" aria-live="polite"></p></div><div class="juris-grid" id="jurisGrid" aria-live="polite"></div><p class="source-note">La biblioteca reúne referencias localizadas en los documentos del proyecto; no reproduce transcripciones de clases ni textos completos de terceros. Los enlaces conducen a fuentes oficiales o a su buscador institucional.</p></section>
-<section id="laboratorio" class="section"><div class="eyebrow">07 / PRACTICAR PARA COMPRENDER</div><h2>¿Podrías defender<br><em>tu respuesta?</em></h2><p class="section-intro">No se trata de memorizar artículos aislados. Cada respuesta explica la razón jurídica y el momento procesal.</p><div class="quiz" id="quiz"><div class="quiz-top"><span id="quizIndex"></span><strong id="quizScore"></strong></div><div class="quiz-bar"><div id="quizBar"></div></div><h3 id="quizQuestion"></h3><div id="quizOptions" class="quiz-options"></div><div id="quizFeedback" class="quiz-feedback" aria-live="polite"></div><button id="quizNext" class="btn primary" disabled type="button">Siguiente pregunta →</button></div></section>
-<section id="biblioteca" class="section shade"><div class="eyebrow">08 / NORMAS Y FUENTES</div><h2>Norma, artículo,<br><em>y función.</em></h2><p class="section-intro">Consulta siempre el texto normativo. La guía lo traduce a lenguaje accesible y enlaza a las fuentes oficiales; no sustituye al reglamento, a la jurisprudencia ni al análisis de cada expediente.</p><div class="sources" id="sources"></div><div class="source-note">Proyecto editorial independiente de Sukima Labs. No es una publicación oficial ni está afiliado o avalado por la Corte Interamericana, la OEA, ONU Mujeres o la Universidad de Alcalá. Se usan documentos de estudio locales como contexto; no se publican esos archivos.</div></section>
+
+<section id="reloj" class="page-section section-block section-alt">
+  <div class="section-heading"><div><p class="section-tag">PLAZOS Y ESCRITOS</p><h2>¿Qué reloj está<br>corriendo?</h2><p>Un plazo empieza por un acto procesal concreto: una decisión, una notificación, un traslado o la recepción de un escrito. Distingue el plazo para actuar del tiempo que tarda todo el procedimiento.</p></div><span class="section-index">04</span></div>
+  <div class="clock"><div class="clock-inputs"><label for="clockRule">Selecciona la actuación</label><select id="clockRule"></select><label for="clockStart">Fecha del acto que activa el plazo</label><input id="clockStart" type="date" value="2026-11-23"><button id="clockGo" class="button primary" type="button">Ver cálculo orientativo</button><p class="small muted">Herramienta de aprendizaje. Usa días naturales y meses calendario como aproximación; no resuelve notificaciones, suspensiones, prórrogas ni reglas especiales. No calcula vencimientos reales.</p></div><div class="clock-result" aria-live="polite"><p class="section-tag">RESULTADO ORIENTATIVO</p><strong id="clockDate">—</strong><h3 id="clockTitle"></h3><p id="clockExplanation"></p><p class="clock-authority" id="clockAuthority"></p></div></div>
+  <div class="deadline-list" id="deadlineList"></div>
+  <details class="method-note"><summary>Cómo leer un plazo</summary><p>Localiza la regla aplicable, identifica el acto inicial que el texto nombra, comprueba la fecha de notificación o recepción y revisa si existe una excepción. El mismo número de días puede empezar a correr en fechas distintas para partes diferentes.</p></details>
+</section>
+
+<section id="arcadia" class="page-section section-block case-section">
+  <div class="section-heading"><div><p class="section-tag">APRENDER APLICANDO</p><h2>Un caso para<br>poner la ruta a prueba</h2><p>Emilio Acosta vs. Arcadia es un expediente académico ficticio. Sigue sus hitos y decide qué pregunta debe resolverse en cada etapa.</p></div><span class="section-index">05</span></div>
+  <div class="case-layout"><nav class="case-list" id="caseList" aria-label="Hitos del caso"></nav><article class="case-detail" id="caseDetail" aria-live="polite"></article></div>
+  <div class="case-warning"><strong>Lee la cronología con cuidado.</strong><span>El material presenta discrepancias entre la fecha de sometimiento y la de notificación, y entre el número de excepciones anunciado y enumerado. La guía las señala sin inventar datos para resolverlas.</span></div>
+</section>
+
+<section id="jurisprudencia" class="page-section section-block section-alt">
+  <div class="section-heading"><div><p class="section-tag">VOLVER A LA FUENTE</p><h2>Jurisprudencia<br>para cada pregunta</h2><p>Busca por caso, país o tema. Las fichas ayudan a encontrar decisiones relevantes; confirma los hechos, la fecha, el párrafo y el alcance en el texto oficial antes de citarlos.</p></div><span class="section-index">06</span></div>
+  <div class="juris-controls"><label for="jurisSearch">Buscar nombre, país o tema</label><input id="jurisSearch" type="search" placeholder="Ej.: agotamiento, víctimas, reparaciones" autocomplete="off"><div class="juris-filters" id="jurisFilters" role="group" aria-label="Filtrar por órgano"></div><p id="jurisCount" class="muted small" aria-live="polite"></p></div>
+  <div class="juris-grid" id="jurisGrid" aria-live="polite"></div>
+  <p class="source-note">Índice elaborado a partir de referencias encontradas en los documentos de estudio locales. No contiene transcripciones de clases ni textos completos de terceros. Cuando no se verificó un enlace directo, abre el buscador oficial de la institución.</p>
+</section>
+
+<section id="laboratorio" class="page-section section-block">
+  <div class="section-heading"><div><p class="section-tag">PRACTICAR PARA COMPRENDER</p><h2>Elige, comprueba,<br>explica por qué</h2><p>Practica con preguntas breves. Después de responder verás qué regla opera y por qué importa en el procedimiento.</p></div><span class="section-index">07</span></div>
+  <article class="quiz" aria-label="Práctica de procedimiento"><div class="quiz-top"><span id="quizIndex"></span><strong id="quizScore"></strong></div><div class="quiz-bar"><div id="quizBar"></div></div><h3 id="quizQuestion"></h3><div id="quizOptions" class="quiz-options"></div><div id="quizFeedback" class="quiz-feedback" aria-live="polite"></div><button id="quizNext" class="button primary" disabled type="button">Siguiente pregunta</button></article>
+  <section class="scenario" aria-labelledby="scenarioTitle"><div><p class="section-tag">ESCENARIO DE DECISIÓN</p><h3 id="scenarioTitle">El Estado presenta una excepción preliminar</h3><p>¿Qué conviene hacer primero para analizarla?</p></div><div class="scenario-actions" role="group" aria-label="Elegir respuesta"><button type="button" data-scenario="appeal">Tratar cualquier desacuerdo como una apelación</button><button type="button" data-scenario="nature">Identificar su naturaleza, el momento y el efecto procesal alegado</button></div><div class="scenario-result" id="scenarioResult" aria-live="polite">Selecciona una respuesta para ver qué elemento debes examinar.</div></section>
+</section>
+
+<section id="biblioteca" class="page-section section-block section-alt">
+  <div class="section-heading"><div><p class="section-tag">NORMAS Y FUENTES OFICIALES</p><h2>Norma, artículo<br>y función</h2><p>Usa esta sección para volver al texto vigente y separar la regla escrita de la explicación didáctica.</p></div><span class="section-index">08</span></div>
+  <div class="sources" id="sources"></div>
+  <div class="independence-note"><strong>Sobre esta guía</strong><p>Proyecto editorial independiente de Sukima Labs. No es una publicación oficial ni está afiliado o avalado por la CIDH, la Corte Interamericana, la OEA, ONU Mujeres o la Universidad de Alcalá. Los documentos académicos locales no se publican.</p></div>
+</section>
+
+<footer class="atlas-footer"><a class="brand footer-brand" href="#inicio"><span class="brandmark">RI<span>.</span></span><span>RUTA<br>INTERAMERICANA</span></a><p>Una guía de estudio para comprender el procedimiento, practicar su aplicación y verificar cada regla en la fuente.</p><a href="#inicio">Volver al inicio ↑</a></footer>
 </main>
-<footer><div class="foot-logo">RUTA INTERAMERICANA<span>.</span><small>Una edición de Sukima Labs</small></div><p>Una guía de lectura fácil para estudiar el procedimiento interamericano. Proyecto independiente; no constituye asesoramiento legal ni representa a ONU Mujeres.</p><span>© 2026 · Fuentes oficiales enlazadas.</span></footer>
+
+<nav class="mobile-bar" aria-label="Accesos rápidos"><a href="#inicio">Inicio</a><a href="#recorrido">Ruta</a><a href="#laboratorio">Practicar</a><a href="#biblioteca">Fuentes</a></nav>
 <script src="assets/jurisprudencia.js" defer></script>
 <script src="assets/app.js" defer></script>
-</body></html>
+</body>
+</html>

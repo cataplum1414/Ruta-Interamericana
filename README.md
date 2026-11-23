@@ -20,12 +20,15 @@ Proyecto educativo independiente, editado por Sukima Labs. No es una publicació
 
 ## Contenido
 
-- Recorrido guiado por el procedimiento interamericano.
+- Página extensa con menú persistente agrupado por orientación, procedimiento y práctica; navegación compacta en móvil.
+- Búsqueda global de etapas, preguntas procesales y decisiones.
+- Orientador «¿En qué momento está el caso?» con rutas hacia los pasos relevantes.
+- Recorrido guiado por el procedimiento interamericano con filtros por fase y un patrón común: qué pasa, quién actúa, documento, plazo y siguiente paso.
 - Mapa de funciones y etapas ante la CIDH y la Corte IDH.
 - Reloj de plazos orientativos.
 - Caso académico ficticio con hitos procesales.
 - Biblioteca de decisiones identificadas en los materiales de estudio disponibles para este proyecto. Los enlaces conducen al buscador oficial de la Corte cuando no se ha verificado un enlace directo a la sentencia.
-- Preguntas de práctica con explicación del razonamiento.
+- Preguntas de práctica y un escenario de decisión con consecuencias explicadas.
 - Fuentes normativas oficiales.
 
 La cronología del caso Arcadia identifica sus discrepancias internas y no inventa hechos para resolverlas. Las referencias de la biblioteca son una ayuda de estudio; comprueba el texto, fecha y alcance de cada decisión en la fuente oficial antes de citarla.
@@ -49,6 +52,12 @@ Después visita http://localhost:8000.
 - `.github/workflows/pages.yml`: publicación en GitHub Pages.
 
 Los documentos fuente locales no forman parte de la publicación. No añadirlos al repositorio.
+
+## Arquitectura didáctica y referencias
+
+La navegación por áreas y la identidad editorial toman como referencia la arquitectura de [Atlas ONU, de Sukima Labs](https://github.com/sukima-labs/atlasonu), adaptada como recorrido largo con anclas para que cada fase permanezca visible y enlazable. La página usa lectura fácil, explicación progresiva y fuentes a la vista.
+
+Para la práctica se estudiaron patrones públicos de [Learn Git Branching](https://github.com/pcottle/learnGitBranching) (acción con respuesta visual), [WiseCases](https://github.com/ihkarise/wisecases) (caso por etapas y pistas) y [Choices](https://github.com/drhycheung/Choices) (decisiones con consecuencias y explicación). Se adaptan las ideas pedagógicas, no se copia código ni contenido de esos proyectos.
 
 ## Fuentes primarias
 
