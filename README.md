@@ -1,83 +1,62 @@
 # Ruta Interamericana
+
 ## Del hecho a la sentencia
 
-**Atlas visual e interactivo del procedimiento de petición individual ante la CIDH y del litigio contencioso ante la Corte IDH.**
+Guía visual e interactiva para aprender el procedimiento de petición individual ante la Comisión Interamericana de Derechos Humanos (CIDH) y el trámite contencioso ante la Corte Interamericana de Derechos Humanos.
 
-**Sitio web:** https://cataplum1414.github.io/Ruta-Interamericana/  
-**Repositorio público:** https://github.com/cataplum1414/Ruta-Interamericana
+**Sitio:** https://cataplum1414.github.io/Ruta-Interamericana/
+**Repositorio:** https://github.com/cataplum1414/Ruta-Interamericana
 
-> Proyecto académico independiente. Es un recurso de aprendizaje: no sustituye la Convención, los reglamentos o asesoría jurídica para litigios reales.
+Proyecto educativo independiente, editado por Sukima Labs. No es una publicación oficial ni está afiliado a la CIDH, la Corte IDH, la OEA, ONU Mujeres o la Universidad de Alcalá. No sustituye la Convención Americana, los reglamentos ni la asesoría jurídica para casos reales.
 
-## Propósito
+## Cómo usar la guía
 
-Esta guía permite integrar dos clases complementarias del Máster en Protección Internacional de los Derechos Humanos de la Universidad de Alcalá:
+1. Sigue las 18 estaciones para entender qué ocurre desde los hechos y los recursos internos hasta la supervisión de cumplimiento.
+2. En cada estación revisa el objetivo, el documento o resultado esperado y el paso que sigue.
+3. Consulta el mapa para distinguir las funciones de la CIDH y la Corte IDH.
+4. Usa el reloj de plazos como orientación y verifica cada término en la norma aplicable.
+5. Explora el caso ficticio de Emilio Acosta vs. Arcadia y practica con preguntas explicadas.
+6. Busca en la biblioteca de jurisprudencia por nombre, país o tema y abre la fuente oficial disponible.
 
-- **Dante Negro:** Sistema Interamericano, artículos 44 a 51 CADH, petición, legitimación, competencia de la CIDH, admisibilidad, agotamiento, fondo y medidas.
-- **Andrés González Serrano:** Corte IDH, artículos 61 y 62, sometimiento, víctimas del artículo 35 del Reglamento, ESAP, contestación, excepciones preliminares, control de legalidad, prueba, audiencia, sentencia, reparaciones y cumplimiento.
+## Contenido
 
-La pregunta que atraviesa todo el sitio es: **quién actúa, ante qué órgano, con qué escrito, dentro de qué plazo y por qué**.
+- Recorrido guiado por el procedimiento interamericano.
+- Mapa de funciones y etapas ante la CIDH y la Corte IDH.
+- Reloj de plazos orientativos.
+- Caso académico ficticio con hitos procesales.
+- Biblioteca de decisiones identificadas en los materiales de estudio disponibles para este proyecto. Los enlaces conducen al buscador oficial de la Corte cuando no se ha verificado un enlace directo a la sentencia.
+- Preguntas de práctica con explicación del razonamiento.
+- Fuentes normativas oficiales.
 
-## Ver el sitio
+La cronología del caso Arcadia identifica sus discrepancias internas y no inventa hechos para resolverlas. Las referencias de la biblioteca son una ayuda de estudio; comprueba el texto, fecha y alcance de cada decisión en la fuente oficial antes de citarla.
 
-**https://cataplum1414.github.io/Ruta-Interamericana/**
+## Ejecutar localmente
 
-La publicación se realiza mediante GitHub Pages, desde la rama main con el flujo de GitHub Actions incluido. Si el sitio aún no aparece, activa una sola vez en **Settings → Pages → Build and deployment → Source: GitHub Actions**. Revisa **Actions → Deploy GitHub Pages**.
+No requiere compilación ni dependencias. Abre `index.html` o ejecuta:
 
-## Trabajar en CLI
+```sh
+python3 -m http.server 8000
+```
 
-Clone: https://github.com/cataplum1414/Ruta-Interamericana.git
+Después visita http://localhost:8000.
 
-Comandos:
-- git clone https://github.com/cataplum1414/Ruta-Interamericana.git
-- cd Ruta-Interamericana
-- python3 -m http.server 8000
+## Archivos principales
 
-Después abre http://localhost:8000. También es posible abrir directamente index.html. No requiere compilación, Node, bibliotecas ni base de datos.
+- `index.html`: estructura y contenido de la guía.
+- `assets/styles.css`: identidad visual, diseño adaptable y estados accesibles.
+- `assets/app.js`: recorrido, caso, reloj, práctica y búsqueda jurisprudencial.
+- `assets/jurisprudencia.js`: referencias jurisprudenciales estructuradas.
+- `.github/workflows/pages.yml`: publicación en GitHub Pages.
 
-## Contenido interactivo
-
-1. **Dieciocho estaciones:** hechos nacionales, recursos internos, petición, CIDH, sometimiento, Corte, sentencia y supervisión.
-2. **Dos docentes, un sistema:** correspondencia entre lo explicado por Dante y Andrés.
-3. **Nueve distinciones:** Declaración vs. Convención, CIDH vs. Corte, peticionario vs. víctima, admisibilidad vs. fondo, informe vs. sentencia, entre otras.
-4. **Reloj de plazos:** doce actuaciones, identificando el acto que activa cada término.
-5. **Caso Emilio Acosta vs. Arcadia:** ocho hitos del expediente académico ficticio.
-6. **Laboratorio jurídico:** diez preguntas con explicación del razonamiento.
-7. **Biblioteca primaria:** normas y portales oficiales.
-
-## Archivos
-
-- index.html: composición editorial de la interfaz.
-- assets/styles.css: diseño responsive, tipografía, identidad y animaciones.
-- assets/app.js: recorrido, reglas pedagógicas, datos del caso, reloj y evaluación.
-- .github/workflows/pages.yml: despliegue automático con GitHub Actions.
-- .nojekyll: publicación estática sin procesamiento Jekyll.
-- README.md: documentación.
-- LICENSE: licencia MIT para el contenido original.
-
-## Advertencia sobre los plazos
-
-El reloj calcula fechas **orientativas** con meses calendario o días naturales. El vencimiento procesal real exige verificar notificaciones, reglas de cómputo, suspensiones, prórrogas y excepciones. La aplicación **no determina vencimientos judiciales**.
-
-## Rigor y procedencia
-
-El atlas se centra en las peticiones individuales **bajo la Convención Americana**. El procedimiento bajo la Declaración Americana para los Estados miembros de la OEA no partes en la CADH se diferencia, pero no se desarrolla aquí como una vía contenciosa ante Corte.
-
-El caso Arcadia es hipotético. La cronología del supuesto distingue sometimiento en 2024 y notificación en 2025; también anuncia cuatro excepciones preliminares y enumera tres. No se añaden hechos no documentados para cubrir esas discrepancias.
-
-La comparación docente refleja contenidos académicos trabajados y **no se presenta como transcripción literal** de intervenciones de los profesores. No se reproducen archivos docentes de terceros.
+Los documentos fuente locales no forman parte de la publicación. No añadirlos al repositorio.
 
 ## Fuentes primarias
 
-- Convención Americana: https://www.oas.org/dil/esp/tratados_b-32_convencion_americana_sobre_derechos_humanos.htm
-- Reglamento de la Corte IDH: https://www.corteidh.or.cr/reglamento.cfm
-- Reglamento CIDH: https://www.oas.org/es/cidh/mandato/Basicos/reglamentoCIDH.asp
-- CIDH: https://www.oas.org/es/cidh/
-- Corte IDH: https://www.corteidh.or.cr/
-
-## Siguientes líneas de trabajo
-
-El proyecto está listo para desarrollo en CLI: ampliar el árbol interactivo con decisiones y consecuencias, incorporar jurisprudencia por excepción preliminar, escenarios interactivos para víctimas y agentes estatales y pruebas de accesibilidad.
+- [Convención Americana sobre Derechos Humanos](https://www.oas.org/dil/esp/tratados_B-32_convencion_americana_sobre_derechos_humanos.htm)
+- [Reglamento de la Corte IDH](https://www.corteidh.or.cr/reglamento.cfm)
+- [Reglamento de la CIDH](https://www.oas.org/es/cidh/jsForm/?File=%2Fes%2Fcidh%2Fmandato%2Fbasicos%2Freglamentocidh.asp)
+- [Buscador de casos y sentencias de la Corte IDH](https://www.corteidh.or.cr/casos_sentencias.cfm)
 
 ## Licencia
 
-MIT para código y contenido original. No se reclaman derechos sobre materiales normativos o docentes externos.
+MIT para el código y el contenido original del proyecto. Esta licencia no cubre normas, sentencias ni materiales de terceros.
