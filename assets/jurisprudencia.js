@@ -380,7 +380,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento contencioso",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=444",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Durand y Ugarte vs. Perú",
@@ -560,7 +561,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=284",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "La Cantuta vs. Perú",
@@ -606,7 +608,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=261",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Masacre de Santo Domingo vs. Colombia",
@@ -684,7 +687,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=208",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Palamara Iribarne vs. Chile",
@@ -699,7 +703,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=262",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Pueblo Saramaka vs. Suriname",
@@ -799,7 +804,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=238",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Usón Ramírez vs. Venezuela",
@@ -814,14 +820,16 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=251",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Valle Jaramillo y otros vs. Colombia",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento contencioso · Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=251",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Vargas Areco vs. Paraguay",
@@ -860,7 +868,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento contencioso · Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=216",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Ximenes Lopes vs. Brasil",

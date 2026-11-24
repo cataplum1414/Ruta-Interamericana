@@ -157,7 +157,15 @@ const additionalSheets = [
   ['Vera Vera', 348],
   ['Yarce', 431],
   ['Vargas Areco', 384],
-  ['Usón Ramírez', 358]
+  ['Usón Ramírez', 358],
+  ['Duque', 444],
+  ['Juan Humberto', 284],
+  ['Maqueda', 261],
+  ['Nogueira de Carvalho', 208],
+  ['Perozo', 262],
+  ['Trujillo Oroza', 238],
+  ['Valle Jaramillo', 251],
+  ['Vélez Restrepo', 216]
 ];
 for (const [title, ficha] of additionalSheets) {
   const row = jurisprudenciaRows.find(item => item.title.includes(title));
@@ -177,7 +185,7 @@ const sourceCounts = jurisprudenciaRows.reduce((counts, row) => {
   else counts.otherSources++;
   return counts;
 }, {officialSheets: 0, serieCPdfs: 0, generalCatalog: 0, otherSources: 0});
-if (jurisprudenciaRows.length !== 123 || sourceCounts.officialSheets !== 89 || sourceCounts.serieCPdfs !== 15 || sourceCounts.generalCatalog !== 12 || sourceCounts.otherSources !== 7) {
+if (jurisprudenciaRows.length !== 123 || sourceCounts.officialSheets !== 98 || sourceCounts.serieCPdfs !== 15 || sourceCounts.generalCatalog !== 3 || sourceCounts.otherSources !== 7) {
   throw new Error(`Unexpected jurisprudence source audit: ${JSON.stringify(sourceCounts)} across ${jurisprudenciaRows.length} records.`);
 }
 if (!styles.includes('.nav-group a[aria-current="page"]') || !styles.includes('.mobile-bar a[aria-current="page"]')) {
