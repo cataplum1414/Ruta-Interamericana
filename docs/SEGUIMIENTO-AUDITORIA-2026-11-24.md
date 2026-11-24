@@ -81,7 +81,7 @@ La familia visual, fuentes locales, navegación por páginas, menú lateral, bar
 
 - `validate-site.mjs`, `test-deadline-clock.mjs`, `test-glossary-search.mjs` y `test-methodology.mjs`: estructura, reglas de cómputo implementadas, consulta del diccionario e integridad de prácticas.
 - `browser-methodology.cjs`: Chromium sin interfaz visible, 390 y 1280 px; navega 25 rutas; comprueba contexto órgano/tratado, requisitos de tres niveles, escritura y pautas, OC-12, excepciones no suspensivas, puntuación sin navegación y descarga JSON real. No equivale a inspección visual de cada página.
-- Código fuente de ONU leído como referencia; no se operó el navegador personal ni se usaron grabaciones privadas.
+- Código fuente de ONU leído como referencia de arquitectura; las explicaciones interamericanas son originales y remiten a fuentes oficiales.
 
 ## Fuentes jurídicas del bloque corregido
 

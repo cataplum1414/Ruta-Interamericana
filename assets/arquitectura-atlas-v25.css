@@ -408,7 +408,7 @@ html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
 
 /* Familia Atlas: marco único para todas las pantallas, no portadas independientes. */
 :root{--atlas-reading-gutter:48px;--atlas-title:35px;--atlas-radius:15px;--atlas-control:9px;--atlas-gap:18px}
-html[data-theme="dark"]{--muted:#CDD2DC}
+html[data-theme="dark"]{--muted:#CDD2DC;--surface:#161A26;--panel:#1C2130;--panel-raised:#242A3B;--line:#353D51;--line-strong:#6B7693}
 .atlas-main{padding:36px var(--atlas-reading-gutter) 64px}
 .page-section,.hero.page-section{min-height:0;padding:0;background:transparent}
 .page-section{scroll-margin-top:calc(var(--top-height) + 18px)}
@@ -435,7 +435,7 @@ html[data-theme="dark"]{--muted:#CDD2DC}
 .atlas-context .atlas-overview-item>span,.atlas-context .atlas-overview-item:not(.atlas-view-count){display:block}
 .atlas-context .atlas-overview-item>a{display:inline-flex;gap:5px;text-decoration:none}
 .atlas-context strong{color:var(--ink);font-size:20px}
-.atlas-context .atlas-overview-item small{display:block;font-size:10px;line-height:1.3;margin-top:3px}
+.atlas-context .atlas-overview-item small{display:block;font-size:11px;line-height:1.3;margin-top:3px}
 .atlas-context .atlas-view-info{margin-left:auto;flex:none}
 .atlas-context .atlas-view-count svg{width:22px;height:22px;flex:none}
 
@@ -445,8 +445,14 @@ html[data-theme="dark"]{--muted:#CDD2DC}
 .language-entry-side{display:flex;align-items:center;margin:10px 0 12px;color:var(--muted)}
 .side .theme-picker{margin:8px 0 10px}
 .side .theme-picker>span{padding-left:0}
-.side .theme-picker button{min-height:36px}
-.side .nav-group a{margin:0;min-height:44px;line-height:1.3}
+.side .nav-group a{margin:0 0 5px;min-height:44px;padding:14px 12px;line-height:normal;font-weight:600;border-radius:10px}
+.side .nav-group a[aria-current="page"]{font-weight:600;background:color-mix(in srgb,var(--cyan) 13%,transparent)}
+.side{background:linear-gradient(180deg,var(--surface),color-mix(in srgb,var(--paper) 80%,#000));border-right-color:var(--line)}
+.side .side-top{margin-bottom:24px}
+.side .language-entry-side{margin:0 0 8px}
+.side .language-entry-side select{min-height:34px;font-size:12px}
+.side .theme-picker button{min-height:34px;font-size:12px}
+.side .theme-picker>span{font-size:12px;padding-bottom:0}
 .side .nav-group h2{text-transform:uppercase;font-size:12px}
 
 /* Ayuda breve al cerrar, explicación completa al abrir. */
@@ -456,15 +462,19 @@ html[data-theme="dark"]{--muted:#CDD2DC}
 .atlas-method-guide p{font-size:14px}
 .easy-read:not(.hero-easy-read){margin:0 0 18px;border-radius:var(--atlas-radius)}
 .easy-read:not(.hero-easy-read)>summary{font-size:14px}
-.hero-easy-read{border-color:color-mix(in srgb,var(--green) 35%,var(--line));background:color-mix(in srgb,var(--green) 6%,var(--paper))}
-.hero .atlas-search{margin-bottom:18px;border-radius:22px;background:linear-gradient(180deg,var(--panel),var(--paper));padding:18px 18px 14px}
+.hero-easy-read{margin-bottom:16px;border-color:color-mix(in srgb,var(--green) 35%,var(--line));background:color-mix(in srgb,var(--green) 6%,var(--paper))}
+.hero .atlas-search{margin-top:6px;margin-bottom:28px;border-radius:22px;background:linear-gradient(180deg,var(--panel),var(--paper));padding:18px 18px 14px}
 .hero .atlas-search .search-hint{font-size:12px;line-height:1.5;color:var(--muted)}
-.hero .atlas-search .search-suggestions button{min-height:32px;padding:5px 13px}
+.hero .atlas-search .search-suggestions button{min-height:32px;padding:5px 13px;font-size:14px}
 .hero-actions{margin-top:0;gap:12px 20px}
 .hero-actions .button{min-height:44px;font-size:14px}
 .hero-route-link{display:inline-flex;align-items:center;min-height:44px;color:var(--cyan-soft);font-weight:700;font-size:14px}
 .hero-system-links{margin:4px 0 12px}
-.hero>.atlas-method-guide{align-self:flex-start;margin-top:8px}
+.hero-system-links a{font-size:13px;font-weight:600}
+.hero-actions .button{border-color:var(--cyan-soft);background:var(--surface);font-weight:650}
+.hero-actions .hero-route-link{font-size:13px;font-weight:600}
+.hero>.home-news{margin-top:20px}
+.hero>.atlas-method-guide{align-self:flex-start;margin-top:20px}
 .home-news{max-width:none;width:100%;margin-top:10px;padding:22px;border:1px solid var(--line);border-radius:20px;background:var(--panel)}
 .home-news-heading{align-items:center}
 .home-news-heading .section-tag{display:none}

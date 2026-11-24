@@ -101,9 +101,9 @@ La sección de noticias muestra la fecha de revisión editorial y conecta cada t
 
 La práctica «Sigue el camino de una declaración» ya cubre la lista definitiva, las objeciones y recusaciones, la decisión sobre objeto y formato, el comienzo del interrogatorio y los alegatos finales escritos. No reemplaza la revisión jurídica completa ni la práctica de valoración de documentos, testimonios, peritajes y escritos de amicus.
 
-## Privacidad y alcance de las clases
+## Fuentes y elaboración
 
-No se incorpora al repositorio contenido de Plaud, nombres de participantes, atribuciones, audios ni transcripciones. Para ampliar el contenido se usan la agenda y los documentos que están en la carpeta local, convertidos en explicaciones generales y corroboradas con fuentes oficiales. Esta página pública describe el diseño pedagógico, no reproduce clases privadas.
+El contenido académico es original, general y corroborado con normas, decisiones y fuentes oficiales identificadas.
 
 ## Estado posterior al diagnóstico
 

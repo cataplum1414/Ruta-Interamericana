@@ -30,7 +30,7 @@ La base local consultada incluye UX-505, «Faceted Search — Show Filters and R
 4. Proponer una decisión breve con explicación de cada opción y regreso a la regla.
 5. Permitir continuar al siguiente paso y volver sin perder los filtros o el contexto.
 
-La matriz de todas las rutas y sus equivalentes ONU está en `AUDITORIA-ATLAS.md`. Los ejercicios, mejoras de audiencia, actualidad documental y garantías procesales de defensa del Estado siguen en `PEDAGOGIA.md`. Las grabaciones privadas no son fuente publicable del contenido y esta revisión no acredita que hayan podido escucharse.
+La matriz de todas las rutas y sus equivalentes ONU está en `AUDITORIA-ATLAS.md`. Los ejercicios, mejoras de audiencia, actualidad documental y garantías procesales de defensa del Estado siguen en `PEDAGOGIA.md`.
 
 ## Comprobaciones de esta entrega
 

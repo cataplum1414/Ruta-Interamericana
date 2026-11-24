@@ -61,3 +61,7 @@ Plazos, la escalera de 18 estaciones, el puente CIDH/Corte y los laboratorios de
 Las capturas y pruebas de geometría no equivalen a un estudio de usabilidad con personas, una traducción integral o una revisión jurídica de todo el corpus. El selector ofrece español y una guía inglesa parcial; no anuncia otros idiomas sin traducción disponible.
 
 Archivos de implementación: `index.html`, `assets/arquitectura-atlas-v25.css`, `assets/familia-atlas-v1.js`, `assets/historia-v1.js`, ajustes en `app-v41.js` y `guia-metodologica-v1.js`. La caché `v114` incluye los módulos nuevos.
+
+## Ajuste de componentes posterior
+
+Se verificó en Chromium la fuente realmente renderizada mediante `CSS.getPlatformFontsForNode`: ambos atlas utilizan DejaVuSans y DejaVuSans-Bold. Las diferencias observadas del menú estaban en el peso declarado (750 frente a 600), margen entre destinos y espaciado, no en una fuente ausente. Se ajustan esos valores, el orden idioma/tema, las superficies oscuras, los márgenes del buscador y la posición de la ayuda de Panorama después de las noticias. La caché de esta corrección es `v115`.

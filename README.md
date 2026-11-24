@@ -112,7 +112,7 @@ Las opiniones emitidas están separadas de las solicitudes en curso. Las noticia
 
 La [auditoría metodológica integral](docs/AUDITORIA-METODOLOGICA-INTEGRAL.md) registra errores, omisiones y tareas de corrección en las 25 rutas. Incluye un [inventario reproducible](docs/AUDITORIA-METODOLOGICA-INVENTARIO.json); la revisión no certifica el cotejo íntegro de todos los documentos jurídicos externos.
 
-`docs/PEDAGOGIA.md` resume qué mecánicas educativas públicas se revisaron, cómo se adaptan a las rutas CIDH y Corte, qué se añadió al simulador y qué módulos conviene construir después. No contiene notas, nombres ni transcripciones de clase.
+`docs/PEDAGOGIA.md` resume qué mecánicas educativas públicas se revisaron, cómo se adaptan a las rutas CIDH y Corte, qué se añadió al simulador y qué módulos conviene construir después.
 
 ## Seguimiento de la auditoría del 24-11-2026
 
