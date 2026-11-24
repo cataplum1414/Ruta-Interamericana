@@ -385,7 +385,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=198",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Escher y Otros vs. Brasil",
@@ -400,7 +401,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento contencioso · Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=227",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Extrabajadores del Organismo Judicial vs. Guatemala",
@@ -414,21 +416,24 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=260",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "García y Familiares vs. Guatemala",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=236",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Garibaldi vs. Brasil",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=282",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Gelman vs. Uruguay",
