@@ -28,6 +28,18 @@ if (countRows(stages) !== 18 || countRows(stationGuide) !== 18) {
 if ((stageChecks?.match(/\{prompt:/g) || []).length !== 18 || !app.includes('stage-check-feedback') || !styles.includes('.stage-challenge-options button.is-correct')) {
   throw new Error('Each procedural station needs an interactive decision with explanatory feedback.');
 }
+const simulationNodes = app.match(/const caseScenarioNodes=\{([\s\S]*?)\r?\n\};\r?\nconst caseScenarioPaths=/)?.[1];
+const simulationNodeIds = [...(simulationNodes || '').matchAll(/^ ([A-Za-z]+):\{phase:/gm)].map(match => match[1]);
+const simulationPaths = [...app.matchAll(/^ (cidh|court):\[(.*?)\],?$/gm)].map(match => ({name: match[1], nodes: [...match[2].matchAll(/'([A-Za-z]+)'/g)].map(item => item[1])}));
+if (simulationNodeIds.length !== 18 || simulationNodeIds.some(id => (simulationNodes.match(new RegExp(`^ ${id}:\\{phase:`, 'gm')) || []).length !== 1)) {
+  throw new Error(`The case simulator needs 18 uniquely identified decision nodes; found ${simulationNodeIds.length}.`);
+}
+if (simulationPaths.length !== 2 || simulationPaths.some(path => path.nodes.length !== (path.name === 'cidh' ? 18 : 9) || path.nodes.some(id => !simulationNodeIds.includes(id)))) {
+  throw new Error('The case simulator needs complete CIDH and Court routes that only reference existing decision nodes.');
+}
+if (!html.includes('id="caseSimulationTitle"') || !app.includes('caseSimRetry') || !app.includes('Decisiones del procedimiento') || !styles.includes('.case-sim-options button.is-correct')) {
+  throw new Error('The case simulator needs retry, explanatory feedback, search integration, and visible decision states.');
+}
 if (countRows(questions) !== 10) throw new Error('The expected 10 practice questions were not found.');
 const opinionNumbers = [...opinions.matchAll(/^  \[(\d+),/gm)].map(match => Number(match[1]));
 const opinionCount = opinionNumbers.length;
