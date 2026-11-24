@@ -1,10 +1,10 @@
-const CACHE_NAME = 'atlas-oea-shell-v87';
+const CACHE_NAME = 'atlas-oea-shell-v88';
 const APP_SHELL = [
   './',
   './index.html',
   './manifest.webmanifest',
   './assets/styles-v26.css',
-  './assets/organizacion-mapa.css?v=atlas-oea-7',
+  './assets/organizacion-mapa.css?v=atlas-oea-8',
   './assets/arquitectura-atlas.css?v=14',
   './assets/app-v40.js',
   './assets/audiencia-lab-v1.js',

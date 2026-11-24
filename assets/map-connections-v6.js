@@ -250,12 +250,10 @@
       caseList.className = 'map-country-cases';
       (fullProfile ? matches : matches.slice(0, 4)).forEach(record => {
         const item = document.createElement('li');
-        const link = document.createElement('a');
-        link.href = record.url;
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        link.textContent = record.title;
-        item.append(link);
+        addLink(item, '#jurisprudencia?caso=' + encodeURIComponent(record.title), record.title);
+        const official = addLink(item, record.url, record.sourceLabel || 'Fuente oficial', 'map-case-source');
+        official.target = '_blank';
+        official.rel = 'noopener noreferrer';
         caseList.append(item);
       });
       panel.append(caseList);

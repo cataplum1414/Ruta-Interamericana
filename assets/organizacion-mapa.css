@@ -64,3 +64,5 @@
 .oas-map-detail,.map-country-connections{min-width:0;grid-template-columns:minmax(0,1fr)}
 .map-country-connections a,.oas-map-detail>a{overflow-wrap:anywhere}
 @media(max-width:950px){.oas-map-layout{grid-template-columns:minmax(0,1fr)}}
+
+.map-country-cases .map-case-source{display:block;width:fit-content;margin-top:3px;font-weight:500;color:var(--muted)}
