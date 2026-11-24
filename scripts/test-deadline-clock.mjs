@@ -1,0 +1,27 @@
+import {readFile} from 'node:fs/promises';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+
+const source=await readFile('assets/app-v41.js','utf8');
+const nodes=new Map();
+const el=id=>{if(!nodes.has(id))nodes.set(id,{value:'',textContent:'',innerHTML:'',disabled:false});return nodes.get(id);};
+const context=vm.createContext({el,escape:String,Date,Intl});
+vm.runInContext(source.slice(source.indexOf('const deadlines=['),source.indexOf('const caseFacts='))+source.slice(source.indexOf('// Preserve existing search/calculator indices;'),source.indexOf("el('clockGo').addEventListener")),context);
+const calculate=(index,date)=>{el('clockRule').value=String(index);el('clockStart').value=date;vm.runInContext('calc()',context);};
+calculate(12,'2026-01-01');
+assert.equal(el('clockDate').textContent,'Plazo fijado por la CIDH');
+assert.equal(el('clockStart').disabled,true);
+assert.match(el('clockExplanation').textContent,/no hay una duración única/);
+calculate(14,'2026-01-01');
+assert.equal(el('clockDate').textContent,'Según decisión de la CIDH');
+assert.match(el('clockExplanation').textContent,/no suspende automáticamente/);
+calculate(15,'2026-01-01');
+assert.equal(el('clockGo').disabled,true);
+calculate(13,'2026-01-15');
+assert.equal(el('clockStart').disabled,false);
+assert.equal(el('clockDate').textContent,'15 de febrero de 2026');
+calculate(4,'2026-01-15');
+assert.equal(el('clockDate').textContent,'15 de abril de 2026');
+assert.match(el('clockRule').innerHTML,/Informe preliminar: informar cumplimiento/);
+assert.match(el('deadlineList').innerHTML,/<header><strong>Informe preliminar/);
+console.log('Deadline clock: variable CIDH periods, suspension, petitioner month and three-month period passed.');

@@ -40,6 +40,7 @@ Atlas OEA es un proyecto educativo independiente, editado por Sukima Labs. No es
 - El diccionario enlaza el informe preliminar, las recomendaciones, el período del artículo 51, su posible suspensión y el informe definitivo con sus fuentes oficiales y las etapas relacionadas.
 - Páginas independientes para la CIDH y la Corte IDH, además de una página puente que explica cómo puede pasar un asunto de un órgano al otro.
 - Reloj de plazos orientativos.
+- El reloj incluye expresamente el informe preliminar, el plazo estatal para informar cumplimiento, el mes del peticionario, el período del artículo 51.1, su suspensión y el informe definitivo. Los plazos fijados por la CIDH se muestran sin inventar fechas; se remite a la comunicación o decisión correspondiente.
 - Caso académico ficticio con hitos procesales.
 - Selección didáctica de casos clave junto con el índice de referencias del proyecto, sin presentarlo como catálogo exhaustivo.
 - Práctica encadenada de admisibilidad: competencia, recursos internos o excepciones, plazo según la ruta, duplicación internacional y caracterización inicial, con fuentes y repaso por etapa.
