@@ -12,28 +12,32 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento del caso · Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=323",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Alfonso Martín del Campo Dodd vs. Estados Unidos Mexicanos",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=232",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Almonacid Arellano y otros vs. Chile",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones · Responsabilidad estatal · Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=335",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Aloeboetoe y otros vs. Suriname",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=211",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Amrhein y otros vs. Costa Rica",
@@ -62,14 +66,16 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones · Responsabilidad estatal · Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=222",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Baldeón García vs. Perú",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=383",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Barbani Duarte y otros vs. Uruguay",
@@ -83,7 +89,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=357",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Barrios Altos vs. Perú",
@@ -147,7 +154,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento contencioso · Competencia y excepciones · Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=259",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Caesar vs. Trinidad y Tobago",
@@ -161,7 +169,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal · Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=328",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Cantos vs. Argentina",
@@ -210,14 +219,16 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal · Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=362",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Claude Reyes y otros vs. Chile",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=332",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Comunidad Indígena Xákmok Kásek vs. Paraguay",
@@ -231,14 +242,16 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=258",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
-        "title":  "Constantine y otros vs. Trinidad y Tobago",
+        "title":  "Hilaire, Constantine y Benjamin y otros vs. Trinidad y Tobago",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=269",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Cuscul Pivaral y otros vs. Guatemala",

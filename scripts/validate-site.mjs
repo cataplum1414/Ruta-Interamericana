@@ -61,6 +61,19 @@ if (routeCount < 17 || !html.includes('href="#oea"') || !html.includes('href="#o
 const jurisprudencia = await readFile('assets/jurisprudencia.js', 'utf8');
 const jurisprudenciaRows = JSON.parse(jurisprudencia.replace(/^window\.RI_JURISPRUDENCIA=/, '').replace(/;\s*$/, ''));
 const featuredSheets = [
+  ['Acevedo Jaramillo y otros vs. Perú', 323],
+  ['Alfonso Martín del Campo Dodd vs. Estados Unidos Mexicanos', 232],
+  ['Almonacid Arellano y otros vs. Chile', 335],
+  ['Aloeboetoe y otros vs. Suriname', 211],
+  ['Baena Ricardo y otros vs. Panamá', 222],
+  ['Baldeón García vs. Perú', 383],
+  ['Barreto Leiva vs. Venezuela', 357],
+  ['Caballero Delgado y Santana vs. Colombia', 259],
+  ['Cantoral Benavides vs. Perú', 328],
+  ['Chitay Nech y otros vs. Guatemala', 362],
+  ['Claude Reyes y otros vs. Chile', 332],
+  ['Comunidad Indígena Yakye Axa vs. Paraguay', 258],
+  ['Hilaire, Constantine y Benjamin y otros vs. Trinidad y Tobago', 269],
   ['19 Comerciantes vs. Colombia', 274],
   ['Atala Riffo y niñas vs. Chile', 196],
   ['Barrios Altos vs. Perú', 267],
