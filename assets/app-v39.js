@@ -318,9 +318,9 @@ stage=function(n){originalStage(n);const all=[...el('stepRail').querySelectorAll
 document.querySelectorAll('#comision [data-open-step],#corte [data-open-step],#sistema [data-open-step]').forEach(a=>a.addEventListener('click',()=>stage(Number(a.dataset.openStep))));
 document.querySelectorAll('[data-phase]').forEach(b=>b.addEventListener('click',()=>{activeStepPhase=b.dataset.phase;document.querySelectorAll('[data-phase]').forEach(x=>{const active=x===b;x.classList.toggle('active',active);x.setAttribute('aria-pressed',String(active));});stage(current);}));
 
-const menuToggle=el('menuToggle'),closeMenu=el('closeMenu'),navScrim=el('navScrim'),sideNav=el('sideNav'),mobileMenuButton=el('mobileMenuButton'),mobileMenuQuery=matchMedia('(max-width: 1080px)');let menuReturnFocus=null,pendingSearchFocus=false;
+const menuToggle=el('menuToggle'),closeMenu=el('closeMenu'),navScrim=el('navScrim'),sideNav=el('sideNav'),mobileMenuButton=el('mobileMenuButton'),mobileMenuQuery=matchMedia('(max-width: 800px)');let menuReturnFocus=null,pendingSearchFocus=false;
 function setMenu(open,restoreFocus=true){if(!mobileMenuQuery.matches)open=false;const active=Boolean(open);if(active)menuReturnFocus=document.activeElement;document.body.classList.toggle('menu-open',active);menuToggle?.setAttribute('aria-expanded',String(active));mobileMenuButton?.setAttribute('aria-expanded',String(active));sideNav.inert=mobileMenuQuery.matches&&!active;el('contenido').inert=mobileMenuQuery.matches&&active;el('mobileBar').inert=mobileMenuQuery.matches&&active;document.querySelector('.appbar').inert=mobileMenuQuery.matches&&active;if(active){const current=sideNav.querySelector('a[aria-current="page"]');(current||sideNav.querySelector('a[href]'))?.focus();}else{if(restoreFocus){const target=menuReturnFocus?.isConnected?menuReturnFocus:(mobileMenuButton||menuToggle);target?.focus();}menuReturnFocus=null;}}
-sideNav.inert=!mobileMenuQuery.matches;mobileMenuQuery.addEventListener?.('change',()=>setMenu(false,false));
+sideNav.inert=false;mobileMenuQuery.addEventListener?.('change',()=>setMenu(false,false));
 menuToggle.addEventListener('click',()=>setMenu(!document.body.classList.contains('menu-open')));
 closeMenu.addEventListener('click',()=>setMenu(false));navScrim.addEventListener('click',()=>setMenu(false));
 mobileMenuButton?.addEventListener('click',()=>setMenu(true));

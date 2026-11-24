@@ -1,0 +1,37 @@
+/* Shell editorial homologado con la arquitectura de Atlas ONU; contenido y rutas siguen siendo propios de Atlas OEA. */
+:root{--cyan-soft:#0A6E78;--focus:#0A6E78}
+html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
+.nav-group h2{margin:0;padding:14px 12px 7px;color:var(--muted);font-size:13px;font-weight:750;letter-spacing:.025em}
+.nav-group a[aria-current="page"]{border-left-color:var(--cyan);background:color-mix(in srgb,var(--cyan) 12%,var(--panel));font-weight:750}
+.nav-group a[aria-current="page"] .nav-icon{color:var(--cyan)}
+@media(min-width:801px){
+  :root{--nav-width:288px}
+  .menu-toggle,.close-menu{display:none}
+  .appbar{display:none;left:var(--nav-width);right:0;width:auto}
+  .side{position:fixed;z-index:80;inset:0 auto 0 0;width:var(--nav-width);max-height:100dvh;transform:none;visibility:visible;box-shadow:none;border-right:1px solid var(--line);background:var(--surface)}
+  .nav-groups{padding-bottom:14px}
+  .nav-group{padding:12px 0 4px;border-top:1px solid var(--line)}
+  .nav-group:first-child{border-top:0}
+  .nav-group h2{padding-top:5px}
+  .atlas-main{width:calc(100% - var(--nav-width));max-width:1690px;margin:0 0 0 var(--nav-width);padding-top:0}
+  .mobile-bar{display:none}
+  body{padding-bottom:0}
+  .nav-scrim{display:none;visibility:hidden}
+}
+@media(max-width:800px){
+  .nav-group{padding:8px 0 6px}
+  .nav-group h2{padding:9px 12px 5px}
+  .side{box-shadow:12px 0 40px #0008}
+}
+
+.theme-picker button[aria-pressed="true"]{border-color:var(--cyan);background:var(--cyan);color:var(--ink)}
+.map-layer-control input{accent-color:var(--cyan-soft)}
+.map-layer-control label:has(input:checked){border-color:var(--cyan-soft);background:color-mix(in srgb,var(--cyan-soft) 10%,var(--surface))}
+.map-timeline>button{min-height:46px;padding:9px 13px;border:1px solid var(--cyan-soft);border-radius:var(--radius-control);background:color-mix(in srgb,var(--cyan) 13%,var(--panel));color:var(--ink);font-weight:750;text-align:left}
+.map-timeline>button[aria-pressed="true"]{background:var(--cyan);color:var(--ink)}
+
+.button[hidden]{display:none!important}
+@media(max-width:420px){
+  .hero-overview{gap:8px;padding-inline:10px;font-size:12px}
+  .hero-overview span:nth-of-type(2),.hero-overview .atlas-view-info{display:none}
+}

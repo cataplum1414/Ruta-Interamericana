@@ -1,7 +1,7 @@
 import {access, readFile} from 'node:fs/promises';
 
 const html = await readFile('index.html', 'utf8');
-const app = await readFile('assets/app-v39.js', 'utf8');
+const app = await readFile('assets/app-v40.js', 'utf8');
 const glossary = await readFile('assets/glosario.js', 'utf8');
 const styles = await readFile('assets/styles-v26.css', 'utf8');
 const opinions = await readFile('assets/opiniones.js', 'utf8');
@@ -10,7 +10,7 @@ const serviceWorker = await readFile('sw.js', 'utf8');
 const organData = await readFile('assets/organos.js', 'utf8');
 const stateData = await readFile('assets/estados-oea.js', 'utf8');
 const regionalMap = await readFile('assets/mapa-americas.svg', 'utf8');
-const mapConnections = await readFile('assets/map-connections-v4.js', 'utf8');
+const mapConnections = await readFile('assets/map-connections-v5.js', 'utf8');
 
 if (!html.includes('<meta name="color-scheme" content="light dark">') || !app.includes('target=hash?document.getElementById(hash):null')) {
   throw new Error('The theme initializer needs its color-scheme metadata, and route handling must safely open the page without a hash.');
@@ -71,12 +71,12 @@ if (!glossary.includes("id:'comunicacion-interestatal'") || !glossary.includes('
 }
 const protectionExercise = app.match(/const protectionSteps=\[([\s\S]*?)\r?\n\];/)?.[1];
 if ((protectionExercise?.match(/\{prompt:/g)||[]).length !== 3 || (protectionExercise?.match(/source:'https:\/\//g)||[]).length !== 3) throw new Error('The urgent-protection practice needs three sourced procedural decisions.');
-if (!html.includes('id="protectionMeasuresLab"') || !app.includes('protectionSteps') || !app.includes('art\\u00edculo 25') || !app.includes('27.3') || !app.includes('dataset.result') || !serviceWorker.includes('./assets/styles-v26.css')) throw new Error('The optional urgent-protection practice must compare CIDH and Court routes with official rules and a cached stylesheet.');
+if (!html.includes('id="protectionMeasuresLab"') || !app.includes('protectionSteps') || !app.includes('art\\u00edculo 25') || !app.includes('27.3') || !app.includes('dataset.result') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/arquitectura-atlas.css')) throw new Error('The optional urgent-protection practice must compare CIDH and Court routes with official rules and a cached stylesheet.');
 if (!app.includes("courtCompetence:{phase:'CORTE IDH'") || !app.includes("stage:14,source:'https://www.oas.org/es/cidh/mandato/basicos/convencion.asp'") || !app.includes("court:['courtCompetence','courtNotification'")) throw new Error('Missing the interactive Court jurisdiction decision.');
-if (!html.includes('assets/styles-v26.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v39.js') || !serviceWorker.includes('atlas-oea-shell-v68') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/app-v39.js') || !serviceWorker.includes('./assets/map-connections-v4.js') || !styles.includes('.process-overview-summary')) {
+if (!html.includes('assets/styles-v26.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v40.js') || !serviceWorker.includes('atlas-oea-shell-v71') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/arquitectura-atlas.css') || !serviceWorker.includes('./assets/app-v40.js') || !serviceWorker.includes('./assets/map-connections-v5.js') || !styles.includes('.process-overview-summary')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
 }
-if (!html.includes('name="mapLayer" value="membership"') || !html.includes('name="mapLayer" value="cases"') || !html.includes('Lectura f&aacute;cil: c&oacute;mo se conecta un pa&iacute;s con el sistema') || !html.includes('data-pan-x=') || !html.includes('aria-label="Mapa seleccionable') || !mapConnections.includes('const casesFor') || !mapConnections.includes('Sigue la relaci') || !mapConnections.includes('La membres\u00eda en la OEA no determina por s\u00ed sola') || !mapConnections.includes("'#comision'") || !mapConnections.includes("'#corte'") || !mapConnections.includes('La selecci\u00f3n no representa el total hist\u00f3rico') || !mapConnections.includes('https://www.oas.org/es/cidh/mandato/Basicos/convratif.asp') || !mapConnections.includes('ArrowLeft') || !html.includes('id="mapTimelineYear"') || !mapConnections.includes('treatyMilestones') || !mapConnections.includes('timeline')) {
+if (!html.includes('name="mapLayer" value="membership"') || !html.includes('name="mapLayer" value="cases"') || !html.includes('Lectura f&aacute;cil: c&oacute;mo se conecta un pa&iacute;s con el sistema') || !html.includes('data-pan-x=') || !html.includes('aria-label="Mapa seleccionable') || !mapConnections.includes('const casesFor') || !mapConnections.includes('Sigue la relaci') || !mapConnections.includes('La membres\u00eda en la OEA no determina por s\u00ed sola') || !mapConnections.includes("'#comision'") || !mapConnections.includes("'#corte'") || !mapConnections.includes('La selecci\u00f3n no representa el total hist\u00f3rico') || !mapConnections.includes('https://www.oas.org/es/cidh/mandato/Basicos/convratif.asp') || !mapConnections.includes('ArrowLeft') || !html.includes('id="mapTimelineYear"') || !mapConnections.includes('treatyMilestones') || !mapConnections.includes('timeline') || !mapConnections.includes('Pausar la cronolog?a') || !html.includes('assets/arquitectura-atlas.css') || !html.includes('<section class="nav-group" data-nav-group>')) {
   throw new Error('The regional map must offer accessible OEA/case layers and connect each selected country to OEA, CIDH, Court, procedure, and official case references.');
 }
 if (!html.includes('data-phase="PASO A LA CORTE"') || html.includes('data-phase="TRANSICIÓN"') || !app.includes("phase:'PASO A LA CORTE'") || app.includes('TRANSICI\\u00d3N')) {

@@ -13,6 +13,7 @@
   const timelineType = document.getElementById('mapTimelineType');
   const timelineYear = document.getElementById('mapTimelineYear');
   const timelineOutput = document.getElementById('mapTimelineOutput');
+  const timelinePlay = document.getElementById('mapTimelinePlay');
   if (!canvas || !detail || !search || !list) return;
 
   const members = window.RI_ESTADOS_OEA || [];
@@ -52,6 +53,13 @@
   };
   const caseCounts = new Map(states.map(state => [state.code, casesFor(state.code).length]));
   let layer = 'membership';
+  let timelineTimer = null;
+  function stopTimeline() {
+    if (timelineTimer) clearInterval(timelineTimer);
+    timelineTimer = null;
+    timelinePlay.setAttribute('aria-pressed','false');
+    timelinePlay.textContent = '? Animar la cronolog?a';
+  }
 
   function setLegend() {
     if (layer === 'timeline') {
@@ -188,13 +196,34 @@
 
   document.querySelectorAll('input[name="mapLayer"]').forEach(input => input.addEventListener('change', () => {
     layer = ['cases','timeline'].includes(input.value) ? input.value : 'membership';
+    if (layer !== 'timeline') stopTimeline();
     applyLayer();
   }));
   timelineType.addEventListener('change', applyLayer);
   timelineYear.addEventListener('input', () => {
+    if (timelineTimer) stopTimeline();
     timelineOutput.value = timelineYear.value;
     timelineOutput.textContent = timelineYear.value;
     applyLayer();
+  });
+  timelinePlay.addEventListener('click', () => {
+    if (timelineTimer) { stopTimeline(); return; }
+    document.querySelector('input[name="mapLayer"][value="timeline"]').checked = true;
+    layer = 'timeline';
+    if (Number(timelineYear.value) >= Number(timelineYear.max)) timelineYear.value = timelineYear.min;
+    timelineOutput.value = timelineYear.value;
+    timelineOutput.textContent = timelineYear.value;
+    timelinePlay.setAttribute('aria-pressed','true');
+    timelinePlay.textContent = '? Pausar la cronolog?a';
+    applyLayer();
+    timelineTimer = setInterval(() => {
+      const next = Number(timelineYear.value) + 1;
+      if (next > Number(timelineYear.max)) { stopTimeline(); return; }
+      timelineYear.value = String(next);
+      timelineOutput.value = String(next);
+      timelineOutput.textContent = String(next);
+      applyLayer();
+    }, 700);
   });
   document.querySelectorAll('.map-pan button').forEach(button => button.addEventListener('click', () => {
     const svg = canvas.querySelector('svg');
