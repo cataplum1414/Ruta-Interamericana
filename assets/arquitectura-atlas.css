@@ -163,3 +163,8 @@ html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
 .hearing-lab-finish{max-width:760px}
 .hearing-lab-finish>p:not(.section-tag){color:var(--muted);line-height:1.6}
 @media(max-width:520px){.hearing-lab-panel{padding:15px;border-radius:16px}.hearing-lab-step-actions{align-items:flex-start;flex-direction:column}.hearing-lab-step-actions .button{width:100%;margin-left:0}.hearing-lab-controls>*{flex:1 1 100%;justify-content:center}}
+
+.juris-connection{grid-column:4;grid-row:1;align-self:start;margin:0;font-size:12px;line-height:1.45}
+.juris-connection a{display:block;margin-top:3px;font-size:12px}
+.juris-card>a[target="_blank"]{grid-column:4;grid-row:2;align-self:end}
+@media(max-width:760px){.juris-connection{grid-column:1 / -1;grid-row:4;margin:0}.juris-card>a[target="_blank"]{grid-column:1 / -1;grid-row:5;justify-self:start}}

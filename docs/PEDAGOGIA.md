@@ -72,7 +72,7 @@ El comparador de plazos de la etapa final de la CIDH separa dos fechas que no de
 
 ## Próximas piezas prioritarias
 
-La versión actual ya incluye el mapa institucional y regional con capas, la práctica ramificada de la CIDH y de la Corte, el comparador de fechas, el mapa de razonamiento, el glosario conectado y catálogos buscables de jurisprudencia y opiniones consultivas. La siguiente iteración debe profundizar la aplicación y el control de calidad, no volver a proponer esos componentes como si faltaran.
+La versión actual ya incluye el mapa institucional y regional con capas, la práctica ramificada de la CIDH y de la Corte, el comparador de fechas, el mapa de razonamiento, el glosario conectado y catálogos buscables de jurisprudencia y opiniones consultivas. Las fichas de jurisprudencia ahora enlazan sus temas con la estación procesal relacionada, de modo que se puede pasar de una referencia al recorrido sin volver a buscar la etapa. La siguiente iteración debe profundizar la aplicación y el control de calidad, no volver a proponer esos componentes como si faltaran.
 
 1. Añadir variantes al expediente didáctico para practicar qué cambia cuando varía un hecho, una notificación, una objeción o el tipo de prueba; mantener cada ruta separada entre CIDH y Corte.
 2. Ampliar la práctica de audiencia con ejercicios para distinguir documento, testimonio, peritaje y amicus, relacionar cada elemento con un hecho y formular preguntas dentro del objeto fijado.
