@@ -698,5 +698,5 @@ main [data-route-page][hidden]{display:none!important}
 .protection-feedback[data-result="correct"]{color:var(--green,var(--cyan))}
 .protection-feedback[data-result="review"]{color:var(--amber,var(--muted))}
 .protection-source{margin:10px 0;font-size:12px}
-.protection-source a{color:var(--cyan);font-weight:750}
+.protection-source a{color:var(--cyan-soft);font-weight:750}
 .protection-controls{display:flex;gap:10px;flex-wrap:wrap}
