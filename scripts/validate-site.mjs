@@ -61,7 +61,7 @@ if ((html.match(/class="process-overview-link"/g) || []).length !== 4 || !app.in
 if (!glossary.includes("id:'comunicacion-interestatal'") || !glossary.includes('convencion-americana-derechos-humanos.pdf') || !app.includes('Petición individual y comunicación interestatal') || !app.includes('artículo 45') || !glossary.includes("id:'denuncia-convencion'") || !app.includes('Denuncia de la Convención y petición individual') || !app.includes('artículo 78 CADH')) {
   throw new Error('The glossary and practice must explain interstate communications and treaty denunciation with official legal sources.');
 }
-if (!html.includes('assets/styles.css?v=atlas-oea-14') || !html.includes('assets/glosario.js?v=editorial-6') || !html.includes('assets/app.js?v=atlas-oea-17') || !serviceWorker.includes('atlas-oea-shell-v36')) {
+if (!html.includes('assets/styles.css?v=atlas-oea-14') || !html.includes('assets/glosario.js?v=editorial-6') || !html.includes('assets/app.js?v=atlas-oea-18') || !serviceWorker.includes('atlas-oea-shell-v37')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
 }
 if (!html.includes('<strong>34</strong> Estados') || !html.includes('CIDH + Corte IDH') || !styles.includes('.hero.page-section{padding-top:22px}') || !styles.includes('.hero-overview{width:100%;justify-content:center;gap:5px;padding:6px 8px;overflow:visible;font-size:11px;white-space:normal;flex-wrap:wrap}')) {
