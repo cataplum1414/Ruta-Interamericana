@@ -123,6 +123,9 @@
     });
     panel.append(path);
     addLink(panel, '#recorrido', 'Ver las 18 estaciones del procedimiento', 'map-route-link');
+    const treatyStatus = addLink(panel, 'https://www.oas.org/es/cidh/mandato/Basicos/convratif.asp', 'Comprobar ratificación de la Convención y aceptación de la Corte en la OEA', 'map-route-link');
+    treatyStatus.target = '_blank';
+    treatyStatus.rel = 'noopener noreferrer';
 
     const matches = casesFor(code);
     const casesHeading = document.createElement('h4');

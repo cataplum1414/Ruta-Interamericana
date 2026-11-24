@@ -60,7 +60,7 @@ El modo sin conexión y la instalación requieren servir la guía por `localhost
 - `index.html`: estructura y contenido de la guía.
 - `assets/styles-v26.css`: identidad visual, navegación adaptable, vistas móviles y estados accesibles.
 - `assets/app-v39.js`: recorrido, caso, reloj, práctica, búsquedas, contador independiente y enlaces contextuales del diccionario.
-- `assets/map-connections-v3.js`: capas del mapa geográfico y enlaces entre Estados, procedimiento y jurisprudencia.
+- `assets/map-connections-v4.js`: capas del mapa geográfico y enlaces entre Estados, procedimiento y jurisprudencia.
 - `assets/glosario.js`: siglas y conceptos con explicaciones claras, relaciones internas y fuentes oficiales.
 - `assets/jurisprudencia.js`: referencias jurisprudenciales estructuradas.
 - `assets/opiniones.js`: catálogo de opiniones consultivas emitidas con enlaces a las Series A oficiales.
