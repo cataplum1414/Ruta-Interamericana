@@ -1,9 +1,9 @@
 import {access, readFile} from 'node:fs/promises';
 
 const html = await readFile('index.html', 'utf8');
-const app = await readFile('assets/app-v37.js', 'utf8');
+const app = await readFile('assets/app-v38.js', 'utf8');
 const glossary = await readFile('assets/glosario.js', 'utf8');
-const styles = await readFile('assets/styles-v24.css', 'utf8');
+const styles = await readFile('assets/styles-v25.css', 'utf8');
 const opinions = await readFile('assets/opiniones.js', 'utf8');
 const manifest = JSON.parse(await readFile('manifest.webmanifest', 'utf8'));
 const serviceWorker = await readFile('sw.js', 'utf8');
@@ -67,9 +67,9 @@ if (!glossary.includes("id:'comunicacion-interestatal'") || !glossary.includes('
 }
 const protectionExercise = app.match(/const protectionSteps=\[([\s\S]*?)\r?\n\];/)?.[1];
 if ((protectionExercise?.match(/\{prompt:/g)||[]).length !== 3 || (protectionExercise?.match(/source:'https:\/\//g)||[]).length !== 3) throw new Error('The urgent-protection practice needs three sourced procedural decisions.');
-if (!html.includes('id="protectionMeasuresLab"') || !app.includes('protectionSteps') || !app.includes('art\\u00edculo 25') || !app.includes('27.3') || !app.includes('dataset.result') || !serviceWorker.includes('./assets/styles-v24.css')) throw new Error('The optional urgent-protection practice must compare CIDH and Court routes with official rules and a cached stylesheet.');
+if (!html.includes('id="protectionMeasuresLab"') || !app.includes('protectionSteps') || !app.includes('art\\u00edculo 25') || !app.includes('27.3') || !app.includes('dataset.result') || !serviceWorker.includes('./assets/styles-v25.css')) throw new Error('The optional urgent-protection practice must compare CIDH and Court routes with official rules and a cached stylesheet.');
 if (!app.includes("courtCompetence:{phase:'CORTE IDH'") || !app.includes("stage:14,source:'https://www.oas.org/es/cidh/mandato/basicos/convencion.asp'") || !app.includes("court:['courtCompetence','courtNotification'")) throw new Error('Missing the interactive Court jurisdiction decision.');
-if (!html.includes('assets/styles-v24.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v37.js') || !serviceWorker.includes('atlas-oea-shell-v60') || !serviceWorker.includes('./assets/styles-v24.css') || !serviceWorker.includes('./assets/app-v37.js')) {
+if (!html.includes('assets/styles-v25.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v38.js') || !serviceWorker.includes('atlas-oea-shell-v61') || !serviceWorker.includes('./assets/styles-v25.css') || !serviceWorker.includes('./assets/app-v38.js')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
 }
 if (!html.includes('id="jurisTopicFilter"') || !app.includes('const jurisTopics=') || !app.includes("jurisTopicFilter.addEventListener('change',renderJurisprudencia)")) {
@@ -78,6 +78,9 @@ if (!html.includes('id="jurisTopicFilter"') || !app.includes('const jurisTopics=
 const featuredProceduralCases = app.match(/const featuredCases=\[([\s\S]*?)\];/)?.[1] || '';
 if ((featuredProceduralCases.match(/\{title:/g) || []).length !== 4 || !featuredProceduralCases.includes('Cayara vs. Perú') || !featuredProceduralCases.includes('stage:9') || !featuredProceduralCases.includes('stage:15') || !featuredProceduralCases.includes('stage:17') || !app.includes("el('featuredCases').querySelectorAll('[data-open-step]')")) {
   throw new Error('The four featured procedural cases must link to the relevant route stations.');
+}
+if (!app.includes('class="stage-facts"') || !app.includes('class="stage-next-arrow"') || !app.includes('Un matiz para recordar') || !styles.includes('.stage-facts') || !styles.includes('.stage-next-arrow')) {
+  throw new Error('Each procedure station must show compact rule facts, the next step, and an optional nuance.');
 }
 if (!app.includes('La CIDH recibe solicitudes de audiencias públicas para el 198.º período de sesiones') || !app.includes("dateValue:'2026-11-02'") || !app.includes('sCodigo=C-118%2F26') || !app.includes("relatedId:'laboratorio'") || !app.includes('news-context-link')) {
   throw new Error('Panorama news must use corrected official dates and connect urgent protection news to its interactive practice.');
