@@ -410,9 +410,10 @@ window.RI_JURISPRUDENCIA=[
     {
         "title":  "Extrabajadores del Organismo Judicial vs. Guatemala",
         "jurisdiction":  "Corte Interamericana",
-        "series":  null,
+        "series":  "445",
         "topic":  "Procedimiento del caso",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/docs/casos/articulos/seriec_445_esp.pdf",
+        "sourceLabel":  "Abrir sentencia oficial"
     },
     {
         "title":  "García Prieto y otros vs. El Salvador",
@@ -481,9 +482,10 @@ window.RI_JURISPRUDENCIA=[
     {
         "title":  "Guachalá Chimbo y otros vs. Ecuador",
         "jurisdiction":  "Corte Interamericana",
-        "series":  null,
+        "series":  "423",
         "topic":  "Procedimiento contencioso",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/docs/casos/articulos/seriec_423_esp.pdf",
+        "sourceLabel":  "Abrir sentencia oficial"
     },
     {
         "title":  "Gudiel Álvarez y otros (Diario Militar) vs. Guatemala",
@@ -725,9 +727,10 @@ window.RI_JURISPRUDENCIA=[
     {
         "title":  "Ramírez Escobar y otros vs. Guatemala",
         "jurisdiction":  "Corte Interamericana",
-        "series":  null,
+        "series":  "351",
         "topic":  "Procedimiento del caso",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/docs/casos/articulos/seriec_351_esp.pdf",
+        "sourceLabel":  "Abrir sentencia oficial"
     },
     {
         "title":  "Rodríguez Vera y otros (Desaparecidos del Palacio de Justicia) vs. Colombia",

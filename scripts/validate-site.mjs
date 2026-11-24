@@ -177,6 +177,17 @@ const benjaminCase = jurisprudenciaRows.find(item => item.title === 'Benjamin y 
 if (benjaminCase?.series !== '81' || !benjaminCase.url.endsWith('/Seriec_81_esp.pdf')) {
   throw new Error('The Benjamin preliminary-exceptions judgment must link directly to its official Serie C 81 PDF.');
 }
+const directJudgments = [
+  ['Extrabajadores del Organismo Judicial', '445'],
+  ['Guachalá Chimbo', '423'],
+  ['Ramírez Escobar', '351']
+];
+for (const [title, series] of directJudgments) {
+  const row = jurisprudenciaRows.find(item => item.title.includes(title));
+  if (row?.series !== series || !row.url.endsWith(`/seriec_${series}_esp.pdf`) || row.sourceLabel !== 'Abrir sentencia oficial') {
+    throw new Error(`The case index needs the verified official Serie C ${series} judgment for ${title}.`);
+  }
+}
 const sourceCounts = jurisprudenciaRows.reduce((counts, row) => {
   const url = row.url.toLowerCase();
   if (url.includes('ver_ficha_tecnica')) counts.officialSheets++;
@@ -185,7 +196,7 @@ const sourceCounts = jurisprudenciaRows.reduce((counts, row) => {
   else counts.otherSources++;
   return counts;
 }, {officialSheets: 0, serieCPdfs: 0, generalCatalog: 0, otherSources: 0});
-if (jurisprudenciaRows.length !== 123 || sourceCounts.officialSheets !== 98 || sourceCounts.serieCPdfs !== 15 || sourceCounts.generalCatalog !== 3 || sourceCounts.otherSources !== 7) {
+if (jurisprudenciaRows.length !== 123 || sourceCounts.officialSheets !== 98 || sourceCounts.serieCPdfs !== 18 || sourceCounts.generalCatalog !== 0 || sourceCounts.otherSources !== 7) {
   throw new Error(`Unexpected jurisprudence source audit: ${JSON.stringify(sourceCounts)} across ${jurisprudenciaRows.length} records.`);
 }
 if (!styles.includes('.nav-group a[aria-current="page"]') || !styles.includes('.mobile-bar a[aria-current="page"]')) {
