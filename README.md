@@ -25,7 +25,7 @@ Atlas OEA es un proyecto educativo independiente, editado por Sukima Labs. No es
 ## Contenido
 
 - Mapa institucional interactivo para explorar los &oacute;rganos de la OEA y distinguir la CIDH de la Corte aut&oacute;noma.
-- Mapa geogr&aacute;fico con b&uacute;squeda, zoom, lista accesible, 34 Estados miembros actuales y Nicaragua como antiguo Estado parte desde el 19 de noviembre de 2023.
+- Mapa geogr&aacute;fico con capas de Estados OEA y jurisprudencia citada en esta gu&iacute;a, b&uacute;squeda, zoom, lista accesible y conexiones desde cada pa&iacute;s a la OEA, la CIDH, la Corte y decisiones oficiales. La capa de casos describe solo el &iacute;ndice de este Atlas, no el total hist&oacute;rico.
 
 - Vistas independientes por tema, navegables desde el men&uacute; y con accesos directos a Inicio, OEA, Ruta, Mapa y Men&uacute; en m&oacute;vil.
 - Búsqueda global de etapas, preguntas procesales, decisiones, plazos, fuentes, ejercicios, siglas y conceptos, con ejemplos listos para abrir.
@@ -60,6 +60,7 @@ El modo sin conexión y la instalación requieren servir la guía por `localhost
 - `index.html`: estructura y contenido de la guía.
 - `assets/styles-v26.css`: identidad visual, navegación adaptable, vistas móviles y estados accesibles.
 - `assets/app-v39.js`: recorrido, caso, reloj, práctica, búsquedas, contador independiente y enlaces contextuales del diccionario.
+- `assets/map-connections-v3.js`: capas del mapa geográfico y enlaces entre Estados, procedimiento y jurisprudencia.
 - `assets/glosario.js`: siglas y conceptos con explicaciones claras, relaciones internas y fuentes oficiales.
 - `assets/jurisprudencia.js`: referencias jurisprudenciales estructuradas.
 - `assets/opiniones.js`: catálogo de opiniones consultivas emitidas con enlaces a las Series A oficiales.
