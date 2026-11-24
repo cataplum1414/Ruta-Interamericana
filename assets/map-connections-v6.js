@@ -72,8 +72,10 @@
       return;
     }
     if (layer === 'cases') {
-      legend.innerHTML = '<span><i class="legend-cases"></i>País con decisiones citadas en esta guía</span><span><i class="legend-other"></i>Sin casos incorporados al índice</span>';
-      description.textContent = 'Violeta: hay decisiones de ese país en el índice de esta guía. La selección no representa el total histórico de casos de la Corte.';
+      legend.innerHTML = [
+        ['1', '1'], ['2', '2&ndash;4'], ['3', '5&ndash;9'], ['4', '10 o m&aacute;s'], ['0', 'Sin casos indexados']
+      ].map(([band, label]) => '<span><i class="legend-case-band" data-case-band="' + band + '"></i>' + label + '</span>').join('');
+      description.textContent = 'El color distingue cuántos casos de cada país aparecen en esta guía. La selección no representa el total histórico de casos de la Corte.';
       listTitle.textContent = 'Países con casos citados en esta guía';
       return;
     }
@@ -86,7 +88,7 @@
     const query = normalize(search.value.trim());
     const source = layer === 'cases' ? states.filter(state => caseCounts.get(state.code) > 0) : layer === 'timeline' ? states.filter(state => (treatyMilestones[state.code]?.[timelineType.value] || 9999) <= Number(timelineYear.value)) : members;
     const rows = source.filter(state => !query || normalize(`${state.name} ${state.region}`).includes(query));
-    count.textContent = layer === 'cases' ? `${rows.length} países` : `${rows.length} de ${members.length} Estados`;
+    count.textContent = layer !== 'membership' ? `${rows.length} Estados` : `${rows.length} de ${members.length} Estados`;
     list.innerHTML = rows.length ? rows.map(state => `<button type="button" data-map-code="${state.code}"><span>${state.name}</span><small>${layer === 'cases' ? `${caseCounts.get(state.code)} ${caseCounts.get(state.code) === 1 ? 'caso citado' : 'casos citados'}` : layer === 'timeline' ? `Hito: ${treatyMilestones[state.code][timelineType.value]}` : state.region}</small></button>`).join('') : '<p class="oas-map-empty">No hay coincidencias en esta capa. Prueba con otro nombre.</p>';
   }
 
@@ -98,6 +100,7 @@
       svg.dataset.timelineYear = timelineYear.value;
       svg.querySelectorAll('[data-code]').forEach(shape => {
         const n = caseCounts.get(shape.dataset.code) || 0;
+        shape.dataset.caseBand = n === 0 ? '0' : n === 1 ? '1' : n < 5 ? '2' : n < 10 ? '3' : '4';
         shape.classList.toggle('has-atlas-cases', n > 0);
         if (shape.dataset.atlasCaseCount !== String(n)) shape.dataset.atlasCaseCount = String(n);
         const year = treatyMilestones[shape.dataset.code]?.[timelineType.value];
