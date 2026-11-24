@@ -469,3 +469,36 @@ main [data-route-page][hidden]{display:none!important}
 .case-sim-trail button span{display:grid;flex:0 0 21px;width:21px;height:21px;place-items:center;border:1px solid currentColor;border-radius:50%;font-weight:800}.case-sim-trail button.current{outline:2px solid var(--cyan);outline-offset:1px;color:var(--ink)}.case-sim-trail button.correct span{color:var(--green)}.case-sim-trail button.wrong span{color:var(--red)}.case-sim-trail button:disabled{opacity:.48;cursor:default}
 .case-sim-trail button:focus-visible,.case-sim-review-list button:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}.case-sim-review-list{display:grid;gap:7px;margin:14px 0;padding:0;list-style:none}.case-sim-review-list button{padding:10px 12px;background:var(--panel);border:1px solid var(--line);color:var(--cyan-soft);font:700 13px/1.4 var(--font);text-align:left;cursor:pointer}
 @media(max-width:800px){.case-sim-trail{margin-right:-5px;margin-left:-5px;padding:12px}.case-sim-trail li,.case-sim-trail button{max-width:155px}}
+
+/* Navegación de la familia Atlas: menú persistente en computador y cajón con accesos en pantallas táctiles. */
+@media(min-width:1081px){
+  :root{--nav-width:300px}
+  .appbar{display:none}
+  .side{top:0;bottom:0;left:0;width:var(--nav-width);max-height:100dvh;transform:none;visibility:visible;border-radius:0;box-shadow:none;transition:none}
+  .side-top{padding-top:10px}
+  .close-menu{display:none}
+  .atlas-main{width:calc(100% - var(--nav-width));max-width:1690px;margin:0 0 0 var(--nav-width);padding-top:0}
+  .nav-scrim{display:none}
+}
+@media(max-width:1080px){
+  :root{--nav-width:min(360px,86vw)}
+  .side{width:var(--nav-width)}
+  .nav-group h2{text-transform:uppercase;font-size:12px;letter-spacing:.04em}
+  .nav-group a{min-height:46px}
+  body{padding-bottom:calc(68px + env(safe-area-inset-bottom))}
+  .mobile-bar{position:fixed;z-index:60;right:0;bottom:0;left:0;display:flex;align-items:stretch;justify-content:space-around;height:calc(68px + env(safe-area-inset-bottom));padding:0 max(4px,env(safe-area-inset-right)) env(safe-area-inset-bottom) max(4px,env(safe-area-inset-left));border-top:1px solid var(--line);background:color-mix(in srgb,var(--surface) 96%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+  .mobile-bar a,.mobile-bar button{position:relative;display:flex;min-width:0;min-height:56px;flex:1 1 0;flex-direction:column;align-items:center;justify-content:center;gap:3px;margin:0;padding:5px 2px 4px;border:0;border-radius:12px;background:transparent;color:var(--muted);font:600 13px/1.1 var(--font);text-decoration:none;touch-action:manipulation}
+  .mobile-bar svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .mobile-bar span{max-width:100%;overflow:hidden;text-align:center;text-overflow:ellipsis;white-space:nowrap}
+  .mobile-bar a[aria-current="page"],.mobile-bar button.bn-activo{color:var(--cyan-soft)}
+  .mobile-bar a[aria-current="page"]::before{position:absolute;top:0;width:28px;height:3px;border-radius:0 0 3px 3px;background:var(--cyan);content:""}
+  .mobile-bar button:focus-visible,.mobile-bar a:focus-visible{outline:3px solid var(--focus);outline-offset:-3px}
+  html{scroll-padding-bottom:calc(90px + env(safe-area-inset-bottom))}
+}
+@media(min-width:801px) and (max-width:1080px){
+  .appbar{height:60px}
+  .menu-toggle{width:auto;min-width:84px}
+  .menu-toggle span{display:inline}
+  .appbrand{font-size:15px}
+}
+@media print{.mobile-bar{display:none!important}.atlas-main{width:auto!important;max-width:none!important;margin:0!important;padding:0!important}.side,.appbar,.nav-scrim{display:none!important}}
