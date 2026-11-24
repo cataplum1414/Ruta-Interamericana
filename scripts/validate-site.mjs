@@ -214,10 +214,9 @@ if (!html.includes('id="organDetail"') || !html.includes('id="oasMapCanvas"') ||
 if (!html.includes('34 Estados miembros') || !html.includes('Nicaragua dej&oacute; de ser Estado parte') || !html.includes('data-mobile-section="mapa"')) {
   throw new Error('The Atlas must explain current membership, Nicaragua’s 2023 withdrawal, and provide a fixed mobile map shortcut.');
 }
-const routeMap = html.match(/<div class="route-line">([\s\S]*?)<\/div>/)?.[1] || '';
-const routeStops = [...routeMap.matchAll(/<span class="route-stop"><b>\d+<\/b><small>([\s\S]*?)<\/small><\/span>/g)];
-if (routeStops.length !== 4 || !routeMap.includes('4 pilares') || !routeMap.includes('CIDH y<br>Corte')) {
-  throw new Error('The Atlas OEA overview must connect its pillars to the two human-rights bodies.');
+const home = html.match(/<section id="inicio" data-route-page[\s\S]*?<\/section>/)?.[0] || '';
+if (!home.includes('Entiende el camino') || !home.includes('del hecho a la sentencia') || !home.includes('href="#comision">Empezar por la Comisi&oacute;n</a>') || !home.includes('href="#recorrido">Ver las 18 estaciones</a>') || home.includes('class="route-art"') || home.includes('class="hero-bottom"')) {
+  throw new Error('The Atlas OEA overview should foreground the Commission-to-Court procedure in a simple editorial layout.');
 }
 if (!styles.includes('.principle-strip .glossary-trigger{color:inherit;text-decoration-color:currentColor}')) {
   throw new Error('Glossary links in the cyan principle strip need an inheriting, contrasting text color.');
