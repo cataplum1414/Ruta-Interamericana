@@ -11,7 +11,7 @@ window.RI_BUSCAR_GLOSARIO = (entries, query = '', options = {}) => {
     if (names.some(name => tokens.every(token => name.split(/[^\p{L}\p{N}]+/u).some(word => word.startsWith(token))))) return 60;
     return options.fullText && tokens.every(token => norm(item.definition+' '+item.use).includes(token)) ? 10 : 0;
   };
-  return entries.filter(item => (!options.category || options.category === 'Todas' || item.category === options.category) && (!options.letter || norm(item.label[0]) === norm(options.letter)))
+  return entries.filter(item => (!options.category || options.category === 'Todas' || item.category === options.category) && (!options.letter || item.label[0].localeCompare(options.letter,'es',{sensitivity:'base'}) === 0))
     .map(item => ({item, rank:score(item)})).filter(row => row.rank > 0)
     .sort((a,b) => b.rank-a.rank || a.item.label.localeCompare(b.item.label,'es')).map(row => row.item);
 };

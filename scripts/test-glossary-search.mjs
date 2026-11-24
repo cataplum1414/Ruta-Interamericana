@@ -14,6 +14,7 @@ assert.equal(search(entries,'zzzz-no-existe').length,0);
 const filtered=search(entries,'',{letter:'R',category:'Competencia y jurisdicción'});
 assert.ok(filtered.length>0);
 assert.ok(filtered.every(x=>x.label.startsWith('R')&&x.category==='Competencia y jurisdicción'));
+assert.equal(search([{...incidental,label:'Niñez'},{...incidental,label:'Ñandú'}],'',{letter:'Ñ'}).length,1);
 const all=search(entries);
 assert.equal(all.length,entries.length);
 assert.ok(all.every((x,i)=>!i||all[i-1].label.localeCompare(x.label,'es')<=0));
