@@ -108,18 +108,20 @@ window.RI_JURISPRUDENCIA=[
         "url":  "https://www.corteidh.or.cr/docs/casos/articulos/seriec_549_esp.pdf"
     },
     {
-        "title":  "Benavides Ceballos vs. Ecuador",
+        "title":  "Benavides Cevallos vs. Ecuador",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=326",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Benjamin y otros vs. Trinidad y Tobago",
         "jurisdiction":  "Corte Interamericana",
-        "series":  null,
+        "series":  "81",
         "topic":  "Competencia y excepciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/docs/casos/articulos/Seriec_81_esp.pdf",
+        "sourceLabel":  "Abrir sentencia de excepciones preliminares"
     },
     {
         "title":  "Blake vs. Guatemala",
@@ -138,9 +140,10 @@ window.RI_JURISPRUDENCIA=[
     {
         "title":  "Bulacio vs. Argentina",
         "jurisdiction":  "Corte Interamericana",
-        "series":  null,
+        "series":  "100",
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=285",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Bámaca Velásquez vs. Guatemala",
@@ -162,7 +165,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=254",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Cantoral Benavides vs. Perú",

@@ -68,7 +68,10 @@ const featuredSheets = [
   ['Baena Ricardo y otros vs. Panamá', 222],
   ['Baldeón García vs. Perú', 383],
   ['Barreto Leiva vs. Venezuela', 357],
+  ['Benavides Cevallos vs. Ecuador', 326],
   ['Caballero Delgado y Santana vs. Colombia', 259],
+  ['Bulacio vs. Argentina', 285],
+  ['Caesar vs. Trinidad y Tobago', 254],
   ['Cantoral Benavides vs. Perú', 328],
   ['Chitay Nech y otros vs. Guatemala', 362],
   ['Claude Reyes y otros vs. Chile', 332],
@@ -86,6 +89,10 @@ for (const [title, ficha] of featuredSheets) {
   if (!row?.url.includes(`nId_Ficha=${ficha}`)) {
     throw new Error(`The selected case index needs the verified official technical sheet ${ficha} for ${title}.`);
   }
+}
+const benjaminCase = jurisprudenciaRows.find(item => item.title === 'Benjamin y otros vs. Trinidad y Tobago');
+if (benjaminCase?.series !== '81' || !benjaminCase.url.endsWith('/Seriec_81_esp.pdf')) {
+  throw new Error('The Benjamin preliminary-exceptions judgment must link directly to its official Serie C 81 PDF.');
 }
 if (!styles.includes('.nav-group a[aria-current="page"]') || !styles.includes('.mobile-bar a[aria-current="page"]')) {
   throw new Error('Navigation needs a visible active-page state for current-page links.');
