@@ -117,3 +117,20 @@ html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
   .reasoning-map-footer{align-items:flex-start;flex-direction:column;gap:8px}
 }
 @media(max-width:420px){.reasoning-map>summary span{font-size:13px}.reasoning-context,.reasoning-answer{font-size:14px}}
+
+/* Mobile top bar shares Atlas ONU's outlined menu and icon-only color control. */
+@media(max-width:800px){
+  .appbar{gap:9px;padding-right:max(14px,env(safe-area-inset-right));padding-left:max(14px,env(safe-area-inset-left))}
+  .menu-toggle{flex:0 0 auto;width:auto;min-width:86px;min-height:44px;gap:7px;padding:0 11px;border:1px solid var(--line-strong);border-radius:12px;background:var(--panel);color:var(--ink)}
+  .menu-toggle svg{width:18px;height:18px;flex:0 0 18px;color:var(--cyan-soft)}
+  .menu-toggle span{display:inline;font-size:13px}
+  .appbrand{flex:1 1 auto;min-width:0;overflow:hidden;color:var(--ink);font-size:16px;font-weight:800;letter-spacing:-.035em;white-space:nowrap}
+  .appbrand b{color:var(--cyan);font-size:15px;letter-spacing:0}
+  .theme-compact{position:relative;display:grid;place-items:center;flex:0 0 44px;width:44px;height:44px;min-height:44px;margin-left:auto;padding:0;border:1px solid var(--line-strong);border-radius:12px;background:var(--panel);color:var(--ink)}
+  .theme-icon{display:none;pointer-events:none}
+  html[data-theme-choice="auto"] .theme-icon-auto,html[data-theme-choice="light"] .theme-icon-light,html[data-theme-choice="dark"] .theme-icon-dark{display:block}
+  .theme-compact select{position:absolute;inset:-1px;width:calc(100% + 2px);height:calc(100% + 2px);max-width:none;margin:0;padding:0;border:0;opacity:0;cursor:pointer;appearance:none}
+  .theme-compact:focus-within,.menu-toggle:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+  .theme-compact:hover,.menu-toggle:hover{background:var(--panel-raised)}
+}
+@media(max-width:420px){.appbar{gap:7px}.menu-toggle{min-width:80px;padding-inline:9px}.appbrand{font-size:15px}.appbrand b{font-size:14px}}
