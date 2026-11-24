@@ -4,7 +4,7 @@
 
 Atlas OEA explica primero qué es la OEA y cómo se organiza; dentro de ese marco, desarrolla el Sistema Interamericano de Derechos Humanos y separa el trabajo de la Comisión del de la Corte. La arquitectura toma de Atlas ONU sus páginas temáticas, navegación persistente, glosario conectado, mapa accesible, fuentes oficiales y práctica integrada. La aplicación debe enseñar cómo se razona en una secuencia, no presentar una pared de texto.
 
-La navegación mantiene esa familia visual: panel lateral agrupado en escritorio, menú lateral en móvil, accesos inferiores fijos y selección visible de la pantalla actual. Se conserva la tipografía DejaVu Sans, los colores de Sukima y los dos modos de color; las etiquetas y el orden de los temas se adaptan a OEA, CIDH y Corte para que la estructura compartida no mezcle sus funciones.
+La navegación mantiene esa familia visual: panel lateral agrupado en escritorio, menú lateral en móvil y barra inferior fija con inicio, búsqueda, ruta, mapa y menú. La ruta queda señalada mientras se consulta el Sistema Interamericano, la Comisión, la Corte, las estaciones, los plazos o el caso guiado. Se conserva la tipografía DejaVu Sans, los colores de Sukima y los dos modos de color; las etiquetas y el orden de los temas se adaptan a OEA, CIDH y Corte para que la estructura compartida no mezcle sus funciones.
 
 ## Material docente revisado localmente
 
