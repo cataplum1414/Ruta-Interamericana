@@ -75,11 +75,13 @@ El comparador de plazos de la etapa final de la CIDH separa dos fechas que no de
 La versión actual ya incluye el mapa institucional y regional con capas, la práctica ramificada de la CIDH y de la Corte, el comparador de fechas, el mapa de razonamiento, el glosario conectado y catálogos buscables de jurisprudencia y opiniones consultivas. La siguiente iteración debe profundizar la aplicación y el control de calidad, no volver a proponer esos componentes como si faltaran.
 
 1. Añadir variantes al expediente didáctico para practicar qué cambia cuando varía un hecho, una notificación, una objeción o el tipo de prueba; mantener cada ruta separada entre CIDH y Corte.
-2. Incorporar una práctica específica de preparación de audiencia: decidir qué declaración aporta a qué hecho, distinguir documento, testimonio, peritaje y amicus, y ordenar preguntas sin anticipar la valoración de la Corte.
+2. Ampliar la práctica de audiencia con ejercicios para distinguir documento, testimonio, peritaje y amicus, relacionar cada elemento con un hecho y formular preguntas dentro del objeto fijado.
 3. Revisar las explicaciones y enlaces del recorrido de la Corte contra el Reglamento vigente, en particular notificaciones, prueba, declaraciones, audiencia, alegatos finales y supervisión.
 4. Mejorar la devolución pedagógica de los ejercicios: mostrar qué premisa llevó a una respuesta, qué dato falta y cuál es el siguiente recurso de la guía para estudiar.
 5. Mantener la actualidad de noticias, jurisprudencia y opiniones con fecha de verificación y enlaces a fichas oficiales; distinguir opiniones emitidas de solicitudes pendientes y no sugerir que los casos sean frecuentes o intercambiables.
 6. Seguir refinando la presentación móvil y la navegación persistente, comprobando el resultado desplegado después de cada publicación y evitando que el caché del navegador o de la PWA oculte cambios recientes.
+
+La práctica «Sigue el camino de una declaración» ya cubre la lista definitiva, las objeciones y recusaciones, la decisión sobre objeto y formato, el comienzo del interrogatorio y los alegatos finales escritos. No reemplaza la revisión jurídica completa ni la práctica de valoración de documentos, testimonios, peritajes y escritos de amicus.
 
 ## Privacidad y alcance de las clases
 

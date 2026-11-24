@@ -15,7 +15,7 @@
 </script>
 <link rel="stylesheet" href="assets/styles-v26.css">
 <link rel="stylesheet" href="assets/organizacion-mapa.css?v=atlas-oea-5">
-<link rel="stylesheet" href="assets/arquitectura-atlas.css?v=8">
+<link rel="stylesheet" href="assets/arquitectura-atlas.css?v=9">
 <link rel="manifest" href="./manifest.webmanifest">
 </head>
 <body>
@@ -222,6 +222,15 @@
     </div>
   </details>
   <section class="case-simulation" aria-labelledby="caseSimulationTitle"><div class="case-simulation-intro"><p class="section-tag">PR&Aacute;CTICA DE PROCEDIMIENTO</p><h3 id="caseSimulationTitle">Elige por d&oacute;nde empezar</h3><p>Sigue el expediente desde la CIDH o entra a la fase de la Corte. Cada decisi&oacute;n muestra qu&eacute; puede ocurrir, por qu&eacute; y en qu&eacute; etapa conviene repasar la regla.</p></div><div class="case-sim-progress" aria-label="Avance del caso"><span id="caseSimProgressText">Elige una ruta para comenzar</span><div class="case-sim-progress-track"><span id="caseSimProgressBar"></span></div></div><nav id="caseSimTrail" class="case-sim-trail" aria-label="Tu recorrido por las decisiones" hidden></nav><article id="caseSimCard" class="case-sim-card" aria-live="polite"></article><div class="case-sim-controls"><button id="caseSimReset" class="button secondary" type="button">Reiniciar el caso</button><button id="caseSimRetry" class="button secondary" type="button" hidden>Revisar la decisi&oacute;n</button><a id="caseSimStageLink" class="button secondary" href="#recorrido" hidden>Repasar esta estaci&oacute;n</a><button id="caseSimNext" class="button primary" type="button" disabled hidden>Continuar</button></div></section>
+  <section class="hearing-lab" id="hearingLab" aria-labelledby="hearingLabTitle">
+    <div class="hearing-lab-heading"><p class="section-tag">TALLER DE AUDIENCIA · CORTE IDH</p><h3 id="hearingLabTitle">Sigue el camino de una declaración</h3><p>Una declaración ofrecida en los escritos no pasa directamente a la audiencia. Decide qué actuación sigue en cada momento y comprueba cómo intervienen las partes y la Presidencia.</p></div>
+    <div class="hearing-lab-panel">
+      <div class="hearing-lab-progress"><span id="hearingLabProgress" role="status" aria-live="polite">Decisión 1 de 5</span><div class="case-sim-progress-track" aria-hidden="true"><span id="hearingLabProgressBar"></span></div></div>
+      <article id="hearingLabCard" class="hearing-lab-card" aria-live="polite"></article>
+      <div class="hearing-lab-controls"><button id="hearingLabRestart" class="button secondary" type="button">Reiniciar práctica</button><a class="button secondary" href="https://www.corteidh.or.cr/reglamento.cfm?lang=es" target="_blank" rel="noopener noreferrer">Abrir Reglamento oficial ↗</a></div>
+    </div>
+    <p class="hearing-lab-note">Esquema de estudio: la Corte o su Presidencia determina si convoca audiencia y qué declaraciones recibe en ella o por affidávit. La práctica resume reglas generales; la resolución de cada caso delimita su aplicación.</p>
+  </section>
   <div class="case-warning"><strong>Lee la cronología con cuidado.</strong><span>El material presenta discrepancias entre la fecha de sometimiento y la de notificación, y entre el número de excepciones anunciado y enumerado. La guía las señala sin inventar datos para resolverlas.</span></div>
 </section>
 
@@ -301,6 +310,7 @@
 <script src="assets/organos.js" defer></script>
 <script src="assets/estados-oea.js" defer></script>
 <script src="assets/app-v40.js" defer></script>
+<script src="assets/audiencia-lab-v1.js" defer></script>
 <script src="assets/razonamiento-v1.js" defer></script>
 <script src="assets/map-connections-v6.js" defer></script>
 <script src="assets/plazos-comparador-v1.js" defer></script>
