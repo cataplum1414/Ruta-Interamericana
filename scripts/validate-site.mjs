@@ -47,8 +47,11 @@ if (simulationPaths.length !== 2 || simulationPaths.some(path => path.nodes.leng
 if (!html.includes('id="caseSimulationTitle"') || !html.includes('id="caseSimTrail"') || !app.includes('caseSimRetry') || !app.includes('drawCaseTrail') || !app.includes('data-review-step') || !app.includes('Decisiones del procedimiento') || !styles.includes('.case-sim-options button.is-correct') || !styles.includes('.case-sim-trail button.current')) {
   throw new Error('The case simulator needs retry, explanatory feedback, a reviewable decision trail, search integration, and visible decision states.');
 }
-if (!html.includes('assets/glosario.js?v=editorial-4') || !html.includes('assets/app.js?v=atlas-oea-12') || !serviceWorker.includes('atlas-oea-shell-v30')) {
-  throw new Error('The offline cache and versioned scripts must expose the current glossary and procedural comparisons.');
+if ((html.match(/class="process-overview-number"/g) || []).length !== 4 || !html.includes('id="processOverview"') || !html.includes('puede someter el caso a la Corte cuando se cumplen las reglas') || !html.includes('reglamentocidh.asp') || !html.includes('reglamento.cfm?lang=es')) {
+  throw new Error('The route needs a four-moment procedure overview with official Commission and Court sources.');
+}
+if (!html.includes('assets/styles.css?v=atlas-oea-12') || !html.includes('assets/app.js?v=atlas-oea-13') || !serviceWorker.includes('atlas-oea-shell-v31')) {
+  throw new Error('The current route overview must be available in the installed offline shell.');
 }
 if (countRows(questions) !== 10) throw new Error('The expected 10 practice questions were not found.');
 const opinionNumbers = [...opinions.matchAll(/^  \[(\d+),/gm)].map(match => Number(match[1]));
