@@ -24,6 +24,9 @@ Atlas OEA es un proyecto educativo independiente, editado por Sukima Labs. No es
 
 ## Contenido
 
+- Módulo «Competencia y jurisdicción internacional» bajo el Sistema Interamericano, con fundamentos, cuatro dimensiones, aceptación y atribución, alcance de tratados, explorador jurídico y laboratorio de escenarios.
+- El explorador distingue la CIDH, la Corte IDH y el Comité de los Derechos del Niño; señala los alcances individuales limitados de Belém do Pará y San Salvador y enlaza fuentes oficiales.
+- El laboratorio ofrece niveles progresivos y retroalimentación normativa razonada. Las ratificaciones, reservas y declaraciones por Estado se marcan como información no verificada en ese módulo.
 - Mapa institucional interactivo para explorar los &oacute;rganos de la OEA y distinguir la CIDH de la Corte aut&oacute;noma.
 - Desde el mapa, enlaces de la CIDH y la Corte a sus p&aacute;ginas y a las estaciones correspondientes del procedimiento.
 - Mapa geogr&aacute;fico con capas de Estados OEA y jurisprudencia citada en esta gu&iacute;a, b&uacute;squeda, zoom, lista accesible y conexiones desde cada pa&iacute;s a la OEA, la CIDH, la Corte y decisiones oficiales. La capa de casos describe solo el &iacute;ndice de este Atlas, no el total hist&oacute;rico.

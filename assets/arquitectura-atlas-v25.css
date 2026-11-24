@@ -380,3 +380,14 @@ html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+#competencia .followup-record{scroll-margin-top:calc(var(--top-height) + 16px)}
+#competencia fieldset{margin-block:16px;padding:14px;border:1px solid var(--line);border-radius:8px}
+#competencia fieldset label{display:flex;align-items:flex-start;gap:9px;min-height:42px}
+#competenceFeedback{padding:12px 0;max-width:78ch;line-height:1.65}
+#competenceDetail dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 18px}
+#competenceDetail dl div{padding:9px 0;border-block:1px solid var(--line)}
+#competenceDetail dd{margin:5px 0 0;color:var(--muted)}
+#competencia select{display:block;width:100%;max-width:100%;min-width:0;box-sizing:border-box}
+@media(max-width:600px){#competenceDetail dl{grid-template-columns:minmax(0,1fr)}}
+@media(prefers-reduced-motion:reduce){#competencia *{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
