@@ -2,6 +2,7 @@ import {access, readFile} from 'node:fs/promises';
 
 const html = await readFile('index.html', 'utf8');
 const app = await readFile('assets/app.js', 'utf8');
+const glossary = await readFile('assets/glosario.js', 'utf8');
 const styles = await readFile('assets/styles.css', 'utf8');
 const opinions = await readFile('assets/opiniones.js', 'utf8');
 const manifest = JSON.parse(await readFile('manifest.webmanifest', 'utf8'));
@@ -53,7 +54,10 @@ if ((html.match(/class="process-overview-number"/g) || []).length !== 4 || !html
 if ((html.match(/class="process-overview-link"/g) || []).length !== 4 || !app.includes("#processOverview [data-open-step]") || !app.includes("el('stepDetail').scrollIntoView")) {
   throw new Error('Each overview moment must open the matching interactive station.');
 }
-if (!html.includes('assets/styles.css?v=atlas-oea-13') || !html.includes('assets/app.js?v=atlas-oea-14') || !serviceWorker.includes('atlas-oea-shell-v32')) {
+if (!glossary.includes("id:'comunicacion-interestatal'") || !glossary.includes('convencion-americana-derechos-humanos.pdf') || !app.includes('Petición individual y comunicación interestatal') || !app.includes('artículo 45')) {
+  throw new Error('The glossary and procedure contrasts must explain individual and interstate communications with the American Convention as a source.');
+}
+if (!html.includes('assets/styles.css?v=atlas-oea-13') || !html.includes('assets/glosario.js?v=editorial-5') || !html.includes('assets/app.js?v=atlas-oea-15') || !serviceWorker.includes('atlas-oea-shell-v33')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
 }
 if (countRows(questions) !== 10) throw new Error('The expected 10 practice questions were not found.');

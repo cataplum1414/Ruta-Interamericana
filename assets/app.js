@@ -62,6 +62,7 @@ const stageChecks=[
 ];
 const contrasts=[
 ['Declaración y Convención','La CIDH puede conocer de obligaciones relacionadas con la Declaración Americana en Estados miembros de la OEA no partes de la CADH. En este atlas seguimos la vía de la Convención; para llegar a la Corte se exige además aceptación de su jurisdicción.'],
+['Petición individual y comunicación interestatal','El artículo 44 permite que personas, grupos y ONG presenten peticiones individuales. El artículo 45 regula comunicaciones entre Estados y requiere las declaraciones de competencia correspondientes.'],
 ['Presentar y someter','La ONG o persona presenta la petición ante la CIDH (art. 44). En el procedimiento individual es la CIDH quien somete el caso a la Corte (art. 61).'],
 ['Admisibilidad y fondo','La admisibilidad verifica si se puede examinar el caso; el fondo evalúa si hubo incumplimiento de derechos.'],
 ['Informe y sentencia','El informe de la Comisión puede contener recomendaciones; la sentencia de la Corte es una decisión judicial obligatoria para el Estado condenado.'],
