@@ -128,7 +128,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=317",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Brewer Carías vs. Venezuela",
@@ -181,14 +182,16 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=272",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Caracazo vs. Venezuela",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=228",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Castañeda Gutman vs. México",
@@ -202,21 +205,24 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=367",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Cayara vs. Perú",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones · Medidas de protección",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=230",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Chaparro Álvarez y Lapo Íñiguez vs. Ecuador",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=275",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Chitay Nech y otros vs. Guatemala",
@@ -269,63 +275,72 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=283",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "de la \"Masacre de Mapiripán\" vs. Colombia",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento contencioso · Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=252",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "de la Comunidad Mayagna (Sumo) Awas Tingni vs. Nicaragua",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=240",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "de la Comunidad Moiwana vs. Surinam",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones · Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=255",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "De la Cruz Flores vs. Perú",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=241",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "de la Masacre de La Rochela vs. Colombia",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento contencioso · Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=217",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "De la Masacre de las Dos Erres vs. Guatemala",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=361",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "de la Masacre de Pueblo Bello vs. Colombia",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento contencioso · Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=320",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "de la “Panel Blanca” (Paniagua Morales y otros) vs. Guatemala",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones · Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=297",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "de las comunidades afrodescendientes desplazadas de la Cuenca del Río Cacarica (Operación Génesis) vs. Colombia",
@@ -353,7 +368,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal · Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=321",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Duque vs. Colombia",
@@ -536,7 +552,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento contencioso · Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=242",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Loayza Tamayo vs. Perú",

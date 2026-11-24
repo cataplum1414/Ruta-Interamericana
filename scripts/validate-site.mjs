@@ -90,9 +90,45 @@ for (const [title, ficha] of featuredSheets) {
     throw new Error(`The selected case index needs the verified official technical sheet ${ficha} for ${title}.`);
   }
 }
+const additionalSheets = [
+  ['Blake', 317],
+  ['Cantos', 272],
+  ['Caracazo', 228],
+  ['Cayara', 230],
+  ['Chaparro Álvarez', 275],
+  ['Dacosta Cadogan', 283],
+  ['Las Palmeras', 242],
+  ['Castillo Petruzzi', 367],
+  ['Comunidad Mayagna', 240],
+  ['Mapirip', 252],
+  ['Pueblo Bello', 320],
+  ['Moiwana', 255],
+  ['Villagr', 321],
+  ['De la Cruz Flores', 241],
+  ['La Rochela', 217],
+  ['Dos Erres', 361],
+  ['Paniagua Morales', 297]
+];
+for (const [title, ficha] of additionalSheets) {
+  const row = jurisprudenciaRows.find(item => item.title.includes(title));
+  if (!row?.url.includes(`nId_Ficha=${ficha}`) || row.sourceLabel !== 'Abrir ficha oficial del caso') {
+    throw new Error(`The case index needs the verified official technical sheet ${ficha} for ${title}.`);
+  }
+}
 const benjaminCase = jurisprudenciaRows.find(item => item.title === 'Benjamin y otros vs. Trinidad y Tobago');
 if (benjaminCase?.series !== '81' || !benjaminCase.url.endsWith('/Seriec_81_esp.pdf')) {
   throw new Error('The Benjamin preliminary-exceptions judgment must link directly to its official Serie C 81 PDF.');
+}
+const sourceCounts = jurisprudenciaRows.reduce((counts, row) => {
+  const url = row.url.toLowerCase();
+  if (url.includes('ver_ficha_tecnica')) counts.officialSheets++;
+  else if (url.includes('/docs/casos/articulos/seriec_')) counts.serieCPdfs++;
+  else if (url.includes('casos_sentencias.cfm')) counts.generalCatalog++;
+  else counts.otherSources++;
+  return counts;
+}, {officialSheets: 0, serieCPdfs: 0, generalCatalog: 0, otherSources: 0});
+if (jurisprudenciaRows.length !== 123 || sourceCounts.officialSheets !== 39 || sourceCounts.serieCPdfs !== 15 || sourceCounts.generalCatalog !== 62 || sourceCounts.otherSources !== 7) {
+  throw new Error(`Unexpected jurisprudence source audit: ${JSON.stringify(sourceCounts)} across ${jurisprudenciaRows.length} records.`);
 }
 if (!styles.includes('.nav-group a[aria-current="page"]') || !styles.includes('.mobile-bar a[aria-current="page"]')) {
   throw new Error('Navigation needs a visible active-page state for current-page links.');
