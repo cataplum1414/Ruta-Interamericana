@@ -1,7 +1,7 @@
 import {access, readFile} from 'node:fs/promises';
 
 const html = await readFile('index.html', 'utf8');
-const app = await readFile('assets/app-v27.js', 'utf8');
+const app = await readFile('assets/app-v28.js', 'utf8');
 const glossary = await readFile('assets/glosario.js', 'utf8');
 const styles = await readFile('assets/styles-v19.css', 'utf8');
 const opinions = await readFile('assets/opiniones.js', 'utf8');
@@ -62,7 +62,7 @@ if (!glossary.includes("id:'comunicacion-interestatal'") || !glossary.includes('
   throw new Error('The glossary and practice must explain interstate communications and treaty denunciation with official legal sources.');
 }
 if (!app.includes("courtCompetence:{phase:'CORTE IDH'") || !app.includes("stage:14,source:'https://www.oas.org/es/cidh/mandato/basicos/convencion.asp'") || !app.includes("court:['courtCompetence','courtNotification'")) throw new Error('Missing the interactive Court jurisdiction decision.');
-if (!html.includes('assets/styles-v19.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v27.js') || !serviceWorker.includes('atlas-oea-shell-v48') || !serviceWorker.includes('./assets/styles-v19.css') || !serviceWorker.includes('./assets/app-v27.js')) {
+if (!html.includes('assets/styles-v19.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v28.js') || !serviceWorker.includes('atlas-oea-shell-v49') || !serviceWorker.includes('./assets/styles-v19.css') || !serviceWorker.includes('./assets/app-v28.js')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
 }
 if (!html.includes('id="atlasVisitCount" data-counter-state="pending"') || !html.includes('id="atlasVisitLabel"') || !app.includes("https://counterapi.com/api/cataplum1414.github.io/view/atlas-oea-home-v2") || !app.includes("referrerPolicy:'no-referrer'") || !app.includes('12*60*60*1000') || !app.includes('new URLSearchParams(location.search).has(\'sinvisita\')') || !app.includes('readOnly=true') || !app.includes("output.dataset.counterState='loading'") || !app.includes("output.dataset.counterState='ready'") || !app.includes("output.dataset.counterState='unavailable'") || !app.includes("value===1?'visita':'visitas'")) {
@@ -261,7 +261,7 @@ if (html.includes('class="principle-strip"') || !systemPage.includes('id="contra
 if (!styles.includes('.mobile-bar{position:fixed;z-index:60;right:0;bottom:0;left:0;') || !styles.includes('height:calc(68px + env(safe-area-inset-bottom))') || !styles.includes('body{padding-bottom:calc(68px + env(safe-area-inset-bottom))}') || !html.includes('viewport-fit=cover')) {
   throw new Error('The mobile navigation must stay fixed, keep its labels visible, and respect the device safe area.');
 }
-if (!html.includes('id="homeNews"') || !html.includes('href="#actualidad">Ver todas las noticias</a>') || !app.includes("dateValue:'2026-11-23'") || !app.includes("org:'OEA'") || !app.includes("'Todas','OEA','CIDH','Corte IDH'") || !app.includes("const featured=[recentNews.find(x=>x.org==='CIDH'),recentNews.find(x=>x.org==='Corte IDH'),recentNews.find(x=>x.org==='OEA')]") || app.includes("x.dateValue!=='2026-11-23'") || !app.includes('function renderHomeNews()')) {
+if (!html.includes('id="homeNews"') || !html.includes('href="#actualidad">Ver todas las noticias</a>') || !html.includes('href="https://www.corteidh.or.cr/187POS-Brasilia/caso-1.html"') || !app.includes("dateValue:'2026-11-23'") || !app.includes("org:'OEA'") || !app.includes("'Todas','OEA','CIDH','Corte IDH'") || !app.includes("dateValue:'2026-03-20'") || !app.includes('215 observaciones escritas') || !app.includes('https://www.corteidh.or.cr/187POS-Brasilia/caso-1.html') || !app.includes("const featured=[recentNews.find(x=>x.org==='CIDH'),recentNews.find(x=>x.org==='Corte IDH'),recentNews.find(x=>x.org==='OEA')]") || app.includes("x.dateValue!=='2026-11-23'") || !app.includes('function renderHomeNews()')) {
   throw new Error('The overview must surface recent CIDH, Court and OAS news and filter the full list by institution.');
 }
 for (const id of ['oea', 'comision', 'corte', 'sistema']) {
