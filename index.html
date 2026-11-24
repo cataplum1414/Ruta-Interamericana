@@ -13,7 +13,7 @@
 <script>
 (()=>{let choice='auto';try{choice=localStorage.getItem('ri-theme')||'auto'}catch(e){}if(!['auto','light','dark'].includes(choice))choice='auto';const media=matchMedia('(prefers-color-scheme: light)');const apply=()=>{const theme=choice==='auto'?(media.matches?'light':'dark'):choice;document.documentElement.dataset.theme=theme;document.documentElement.dataset.themeChoice=choice;const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=theme==='light'?'#F5F4F0':'#10131C';document.querySelector('meta[name="color-scheme"]').content=theme};window.riTheme={get:()=>choice,set:value=>{choice=['auto','light','dark'].includes(value)?value:'auto';try{choice==='auto'?localStorage.removeItem('ri-theme'):localStorage.setItem('ri-theme',choice)}catch(e){}apply()}};media.addEventListener?.('change',()=>{if(choice==='auto')apply()});apply()})();
 </script>
-<link rel="stylesheet" href="assets/styles-v18.css">
+<link rel="stylesheet" href="assets/styles-v19.css">
 <link rel="stylesheet" href="assets/organizacion-mapa.css?v=atlas-oea-1">
 <link rel="manifest" href="./manifest.webmanifest">
 </head>
@@ -49,14 +49,12 @@
     <p class="hero-lead">Una gu&iacute;a para seguir una petici&oacute;n: qu&eacute; examina la Comisi&oacute;n Interamericana, cu&aacute;ndo un caso puede llegar a la Corte y qu&eacute; ocurre despu&eacute;s.</p>
     <details class="easy-read hero-easy-read"><summary>Lectura f&aacute;cil: qu&eacute; explica esta gu&iacute;a</summary><ul><li>La petici&oacute;n individual empieza ante la Comisi&oacute;n Interamericana.</li><li>La Comisi&oacute;n analiza el caso y puede someterlo a la Corte si se cumplen las reglas aplicables.</li><li>La Corte realiza su propio procedimiento y puede dictar una sentencia.</li></ul></details>
     <div class="atlas-search"><label for="atlasSearch">Busca una etapa, una sigla o una pregunta</label><div class="search-row"><input id="atlasSearch" type="search" placeholder="Ej.: admisibilidad, plazo de dos meses, ESAP" autocomplete="off"><button class="button primary" id="atlasSearchGo" type="button">Buscar</button><button class="button secondary" id="atlasSearchClear" type="button" hidden>Limpiar</button></div><div class="search-suggestions" aria-label="B&uacute;squedas de ejemplo"><span>Prueba:</span><button type="button" data-search-example="admisibilidad">admisibilidad</button><button type="button" data-search-example="ESAP">ESAP</button><button type="button" data-search-example="agotamiento">agotamiento</button><button type="button" data-search-example="reparaciones">reparaciones</button></div><div id="searchResults" class="search-results" aria-live="polite" hidden></div><p class="search-hint">Escribe tu pregunta con tus propias palabras. La b&uacute;squeda conecta etapas, plazos, conceptos, casos y fuentes.</p></div>
-    <div class="hero-actions"><a class="button primary" href="#comision">Empezar por la Comisi&oacute;n</a><a class="button secondary" href="#recorrido">Ver las 18 estaciones</a><a class="hero-oas-link" href="#oea">Conocer la OEA</a></div>
+    <div class="hero-actions"><a class="button primary" href="#comision">Empezar por la Comisi&oacute;n</a><a class="button secondary" href="#recorrido">Ver las 18 estaciones</a></div>
     <div class="study-resume" id="studyResume" hidden><div><span class="section-tag">TU AVANCE EN ESTE DISPOSITIVO</span><strong id="studyProgressText"></strong></div><a class="button secondary" id="resumeStudy" href="#recorrido">Retomar</a><button class="study-reset" id="resetStudy" type="button">Borrar avance</button></div>
   </div>
   <p class="hero-route-summary">Una petici&oacute;n no pasa autom&aacute;ticamente a la Corte. <a href="#comision">La Comisi&oacute;n examina el asunto</a> y puede someterlo al tribunal cuando se cumplen las reglas.</p>
   <section class="home-news" aria-labelledby="homeNewsTitle"><div class="home-news-heading"><div><p class="section-tag">PANORAMA · OEA, CIDH Y CORTE</p><h2 id="homeNewsTitle">Lo que ocurre en las Am&eacute;ricas</h2><p>Actividad institucional y actualidad regional, con sus fuentes oficiales.</p></div><a class="home-news-all" href="#actualidad">Ver todas las noticias</a></div><div class="home-news-list" id="homeNews" aria-live="polite"></div></section>
 </section>
-
-<section class="principle-strip" aria-label="Regla clave"><p><strong>Dos órganos, dos momentos.</strong> La admisibilidad no decide si hubo una violación. El informe de fondo de la Comisión no es una sentencia de la Corte.</p><a href="#sistema">Entender la diferencia</a></section>
 
 <section id="oea" data-route-page class="page-section section-block section-alt">
   <div class="section-heading"><div><p class="section-tag">ORGANIZACI&Oacute;N DE LOS ESTADOS AMERICANOS</p><h2>Una organizaci&oacute;n.<br>Cuatro pilares.</h2><p>La OEA re&uacute;ne a los Estados independientes de las Am&eacute;ricas en un foro pol&iacute;tico, jur&iacute;dico y social. Esta p&aacute;gina ubica sus prop&oacute;sitos, su estructura y el lugar del Sistema Interamericano de Derechos Humanos.</p></div><span class="section-index">01</span></div>
@@ -247,6 +245,6 @@
 <script src="assets/glosario.js?v=editorial-7" defer></script>
 <script src="assets/organos.js" defer></script>
 <script src="assets/estados-oea.js" defer></script>
-<script src="assets/app-v26.js" defer></script>
+<script src="assets/app-v27.js" defer></script>
 </body>
 </html>
