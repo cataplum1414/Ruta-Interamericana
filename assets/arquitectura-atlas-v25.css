@@ -1,5 +1,14 @@
 /* Shell editorial homologado con la arquitectura de Atlas ONU; contenido y rutas siguen siendo propios de Atlas OEA. */
 :root{--cyan-soft:#0A6E78;--focus:#0A6E78}
+.glossary-alphabet{display:flex;flex-wrap:wrap;gap:5px;margin:16px 0}
+.glossary-alphabet button{min-width:44px;min-height:44px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer}
+.glossary-alphabet button[aria-pressed="true"]{background:var(--cyan-soft);color:var(--paper);border-color:var(--cyan-soft)}
+.glossary-alphabet button:disabled{opacity:.35;cursor:default}
+.glossary-alphabet button:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.glossary-fulltext{display:flex;align-items:center;gap:10px;min-height:44px}
+.glossary-fulltext input{width:20px;height:20px;accent-color:var(--cyan-soft)}
+#glossaryFilters{display:flex;align-items:center;gap:12px}
+#glossaryCategory{max-width:100%;min-height:44px;padding:8px;background:var(--surface);color:var(--ink);font:inherit;border:1px solid var(--line);border-radius:8px}
 html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
 .nav-group h2{margin:0;padding:14px 12px 7px;color:var(--muted);font-size:13px;font-weight:750;letter-spacing:.025em}
 .nav-group a[aria-current="page"]{border-left-color:var(--cyan);background:color-mix(in srgb,var(--cyan) 12%,var(--panel));font-weight:750}

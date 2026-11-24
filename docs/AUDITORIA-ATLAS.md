@@ -2,7 +2,7 @@
 
 Referencia: [Atlas ONU](https://sukimalabs.com/atlasonu/). Sitio evaluado: [Atlas OEA](https://cataplum1414.github.io/Ruta-Interamericana/).
 
-Se recorrieron por teclado las 22 vistas internas del menú de Atlas ONU y las 18 entradas en español de Atlas OEA en Chromium, a 320 × 740 y 1.200 × 740 px. DIGNITYOS es una salida externa. La guía en inglés de Atlas OEA tiene su propia entrada fuera del menú principal. Al abrir cada vista se comprobó su encabezado y el ancho del documento. Las oportunidades de la tabla son una evaluación de la arquitectura y del propósito de cada pantalla, no resultados de pruebas con usuarios.
+Esta revisión actualiza un inventario anterior y coteja las 23 vistas principales del menú público de Atlas ONU con las 24 rutas del menú de Atlas OEA. Se revisaron el contenido accesible del sitio de referencia, el HTML, estilos y componentes del repositorio OEA y las capturas aportadas. Es una auditoría de arquitectura y código, no una prueba de usabilidad con personas.
 
 | Entrada de Atlas ONU | Equivalente en Atlas OEA | Patrón que conviene trasladar |
 | --- | --- | --- |
@@ -30,6 +30,50 @@ Se recorrieron por teclado las 22 vistas internas del menú de Atlas ONU y las 1
 | DIGNITYOS | Enlace externo | Mantenerlo fuera de la comparación de pantallas. |
 | Descargas | [Datos, calidad y descargas](https://cataplum1414.github.io/Ruta-Interamericana/#datos) | Exporta en JSON los metadatos públicos de jurisprudencia, opiniones y Estados con sus enlaces. |
 | Fuentes y alcance | [Normas y fuentes](https://cataplum1414.github.io/Ruta-Interamericana/#biblioteca) | Conservar autoría y alcance. Diferenciar documento oficial, selección editorial y material de práctica. |
+
+## Segunda pasada: hallazgos por pantalla
+
+La auditoría actualizada el 24-11-2026 compara las 23 vistas principales del menú público de Atlas ONU con las 24 rutas del menú de Atlas OEA. Se contrastaron el menú y el contenido accesible del sitio de referencia, la estructura y los componentes del repositorio OEA y las capturas compartidas por el usuario. El código declara estados de escritorio y móvil; esta auditoría no sustituye una prueba de usabilidad con personas. DIGNITYOS es una iniciativa externa a la materia de Atlas OEA y no se incorpora como contenido. La guía en inglés de OEA sigue siendo una ruta aparte y parcial, no una traducción integral de la plataforma.
+
+La comparación traslada patrones de navegación, explicación, búsqueda, visualización, trazabilidad y transparencia. No traslada datos ni instituciones: cada explicación y fuente debe seguir siendo propia de la OEA y del Sistema Interamericano.
+
+| Vista de Atlas ONU | Equivalente actual en Atlas OEA | Hallazgo de esta pasada |
+| --- | --- | --- |
+| Panorama | `#inicio` | Comparte franja de contexto, lectura fácil, búsqueda y noticias. ONU añade búsqueda con sinónimos y corrección, ejemplos, búsqueda guiada, accesos temáticos y explicación de instalación. OEA debe ordenar la portada por tareas y conectar ejemplos de búsqueda con resultados de varias vistas; mantener el contenido especializado en sus rutas. |
+| Noticias del mundo | `#actualidad` | OEA ofrece filtros por organismo, fecha de revisión y vínculos a contexto interno. ONU incorpora archivo y actualización automatizada. La selección OEA es manual: mostrar siempre fecha de revisión, alcance editorial y fuente original; no presentarla como flujo en vivo. |
+| Cómo se nombra a los expertos | `#elecciones` | OEA compara la elección de CIDH y Corte con sus normas propias. Conservar el recorrido breve por candidaturas, votación, designación y duración del mandato, diferenciando los dos órganos. |
+| Explorar mandatos | `#comision` y `#corte` | La división CIDH/Corte es correcta para no mezclar funciones. La exploración OEA es institucional y procesal, no un catálogo de mandatos temáticos como el de ONU. Conectar cada función con las etapas y documentos que produce. |
+| Relatores y relatoras | `#relatorias` | El directorio temático OEA no replica el inventario de titulares y actos de nombramiento ONU. Mantener claro qué hace una relatoría, qué no decide y cómo se conecta con el procedimiento de peticiones. |
+| Países | `#estados` | La ficha OEA enlaza membresía, hitos y casos incluidos en el Atlas. Debe distinguir miembros actuales, Estados parte de la CADH, aceptación de la Corte y datos que el índice no contiene. No inferir ratificaciones a partir del mapa de membresía. |
+| Mapa del mundo | `#mapa` | El mapa OEA tiene alcance regional, lista accesible, búsqueda, zoom, tres capas y cronología de hitos. ONU añade más indicadores, control temporal por capa y explicación de cada indicador. Homologar leyenda, ficha y acceso por lista; ampliar capas solo con fuente, fecha de corte y significado claro. No copiar escala mundial ni datos exclusivos de ONU. |
+| Seguimiento de recomendaciones | `#seguimiento` | Son procesos distintos: EPU compara recomendaciones entre Estados; OEA debe separar recomendaciones CIDH y reparaciones supervisadas por la Corte. La vista OEA distingue organismos, pero cada ficha debe repetir quién emitió el documento, en qué etapa y qué significa (y no significa) el estado de cumplimiento. |
+| Tratados y comités | `#biblioteca` y `#competencia` | ONU compara tratados, comités, procedimientos y ratificaciones. OEA organiza normas y artículos del Sistema, además del explorador de competencia. Reforzar búsqueda por instrumento, artículo, órgano y etapa, y marcar estados nacionales no cotejados. |
+| Tengo un caso: ¿adónde acudo? | `#orientador` | OEA orienta por momento procesal y lleva a la CIDH o a la Corte. Mantener una pregunta por pantalla, explicar el motivo de cada ruta y advertir que el orientador educativo no determina estrategia para un caso real. |
+| Otros mecanismos | `#sistema` y `#opiniones` | Distinguir petición individual, medidas cautelares, función consultiva y otros mecanismos. La competencia consultiva de la Corte no es una vía para presentar una petición individual. |
+| Arqueología documental | `#jurisprudencia` | La biblioteca OEA es un índice pedagógico de casos y decisiones, no un rastreador documental equivalente. Hacer visible tipo de fuente, ficha oficial, párrafo o tema citado y si el listado es selectivo o exhaustivo. |
+| Cómo funciona la ONU | `#oea` y `#organos` | Atlas OEA explica los cuatro pilares y distingue órganos OEA de la Corte autónoma. Mantener relaciones y dependencia claras; no representar CIDH y Corte como una sola cadena orgánica. |
+| Su historia | `#historia` | La cronología OEA conecta hitos con tratados y procedimiento. Mantener filtros, fuentes por hito y enlaces a la institución o regla relacionada. |
+| Simula una asamblea | `#arcadia` y `#laboratorio` | El caso ficticio y las prácticas OEA entrenan decisiones procesales y lectura jurídica, no una simulación diplomática. Priorizar decisiones con consecuencias explicadas, pistas y retorno a la regla pertinente. |
+| Siglas y códigos | `#diccionario` | La búsqueda y los enlaces contextuales existen, pero faltan términos que aparecen en el procedimiento, escritos, resoluciones, medidas, recomendaciones, jurisprudencia y noticias. La ampliación integral se hará después de cerrar esta auditoría, con sinónimos, explicación, límites, etapa, órgano y fuente oficial. |
+| Recuperar documentos | `#inicio`, `#jurisprudencia` y `#biblioteca` | La búsqueda OEA reconoce preguntas, etapas y referencias; jurisprudencia abre registros y fuentes. Falta un recorrido general que distinga sentencia, resolución, informe, opinión consultiva, escrito y comunicado y explique qué puede verificarse por cada código. |
+| Datos y calidad | `#datos` | OEA ofrece cifras y descargas del Atlas. Reforzar fecha de corte por conjunto, cobertura, fuente, estado de verificación y límites; una cifra del índice no debe sugerir el total histórico de la Corte. |
+| Alertas de verificación | Sin ruta equivalente independiente | OEA no tiene una vista de alertas comparable. Las incertidumbres deben aparecer junto al dato afectado y reunirse también en `#datos`, con fuente oficial y fecha de revisión. |
+| Qué falta y qué viene | `docs/AUDITORIA-ATLAS.md` y `docs/PEDAGOGIA.md` | El registro está en documentación de desarrollo, no en una vista de producto. Decidir qué límites y próximos contenidos conviene exponer al lector. |
+| DIGNITYOS | Sin equivalente; fuera del alcance | No trasladar esta iniciativa a Atlas OEA: tiene otro propósito y distraería del sistema regional. |
+| Descargas de datos | `#datos` | La exportación permite reutilizar el índice del proyecto. Incluir en cada archivo alcance, fecha de generación y fuente. |
+| Fuentes y alcance | `#biblioteca`, `#datos` y pie de página | La atribución está distribuida entre las fichas. Consolidar licencias, autoría, fuentes primarias, límites de cobertura y mecanismo de corrección con la misma claridad editorial. |
+
+## Hallazgos transversales y orden de trabajo
+
+1. **Navegación y presentación:** ambas plataformas usan una ruta por pantalla, menú lateral en escritorio y barra inferior fija en móvil. OEA ya importa el ancho, la tipografía, la cabecera de lectura y estados del menú del shell de Atlas ONU; sus grupos son propios (OEA, ruta interamericana, casos y consulta). El parecido debe verificarse por flujo y legibilidad, no solo por colores. La captura del menú OEA que muestra el subtítulo superpuesto no coincide con el flujo `grid` declarado por el CSS actual; hay que cotejar el despliegue y su caché antes de dar ese defecto por cerrado.
+2. **Idioma:** Atlas ONU ofrece selector multilingüe para el contenido traducido. OEA tiene una guía de procedimiento en inglés, no traducción de las 24 rutas. No presentar un selector como completo hasta revisar también navegación, datos, fuentes, jurisprudencia e interacciones. Mantener explícito el alcance y planear traducciones por módulo.
+3. **Mapa:** se confirma que las capas OEA (membresía, casos citados y cronología de hitos) sí están conectadas al selector `mapLayerSelect` en el archivo activo `map-connections-v6.js`. Las versiones v4/v5 que quedan en `assets/` no son las que importa `index.html` ni almacena el service worker; no deben usarse para diagnosticar el comportamiento publicado. La diferencia de capas responde al alcance regional y a sus fuentes, no a una omisión del selector.
+4. **Procedimiento como eje:** portada, orientador, órganos, 18 estaciones, plazos, escritos, jurisprudencia y diccionario deben llevar al mismo término y al paso siguiente. La vista de plazos debe ordenar actuaciones y documentos con actor, evento inicial, fuente normativa y posibilidad de prórroga o suspensión solo cuando la norma la contemple.
+5. **Transparencia y actualidad:** no copiar automatismos que las fuentes OEA no soporten. Para noticias y datos manuales, hacer visible selección, fecha de verificación y enlace original; distinguir “sin dato” de cero y “no verificado” de ausencia jurídica.
+
+### Resultado de auditoría
+
+La arquitectura base ya es reconocible como una plataforma hermana: rutas independientes, menú agrupado, barra móvil fija, modos de color, contador, mapas, búsqueda, fuentes, ejercicios y contenido centrado en OEA. La brecha principal está en el acabado y la densidad editorial: algunos recorridos no explican de forma consistente para qué sirve cada pantalla, qué debe observarse, qué documento resulta y adónde seguir; falta un mapa más explícito de conexiones; y la transparencia de datos debe estar junto a cada conjunto. Después del inventario, el diccionario se amplió de 48 a 107 fichas interconectadas y validadas. La siguiente pasada debe cerrar las relaciones entre plazos, escritos, informes y recomendaciones y comprobar la presentación en el sitio desplegado.
 
 ## Correcciones derivadas de la revisión
 

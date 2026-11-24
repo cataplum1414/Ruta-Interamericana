@@ -33,7 +33,7 @@ Atlas OEA es un proyecto educativo independiente, editado por Sukima Labs. No es
 
 - Vistas independientes por tema, navegables desde el men&uacute; y con accesos directos a Inicio, OEA, Ruta, Mapa y Men&uacute; en m&oacute;vil.
 - Búsqueda global de etapas, preguntas procesales, decisiones, plazos, fuentes, ejercicios, siglas y conceptos, con ejemplos listos para abrir.
-- Diccionario buscable de siglas y conceptos conectado con las explicaciones, las etapas y las fuentes oficiales.
+- Diccionario buscable con 107 siglas y conceptos, conectado con explicaciones, órganos, etapas, normas y fuentes oficiales; distingue, entre otros, los informes de los artículos 50 y 51, la oportunidad del peticionario, las recomendaciones y las reparaciones.
 - Orientador «¿En qué momento está el caso?» con rutas hacia los pasos relevantes.
 - Recorrido guiado por el procedimiento interamericano con 18 decisiones interactivas y explicaciones inmediatas, filtros por fase y un patrón común: qué pasa, quién actúa, documento, plazo y siguiente paso.
 - La escalera explica el informe del artículo 50, las recomendaciones, su transmisión al Estado y el período de tres meses del artículo 51.1; distingue este período del mes de la posición del peticionario e indica cuándo la CIDH puede considerar suspenderlo bajo el artículo 46 de su Reglamento.
@@ -66,7 +66,7 @@ El modo sin conexión y la instalación requieren servir la guía por `localhost
 
 - `index.html`: estructura y contenido de la guía.
 - `assets/styles-v26.css`: identidad visual, navegación adaptable, vistas móviles y estados accesibles.
-- `assets/app-v39.js`: recorrido, caso, reloj, práctica, búsquedas, contador independiente y enlaces contextuales del diccionario.
+- `assets/app-v41.js`: recorrido, caso, reloj, práctica, búsquedas, contador independiente y enlaces contextuales del diccionario.
 - `assets/map-connections-v4.js`: capas del mapa geográfico y enlaces entre Estados, procedimiento y jurisprudencia.
 - `assets/glosario.js`: siglas y conceptos con explicaciones claras, relaciones internas y fuentes oficiales.
 - `assets/jurisprudencia.js`: referencias jurisprudenciales estructuradas.

@@ -1,4 +1,5 @@
 import {access, readFile} from 'node:fs/promises';
+import vm from 'node:vm';
 
 const html = await readFile('index.html', 'utf8');
 const app = await readFile('assets/app-v41.js', 'utf8');
@@ -6,6 +7,9 @@ const competence = await readFile('assets/competencia-v1.js', 'utf8');
 const deadlineCompare = await readFile('assets/plazos-comparador-v1.js', 'utf8');
 const reasoning = await readFile('assets/razonamiento-v1.js', 'utf8');
 const glossary = await readFile('assets/glosario.js', 'utf8');
+const glossaryContext = {window:{}};
+vm.runInNewContext(glossary, glossaryContext);
+const glossaryEntries = glossaryContext.window.RI_GLOSARIO;
 const styles = await readFile('assets/styles-v26.css', 'utf8');
 const atlasShell = await readFile('assets/arquitectura-atlas-v25.css', 'utf8');
 const orgMapStyles = await readFile('assets/organizacion-mapa.css', 'utf8');
@@ -89,7 +93,7 @@ if (!html.includes('id="protectionMeasuresLab"') || !app.includes('protectionSte
 if (!html.includes('id="petitionerNoticeDate"') || !html.includes('id="reportTransmissionDate"') || !html.includes('id="petitionerNoticeResult"') || !html.includes('id="reportTransmissionResult"') || !deadlineCompare.includes('months: 1') || !deadlineCompare.includes('months: 3') || !deadlineCompare.includes('addCalendarMonths') || !serviceWorker.includes('./assets/plazos-comparador-v1.js')) throw new Error('The two distinct Article 44.3 and 51.1 trigger dates must have separate calendar controls, calculations, and an offline-cached script.');
 if (!app.includes("'<article><header><strong>'+escape(x[0])+'</strong><span>'+escape(deadlineDuration(x))") || !styles.includes('.deadline-list header strong{flex:1 1 auto;min-width:0;overflow-wrap:anywhere')) throw new Error('Deadline titles must stay grouped when glossary terms become inline buttons.');
 if (!app.includes("courtCompetence:{phase:'CORTE IDH'") || !app.includes("stage:14,source:'https://www.oas.org/es/cidh/mandato/basicos/convencion.asp'") || !app.includes("court:['courtCompetence','courtNotification'")) throw new Error('Missing the interactive Court jurisdiction decision.');
-if (!html.includes('assets/styles-v26.css') || !html.includes('assets/arquitectura-atlas-v25.css') || !html.includes('assets/organizacion-mapa.css?v=atlas-oea-9') || !html.includes('assets/glosario.js?v=editorial-9') || !html.includes('assets/app-v41.js') || !html.includes('assets/competencia-v1.js') || !html.includes('assets/audiencia-lab-v1.js') || !serviceWorker.includes('atlas-oea-shell-v110') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/arquitectura-atlas-v25.css') || !serviceWorker.includes('./assets/organizacion-mapa.css?v=atlas-oea-9') || !serviceWorker.includes('./assets/app-v41.js') || !serviceWorker.includes('./assets/competencia-v1.js') || !serviceWorker.includes('./assets/audiencia-lab-v1.js') || !serviceWorker.includes('./assets/razonamiento-v1.js') || !serviceWorker.includes('./assets/map-connections-v6.js') || !styles.includes('.process-overview-summary')) {
+if (!html.includes('assets/styles-v26.css') || !html.includes('assets/arquitectura-atlas-v25.css') || !html.includes('assets/organizacion-mapa.css?v=atlas-oea-9') || !html.includes('assets/glosario.js?v=editorial-10') || !html.includes('assets/app-v41.js') || !html.includes('assets/competencia-v1.js') || !html.includes('assets/audiencia-lab-v1.js') || !serviceWorker.includes('atlas-oea-shell-v111') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/arquitectura-atlas-v25.css') || !serviceWorker.includes('./assets/organizacion-mapa.css?v=atlas-oea-9') || !serviceWorker.includes('./assets/app-v41.js') || !serviceWorker.includes('./assets/competencia-v1.js') || !serviceWorker.includes('./assets/audiencia-lab-v1.js') || !serviceWorker.includes('./assets/razonamiento-v1.js') || !serviceWorker.includes('./assets/map-connections-v6.js') || !styles.includes('.process-overview-summary')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
 }
 
@@ -146,7 +150,7 @@ if (!html.includes('<strong>34</strong> Estados') || !html.includes('Sistema Int
 if (!atlasShell.includes('.side-top{flex:none') || !atlasShell.includes('.side .theme-picker,.side .nav-groups,.side .side-footer{flex:none}') || !atlasShell.includes('.hero-overview #atlasVisitLabel{display:none}')) {
   throw new Error('The drawer header and theme controls must keep their natural height, and the desktop counter should display only one label.');
 }
-if (serviceWorker.includes('ignoreSearch') || !serviceWorker.includes("'./assets/glosario.js?v=editorial-9'") || !serviceWorker.includes("cache:'reload'") || !html.includes("'controllerchange'")) {
+if (serviceWorker.includes('ignoreSearch') || !serviceWorker.includes("'./assets/glosario.js?v=editorial-10'") || !serviceWorker.includes("cache:'reload'") || !html.includes("'controllerchange'")) {
   throw new Error('The offline cache must respect exact asset versions and refresh controlled pages after activation.');
 }
 if (!app.includes('44.3, 45–47 Reglamento CIDH') || !app.includes('un mes para presentar su posici\\u00f3n sobre el posible sometimiento') && !app.includes('un mes para presentar su posición sobre el posible sometimiento') || !stageChecks.includes('¿Quién decide si el caso se somete a la Corte?')) throw new Error('The referral stations must connect the petitioner position under article 44.3 with the CIDH decision.');
@@ -390,7 +394,7 @@ if (!html.includes('id="homeNews"') || !html.includes('href="#actualidad">Ver to
 }
 const newsRecords = app.match(/const newsItems=\[([\s\S]*?)\];let activeNewsOrg=/)?.[1];
 const newsRecordCount = (newsRecords?.match(/\{org:'/g) || []).length;
-if (newsRecordCount !== 10 || (newsRecords.match(/relatedId:/g) || []).length !== newsRecordCount || !html.includes('Selección editorial revisada el 24 de noviembre de 2026')) {
+if (newsRecordCount !== 10 || (newsRecords.match(/relatedId:/g) || []).length !== newsRecordCount || !html.includes('Selección editorial revisada el 24 de noviembre de 2026') || !newsRecords.includes("https://www.oas.org/es/cidh/decisiones/pdf/2026/res-1-26.pdf") || !newsRecords.includes("documentLabel:'Leer la Resolución CIDH 1/26 ↗'") || !glossary.includes("id:'resolucion-supervision'")) {
   throw new Error('Each news item needs a visible review date and a contextual route into the Atlas.');
 }
 for (const id of ['oea', 'comision', 'corte', 'sistema']) {
@@ -414,6 +418,15 @@ if (!app.includes("id!=='remedies'") || !app.includes("caseSim.internalVariant==
 }
 if (!glossary.includes("id:'caracterizacion'") || !glossary.includes('Caracterización de una posible violación') || !glossary.includes('caracterización de los hechos') || !app.includes('caracterización de los hechos')) {
   throw new Error('The admissibility practice must connect initial characterization to a searchable glossary entry.');
+}
+const glossaryIds = glossaryEntries.map(entry => entry.id);
+const glossaryIdSet = new Set(glossaryIds);
+const brokenGlossaryRelations = glossaryEntries.flatMap(entry => entry.related.filter(id => !glossaryIdSet.has(id)).map(id => `${entry.id} -> ${id}`));
+const brokenGlossaryRoutes = glossaryEntries.filter(entry => !idSet.has(entry.section.replace(/^#/, ''))).map(entry => `${entry.id} -> ${entry.section}`);
+const unsourcedGlossary = glossaryEntries.filter(entry => entry.source && !entry.source.startsWith('https://')).map(entry => entry.id);
+const requiredGlossaryConcepts = ['ratione-personae','ratione-temporis','ratione-loci','ratione-materiae','informe-admisibilidad','posicion-peticionario-sometimiento','recomendaciones-vs-reparaciones','prorroga-y-suspension','resolucion-supervision','criterios-sometimiento'];
+if (glossaryEntries.length < 107 || glossaryIds.length !== glossaryIdSet.size || brokenGlossaryRelations.length || brokenGlossaryRoutes.length || unsourcedGlossary.length || requiredGlossaryConcepts.some(id => !glossaryIdSet.has(id))) {
+  throw new Error(`The expanded glossary must contain unique, routed, sourced and connected records. Entries: ${glossaryEntries.length}; broken relations: ${brokenGlossaryRelations.join(', ')}; broken routes: ${brokenGlossaryRoutes.join(', ')}; unsourced: ${unsourcedGlossary.join(', ')}.`);
 }
 if (!manifest.start_url || !manifest.scope || !serviceWorker.includes("'./index.html'")) {
   throw new Error('PWA start page or offline shell is incomplete.');

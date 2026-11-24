@@ -28,6 +28,7 @@ jobs:
           node --check sw.js
           node scripts/validate-site.mjs
           node scripts/test-deadline-clock.mjs
+          node scripts/test-glossary-search.mjs
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
         with:
