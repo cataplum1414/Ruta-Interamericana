@@ -4,7 +4,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento contencioso · Responsabilidad estatal · Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=274",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Acevedo Jaramillo y otros vs. Perú",
@@ -53,7 +54,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento del caso · Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=196",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Baena Ricardo y otros vs. Panamá",
@@ -88,7 +90,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal · Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=267",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Beatriz y otros vs. El Salvador",
@@ -424,7 +427,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=347",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Guachalá Chimbo y otros vs. Ecuador",
@@ -753,7 +757,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones · Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=189",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Vera Vera y otra vs. Ecuador",
@@ -767,7 +772,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=341",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Vélez Restrepo y familiares vs. Colombia",

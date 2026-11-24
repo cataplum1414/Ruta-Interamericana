@@ -57,6 +57,26 @@ const routeCount = (html.match(/data-route-page/g) || []).length;
 if (routeCount < 17 || !html.includes('href="#oea"') || !html.includes('href="#organos"') || !html.includes('href="#mapa"') || !html.includes('href="#comision"') || !html.includes('href="#corte"') || !html.includes('href="#sistema"') || !html.includes('href="#opiniones"') || !html.includes('href="#actualidad"')) {
   throw new Error('The 17 menu-driven pages, separate CIDH and Court pages, OEA organ and member maps, bridge page, cases, advisory opinions, and news pages must be present.');
 }
+
+const jurisprudencia = await readFile('assets/jurisprudencia.js', 'utf8');
+const jurisprudenciaRows = JSON.parse(jurisprudencia.replace(/^window\.RI_JURISPRUDENCIA=/, '').replace(/;\s*$/, ''));
+const featuredSheets = [
+  ['19 Comerciantes vs. Colombia', 274],
+  ['Atala Riffo y niñas vs. Chile', 196],
+  ['Barrios Altos vs. Perú', 267],
+  ['González y otras (“Campo Algodonero”) vs. México', 347],
+  ['Velásquez Rodríguez vs. Honduras', 189],
+  ['Vélez Loor vs. Panamá', 341]
+];
+for (const [title, ficha] of featuredSheets) {
+  const row = jurisprudenciaRows.find(item => item.title === title);
+  if (!row?.url.includes(`nId_Ficha=${ficha}`)) {
+    throw new Error(`The selected case index needs the verified official technical sheet ${ficha} for ${title}.`);
+  }
+}
+if (!styles.includes('.nav-group a[aria-current="page"]') || !styles.includes('.mobile-bar a[aria-current="page"]')) {
+  throw new Error('Navigation needs a visible active-page state for current-page links.');
+}
 const currentStates = [...stateData.matchAll(/\['([A-Z]{3})','([^']+)','([^']+)'\]/g)];
 const organIds = [...organData.matchAll(/\{id:'([a-z]+)'/g)].map(match => match[1]);
 const mapCodes = new Set([...regionalMap.matchAll(/data-code="([A-Z]{3})"/g)].map(match => match[1]));

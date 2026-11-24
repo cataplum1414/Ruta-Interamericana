@@ -4,6 +4,8 @@
 
 Atlas OEA explica primero qué es la OEA y cómo se organiza; dentro de ese marco, desarrolla el Sistema Interamericano de Derechos Humanos y separa el trabajo de la Comisión del de la Corte. La arquitectura toma de Atlas ONU sus páginas temáticas, navegación persistente, glosario conectado, mapa accesible, fuentes oficiales y práctica integrada. La aplicación debe enseñar cómo se razona en una secuencia, no presentar una pared de texto.
 
+La navegación mantiene esa familia visual: panel lateral agrupado en escritorio, menú lateral en móvil, accesos inferiores fijos y selección visible de la pantalla actual. Se conserva la tipografía DejaVu Sans, los colores de Sukima y los dos modos de color; las etiquetas y el orden de los temas se adaptan a OEA, CIDH y Corte para que la estructura compartida no mezcle sus funciones.
+
 ## Material docente revisado localmente
 
 La agenda y los materiales de curso organizan una secuencia concentrada en: introducción y litigio ante la Corte; estructura y procedimiento de la Corte; competencia y admisibilidad; forma de la petición; obligaciones estatales; reparaciones; y ejercicios de fondo, reparaciones y audiencia. El caso académico de Arcadia permite aplicar esas reglas, mientras las lecturas y normas aportan jurisprudencia y reglas procesales.
@@ -46,6 +48,8 @@ Estos repositorios son referencias de interacción, no autoridades jurídicas. L
 La simulación de caso ahora conserva un historial visual por sesión: cada respuesta queda marcada como correcta o pendiente de repaso; se puede regresar a una decisión contestada, leer otra vez su explicación y cambiarla; el cierre indica el resultado y enlaza cada error con el punto exacto que se puede revisar. La pantalla no bloquea el aprendizaje por fallar: invita a intentarlo de nuevo y deja visible la explicación jurídica.
 
 Las 18 estaciones incorporan ahora dos pistas progresivas, solicitadas de forma voluntaria. La primera orienta hacia la pregunta jurídica; la segunda ayuda a localizar la distinción o regla relevante. La respuesta y su fundamento aparecen al contestar, y el avance sigue guardándose solo en el dispositivo.
+
+La pantalla de jurisprudencia ya abre fichas técnicas de la Corte IDH para seis decisiones de referencia: [19 Comerciantes](https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?nId_Ficha=274&lang=es), [Atala Riffo](https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?nId_Ficha=196&lang=es), [Barrios Altos](https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?nId_Ficha=267&lang=es), [Campo Algodonero](https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?nId_Ficha=347&lang=es), [Velásquez Rodríguez](https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?nId_Ficha=189&lang=es) y [Vélez Loor](https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?nId_Ficha=341&lang=es). Los identificadores se guardan explícitamente: no se deducen de los números de Serie C. El catálogo todavía requiere revisar los enlaces genéricos caso por caso; no se encontró un mecanismo oficial documentado para resolver los 123 registros en lote.
 
 El registro existe solo en memoria durante la sesión, no crea perfiles ni envía respuestas. La ruta conserva su orden procesal: la interacción ayuda a explorar, pero no altera la regla ni afirma que la elección del estudiante modifique el procedimiento real.
 
