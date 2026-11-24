@@ -348,14 +348,16 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento contencioso",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=377",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "de las Masacres de Ituango vs. Colombia",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento contencioso",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=330",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "de los Hermanos Gómez Paquiyauri vs. Perú",
@@ -518,7 +520,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=247",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Herrera Ulloa vs. Costa Rica",
