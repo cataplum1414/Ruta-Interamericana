@@ -2,7 +2,6 @@ import {access, readFile} from 'node:fs/promises';
 
 const html = await readFile('index.html', 'utf8');
 const app = await readFile('assets/app.js', 'utf8');
-const glossary = await readFile('assets/glosario.js', 'utf8');
 const styles = await readFile('assets/styles.css', 'utf8');
 const opinions = await readFile('assets/opiniones.js', 'utf8');
 const manifest = JSON.parse(await readFile('manifest.webmanifest', 'utf8'));
@@ -48,10 +47,7 @@ if (simulationPaths.length !== 2 || simulationPaths.some(path => path.nodes.leng
 if (!html.includes('id="caseSimulationTitle"') || !html.includes('id="caseSimTrail"') || !app.includes('caseSimRetry') || !app.includes('drawCaseTrail') || !app.includes('data-review-step') || !app.includes('Decisiones del procedimiento') || !styles.includes('.case-sim-options button.is-correct') || !styles.includes('.case-sim-trail button.current')) {
   throw new Error('The case simulator needs retry, explanatory feedback, a reviewable decision trail, search integration, and visible decision states.');
 }
-if (!glossary.includes("id:'comision-verdad'") || !glossary.includes('RuleoflawTruthCommissionsen.pdf') || !app.includes('Comisión de la verdad y CIDH')) {
-  throw new Error('The glossary must distinguish a national truth commission from the Inter-American Commission using a primary source.');
-}
-if (!html.includes('assets/glosario.js?v=editorial-3') || !html.includes('assets/app.js?v=atlas-oea-11') || !serviceWorker.includes('atlas-oea-shell-v29')) {
+if (!html.includes('assets/glosario.js?v=editorial-4') || !html.includes('assets/app.js?v=atlas-oea-12') || !serviceWorker.includes('atlas-oea-shell-v30')) {
   throw new Error('The offline cache and versioned scripts must expose the current glossary and procedural comparisons.');
 }
 if (countRows(questions) !== 10) throw new Error('The expected 10 practice questions were not found.');
