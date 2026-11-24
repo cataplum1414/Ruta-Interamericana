@@ -168,3 +168,12 @@ html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
 .juris-connection a{display:block;margin-top:3px;font-size:12px}
 .juris-card>a[target="_blank"]{grid-column:4;grid-row:2;align-self:end}
 @media(max-width:760px){.juris-connection{grid-column:1 / -1;grid-row:4;margin:0}.juris-card>a[target="_blank"]{grid-column:1 / -1;grid-row:5;justify-self:start}}
+
+.case-sim-variant{margin:0 0 18px;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--surface-soft,rgba(127,140,160,.08))}
+.case-sim-variant legend{padding:0 5px;font-weight:750;color:var(--text)}
+.case-sim-variant>p{margin:2px 0 10px;color:var(--muted);font-size:.9rem;line-height:1.45}
+.case-sim-variant>div{display:flex;flex-wrap:wrap;gap:8px}
+.case-sim-variant button{min-height:42px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--text);font:inherit;font-size:.9rem;cursor:pointer}
+.case-sim-variant button[aria-pressed="true"]{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,var(--surface));box-shadow:inset 0 0 0 1px var(--accent)}
+.case-sim-variant button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media(max-width:520px){.case-sim-variant>div{display:grid;grid-template-columns:1fr}.case-sim-variant button{text-align:left}}
