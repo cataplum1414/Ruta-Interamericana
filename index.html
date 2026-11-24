@@ -189,6 +189,14 @@
   <div class="section-heading"><div><p class="section-tag">PLAZOS Y ESCRITOS</p><h2>¿Qué reloj está<br>corriendo?</h2><p>Un plazo empieza por un acto procesal concreto: una decisión, una notificación, un traslado o la recepción de un escrito. Distingue el plazo para actuar del tiempo que tarda todo el procedimiento.</p></div><span class="section-index">08</span></div>
   <div class="clock"><div class="clock-inputs"><label for="clockRule">Selecciona la actuación</label><select id="clockRule"></select><label for="clockStart">Fecha del acto que activa el plazo</label><input id="clockStart" type="date" value="2026-11-23"><button id="clockGo" class="button primary" type="button">Ver cálculo orientativo</button><p class="small muted">Herramienta de aprendizaje. Usa días naturales y meses calendario como aproximación; no resuelve notificaciones, suspensiones, prórrogas ni reglas especiales. No calcula vencimientos reales.</p></div><div class="clock-result" aria-live="polite"><p class="section-tag">RESULTADO ORIENTATIVO</p><strong id="clockDate">—</strong><h3 id="clockTitle"></h3><p id="clockExplanation"></p><p class="clock-authority" id="clockAuthority"></p></div></div>
   <div class="deadline-list" id="deadlineList"></div>
+  <section class="clock-compare" aria-labelledby="clockCompareTitle">
+    <div class="clock-compare-heading"><p class="section-tag">DOS ACTOS, DOS RELOJES</p><h3 id="clockCompareTitle">¿Qué fecha activa cada plazo?</h3><p>La oportunidad del peticionario para opinar sobre el sometimiento y el período del artículo 51.1 de la Convención no empiezan necesariamente el mismo día. Introduce cada fecha por separado.</p></div>
+    <div class="clock-compare-grid">
+      <article class="clock-compare-card"><label for="petitionerNoticeDate">1 · Notificación al peticionario</label><p>Fecha de notificación para presentar su posición sobre el posible sometimiento del caso a la Corte.</p><input id="petitionerNoticeDate" type="date"><output id="petitionerNoticeResult" aria-live="polite">Elige una fecha para ver la referencia orientativa de un mes.</output><a href="https://www.oas.org/es/cidh/jsForm/?File=%2Fes%2Fcidh%2Fmandato%2Fbasicos%2Freglamentocidh.asp" target="_blank" rel="noopener noreferrer">Reglamento CIDH, artículo 44.3 ↗</a></article>
+      <article class="clock-compare-card"><label for="reportTransmissionDate">2 · Remisión del informe a los Estados</label><p>Fecha desde la que el artículo 51.1 cuenta el período previsto para que el asunto se solucione o llegue a la Corte.</p><input id="reportTransmissionDate" type="date"><output id="reportTransmissionResult" aria-live="polite">Elige una fecha para ver la referencia orientativa de tres meses.</output><a href="https://www.oas.org/es/cidh/mandato/documentos-basicos/convencion-americana-derechos-humanos.pdf" target="_blank" rel="noopener noreferrer">Convención Americana, artículo 51.1 ↗</a></article>
+    </div>
+    <p class="clock-compare-note">Son referencias de calendario para aprender a identificar el acto inicial; no determinan un vencimiento jurídico. Verifica la notificación, el expediente, las reglas aplicables y cualquier suspensión o circunstancia especial.</p>
+  </section>
   <details class="method-note"><summary>Cómo leer un plazo</summary><p>Localiza la regla aplicable, identifica el acto inicial que el texto nombra, comprueba la fecha de notificación o recepción y revisa si existe una excepción. El mismo número de días puede empezar a correr en fechas distintas para partes diferentes.</p></details>
 </section>
 
@@ -296,5 +304,6 @@
 <script src="assets/app-v40.js" defer></script>
 <script src="assets/razonamiento-v1.js" defer></script>
 <script src="assets/map-connections-v6.js" defer></script>
+<script src="assets/plazos-comparador-v1.js" defer></script>
 </body>
 </html>

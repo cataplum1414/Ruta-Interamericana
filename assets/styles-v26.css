@@ -201,6 +201,10 @@ h1 span{color:var(--cyan-soft)}
 .clock-result h3{margin-bottom:8px;font-size:20px}
 .clock-result p:not(.section-tag){color:var(--muted);font-size:13px}
 .clock-authority{padding-top:12px;border-top:1px solid var(--line);font-size:13px!important}
+.clock-compare{max-width:var(--content);margin:28px auto 0;padding:clamp(20px,4vw,34px);background:var(--panel);border:1px solid var(--line)}
+.clock-compare-heading{max-width:760px;margin-bottom:20px}.clock-compare-heading h3{margin:0 0 9px;font-size:clamp(22px,3vw,30px)}.clock-compare-heading>p:last-child,.clock-compare-card p,.clock-compare-note{color:var(--muted);font-size:14px;line-height:1.65}
+.clock-compare-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.clock-compare-card{display:flex;flex-direction:column;gap:8px;padding:19px;background:var(--panel-raised);border:1px solid var(--line)}.clock-compare-card label{font-size:15px;font-weight:800}.clock-compare-card p{margin:0;min-height:68px}.clock-compare-card input{width:100%;min-height:47px;padding:10px 12px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink)}.clock-compare-card output{min-height:45px;color:var(--cyan-soft);font-size:15px;font-weight:750;line-height:1.5}.clock-compare-card a{margin-top:auto;font-size:13px;font-weight:750}.clock-compare-note{margin:16px 0 0;font-size:12px}
+@media(max-width:620px){.clock-compare-grid{grid-template-columns:1fr}.clock-compare-card p{min-height:0}}
 .deadline-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}
 .deadline-list article{padding:16px;background:var(--panel);border:1px solid var(--line)}
 .deadline-list header{display:flex;justify-content:space-between;gap:12px;font-size:13px;font-weight:750}

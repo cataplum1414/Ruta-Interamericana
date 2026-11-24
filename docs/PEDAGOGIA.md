@@ -68,6 +68,8 @@ El registro existe solo en memoria durante la sesión, no crea perfiles ni enví
 
 El expediente Arcadia incluye un mapa de razonamiento desplegable. Seis preguntas conectan hechos, obligaciones, conducta estatal, evidencia, daño y reparación. El estudiante elige una respuesta por relación, recibe explicación y abre la norma o decisión oficial. La vista aclara que la secuencia sirve para organizar argumentos y no es una prueba automática de responsabilidad; las respuestas se conservan solo mientras la página permanece abierta.
 
+El comparador de plazos de la etapa final de la CIDH separa dos fechas que no deben confundirse: la notificación al peticionario para que presente su posición sobre el sometimiento del caso (art. 44.3 del Reglamento) y la remisión del informe a los Estados, que activa la referencia del artículo 51.1 de la Convención. Cada fecha tiene su propio campo y enlace oficial. El resultado es un cálculo de calendario para aprender a reconocer el acto inicial; no determina vencimientos procesales.
+
 ## Próximas piezas prioritarias
 
 1. Mapa de relaciones entre OEA, órganos políticos, CIDH y Corte, con capas activables y una alternativa en lista.
