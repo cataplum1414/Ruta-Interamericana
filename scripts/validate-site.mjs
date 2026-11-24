@@ -6,6 +6,9 @@ const styles = await readFile('assets/styles.css', 'utf8');
 const opinions = await readFile('assets/opiniones.js', 'utf8');
 const manifest = JSON.parse(await readFile('manifest.webmanifest', 'utf8'));
 const serviceWorker = await readFile('sw.js', 'utf8');
+const organData = await readFile('assets/organos.js', 'utf8');
+const stateData = await readFile('assets/estados-oea.js', 'utf8');
+const regionalMap = await readFile('assets/mapa-americas.svg', 'utf8');
 
 const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
 const idSet = new Set(ids);
@@ -47,8 +50,20 @@ if (opinionCount !== 32 || opinionNumbers.some((number, index) => number !== ind
   throw new Error(`Expected each issued advisory opinion from OC-1 to OC-32 exactly once; found ${opinionNumbers.join(', ')}.`);
 }
 const routeCount = (html.match(/data-route-page/g) || []).length;
-if (routeCount < 15 || !html.includes('href="#oea"') || !html.includes('href="#comision"') || !html.includes('href="#corte"') || !html.includes('href="#sistema"') || !html.includes('href="#opiniones"') || !html.includes('href="#actualidad"')) {
-  throw new Error('The 15 menu-driven pages, separate CIDH and Court pages, bridge page, cases, advisory opinions, and news pages must be present.');
+if (routeCount < 17 || !html.includes('href="#oea"') || !html.includes('href="#organos"') || !html.includes('href="#mapa"') || !html.includes('href="#comision"') || !html.includes('href="#corte"') || !html.includes('href="#sistema"') || !html.includes('href="#opiniones"') || !html.includes('href="#actualidad"')) {
+  throw new Error('The 17 menu-driven pages, separate CIDH and Court pages, OEA organ and member maps, bridge page, cases, advisory opinions, and news pages must be present.');
+}
+const currentStates = [...stateData.matchAll(/\['([A-Z]{3})','([^']+)','([^']+)'\]/g)];
+const organIds = [...organData.matchAll(/\{id:'([a-z]+)'/g)].map(match => match[1]);
+const mapCodes = new Set([...regionalMap.matchAll(/data-code="([A-Z]{3})"/g)].map(match => match[1]));
+if (currentStates.length !== 34 || new Set(currentStates.map(row => row[1])).size !== 34 || currentStates.some(row => !mapCodes.has(row[1])) || !stateData.includes("code:'NIC'") || !mapCodes.has('NIC') || organIds.length !== 10 || !organIds.includes('cidh') || !organIds.includes('corte')) {
+  throw new Error(`Expected 34 current OAS member states, Nicaragua's withdrawal record, and 10 distinct institutional profiles; found ${currentStates.length} states and ${organIds.length} organs.`);
+}
+if (!html.includes('id="organDetail"') || !html.includes('id="oasMapCanvas"') || !html.includes('id="mapMemberList"') || !html.includes('id="mapSearchResults"') || !html.includes('id="mapZoomIn"') || !regionalMap.includes('data-status="member"') || !serviceWorker.includes("'./assets/mapa-americas.svg'")) {
+  throw new Error('The interactive organization explorer and offline Americas member map must be present.');
+}
+if (!html.includes('34 Estados miembros') || !html.includes('Nicaragua dej&oacute; de ser Estado parte') || !html.includes('data-mobile-section="mapa"')) {
+  throw new Error('The Atlas must explain current membership, Nicaragua’s 2023 withdrawal, and provide a fixed mobile map shortcut.');
 }
 const routeMap = html.match(/<div class="route-line">([\s\S]*?)<\/div>/)?.[1] || '';
 const routeStops = [...routeMap.matchAll(/<span class="route-stop"><b>\d+<\/b><small>([\s\S]*?)<\/small><\/span>/g)];
@@ -81,4 +96,4 @@ const cachedFiles = [...serviceWorker.matchAll(/'\.(\/[^']+)'/g)]
   .filter(path => path !== '/');
 for (const file of cachedFiles) await access(file.slice(1));
 
-console.log(`Validated ${ids.length} unique page ids, ${routeCount} route pages, ${opinionCount} advisory opinions, 18 procedural stations with decision checks, 10 practice questions, and ${cachedFiles.length} offline assets.`);
+console.log(`Validated ${ids.length} unique page ids, ${routeCount} route pages, 34 OAS member states, 10 interactive organ profiles, the Americas map, ${opinionCount} advisory opinions, 18 procedural stations, 10 practice questions, and ${cachedFiles.length} offline assets.`);

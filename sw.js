@@ -1,13 +1,17 @@
-const CACHE_NAME = 'atlas-oea-shell-v3';
+const CACHE_NAME = 'atlas-oea-shell-v4';
 const APP_SHELL = [
   './',
   './index.html',
   './manifest.webmanifest',
   './assets/styles.css',
+  './assets/organizacion-mapa.css',
   './assets/app.js',
   './assets/glosario.js',
   './assets/jurisprudencia.js',
   './assets/opiniones.js',
+  './assets/organos.js',
+  './assets/estados-oea.js',
+  './assets/mapa-americas.svg',
   './assets/brand/dejavu-sans-regular.woff2',
   './assets/brand/dejavu-sans-bold.woff2',
   './assets/brand/isotipo_color.svg',

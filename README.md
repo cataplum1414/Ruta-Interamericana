@@ -13,17 +13,21 @@ Atlas OEA es un proyecto educativo independiente, editado por Sukima Labs. No es
 
 1. Sigue las 18 estaciones para entender qué ocurre desde los hechos y los recursos internos hasta la supervisión de cumplimiento.
 2. En cada estación revisa el objetivo, el documento o resultado esperado y el paso que sigue.
-3. Consulta el mapa para distinguir las funciones de la CIDH y la Corte IDH.
-4. Usa el reloj de plazos como orientación y verifica cada término en la norma aplicable.
-5. Explora el caso ficticio de Emilio Acosta vs. Arcadia y practica con preguntas explicadas.
-6. Busca en la biblioteca de jurisprudencia por nombre, país o tema y abre la fuente oficial disponible.
-7. Busca siglas y conceptos en el diccionario; también puedes tocar los términos subrayados para abrir su explicación y seguir los enlaces relacionados.
-8. Marca las estaciones que ya estudiaste. La guía recuerda tu última estación y tu avance en este navegador, sin crear una cuenta.
-9. En un navegador compatible, abre el menú para instalar la guía. Tras la primera carga, el contenido y los ejercicios disponibles se pueden consultar sin conexión; las fuentes oficiales externas requieren internet.
+3. Explora el mapa de &oacute;rganos para ver qu&eacute; hace cada uno y distinguir la CIDH de la Corte IDH.
+4. Usa el mapa geogr&aacute;fico para localizar los Estados, revisar su membres&iacute;a y abrir la ficha de pa&iacute;s.
+5. Usa el reloj de plazos como orientación y verifica cada término en la norma aplicable.
+6. Explora el caso ficticio de Emilio Acosta vs. Arcadia y practica con preguntas explicadas.
+7. Busca en la biblioteca de jurisprudencia por nombre, país o tema y abre la fuente oficial disponible.
+8. Busca siglas y conceptos en el diccionario; también puedes tocar los términos subrayados para abrir su explicación y seguir los enlaces relacionados.
+9. Marca las estaciones que ya estudiaste. La guía recuerda tu última estación y tu avance en este navegador, sin crear una cuenta.
+10. En un navegador compatible, abre el menú para instalar la guía. Tras la primera carga, el contenido y los ejercicios disponibles se pueden consultar sin conexión; las fuentes oficiales externas requieren internet.
 
 ## Contenido
 
-- Vistas independientes por tema, navegables desde el menú y con accesos directos a Ruta, Casos y Opiniones en móvil.
+- Mapa institucional interactivo para explorar los &oacute;rganos de la OEA y distinguir la CIDH de la Corte aut&oacute;noma.
+- Mapa geogr&aacute;fico con b&uacute;squeda, zoom, lista accesible, 34 Estados miembros actuales y Nicaragua como antiguo Estado parte desde el 19 de noviembre de 2023.
+
+- Vistas independientes por tema, navegables desde el men&uacute; y con accesos directos a Inicio, OEA, Ruta, Mapa y Men&uacute; en m&oacute;vil.
 - Búsqueda global de etapas, preguntas procesales, decisiones, plazos, fuentes, ejercicios, siglas y conceptos, con ejemplos listos para abrir.
 - Diccionario buscable de siglas y conceptos conectado con las explicaciones, las etapas y las fuentes oficiales.
 - Orientador «¿En qué momento está el caso?» con rutas hacia los pasos relevantes.
@@ -40,7 +44,7 @@ La cronología del caso Arcadia identifica sus discrepancias internas y no inven
 
 ## Ejecutar localmente
 
-No requiere compilación ni dependencias. Abre `index.html` o ejecuta:
+No requiere compilaci&oacute;n ni dependencias. Para cargar el mapa interactivo y habilitar el modo sin conexi&oacute;n, sirve la gu&iacute;a por HTTP:
 
 ```sh
 python3 -m http.server 8000
