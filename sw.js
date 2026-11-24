@@ -1,4 +1,4 @@
-const CACHE_NAME = 'atlas-oea-shell-v113';
+const CACHE_NAME = 'atlas-oea-shell-v114';
 const APP_SHELL = [
   './',
   './index.html',
@@ -9,6 +9,8 @@ const APP_SHELL = [
   './assets/app-v41.js',
   './assets/competencia-v1.js',
   './assets/pedagogia-v1.js',
+  './assets/historia-v1.js',
+  './assets/familia-atlas-v1.js',
   './assets/guia-metodologica-v1.js',
   './assets/audiencia-lab-v1.js',
   './assets/razonamiento-v1.js',

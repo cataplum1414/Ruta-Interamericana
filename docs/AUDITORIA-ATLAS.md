@@ -85,3 +85,5 @@ La arquitectura base ya es reconocible como una plataforma hermana: rutas indepe
 ## Implementación posterior
 
 La [matriz de traslado y estado actual](SEGUIMIENTO-AUDITORIA-2026-11-24.md) identifica la fuente de Atlas ONU, los patrones reutilizados y las diferencias deliberadas por materia. Esta auditoría comparativa se conserva como diagnóstico; no certifica identidad visual entre todas las pantallas ni equivalencia de datos o mecanismos.
+
+La revisión visual y de interacción posterior se registra en [Homologación de la familia Atlas](HOMOLOGACION-FAMILIA-ATLAS.md), con cambios de marco comunes a todas las rutas y nuevo explorador histórico.

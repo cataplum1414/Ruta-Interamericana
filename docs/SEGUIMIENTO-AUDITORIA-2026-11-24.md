@@ -95,3 +95,7 @@ La familia visual, fuentes locales, navegación por páginas, menú lateral, bar
 - [Registro B-32](https://www.oas.org/dil/esp/tratados_B-32_Convencion_Americana_sobre_Derechos_Humanos_firmas.htm), actos estatales; la descripción del mapa no sustituye su lectura por período.
 
 No se certifica que las demás fuentes del índice hayan sido abiertas y cotejadas íntegramente. Las citas verificadas focalmente no convierten en verificado todo un expediente.
+
+## Revisión posterior del marco de pantallas
+
+Ver [Homologación de la familia Atlas](HOMOLOGACION-FAMILIA-ATLAS.md). Corrige la posición del pie, unifica el marco y añade exploración histórica. No cierra por sí sola los cotejos jurídicos pendientes de esta matriz.

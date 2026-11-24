@@ -25,6 +25,8 @@ jobs:
           node --check assets/glosario.js
           node --check assets/jurisprudencia.js
           node --check assets/opiniones.js
+          node --check assets/historia-v1.js
+          node --check assets/familia-atlas-v1.js
           node --check sw.js
           node scripts/validate-site.mjs
           node scripts/test-deadline-clock.mjs

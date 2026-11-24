@@ -132,3 +132,9 @@ node scripts/test-methodology.mjs
 ```
 
 Con un servidor HTTP activo, Playwright y Chromium disponibles externamente, `node scripts/browser-methodology.cjs` prueba navegación de las 25 vistas, contexto del explorador, niveles, ejercicios y exportación en 390 y 1280 px. Configuración opcional: `ATLAS_PLAYWRIGHT_MODULE`, `ATLAS_CHROMIUM_PATH` y `ATLAS_TEST_URL`. No se añaden dependencias al sitio estático.
+
+## Marco compartido de la familia Atlas
+
+La [homologación de pantallas](docs/HOMOLOGACION-FAMILIA-ATLAS.md) registra el contraste con los 23 destinos del menú de Atlas ONU y los patrones aplicados a las 25 rutas OEA. Incluye un marco común de lectura, contexto, títulos, controles y pie; exploración de Historia por búsqueda, período, tema y año; recorrido por hitos con teclado; y búsqueda de Noticias combinada con órgano.
+
+Los siete hitos históricos se conservan con sus fuentes. La guía inglesa es parcial; no se anuncia una traducción de toda la plataforma. Para comprobar estructura y flujos del marco común, con Chromium y Playwright externos disponibles, ejecutar `node scripts/browser-family.cjs` con las mismas variables de entorno descritas arriba. Prueba 360, 390 y 1440 px en claro y oscuro.
