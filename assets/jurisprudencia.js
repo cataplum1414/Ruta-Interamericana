@@ -806,7 +806,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=358",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Valle Jaramillo vs. Colombia",
@@ -827,7 +828,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=384",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Velásquez Rodríguez vs. Honduras",
@@ -873,7 +875,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento contencioso",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=431",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Yatama vs. Nicaragua",
