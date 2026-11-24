@@ -58,7 +58,7 @@ El modo sin conexión y la instalación requieren servir la guía por `localhost
 ## Archivos principales
 
 - `index.html`: estructura y contenido de la guía.
-- `assets/styles-v20.css`: identidad visual, navegación adaptable, vistas móviles y estados accesibles.
+- `assets/styles-v21.css`: identidad visual, navegación adaptable, vistas móviles y estados accesibles.
 - `assets/app-v34.js`: recorrido, caso, reloj, práctica, búsquedas, contador independiente y enlaces contextuales del diccionario.
 - `assets/glosario.js`: siglas y conceptos con explicaciones claras, relaciones internas y fuentes oficiales.
 - `assets/jurisprudencia.js`: referencias jurisprudenciales estructuradas.

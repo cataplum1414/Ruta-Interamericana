@@ -3,7 +3,7 @@ import {access, readFile} from 'node:fs/promises';
 const html = await readFile('index.html', 'utf8');
 const app = await readFile('assets/app-v34.js', 'utf8');
 const glossary = await readFile('assets/glosario.js', 'utf8');
-const styles = await readFile('assets/styles-v20.css', 'utf8');
+const styles = await readFile('assets/styles-v21.css', 'utf8');
 const opinions = await readFile('assets/opiniones.js', 'utf8');
 const manifest = JSON.parse(await readFile('manifest.webmanifest', 'utf8'));
 const serviceWorker = await readFile('sw.js', 'utf8');
@@ -67,9 +67,9 @@ if (!glossary.includes("id:'comunicacion-interestatal'") || !glossary.includes('
 }
 const protectionExercise = app.match(/const protectionSteps=\[([\s\S]*?)\r?\n\];/)?.[1];
 if ((protectionExercise?.match(/\{prompt:/g)||[]).length !== 3 || (protectionExercise?.match(/source:'https:\/\//g)||[]).length !== 3) throw new Error('The urgent-protection practice needs three sourced procedural decisions.');
-if (!html.includes('id="protectionMeasuresLab"') || !app.includes('protectionSteps') || !app.includes('art\\u00edculo 25') || !app.includes('27.3') || !app.includes('dataset.result') || !serviceWorker.includes('./assets/styles-v20.css')) throw new Error('The optional urgent-protection practice must compare CIDH and Court routes with official rules and a cached stylesheet.');
+if (!html.includes('id="protectionMeasuresLab"') || !app.includes('protectionSteps') || !app.includes('art\\u00edculo 25') || !app.includes('27.3') || !app.includes('dataset.result') || !serviceWorker.includes('./assets/styles-v21.css')) throw new Error('The optional urgent-protection practice must compare CIDH and Court routes with official rules and a cached stylesheet.');
 if (!app.includes("courtCompetence:{phase:'CORTE IDH'") || !app.includes("stage:14,source:'https://www.oas.org/es/cidh/mandato/basicos/convencion.asp'") || !app.includes("court:['courtCompetence','courtNotification'")) throw new Error('Missing the interactive Court jurisdiction decision.');
-if (!html.includes('assets/styles-v20.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v34.js') || !serviceWorker.includes('atlas-oea-shell-v56') || !serviceWorker.includes('./assets/styles-v20.css') || !serviceWorker.includes('./assets/app-v34.js')) {
+if (!html.includes('assets/styles-v21.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v34.js') || !serviceWorker.includes('atlas-oea-shell-v57') || !serviceWorker.includes('./assets/styles-v21.css') || !serviceWorker.includes('./assets/app-v34.js')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
 }
 if (!html.includes('id="atlasVisitCount" data-counter-state="pending"') || !html.includes('id="atlasVisitLabel"') || !app.includes("https://counterapi.com/api/cataplum1414.github.io/view/atlas-oea-home-v2") || !app.includes("referrerPolicy:'no-referrer'") || !app.includes('12*60*60*1000') || !app.includes('new URLSearchParams(location.search).has(\'sinvisita\')') || !app.includes('readOnly=true') || !app.includes("output.dataset.counterState='loading'") || !app.includes("output.dataset.counterState='ready'") || !app.includes("output.dataset.counterState='unavailable'") || !app.includes("value===1?'visita':'visitas'")) {
