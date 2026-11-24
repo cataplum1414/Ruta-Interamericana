@@ -504,7 +504,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones · Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=307",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Hermanas Serrano Cruz vs. Salvador",
@@ -540,7 +541,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=340",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Juan Humberto Sánchez vs. Honduras",
@@ -686,7 +688,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento del caso · Competencia y excepciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=288",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Radilla Pacheco vs. México",
