@@ -1,7 +1,7 @@
 import {access, readFile} from 'node:fs/promises';
 
 const html = await readFile('index.html', 'utf8');
-const app = await readFile('assets/app-v25.js', 'utf8');
+const app = await readFile('assets/app-v26.js', 'utf8');
 const glossary = await readFile('assets/glosario.js', 'utf8');
 const styles = await readFile('assets/styles-v18.css', 'utf8');
 const opinions = await readFile('assets/opiniones.js', 'utf8');
@@ -43,10 +43,10 @@ if (progressiveHints.length !== 18 || progressiveHints.some(([, first, second]) 
 const simulationNodes = app.match(/const caseScenarioNodes=\{([\s\S]*?)\r?\n\};\r?\nconst caseScenarioPaths=/)?.[1];
 const simulationNodeIds = [...(simulationNodes || '').matchAll(/^ ([A-Za-z]+):\{phase:/gm)].map(match => match[1]);
 const simulationPaths = [...app.matchAll(/^ (cidh|court):\[(.*?)\],?$/gm)].map(match => ({name: match[1], nodes: [...match[2].matchAll(/'([A-Za-z]+)'/g)].map(item => item[1])}));
-if (simulationNodeIds.length !== 18 || simulationNodeIds.some(id => (simulationNodes.match(new RegExp(`^ ${id}:\\{phase:`, 'gm')) || []).length !== 1)) {
-  throw new Error(`The case simulator needs 18 uniquely identified decision nodes; found ${simulationNodeIds.length}.`);
+if (simulationNodeIds.length !== 19 || simulationNodeIds.some(id => (simulationNodes.match(new RegExp(`^ ${id}:\\{phase:`, 'gm')) || []).length !== 1)) {
+  throw new Error(`The case simulator needs 19 uniquely identified decision nodes; found ${simulationNodeIds.length}.`);
 }
-if (simulationPaths.length !== 2 || simulationPaths.some(path => path.nodes.length !== (path.name === 'cidh' ? 18 : 9) || path.nodes.some(id => !simulationNodeIds.includes(id)))) {
+if (simulationPaths.length !== 2 || simulationPaths.some(path => path.nodes.length !== (path.name === 'cidh' ? 19 : 10) || path.nodes.some(id => !simulationNodeIds.includes(id)))) {
   throw new Error('The case simulator needs complete CIDH and Court routes that only reference existing decision nodes.');
 }
 if (!html.includes('id="caseSimulationTitle"') || !html.includes('id="caseSimTrail"') || !app.includes('caseSimRetry') || !app.includes('drawCaseTrail') || !app.includes('data-review-step') || !app.includes('Decisiones del procedimiento') || !styles.includes('.case-sim-options button.is-correct') || !styles.includes('.case-sim-trail button.current')) {
@@ -61,7 +61,8 @@ if ((html.match(/class="process-overview-link"/g) || []).length !== 4 || !app.in
 if (!glossary.includes("id:'comunicacion-interestatal'") || !glossary.includes('convencion-americana-derechos-humanos.pdf') || !app.includes('Petición individual y comunicación interestatal') || !app.includes('artículo 45') || !glossary.includes("id:'denuncia-convencion'") || !app.includes('Denuncia de la Convención y petición individual') || !app.includes('artículo 78 CADH')) {
   throw new Error('The glossary and practice must explain interstate communications and treaty denunciation with official legal sources.');
 }
-if (!html.includes('assets/styles-v18.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v25.js') || !serviceWorker.includes('atlas-oea-shell-v46') || !serviceWorker.includes('./assets/styles-v18.css') || !serviceWorker.includes('./assets/app-v25.js')) {
+if (!app.includes("courtCompetence:{phase:'CORTE IDH'") || !app.includes("stage:14,source:'https://www.oas.org/es/cidh/mandato/basicos/convencion.asp'") || !app.includes("court:['courtCompetence','courtNotification'")) throw new Error('Missing the interactive Court jurisdiction decision.');
+if (!html.includes('assets/styles-v18.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v26.js') || !serviceWorker.includes('atlas-oea-shell-v47') || !serviceWorker.includes('./assets/styles-v18.css') || !serviceWorker.includes('./assets/app-v26.js')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
 }
 if (!html.includes('id="atlasVisitCount" data-counter-state="pending"') || !html.includes('id="atlasVisitLabel"') || !app.includes("https://counterapi.com/api/cataplum1414.github.io/view/atlas-oea-home-v2") || !app.includes("referrerPolicy:'no-referrer'") || !app.includes('12*60*60*1000') || !app.includes('new URLSearchParams(location.search).has(\'sinvisita\')') || !app.includes('readOnly=true') || !app.includes("output.dataset.counterState='loading'") || !app.includes("output.dataset.counterState='ready'") || !app.includes("output.dataset.counterState='unavailable'") || !app.includes("value===1?'visita':'visitas'")) {
