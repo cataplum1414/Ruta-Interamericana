@@ -45,3 +45,32 @@ html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
 .oas-map-directory summary:after{content:'+';flex:0 0 auto;margin-left:8px;color:var(--cyan-soft);font-size:20px;line-height:1}
 .oas-map-directory[open] summary:after{content:'?'}
 .oas-map-directory:not([open]) .oas-map-directory-heading{margin-bottom:0}
+
+/* Home page signature: a procedural line with an explicit conditional handoff. */
+.procedure-overview{max-width:1050px;margin:34px 0 0;padding:19px 0 0;border-top:1px solid var(--line)}
+.procedure-overview-heading{display:flex;align-items:baseline;justify-content:space-between;gap:18px;margin-bottom:17px}
+.procedure-overview-heading h2{margin:0;font-size:17px;font-weight:750;letter-spacing:-.02em}
+.procedure-overview-heading>a{min-height:40px;display:inline-flex;align-items:center;color:var(--cyan-soft);font-size:13px;font-weight:750;text-underline-offset:3px}
+.procedure-path{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0;padding:0;list-style:none}
+.procedure-path li{position:relative;min-width:0}
+.procedure-path li:not(:last-child):after{position:absolute;top:17px;left:44px;right:-14px;border-top:1px solid var(--line-strong);content:"";pointer-events:none}
+.procedure-path li a{position:relative;z-index:1;display:grid;grid-template-columns:35px minmax(0,1fr);grid-template-rows:auto auto;align-items:center;gap:3px 9px;min-height:67px;color:var(--ink);text-decoration:none}
+.procedure-path li a:hover strong,.procedure-path li a:focus-visible strong{text-decoration:underline;text-decoration-color:var(--cyan-soft);text-underline-offset:4px}
+.procedure-path-number{width:34px;height:34px;display:grid;grid-row:1 / span 2;place-items:center;border:2px solid var(--cyan-soft);border-radius:50%;background:var(--paper);color:var(--cyan-soft);font-size:14px;font-weight:800}
+.procedure-path li:nth-child(n+3) .procedure-path-number{border-color:var(--violet);color:var(--violet)}
+.procedure-path strong{min-width:0;font-size:14px;line-height:1.25}
+.procedure-path small{min-width:0;color:var(--muted);font-size:12px;line-height:1.35}
+.procedure-path-note{display:inline-block;margin:9px 0 0;padding:3px 0 3px 10px;border-left:2px solid var(--violet);color:var(--muted);font-size:12px;line-height:1.4}
+.procedure-path-caption{margin:14px 0 0;color:var(--muted);font-size:13px;line-height:1.5}
+@media(max-width:760px){
+  .procedure-overview{margin-top:27px;padding-top:17px}
+  .procedure-overview-heading{align-items:flex-start;margin-bottom:10px}
+  .procedure-overview-heading h2{font-size:16px}
+  .procedure-path{grid-template-columns:1fr;gap:0}
+  .procedure-path li:not(:last-child):after{top:37px;bottom:-4px;left:16px;right:auto;border-top:0;border-left:1px solid var(--line-strong)}
+  .procedure-path li a{min-height:62px;gap:2px 11px}
+  .procedure-path-number{width:33px;height:33px}
+  .procedure-path-note{margin-top:6px}
+  .procedure-path-caption{margin-top:9px}
+}
+@media(max-width:420px){.procedure-overview-heading{flex-wrap:wrap;gap:1px 12px}.procedure-overview-heading>a{min-height:34px}.procedure-path small{font-size:13px}}

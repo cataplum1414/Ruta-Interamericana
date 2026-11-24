@@ -4,6 +4,7 @@ const html = await readFile('index.html', 'utf8');
 const app = await readFile('assets/app-v40.js', 'utf8');
 const glossary = await readFile('assets/glosario.js', 'utf8');
 const styles = await readFile('assets/styles-v26.css', 'utf8');
+const atlasShell = await readFile('assets/arquitectura-atlas.css', 'utf8');
 const opinions = await readFile('assets/opiniones.js', 'utf8');
 const manifest = JSON.parse(await readFile('manifest.webmanifest', 'utf8'));
 const serviceWorker = await readFile('sw.js', 'utf8');
@@ -73,7 +74,7 @@ const protectionExercise = app.match(/const protectionSteps=\[([\s\S]*?)\r?\n\];
 if ((protectionExercise?.match(/\{prompt:/g)||[]).length !== 3 || (protectionExercise?.match(/source:'https:\/\//g)||[]).length !== 3) throw new Error('The urgent-protection practice needs three sourced procedural decisions.');
 if (!html.includes('id="protectionMeasuresLab"') || !app.includes('protectionSteps') || !app.includes('art\\u00edculo 25') || !app.includes('27.3') || !app.includes('dataset.result') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/arquitectura-atlas.css')) throw new Error('The optional urgent-protection practice must compare CIDH and Court routes with official rules and a cached stylesheet.');
 if (!app.includes("courtCompetence:{phase:'CORTE IDH'") || !app.includes("stage:14,source:'https://www.oas.org/es/cidh/mandato/basicos/convencion.asp'") || !app.includes("court:['courtCompetence','courtNotification'")) throw new Error('Missing the interactive Court jurisdiction decision.');
-if (!html.includes('assets/styles-v26.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v40.js') || !serviceWorker.includes('atlas-oea-shell-v73') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/arquitectura-atlas.css') || !serviceWorker.includes('./assets/app-v40.js') || !serviceWorker.includes('./assets/map-connections-v6.js') || !styles.includes('.process-overview-summary')) {
+if (!html.includes('assets/styles-v26.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v40.js') || !serviceWorker.includes('atlas-oea-shell-v74') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/arquitectura-atlas.css?v=6') || !serviceWorker.includes('./assets/app-v40.js') || !serviceWorker.includes('./assets/map-connections-v6.js') || !styles.includes('.process-overview-summary')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
 }
 if (!html.includes('id="mapLayerSelect"') || !html.includes('value="membership"') || !html.includes('value="cases"') || !html.includes('Lectura f&aacute;cil: c&oacute;mo se conecta un pa&iacute;s con el sistema') || !html.includes('data-pan-x=') || !html.includes('aria-label="Mapa seleccionable') || !mapConnections.includes('const casesFor') || !mapConnections.includes('Sigue la relaci') || !mapConnections.includes('La membres\u00eda en la OEA no determina por s\u00ed sola') || !mapConnections.includes("'#comision'") || !mapConnections.includes("'#corte'") || !mapConnections.includes('La selecci\u00f3n no representa el total hist\u00f3rico') || !mapConnections.includes('https://www.oas.org/es/cidh/mandato/Basicos/convratif.asp') || !mapConnections.includes('ArrowLeft') || !html.includes('id="mapTimelineYear"') || !mapConnections.includes('treatyMilestones') || !mapConnections.includes('timeline') || !mapConnections.includes('Pausar la cronolog') || !html.includes('<details class="oas-map-directory">') || !html.includes('assets/arquitectura-atlas.css') || !html.includes('<section class="nav-group" data-nav-group>')) {
@@ -119,6 +120,10 @@ if (opinionCount !== 32 || opinionNumbers.some((number, index) => number !== ind
 const routeCount = (html.match(/data-route-page/g) || []).length;
 if (routeCount < 17 || !html.includes('href="#oea"') || !html.includes('href="#organos"') || !html.includes('href="#mapa"') || !html.includes('href="#comision"') || !html.includes('href="#corte"') || !html.includes('href="#sistema"') || !html.includes('href="#opiniones"') || !html.includes('href="#actualidad"')) {
   throw new Error('The 17 menu-driven pages, separate CIDH and Court pages, OEA organ and member maps, bridge page, cases, advisory opinions, and news pages must be present.');
+}
+const homeProcedure = html.match(/<ol class="procedure-path"[\s\S]*?<\/ol>/)?.[0] || '';
+if ((homeProcedure.match(/class="procedure-path-number"/g) || []).length !== 4 || !homeProcedure.includes('href="#comision"') || !homeProcedure.includes('href="#corte"') || !html.includes('El paso entre la Comisi&oacute;n y la Corte es eventual, no autom&aacute;tico') || !atlasShell.includes('.procedure-path li:not(:last-child):after')) {
+  throw new Error('The home panorama must show four linked procedural moments and make the Commission-to-Court handoff explicitly conditional.');
 }
 
 const jurisprudencia = await readFile('assets/jurisprudencia.js', 'utf8');
@@ -284,7 +289,7 @@ if (!html.includes('34 Estados miembros') || !html.includes('Nicaragua dej&oacut
   throw new Error('The Atlas must explain current membership, Nicaragua’s 2023 withdrawal, and provide a fixed mobile map shortcut.');
 }
 const home = html.match(/<section id="inicio" data-route-page[\s\S]*?<\/section>/)?.[0] || '';
-if (!home.includes('Entiende el camino') || !home.includes('del hecho a la sentencia') || !home.includes('href="#comision">Empezar por la Comisi&oacute;n</a>') || !home.includes('href="#recorrido">Ver las 18 estaciones</a>') || home.includes('class="hero-oas-link"') || home.includes('class="route-art"') || home.includes('class="hero-bottom"')) {
+if (!home.includes('Entiende el camino') || !home.includes('del hecho a la sentencia') || !home.includes('href="#recorrido">Seguir la ruta</a>') || !home.includes('href="#comision">Ver la funci&oacute;n de la CIDH</a>') || home.includes('class="hero-oas-link"') || home.includes('class="route-art"') || home.includes('class="hero-bottom"')) {
   throw new Error('The Atlas OEA overview should foreground the Commission-to-Court procedure in a simple editorial layout.');
 }
 const systemPage = html.match(/<section id="sistema"[\s\S]*?<\/section>/)?.[0] || '';
@@ -323,6 +328,6 @@ for (const icon of manifest.icons) await access(icon.src.replace(/^\.\//, ''));
 const cachedFiles = [...serviceWorker.matchAll(/'\.(\/[^']+)'/g)]
   .map(match => match[1])
   .filter(path => path !== '/');
-for (const file of cachedFiles) await access(file.slice(1));
+for (const file of cachedFiles) await access(file.split('?')[0].slice(1));
 
 console.log(`Validated ${ids.length} unique page ids, ${routeCount} route pages, 34 OAS member states, 10 interactive organ profiles, the Americas map, ${opinionCount} advisory opinions, 18 procedural stations, 12 practice questions, and ${cachedFiles.length} offline assets.`);
