@@ -682,7 +682,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=313",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Perozo y otros vs. Venezuela",
@@ -851,7 +852,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=319",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Yarce y otras vs. Colombia",
@@ -865,7 +867,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=268",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Zegarra Marín vs. Perú",
