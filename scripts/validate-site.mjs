@@ -54,16 +54,19 @@ if ((html.match(/class="process-overview-number"/g) || []).length !== 4 || !html
 if ((html.match(/class="process-overview-link"/g) || []).length !== 4 || !app.includes("#processOverview [data-open-step]") || !app.includes("el('stepDetail').scrollIntoView")) {
   throw new Error('Each overview moment must open the matching interactive station.');
 }
-if (!glossary.includes("id:'comunicacion-interestatal'") || !glossary.includes('convencion-americana-derechos-humanos.pdf') || !app.includes('Petición individual y comunicación interestatal') || !app.includes('artículo 45')) {
-  throw new Error('The glossary and procedure contrasts must explain individual and interstate communications with the American Convention as a source.');
+if (!glossary.includes("id:'comunicacion-interestatal'") || !glossary.includes('convencion-americana-derechos-humanos.pdf') || !app.includes('Petición individual y comunicación interestatal') || !app.includes('artículo 45') || !glossary.includes("id:'denuncia-convencion'") || !app.includes('Denuncia de la Convención y petición individual') || !app.includes('artículo 78 CADH')) {
+  throw new Error('The glossary and practice must explain interstate communications and treaty denunciation with official legal sources.');
 }
-if (!html.includes('assets/styles.css?v=atlas-oea-14') || !html.includes('assets/glosario.js?v=editorial-5') || !html.includes('assets/app.js?v=atlas-oea-15') || !serviceWorker.includes('atlas-oea-shell-v34')) {
+if (!html.includes('assets/styles.css?v=atlas-oea-14') || !html.includes('assets/glosario.js?v=editorial-6') || !html.includes('assets/app.js?v=atlas-oea-16') || !serviceWorker.includes('atlas-oea-shell-v35')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
 }
 if (!html.includes('<strong>34</strong> Estados') || !html.includes('CIDH + Corte IDH') || !styles.includes('.hero.page-section{padding-top:22px}') || !styles.includes('.hero-overview{width:100%;justify-content:center;gap:5px;padding:6px 8px;overflow:visible;font-size:11px;white-space:normal;flex-wrap:wrap}')) {
   throw new Error('The mobile overview must keep its institutional context visible without blank space or clipped labels.');
 }
-if (countRows(questions) !== 10) throw new Error('The expected 10 practice questions were not found.');
+if (countRows(questions) !== 11) throw new Error('The expected 11 practice questions were not found.');
+if (countRows(questions) !== (app.match(/const questionStages=\[([^\]]+)\]/)?.[1].split(',').length || 0)) {
+  throw new Error('Every practice question must link to its corresponding procedural station.');
+}
 const opinionNumbers = [...opinions.matchAll(/^  \[(\d+),/gm)].map(match => Number(match[1]));
 const opinionCount = opinionNumbers.length;
 if (opinionCount !== 32 || opinionNumbers.some((number, index) => number !== index + 1)) {
@@ -269,4 +272,4 @@ const cachedFiles = [...serviceWorker.matchAll(/'\.(\/[^']+)'/g)]
   .filter(path => path !== '/');
 for (const file of cachedFiles) await access(file.slice(1));
 
-console.log(`Validated ${ids.length} unique page ids, ${routeCount} route pages, 34 OAS member states, 10 interactive organ profiles, the Americas map, ${opinionCount} advisory opinions, 18 procedural stations, 10 practice questions, and ${cachedFiles.length} offline assets.`);
+console.log(`Validated ${ids.length} unique page ids, ${routeCount} route pages, 34 OAS member states, 10 interactive organ profiles, the Americas map, ${opinionCount} advisory opinions, 18 procedural stations, 11 practice questions, and ${cachedFiles.length} offline assets.`);
