@@ -1,7 +1,7 @@
 import {access, readFile} from 'node:fs/promises';
 
 const html = await readFile('index.html', 'utf8');
-const app = await readFile('assets/app-v28.js', 'utf8');
+const app = await readFile('assets/app-v29.js', 'utf8');
 const glossary = await readFile('assets/glosario.js', 'utf8');
 const styles = await readFile('assets/styles-v19.css', 'utf8');
 const opinions = await readFile('assets/opiniones.js', 'utf8');
@@ -49,6 +49,9 @@ if (simulationNodeIds.length !== 19 || simulationNodeIds.some(id => (simulationN
 if (simulationPaths.length !== 2 || simulationPaths.some(path => path.nodes.length !== (path.name === 'cidh' ? 19 : 10) || path.nodes.some(id => !simulationNodeIds.includes(id)))) {
   throw new Error('The case simulator needs complete CIDH and Court routes that only reference existing decision nodes.');
 }
+if (!app.includes('19 decisiones') || !app.includes('10 decisiones')) {
+  throw new Error('The case simulator start buttons must show the same number of decisions as their routes.');
+}
 if (!html.includes('id="caseSimulationTitle"') || !html.includes('id="caseSimTrail"') || !app.includes('caseSimRetry') || !app.includes('drawCaseTrail') || !app.includes('data-review-step') || !app.includes('Decisiones del procedimiento') || !styles.includes('.case-sim-options button.is-correct') || !styles.includes('.case-sim-trail button.current')) {
   throw new Error('The case simulator needs retry, explanatory feedback, a reviewable decision trail, search integration, and visible decision states.');
 }
@@ -62,7 +65,7 @@ if (!glossary.includes("id:'comunicacion-interestatal'") || !glossary.includes('
   throw new Error('The glossary and practice must explain interstate communications and treaty denunciation with official legal sources.');
 }
 if (!app.includes("courtCompetence:{phase:'CORTE IDH'") || !app.includes("stage:14,source:'https://www.oas.org/es/cidh/mandato/basicos/convencion.asp'") || !app.includes("court:['courtCompetence','courtNotification'")) throw new Error('Missing the interactive Court jurisdiction decision.');
-if (!html.includes('assets/styles-v19.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v28.js') || !serviceWorker.includes('atlas-oea-shell-v49') || !serviceWorker.includes('./assets/styles-v19.css') || !serviceWorker.includes('./assets/app-v28.js')) {
+if (!html.includes('assets/styles-v19.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v29.js') || !serviceWorker.includes('atlas-oea-shell-v50') || !serviceWorker.includes('./assets/styles-v19.css') || !serviceWorker.includes('./assets/app-v29.js')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
 }
 if (!html.includes('id="atlasVisitCount" data-counter-state="pending"') || !html.includes('id="atlasVisitLabel"') || !app.includes("https://counterapi.com/api/cataplum1414.github.io/view/atlas-oea-home-v2") || !app.includes("referrerPolicy:'no-referrer'") || !app.includes('12*60*60*1000') || !app.includes('new URLSearchParams(location.search).has(\'sinvisita\')') || !app.includes('readOnly=true') || !app.includes("output.dataset.counterState='loading'") || !app.includes("output.dataset.counterState='ready'") || !app.includes("output.dataset.counterState='unavailable'") || !app.includes("value===1?'visita':'visitas'")) {
