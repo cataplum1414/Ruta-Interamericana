@@ -6,7 +6,7 @@ const deadlineCompare = await readFile('assets/plazos-comparador-v1.js', 'utf8')
 const reasoning = await readFile('assets/razonamiento-v1.js', 'utf8');
 const glossary = await readFile('assets/glosario.js', 'utf8');
 const styles = await readFile('assets/styles-v26.css', 'utf8');
-const atlasShell = await readFile('assets/arquitectura-atlas-v15.css', 'utf8');
+const atlasShell = await readFile('assets/arquitectura-atlas-v16.css', 'utf8');
 const orgMapStyles = await readFile('assets/organizacion-mapa.css', 'utf8');
 const opinions = await readFile('assets/opiniones.js', 'utf8');
 const manifest = JSON.parse(await readFile('manifest.webmanifest', 'utf8'));
@@ -26,7 +26,7 @@ const idSet = new Set(ids);
 if (ids.length !== idSet.size) throw new Error('Duplicate HTML id found.');
 const missingTargets = [...html.matchAll(/href="#([^"]+)"/g)]
   .map(match => match[1])
-  .filter(id => !idSet.has(id));
+  .filter(target => !idSet.has(target.split('?')[0]));
 if (missingTargets.length) {
   throw new Error(`Missing in-page targets: ${[...new Set(missingTargets)].join(', ')}`);
 }
@@ -79,11 +79,11 @@ if (!glossary.includes("id:'comunicacion-interestatal'") || !glossary.includes('
 }
 const protectionExercise = app.match(/const protectionSteps=\[([\s\S]*?)\r?\n\];/)?.[1];
 if ((protectionExercise?.match(/\{prompt:/g)||[]).length !== 3 || (protectionExercise?.match(/source:'https:\/\//g)||[]).length !== 3) throw new Error('The urgent-protection practice needs three sourced procedural decisions.');
-if (!html.includes('id="protectionMeasuresLab"') || !app.includes('protectionSteps') || !app.includes('art\\u00edculo 25') || !app.includes('27.3') || !app.includes('dataset.result') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/arquitectura-atlas-v15.css')) throw new Error('The optional urgent-protection practice must compare CIDH and Court routes with official rules and a cached stylesheet.');
+if (!html.includes('id="protectionMeasuresLab"') || !app.includes('protectionSteps') || !app.includes('art\\u00edculo 25') || !app.includes('27.3') || !app.includes('dataset.result') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/arquitectura-atlas-v16.css')) throw new Error('The optional urgent-protection practice must compare CIDH and Court routes with official rules and a cached stylesheet.');
 
 if (!html.includes('id="petitionerNoticeDate"') || !html.includes('id="reportTransmissionDate"') || !html.includes('id="petitionerNoticeResult"') || !html.includes('id="reportTransmissionResult"') || !deadlineCompare.includes('months: 1') || !deadlineCompare.includes('months: 3') || !deadlineCompare.includes('addCalendarMonths') || !serviceWorker.includes('./assets/plazos-comparador-v1.js')) throw new Error('The two distinct Article 44.3 and 51.1 trigger dates must have separate calendar controls, calculations, and an offline-cached script.');
 if (!app.includes("courtCompetence:{phase:'CORTE IDH'") || !app.includes("stage:14,source:'https://www.oas.org/es/cidh/mandato/basicos/convencion.asp'") || !app.includes("court:['courtCompetence','courtNotification'")) throw new Error('Missing the interactive Court jurisdiction decision.');
-if (!html.includes('assets/styles-v26.css') || !html.includes('assets/arquitectura-atlas-v15.css') || !html.includes('assets/organizacion-mapa.css?v=atlas-oea-8') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v40.js') || !html.includes('assets/audiencia-lab-v1.js') || !serviceWorker.includes('atlas-oea-shell-v90') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/arquitectura-atlas-v15.css') || !serviceWorker.includes('./assets/organizacion-mapa.css?v=atlas-oea-8') || !serviceWorker.includes('./assets/app-v40.js') || !serviceWorker.includes('./assets/audiencia-lab-v1.js') || !serviceWorker.includes('./assets/razonamiento-v1.js') || !serviceWorker.includes('./assets/map-connections-v6.js') || !styles.includes('.process-overview-summary')) {
+if (!html.includes('assets/styles-v26.css') || !html.includes('assets/arquitectura-atlas-v16.css') || !html.includes('assets/organizacion-mapa.css?v=atlas-oea-8') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v40.js') || !html.includes('assets/audiencia-lab-v1.js') || !serviceWorker.includes('atlas-oea-shell-v91') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/arquitectura-atlas-v16.css') || !serviceWorker.includes('./assets/organizacion-mapa.css?v=atlas-oea-8') || !serviceWorker.includes('./assets/app-v40.js') || !serviceWorker.includes('./assets/audiencia-lab-v1.js') || !serviceWorker.includes('./assets/razonamiento-v1.js') || !serviceWorker.includes('./assets/map-connections-v6.js') || !styles.includes('.process-overview-summary')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
 }
 if (!organData.includes("item.id==='cidh').atlasLinks") || !organData.includes("item.id==='corte').atlasLinks") || !organData.includes("step:2") || !organData.includes("step:10") || !app.includes('item.atlasLinks?.length') || !app.includes("el('organDetail').addEventListener('click'") || !app.includes('openProceduralStep(link.dataset.openStep)') || !orgMapStyles.includes('.org-detail-guide') || !html.includes('assets/organizacion-mapa.css?v=atlas-oea-8')) {
@@ -102,7 +102,7 @@ const requiredHearingArticles=['artículo 46','artículos 46–48','artículo 50
 if (!html.includes('id="hearingLab"') || !html.includes('id="hearingLabCard"') || !html.includes('id="hearingLabProgress"') || !html.includes('Abrir Reglamento oficial') || requiredHearingArticles.some(article=>!hearingLab.includes(article)) || !hearingLab.includes('aria-live="polite"') || !atlasShell.includes('.hearing-lab-option:focus-visible') || !serviceWorker.includes('./assets/audiencia-lab-v1.js')) {
   throw new Error('The Corte hearing practice must guide the declarant list, objections, presidency order, oral procedure, and closing briefs with accessible feedback and an offline-cached official-source link.');
 }
-if (!html.includes('id="mapLayerSelect"') || !html.includes('value="membership"') || !html.includes('value="cases"') || !html.includes('Lectura f&aacute;cil: c&oacute;mo se conecta un pa&iacute;s con el sistema') || !html.includes('data-pan-x=') || !html.includes('aria-label="Mapa seleccionable') || !mapConnections.includes('const casesFor') || !mapConnections.includes('Sigue la relaci') || !mapConnections.includes('La membres\u00eda en la OEA no determina por s\u00ed sola') || !mapConnections.includes("'#comision'") || !mapConnections.includes("'#corte'") || !mapConnections.includes('La selecci\u00f3n no representa el total hist\u00f3rico') || !mapConnections.includes('https://www.oas.org/es/cidh/mandato/Basicos/convratif.asp') || !mapConnections.includes('ArrowLeft') || !html.includes('id="mapTimelineYear"') || !mapConnections.includes('treatyMilestones') || !mapConnections.includes('timeline') || !mapConnections.includes('Pausar la cronolog') || !html.includes('<details class="oas-map-directory">') || !html.includes('assets/arquitectura-atlas-v15.css') || !html.includes('<section class="nav-group" data-nav-group>')) {
+if (!html.includes('id="mapLayerSelect"') || !html.includes('value="membership"') || !html.includes('value="cases"') || !html.includes('Lectura f&aacute;cil: c&oacute;mo se conecta un pa&iacute;s con el sistema') || !html.includes('data-pan-x=') || !html.includes('aria-label="Mapa seleccionable') || !mapConnections.includes('const casesFor') || !mapConnections.includes('Sigue la relaci') || !mapConnections.includes('La membres\u00eda en la OEA no determina por s\u00ed sola') || !mapConnections.includes("'#comision'") || !mapConnections.includes("'#corte'") || !mapConnections.includes('La selecci\u00f3n no representa el total hist\u00f3rico') || !mapConnections.includes('https://www.oas.org/es/cidh/mandato/Basicos/convratif.asp') || !mapConnections.includes('ArrowLeft') || !html.includes('id="mapTimelineYear"') || !mapConnections.includes('treatyMilestones') || !mapConnections.includes('timeline') || !mapConnections.includes('Pausar la cronolog') || !html.includes('<details class="oas-map-directory">') || !html.includes('assets/arquitectura-atlas-v16.css') || !html.includes('<section class="nav-group" data-nav-group>')) {
   throw new Error('The regional map must offer accessible OEA/case layers and connect each selected country to OEA, CIDH, Court, procedure, and official case references.');
 }
 if (!html.includes('data-phase="PASO A LA CORTE"') || html.includes('data-phase="TRANSICIÓN"') || !app.includes("phase:'PASO A LA CORTE'") || app.includes('TRANSICI\\u00d3N')) {
@@ -328,6 +328,11 @@ if (!html.includes('34 Estados miembros') || !html.includes('Nicaragua dej&oacut
 const home = html.match(/<section id="inicio" data-route-page[\s\S]*?<\/section>/)?.[0] || '';
 if (!home.includes('Entiende el camino') || !home.includes('del hecho a la sentencia') || !home.includes('href="#recorrido">Seguir la ruta</a>') || ['#comision', '#corte', '#sistema'].some(href => !home.includes('href="' + href + '"')) || home.includes('class="procedure-overview"') || home.includes('class="hero-oas-link"') || home.includes('class="route-art"') || home.includes('class="hero-bottom"')) {
   throw new Error('The Atlas OEA overview should foreground the Commission-to-Court procedure in a simple editorial layout.');
+}
+for (const [id, expected] of [['comision', [3,4,5,6,7,8,9,10]], ['corte', [11,12,13,14,15,16,17,18]]]) {
+  const institution = html.match(new RegExp('<section id="' + id + '" data-route-page[\\s\\S]+?</ol>'))?.[0] || '';
+  const steps = [...institution.matchAll(/href="#recorrido\?paso=(\d+)"/g)].map(match => Number(match[1]));
+  if (steps.join(',') !== expected.join(',')) throw new Error('The ' + id + ' procedure must link in order to its matching stations.');
 }
 const systemPage = html.match(/<section id="sistema"[\s\S]*?<\/section>/)?.[0] || '';
 if (html.includes('class="principle-strip"') || !systemPage.includes('id="contrasts"') || !app.includes("['Admisibilidad y fondo'") || !app.includes("['Informe y sentencia'")) {

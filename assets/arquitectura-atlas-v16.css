@@ -224,3 +224,16 @@ html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
   .hero-easy-read summary{font-size:14px}
   .hero .atlas-search #atlasSearchGo{min-height:48px}
 }
+
+.institution-procedure,.institution-secondary{max-width:var(--content);margin:24px auto 0}
+.institution-procedure>h3,.institution-secondary h3{margin:0 0 8px;font-size:clamp(22px,3vw,32px);line-height:1.2}
+.institution-procedure>p,.institution-secondary p{max-width:70ch;margin:0;color:var(--muted);line-height:1.6}
+.institution-procedure ol{list-style:none;counter-reset:institution-step;margin:20px 0 10px;padding:0}
+.institution-procedure li{position:relative;counter-increment:institution-step;padding:13px 0 13px 46px;border-top:1px solid var(--line)}
+.institution-procedure li::before{content:counter(institution-step);position:absolute;left:0;top:14px;display:grid;place-items:center;width:32px;height:32px;border:1px solid var(--cyan-soft);border-radius:50%;color:var(--cyan-soft);font-weight:800}
+.institution-procedure li h4{margin:0;font-size:17px}
+.institution-procedure li p{max-width:72ch;margin:5px 0 0;color:var(--muted);line-height:1.55}
+.institution-step-links{display:flex;flex-wrap:wrap;gap:0 18px}
+.institution-step-links a,.institution-procedure-source,.institution-secondary a{display:inline-flex;align-items:center;min-height:44px;color:var(--cyan-soft);font-weight:750;text-underline-offset:3px}
+.institution-secondary{padding-top:20px;border-top:1px solid var(--line)}
+@media(max-width:520px){.institution-procedure li{padding-left:42px}.institution-step-links{gap:0 14px}}

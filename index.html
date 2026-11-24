@@ -15,7 +15,7 @@
 </script>
 <link rel="stylesheet" href="assets/styles-v26.css">
 <link rel="stylesheet" href="assets/organizacion-mapa.css?v=atlas-oea-8">
-<link rel="stylesheet" href="assets/arquitectura-atlas-v15.css">
+<link rel="stylesheet" href="assets/arquitectura-atlas-v16.css">
 <link rel="manifest" href="./manifest.webmanifest">
 <script>
 if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
@@ -147,20 +147,34 @@ if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
 
 <section id="comision" data-route-page class="page-section section-block section-alt">
   <div class="section-heading"><div><p class="section-tag">&Oacute;RGANO DE PETICIONES Y PROMOCI&Oacute;N</p><h2>Comisi&oacute;n Interamericana<br>de Derechos Humanos</h2><p>La CIDH recibe peticiones individuales, examina sus requisitos y estudia si hubo violaciones. No dicta las sentencias de la Corte.</p></div><span class="section-index">05</span></div>
-  <div class="institution-map commission-page">
-    <article class="institution-card commission"><span class="institution-number">A</span><p class="section-tag">QU&Eacute; HACE LA CIDH</p><h3>Examina la petici&oacute;n<br>y el fondo</h3><p>Puede analizar competencia y admisibilidad, facilitar una soluci&oacute;n amistosa, evaluar las alegaciones de fondo y formular conclusiones y recomendaciones. Tambi&eacute;n tramita medidas cautelares cuando se cumplen sus requisitos.</p><div class="ask"><b>Pregunta que orienta</b><span>&iquest;Puede la Comisi&oacute;n conocer la petici&oacute;n y qu&eacute; respuesta corresponde a los hechos?</span></div><a href="#recorrido" data-open-step="1">Ver c&oacute;mo empieza la petici&oacute;n &rarr;</a></article>
-    <article class="institution-card commission"><span class="institution-number">B</span><p class="section-tag">QU&Eacute; PUEDE OCURRIR</p><h3>Informe, recomendaciones<br>y posible sometimiento</h3><p>La CIDH puede emitir informes y recomendaciones. Si el asunto re&uacute;ne las condiciones aplicables y la Corte tiene competencia, la Comisi&oacute;n puede someterlo a ese tribunal. Ese paso no significa que ya exista una sentencia.</p><div class="ask"><b>Distinci&oacute;n clave</b><span>El informe de fondo de la CIDH no es una decisi&oacute;n judicial de la Corte.</span></div><a href="#sistema">Entender el paso entre &oacute;rganos &rarr;</a></article>
-  </div>
-  <div class="organ-links"><a href="#corte">Conocer la funci&oacute;n de la Corte IDH &rarr;</a><a href="#biblioteca">Consultar el Reglamento de la CIDH &rarr;</a></div>
+  <section class="institution-procedure" aria-labelledby="cidhProcedure">
+    <h3 id="cidhProcedure">De la petici?n al informe</h3>
+    <p>La Comisi?n examina si puede conocer la petici?n y, si corresponde, analiza el fondo. Seg?n el expediente, puede haber una soluci?n amistosa o un eventual sometimiento a la Corte.</p>
+    <ol>
+      <li><h4>Presentaci?n y traslado</h4><p>La CIDH recibe la petici?n y puede pedir informaci?n. Si la transmite al Estado, este puede responder.</p><div class="institution-step-links"><a href="#recorrido?paso=3">Petici?n individual &rarr;</a><a href="#recorrido?paso=4">Traslado inicial &rarr;</a></div></li>
+      <li><h4>Competencia y admisibilidad</h4><p>La CIDH comprueba su competencia y examina los requisitos de admisi?n, como el agotamiento y el plazo aplicable.</p><div class="institution-step-links"><a href="#recorrido?paso=5">Competencia &rarr;</a><a href="#recorrido?paso=6">Admisibilidad &rarr;</a></div></li>
+      <li><h4>Posible acuerdo o examen del fondo</h4><p>Las partes pueden intentar una soluci?n amistosa. Si contin?a el tr?mite, la CIDH analiza las alegaciones y pruebas del fondo.</p><div class="institution-step-links"><a href="#recorrido?paso=7">Soluci?n amistosa &rarr;</a><a href="#recorrido?paso=8">Examen del fondo &rarr;</a></div></li>
+      <li><h4>Informe y posible paso a la Corte</h4><p>La CIDH formula conclusiones y, cuando corresponde, recomendaciones. El paso a la Corte depende de las reglas de sometimiento y de su competencia.</p><div class="institution-step-links"><a href="#recorrido?paso=9">Informe de fondo &rarr;</a><a href="#recorrido?paso=10">Posible paso a la Corte &rarr;</a></div></li>
+    </ol>
+    <a class="institution-procedure-source" href="https://www.oas.org/es/cidh/jsForm/?File=%2Fes%2Fcidh%2Fmandato%2Fbasicos%2Freglamentocidh.asp" target="_blank" rel="noopener noreferrer">Reglamento de la CIDH &nearr;</a>
+  </section>
+  <div class="organ-links"><a href="#corte">Conocer la funci&oacute;n de la Corte IDH &rarr;</a><a href="#caseSimulationTitle">Practicar desde la petici&oacute;n &rarr;</a></div>
 </section>
 
 <section id="corte" data-route-page class="page-section section-block">
   <div class="section-heading"><div><p class="section-tag">TRIBUNAL REGIONAL</p><h2>Corte Interamericana<br>de Derechos Humanos</h2><p>La Corte resuelve los casos que puede conocer conforme a las reglas de competencia. Su funci&oacute;n contenciosa es distinta del tr&aacute;mite de peticiones ante la CIDH.</p></div><span class="section-index">06</span></div>
-  <div class="institution-map court-page">
-    <article class="institution-card court"><span class="institution-number">C</span><p class="section-tag">FUNCI&Oacute;N CONTENCIOSA</p><h3>Tramita y decide<br>casos sometidos</h3><p>En la fase contenciosa recibe el caso, oye a las partes, examina excepciones y pruebas, celebra audiencias cuando corresponde y dicta sentencia. Puede ordenar reparaciones y supervisar su cumplimiento.</p><div class="ask"><b>Pregunta que orienta</b><span>&iquest;Tiene la Corte competencia para conocer este caso y qu&eacute; debe resolver?</span></div><a href="#recorrido" data-open-step="9">Recorrer la fase ante la Corte &rarr;</a></article>
-    <article class="institution-card court"><span class="institution-number">D</span><p class="section-tag">FUNCI&Oacute;N CONSULTIVA</p><h3>Responde consultas<br>sobre derechos humanos</h3><p>La Corte tambi&eacute;n interpreta tratados y responde consultas de Estados miembros de la OEA y &oacute;rganos de la Organizaci&oacute;n. Una opini&oacute;n consultiva no resuelve el litigio de una persona.</p><div class="ask"><b>Distinci&oacute;n clave</b><span>Una sentencia contenciosa y una opini&oacute;n consultiva son productos distintos.</span></div><a href="#opiniones">Explorar las 32 opiniones emitidas &rarr;</a></article>
-  </div>
-  <div class="institution-note"><strong>La Corte no es una instancia ordinaria de apelacion.</strong><span>Su competencia contenciosa depende del consentimiento estatal y de las reglas aplicables; no toda peticion individual llega hasta este tribunal.</span></div>
+  <section class="institution-procedure" aria-labelledby="courtProcedure">
+    <h3 id="courtProcedure">Del sometimiento al cumplimiento</h3>
+    <p>La Corte examina su competencia para conocer el caso. La Secretar?a notifica a las partes e intervinientes, y los escritos tienen sus propios plazos.</p>
+    <ol>
+      <li><h4>Sometimiento y notificaci?n</h4><p>La CIDH somete el caso con el informe de fondo. La Secretar?a comunica formalmente el sometimiento y sus anexos.</p><div class="institution-step-links"><a href="#recorrido?paso=11">Sometimiento &rarr;</a><a href="#recorrido?paso=12">Notificaci?n &rarr;</a></div></li>
+      <li><h4>ESAP, contestaci?n y excepciones</h4><p>Las presuntas v?ctimas o sus representantes presentan sus solicitudes, argumentos y pruebas. El Estado contesta y puede formular excepciones preliminares.</p><div class="institution-step-links"><a href="#recorrido?paso=13">ESAP &rarr;</a><a href="#recorrido?paso=14">Contestaci?n &rarr;</a><a href="#recorrido?paso=15">Excepciones &rarr;</a></div></li>
+      <li><h4>Prueba y alegatos</h4><p>La Corte organiza la prueba y, cuando corresponde, celebra una audiencia. Los alegatos finales siguen las instrucciones para el caso.</p><div class="institution-step-links"><a href="#recorrido?paso=16">Prueba &rarr;</a><a href="#recorrido?paso=17">Audiencia y alegatos &rarr;</a></div></li>
+      <li><h4>Sentencia y supervisi?n</h4><p>La Corte decide el caso y puede ordenar reparaciones. Despu?s eval?a el cumplimiento de las medidas ordenadas.</p><div class="institution-step-links"><a href="#recorrido?paso=18">Sentencia y cumplimiento &rarr;</a></div></li>
+    </ol>
+    <a class="institution-procedure-source" href="https://www.corteidh.or.cr/reglamento.cfm?lang=es" target="_blank" rel="noopener noreferrer">Reglamento de la Corte IDH &nearr;</a>
+  </section>
+  <aside class="institution-secondary" aria-labelledby="courtConsultative"><h3 id="courtConsultative">Funci&oacute;n consultiva</h3><p>La Corte interpreta tratados y responde consultas de Estados miembros de la OEA y &oacute;rganos de la Organizaci&oacute;n. Las opiniones consultivas tienen su propio cat&aacute;logo.</p><a href="#opiniones">Explorar opiniones consultivas &rarr;</a></aside>
   <div class="organ-links"><a href="#comision">Conocer la funci&oacute;n de la CIDH &rarr;</a><a href="#sistema">Ver c&oacute;mo se conecta el procedimiento &rarr;</a><a href="#caseSimulationTitle">Practicar el procedimiento ante la Corte &rarr;</a></div>
 </section>
 
