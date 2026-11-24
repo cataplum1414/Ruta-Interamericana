@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Validate application and offline shell
         run: |
-          node --check assets/app-v23.js
+          node --check assets/app-v24.js
           node --check assets/glosario.js
           node --check assets/jurisprudencia.js
           node --check assets/opiniones.js
