@@ -13,7 +13,7 @@
 <script>
 (()=>{let choice='auto';try{choice=localStorage.getItem('ri-theme')||'auto'}catch(e){}if(!['auto','light','dark'].includes(choice))choice='auto';const media=matchMedia('(prefers-color-scheme: light)');const apply=()=>{const theme=choice==='auto'?(media.matches?'light':'dark'):choice;document.documentElement.dataset.theme=theme;document.documentElement.dataset.themeChoice=choice;const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=theme==='light'?'#F5F4F0':'#10131C';document.querySelector('meta[name="color-scheme"]').content=theme};window.riTheme={get:()=>choice,set:value=>{choice=['auto','light','dark'].includes(value)?value:'auto';try{choice==='auto'?localStorage.removeItem('ri-theme'):localStorage.setItem('ri-theme',choice)}catch(e){}apply()}};media.addEventListener?.('change',()=>{if(choice==='auto')apply()});apply()})();
 </script>
-<link rel="stylesheet" href="assets/styles-v17.css">
+<link rel="stylesheet" href="assets/styles-v18.css">
 <link rel="stylesheet" href="assets/organizacion-mapa.css?v=atlas-oea-1">
 <link rel="manifest" href="./manifest.webmanifest">
 </head>
@@ -220,7 +220,13 @@
 <section id="laboratorio" data-route-page class="page-section section-block">
   <div class="section-heading"><div><p class="section-tag">PRACTICAR PARA COMPRENDER</p><h2>Elige, comprueba,<br>explica por qué</h2><p>Practica con preguntas breves. Después de responder verás qué regla opera y por qué importa en el procedimiento.</p></div><span class="section-index">14</span></div>
   <article class="quiz" aria-label="Práctica de procedimiento"><div class="quiz-top"><span id="quizIndex"></span><strong id="quizScore"></strong></div><div class="quiz-bar"><div id="quizBar"></div></div><h3 id="quizQuestion"></h3><div id="quizOptions" class="quiz-options"></div><div id="quizFeedback" class="quiz-feedback" aria-live="polite"></div><button id="quizNext" class="button primary" disabled type="button">Siguiente pregunta</button></article>
-  <section class="scenario" aria-labelledby="scenarioTitle"><div><p class="section-tag">ESCENARIO DE DECISIÓN</p><h3 id="scenarioTitle">El Estado presenta una excepción preliminar</h3><p>¿Qué conviene hacer primero para analizarla?</p></div><div class="scenario-actions" role="group" aria-label="Elegir respuesta"><button type="button" data-scenario="appeal">Tratar cualquier desacuerdo como una apelación</button><button type="button" data-scenario="nature">Identificar su naturaleza, el momento y el efecto procesal alegado</button></div><div class="scenario-result" id="scenarioResult" aria-live="polite">Selecciona una respuesta para ver qué elemento debes examinar.</div></section>
+  <section id="admissibilityLab" class="scenario admissibility-lab" aria-labelledby="admissibilityTitle">
+    <div><p class="section-tag">EXPEDIENTE INTERACTIVO · CIDH</p><h3 id="admissibilityTitle">¿Puede la Comisión examinar esta petición?</h3><p>Resuelve cinco decisiones en orden. Las rutas cambian según lo que pasó con los recursos internos; una respuesta incorrecta muestra la regla antes de continuar.</p><p id="admissibilityProgress" class="small" aria-live="polite">Decisión 1 de 5</p></div>
+    <div class="admissibility-question"><strong id="admissibilityPrompt"></strong><div class="scenario-actions" id="admissibilityChoices" role="group" aria-label="Elegir respuesta"></div></div>
+    <div class="scenario-result" id="admissibilityResult" aria-live="polite">La admisibilidad pregunta si la petición puede estudiarse; todavía no decide si el Estado es responsable.</div>
+    <div class="admissibility-controls"><button id="admissibilityNext" class="button primary" type="button" hidden>Continuar →</button><button id="admissibilityReset" class="button secondary" type="button">Reiniciar el expediente</button></div>
+    <p class="admissibility-sources">Reglas aplicables: <a href="https://www.oas.org/es/CIDH/jsForm/?File=%2Fes%2Fcidh%2Fmandato%2Fbasicos%2Freglamentocidh.asp" target="_blank" rel="noopener noreferrer">Reglamento de la CIDH, arts. 31–34 ↗</a> · <a href="https://www.oas.org/dil/esp/tratados_B-32_convencion_americana_sobre_derechos_humanos.htm" target="_blank" rel="noopener noreferrer">Convención Americana, arts. 46–47 ↗</a></p>
+  </section>
 </section>
 
 <section id="biblioteca" data-route-page class="page-section section-block section-alt">
@@ -241,6 +247,6 @@
 <script src="assets/glosario.js?v=editorial-6" defer></script>
 <script src="assets/organos.js" defer></script>
 <script src="assets/estados-oea.js" defer></script>
-<script src="assets/app-v22.js" defer></script>
+<script src="assets/app-v23.js" defer></script>
 </body>
 </html>

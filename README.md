@@ -32,11 +32,12 @@ Atlas OEA es un proyecto educativo independiente, editado por Sukima Labs. No es
 - Diccionario buscable de siglas y conceptos conectado con las explicaciones, las etapas y las fuentes oficiales.
 - Orientador «¿En qué momento está el caso?» con rutas hacia los pasos relevantes.
 - Recorrido guiado por el procedimiento interamericano con 18 decisiones interactivas y explicaciones inmediatas, filtros por fase y un patrón común: qué pasa, quién actúa, documento, plazo y siguiente paso.
-- P?ginas independientes para la CIDH y la Corte IDH, adem?s de una p?gina puente que explica c?mo puede pasar un asunto de un ?rgano al otro.
+- Páginas independientes para la CIDH y la Corte IDH, además de una página puente que explica cómo puede pasar un asunto de un órgano al otro.
 - Reloj de plazos orientativos.
 - Caso académico ficticio con hitos procesales.
 - Selección didáctica de casos clave junto con el índice de referencias del proyecto, sin presentarlo como catálogo exhaustivo.
-- Preguntas de práctica y un escenario de decisión con consecuencias explicadas.
+- Práctica encadenada de admisibilidad: competencia, recursos internos o excepciones, plazo según la ruta, duplicación internacional y caracterización inicial, con fuentes y repaso por etapa.
+- Preguntas de práctica y un escenario sobre excepciones preliminares con consecuencias explicadas.
 - Continuidad de lectura privada en el dispositivo y versión instalable con caché sin conexión.
 - Fuentes normativas oficiales.
 
@@ -57,8 +58,8 @@ El modo sin conexión y la instalación requieren servir la guía por `localhost
 ## Archivos principales
 
 - `index.html`: estructura y contenido de la guía.
-- `assets/styles-v17.css`: identidad visual, navegación adaptable, vistas móviles y estados accesibles.
-- `assets/app-v22.js`: recorrido, caso, reloj, práctica, búsquedas, contador independiente y enlaces contextuales del diccionario.
+- `assets/styles-v18.css`: identidad visual, navegación adaptable, vistas móviles y estados accesibles.
+- `assets/app-v23.js`: recorrido, caso, reloj, práctica, búsquedas, contador independiente y enlaces contextuales del diccionario.
 - `assets/glosario.js`: siglas y conceptos con explicaciones claras, relaciones internas y fuentes oficiales.
 - `assets/jurisprudencia.js`: referencias jurisprudenciales estructuradas.
 - `assets/opiniones.js`: catálogo de opiniones consultivas emitidas con enlaces a las Series A oficiales.

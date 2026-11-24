@@ -47,6 +47,8 @@ Estos repositorios son referencias de interacción, no autoridades jurídicas. L
 
 La simulación de caso ahora conserva un historial visual por sesión: cada respuesta queda marcada como correcta o pendiente de repaso; se puede regresar a una decisión contestada, leer otra vez su explicación y cambiarla; el cierre indica el resultado y enlaza cada error con el punto exacto que se puede revisar. La pantalla no bloquea el aprendizaje por fallar: invita a intentarlo de nuevo y deja visible la explicación jurídica.
 
+El laboratorio incluye ahora una práctica independiente de admisibilidad de la CIDH, en cinco decisiones encadenadas: competencia; agotamiento o excepción; regla temporal específica según esa ruta; duplicación internacional; y caracterización inicial. Cada respuesta enlaza con la norma y con la estación de la ruta, y la síntesis aclara que admisibilidad no resuelve el fondo. No guarda respuestas ni las envía.
+
 Las 18 estaciones incorporan ahora dos pistas progresivas, solicitadas de forma voluntaria. La primera orienta hacia la pregunta jurídica; la segunda ayuda a localizar la distinción o regla relevante. La respuesta y su fundamento aparecen al contestar, y el avance sigue guardándose solo en el dispositivo.
 
 El glosario y la práctica distinguen ahora la denuncia de la Convención Americana de una petición individual ante la CIDH y del retiro de la Carta de la OEA. La pregunta explica el plazo del artículo 78 y la continuidad de obligaciones por hechos anteriores a la fecha efectiva, con enlaces al texto oficial de la Convención y a la [Opinión Consultiva OC-26/20](https://www.corteidh.or.cr/docs/opiniones/seriea_26_esp.pdf).
@@ -58,7 +60,7 @@ El registro existe solo en memoria durante la sesión, no crea perfiles ni enví
 ## Próximas piezas prioritarias
 
 1. Mapa de relaciones entre OEA, órganos políticos, CIDH y Corte, con capas activables y una alternativa en lista.
-2. Simulador de competencia/admisibilidad con una decisión por pantalla, causas de inadmisión y excepciones explícitas.
+2. Simulador de competencia/admisibilidad implementado en el laboratorio; falta ampliarlo con casos alternativos y práctica de causas de inadmisibilidad.
 3. Línea de tiempo donde el usuario cambia una fecha de notificación y ve qué plazo se está calculando, cuál es su regla y qué datos faltan.
 4. Grafo de razonamiento para alegaciones y reparaciones del caso hipotético; cada relación debe abrir su fuente.
 5. Glosario transversal con enlaces bidireccionales desde órganos, etapas, jurisprudencia y preguntas.
