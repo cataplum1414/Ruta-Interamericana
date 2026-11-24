@@ -25,6 +25,7 @@ Atlas OEA es un proyecto educativo independiente, editado por Sukima Labs. No es
 ## Contenido
 
 - Mapa institucional interactivo para explorar los &oacute;rganos de la OEA y distinguir la CIDH de la Corte aut&oacute;noma.
+- Desde el mapa, enlaces de la CIDH y la Corte a sus p&aacute;ginas y a las estaciones correspondientes del procedimiento.
 - Mapa geogr&aacute;fico con capas de Estados OEA y jurisprudencia citada en esta gu&iacute;a, b&uacute;squeda, zoom, lista accesible y conexiones desde cada pa&iacute;s a la OEA, la CIDH, la Corte y decisiones oficiales. La capa de casos describe solo el &iacute;ndice de este Atlas, no el total hist&oacute;rico.
 
 - Vistas independientes por tema, navegables desde el men&uacute; y con accesos directos a Inicio, OEA, Ruta, Mapa y Men&uacute; en m&oacute;vil.

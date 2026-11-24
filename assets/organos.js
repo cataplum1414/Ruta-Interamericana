@@ -10,3 +10,13 @@ window.RI_ORGANOS = [
   {id:'especializados',name:'Organismos especializados',tag:'Cooperación técnica permanente',role:'Desarrollan funciones técnicas de interés común en materias particulares, de acuerdo con su instrumento constitutivo y con la Carta de la OEA.',relation:'La Carta reconoce estos organismos como parte de la estructura interamericana y prevé coordinación con la Organización.',why:'Son parte de una red más extensa: el Atlas profundiza en el Sistema Interamericano de Derechos Humanos, sin presentar cada entidad especializada como parte del procedimiento de casos.',rule:'Carta de la OEA, artículos 53 y 124–130',url:'https://www.oas.org/juridico/spanish/carta.html',link:'Leer la Carta de la OEA'},
   {id:'corte',name:'Corte Interamericana de Derechos Humanos',tag:'Tribunal autónomo del Sistema Interamericano',role:'Interpreta y aplica la Convención Americana en su función contenciosa y consultiva. Puede dictar sentencias y supervisar su cumplimiento.',relation:'Forma parte del Sistema Interamericano de Derechos Humanos. Tiene autonomía judicial; la CIDH no es su superior y la Secretaría General no decide sus casos.',why:'En peticiones individuales, la persona no presenta directamente el caso contencioso a la Corte. La Comisión puede someterlo conforme a la Convención y al Reglamento.',rule:'Convención Americana, artículos 52–69; Estatuto de la Corte, artículo 1',url:'https://www.corteidh.or.cr/que_es_la_corte.cfm',link:'Conocer la Corte IDH'}
 ];
+
+window.RI_ORGANOS.find(item=>item.id==='cidh').atlasLinks=[
+  {label:'Conocer la funci\u00f3n de la CIDH',href:'#comision'},
+  {label:'Empezar el recorrido desde una petici\u00f3n',href:'#recorrido',step:2}
+];
+window.RI_ORGANOS.find(item=>item.id==='corte').atlasLinks=[
+  {label:'Conocer la funci\u00f3n de la Corte',href:'#corte'},
+  {label:'Ir al inicio de la fase ante la Corte',href:'#recorrido',step:10},
+  {label:'Explorar las opiniones consultivas',href:'#opiniones'}
+];

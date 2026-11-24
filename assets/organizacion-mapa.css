@@ -32,3 +32,11 @@
 .map-timeline>a{color:var(--cyan-soft);font-size:12px;font-weight:800;text-underline-offset:3px}
 .oas-map-canvas svg[data-layer="timeline"] path[data-milestone="yes"]{fill:var(--cyan)}
 .oas-map-canvas svg[data-layer="timeline"] path[data-milestone="yes"].is-selected{fill:var(--map-selected)}
+
+/* From the institutional map, jump directly to each organ's role in the procedure. */
+.org-detail-guide{display:grid;gap:7px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.org-detail-guide>strong{font-size:12px}
+.org-detail-guide>div{display:flex;flex-wrap:wrap;gap:6px 15px}
+.org-detail-guide a{min-height:36px;display:inline-flex;align-items:center;color:var(--cyan-soft);font-size:13px;font-weight:750;text-underline-offset:3px}
+.org-detail-guide a:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+@media(max-width:520px){.org-detail-guide>div{display:grid;gap:2px}.org-detail-guide a{min-height:40px}}

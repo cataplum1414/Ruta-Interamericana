@@ -7,6 +7,7 @@ const reasoning = await readFile('assets/razonamiento-v1.js', 'utf8');
 const glossary = await readFile('assets/glosario.js', 'utf8');
 const styles = await readFile('assets/styles-v26.css', 'utf8');
 const atlasShell = await readFile('assets/arquitectura-atlas.css', 'utf8');
+const orgMapStyles = await readFile('assets/organizacion-mapa.css', 'utf8');
 const opinions = await readFile('assets/opiniones.js', 'utf8');
 const manifest = JSON.parse(await readFile('manifest.webmanifest', 'utf8'));
 const serviceWorker = await readFile('sw.js', 'utf8');
@@ -79,8 +80,11 @@ if (!html.includes('id="protectionMeasuresLab"') || !app.includes('protectionSte
 
 if (!html.includes('id="petitionerNoticeDate"') || !html.includes('id="reportTransmissionDate"') || !html.includes('id="petitionerNoticeResult"') || !html.includes('id="reportTransmissionResult"') || !deadlineCompare.includes('months: 1') || !deadlineCompare.includes('months: 3') || !deadlineCompare.includes('addCalendarMonths') || !serviceWorker.includes('./assets/plazos-comparador-v1.js')) throw new Error('The two distinct Article 44.3 and 51.1 trigger dates must have separate calendar controls, calculations, and an offline-cached script.');
 if (!app.includes("courtCompetence:{phase:'CORTE IDH'") || !app.includes("stage:14,source:'https://www.oas.org/es/cidh/mandato/basicos/convencion.asp'") || !app.includes("court:['courtCompetence','courtNotification'")) throw new Error('Missing the interactive Court jurisdiction decision.');
-if (!html.includes('assets/styles-v26.css') || !html.includes('assets/arquitectura-atlas.css?v=11') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v40.js') || !html.includes('assets/audiencia-lab-v1.js') || !serviceWorker.includes('atlas-oea-shell-v82') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/arquitectura-atlas.css?v=11') || !serviceWorker.includes('./assets/app-v40.js') || !serviceWorker.includes('./assets/audiencia-lab-v1.js') || !serviceWorker.includes('./assets/razonamiento-v1.js') || !serviceWorker.includes('./assets/map-connections-v6.js') || !styles.includes('.process-overview-summary')) {
+if (!html.includes('assets/styles-v26.css') || !html.includes('assets/arquitectura-atlas.css?v=11') || !html.includes('assets/organizacion-mapa.css?v=atlas-oea-6') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v40.js') || !html.includes('assets/audiencia-lab-v1.js') || !serviceWorker.includes('atlas-oea-shell-v83') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/arquitectura-atlas.css?v=11') || !serviceWorker.includes('./assets/organizacion-mapa.css?v=atlas-oea-6') || !serviceWorker.includes('./assets/app-v40.js') || !serviceWorker.includes('./assets/audiencia-lab-v1.js') || !serviceWorker.includes('./assets/razonamiento-v1.js') || !serviceWorker.includes('./assets/map-connections-v6.js') || !styles.includes('.process-overview-summary')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
+}
+if (!organData.includes("item.id==='cidh').atlasLinks") || !organData.includes("item.id==='corte').atlasLinks") || !organData.includes("step:2") || !organData.includes("step:10") || !app.includes('item.atlasLinks?.length') || !app.includes("el('organDetail').addEventListener('click'") || !app.includes('openProceduralStep(link.dataset.openStep)') || !orgMapStyles.includes('.org-detail-guide') || !html.includes('assets/organizacion-mapa.css?v=atlas-oea-6')) {
+  throw new Error('Selecting the CIDH or Court in the institutional map must lead to the matching Atlas page and procedural station.');
 }
 if (!atlasShell.includes('.menu-toggle span{display:inline') || !atlasShell.includes('opacity:0;cursor:pointer;appearance:none') || !html.includes('class="theme-compact"') || !html.includes('class="appbrand"')) {
   throw new Error('The mobile header must show the outlined Atlas menu and brand while keeping the color selector accessible behind its icon control.');
@@ -88,7 +92,7 @@ if (!atlasShell.includes('.menu-toggle span{display:inline') || !atlasShell.incl
 if (!app.includes('function relatedJurisprudenceLinks(entry)') || !app.includes("add('#recorrido','Competencia y excepciones',14)") || !app.includes("add('#recorrido','Reparaciones y cumplimiento',17)") || !app.includes("add('#recorrido','Examinar el fondo',7)") || !app.includes("jurisGrid.querySelectorAll('[data-open-step]')") || !atlasShell.includes('.juris-connection') || !html.includes('id="jurisGrid"')) {
   throw new Error('Jurisprudence cards must connect their topic labels to the matching procedural station, with an accessible route link in both desktop and mobile layouts.');
 }
-if (!app.includes('function openProceduralStep(stepIndex)') || !app.includes("location.hash='recorrido'") || !app.includes("window.addEventListener('hashchange',go,{once:true})") || !app.includes("event.preventDefault();openProceduralStep(link.dataset.openStep)") || (app.match(/openProceduralStep\(/g)||[]).length < 10) {
+if (!app.includes('function openProceduralStep(stepIndex)') || !app.includes("activeStepPhase='Todas';document.querySelectorAll('[data-phase]')") || !app.includes("location.hash='recorrido'") || !app.includes("window.addEventListener('hashchange',go,{once:true})") || !app.includes("event.preventDefault();openProceduralStep(link.dataset.openStep)") || (app.match(/openProceduralStep\(/g)||[]).length < 10) {
   throw new Error('Every contextual link to a procedural station must open the Route page before scrolling to the selected step.');
 }
 const requiredHearingArticles=['artículo 46','artículos 46–48','artículo 50.1','artículos 51–52','artículo 56'];
