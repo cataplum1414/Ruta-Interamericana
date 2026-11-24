@@ -162,7 +162,7 @@ html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
 
 /* Shell compartido de los atlas: el contenido y los destinos los define cada sitio. */
 :root{--atlas-reading-gutter:clamp(16px,3.34vw,48px)}
-.side-top{min-height:0;padding:0 0 20px;border:0}
+.side-top{flex:none;padding:0 0 8px;border:0}
 .side-identity{gap:4px;padding:0}
 .side-identity strong{font-size:25px;line-height:1.16;font-weight:800;letter-spacing:-.8px}
 .side-identity strong b{color:var(--cyan-soft)}
@@ -181,8 +181,9 @@ html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
 .hero .atlas-search #atlasSearchGo{background:#6740E8;color:#fff;border-color:transparent}
 .hero .atlas-search #atlasSearchGo:hover{background:#5731D3}
 .hero-easy-read summary{font-weight:400}
-.side{overflow-y:auto}
-.side .nav-groups{flex:none;overflow:visible}
+.side{overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--line-strong) transparent}
+.side .theme-picker,.side .nav-groups,.side .side-footer{flex:none}
+.side .nav-groups{overflow:visible}
 .side .theme-picker button{border-radius:7px}
 .side .theme-picker button[aria-pressed="true"]{color:#10131C}
 .side .nav-group a{min-height:48px;border-radius:12px}
@@ -198,7 +199,6 @@ html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
   .menu-toggle span{font-size:16px}
   .appbrand,.appbrand b{font-size:16px;letter-spacing:-.05em}
   .side{width:min(86vw,330px);padding:calc(20px + env(safe-area-inset-top)) 14px calc(110px + env(safe-area-inset-bottom));border-radius:0}
-  .side-top{padding-bottom:16px}
   .hero.page-section{padding-top:16px;padding-inline:var(--atlas-reading-gutter)}
   .hero-lead{font-size:15.5px}
   .hero .atlas-search{padding:14px 12px 10px}
@@ -210,6 +210,7 @@ html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
 .hero-overview .atlas-view-count{display:flex;gap:8px;align-items:flex-start}
 .hero-overview .atlas-view-count svg{margin-top:3px}
 .hero-overview .atlas-view-info{margin-left:auto}
+@media(min-width:801px){.hero-overview #atlasVisitLabel{display:none}}
 @media(max-width:800px){
   .hero .hero-overview{gap:6px 12px;min-height:40px;padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:var(--panel)}
   .atlas-overview-item{font-size:12px}
