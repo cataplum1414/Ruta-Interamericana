@@ -729,7 +729,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento contencioso",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=461",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Rosadio Villavicencio vs. Perú",
@@ -782,7 +783,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=351",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Tristán Donoso vs. Panamá",
@@ -840,7 +842,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=348",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Vélez Loor vs. Panamá",
