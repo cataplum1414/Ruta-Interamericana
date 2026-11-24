@@ -17,7 +17,7 @@ Atlas OEA es un proyecto educativo independiente, editado por Sukima Labs. No es
 4. Usa el mapa geogr&aacute;fico para localizar los Estados, revisar su membres&iacute;a y abrir la ficha de pa&iacute;s.
 5. Usa el reloj de plazos como orientación y verifica cada término en la norma aplicable.
 6. Explora el caso ficticio de Emilio Acosta vs. Arcadia y practica con preguntas explicadas.
-7. Busca en la biblioteca de jurisprudencia por nombre, país o tema y abre la fuente oficial disponible.
+7. Busca en la biblioteca de jurisprudencia por nombre, país o tema; filtra además por tema jurídico o entidad y abre la fuente oficial disponible.
 8. Busca siglas y conceptos en el diccionario; también puedes tocar los términos subrayados para abrir su explicación y seguir los enlaces relacionados.
 9. Marca las estaciones que ya estudiaste. La guía recuerda tu última estación y tu avance en este navegador, sin crear una cuenta.
 10. En un navegador compatible, abre el menú para instalar la guía. Tras la primera carga, el contenido y los ejercicios disponibles se pueden consultar sin conexión; las fuentes oficiales externas requieren internet.
@@ -58,8 +58,8 @@ El modo sin conexión y la instalación requieren servir la guía por `localhost
 ## Archivos principales
 
 - `index.html`: estructura y contenido de la guía.
-- `assets/styles-v22.css`: identidad visual, navegación adaptable, vistas móviles y estados accesibles.
-- `assets/app-v35.js`: recorrido, caso, reloj, práctica, búsquedas, contador independiente y enlaces contextuales del diccionario.
+- `assets/styles-v23.css`: identidad visual, navegación adaptable, vistas móviles y estados accesibles.
+- `assets/app-v36.js`: recorrido, caso, reloj, práctica, búsquedas, contador independiente y enlaces contextuales del diccionario.
 - `assets/glosario.js`: siglas y conceptos con explicaciones claras, relaciones internas y fuentes oficiales.
 - `assets/jurisprudencia.js`: referencias jurisprudenciales estructuradas.
 - `assets/opiniones.js`: catálogo de opiniones consultivas emitidas con enlaces a las Series A oficiales.
