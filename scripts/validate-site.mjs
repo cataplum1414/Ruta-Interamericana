@@ -49,7 +49,8 @@ if (simulationNodeIds.length !== 19 || simulationNodeIds.some(id => (simulationN
 if (simulationPaths.length !== 2 || simulationPaths.some(path => path.nodes.length !== (path.name === 'cidh' ? 19 : 10) || path.nodes.some(id => !simulationNodeIds.includes(id)))) {
   throw new Error('The case simulator needs complete CIDH and Court routes that only reference existing decision nodes.');
 }
-if (!app.includes('19 decisiones') || !app.includes('10 decisiones')) {
+const startCounts = Object.fromEntries([...app.matchAll(/data-sim-path="(cidh|court)">[\s\S]*?<span>(\d+) decisiones/g)].map(match => [match[1], Number(match[2])]));
+if (simulationPaths.some(path => startCounts[path.name] !== path.nodes.length)) {
   throw new Error('The case simulator start buttons must show the same number of decisions as their routes.');
 }
 if (!html.includes('id="caseSimulationTitle"') || !html.includes('id="caseSimTrail"') || !app.includes('caseSimRetry') || !app.includes('drawCaseTrail') || !app.includes('data-review-step') || !app.includes('Decisiones del procedimiento') || !styles.includes('.case-sim-options button.is-correct') || !styles.includes('.case-sim-trail button.current')) {
