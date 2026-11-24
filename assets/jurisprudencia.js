@@ -432,7 +432,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=345",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Godínez Cruz vs. Honduras",
@@ -545,7 +546,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=214",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Las Palmeras vs. Colombia",
@@ -721,14 +723,16 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=315",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Tibi vs. Ecuador",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=239",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Tiu Tojín vs. Guatemala",
