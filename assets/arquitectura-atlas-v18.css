@@ -238,3 +238,21 @@ html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
 .institution-step-links a,.institution-procedure-source,.institution-secondary a{display:inline-flex;align-items:center;min-height:44px;color:var(--cyan-soft);font-weight:750;text-underline-offset:3px}
 .institution-secondary{padding-top:20px;border-top:1px solid var(--line)}
 @media(max-width:520px){.institution-procedure li{padding-left:42px}.institution-step-links{gap:0 14px}}
+
+.language-entry{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:6px 10px;border:1px solid var(--line-strong);border-radius:8px;color:var(--ink);font-weight:750;text-decoration:none}
+.language-entry-side{align-self:flex-start;flex:none;margin-bottom:8px}
+.language-entry-mobile{display:none}
+.english-guide{max-width:var(--content);margin:auto}
+.english-guide-links{display:flex;gap:8px 20px;flex-wrap:wrap;margin:0 0 22px}
+.english-guide a{color:var(--cyan-soft);text-underline-offset:3px}
+.english-phase{margin-block:20px}
+.english-phase h3{margin-bottom:8px}
+.english-phase ol{padding-left:26px}
+.english-phase li{padding:10px 0 8px 6px;border-top:1px solid var(--line)}
+.english-phase li h4,.english-phase li p{margin:0 0 5px}
+.english-phase li p,.english-exercise p{max-width:74ch;color:var(--muted);line-height:1.6}
+.english-phase li a{display:inline-flex;align-items:center;min-height:44px}
+.english-exercise{margin:24px 0;padding-top:15px;border-top:1px solid var(--line)}
+.english-exercise details{border-bottom:1px solid var(--line);padding:6px 0 8px}
+.english-exercise summary{min-height:44px;padding-block:10px;font-weight:750;cursor:pointer}
+@media(max-width:800px){.language-entry-mobile{display:inline-flex;flex:0 0 44px;min-width:44px}}

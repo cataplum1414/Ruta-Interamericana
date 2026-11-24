@@ -15,7 +15,7 @@
 </script>
 <link rel="stylesheet" href="assets/styles-v26.css">
 <link rel="stylesheet" href="assets/organizacion-mapa.css?v=atlas-oea-9">
-<link rel="stylesheet" href="assets/arquitectura-atlas-v17.css">
+<link rel="stylesheet" href="assets/arquitectura-atlas-v18.css">
 <link rel="manifest" href="./manifest.webmanifest">
 <script>
 if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
@@ -30,11 +30,13 @@ if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
   <a class="appbrand" href="#inicio" aria-label="Atlas OEA, inicio">ATLAS <b>OEA</b></a>
   <div class="appbar-context">Organizaci&oacute;n de los Estados Americanos</div>
   <label class="theme-compact" title="Modo de color"><svg class="theme-icon theme-icon-auto" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 0 0 16z" fill="currentColor"/></svg><svg class="theme-icon theme-icon-light" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="theme-icon theme-icon-dark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 15.5A8.5 8.5 0 0 1 8.5 3.5 8.5 8.5 0 1 0 20.5 15.5Z"/></svg><select id="themeSelect" aria-label="Modo de color"><option value="auto">Autom&aacute;tico</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></label>
+  <a class="language-entry language-entry-mobile" href="#english" hreflang="en" lang="en" aria-label="English procedure guide">EN</a>
 </header>
 
 <aside class="side" id="sideNav" aria-label="Menú principal">
   <div class="side-top"><div class="side-identity"><strong>ATLAS <b>OEA</b></strong><span>SISTEMA INTERAMERICANO</span></div><button class="close-menu" id="closeMenu" type="button" aria-label="Cerrar menú">×</button></div>
   <div class="theme-picker" role="group" aria-label="Modo de color"><span>Modo de color</span><button type="button" data-theme-choice="auto" aria-pressed="true">Automático</button><button type="button" data-theme-choice="light" aria-pressed="false">Claro</button><button type="button" data-theme-choice="dark" aria-pressed="false">Oscuro</button></div>
+  <a class="language-entry language-entry-side" href="#english" hreflang="en" lang="en">English guide</a>
   <nav class="nav-groups" id="primaryNav" aria-label="Pantallas de Atlas OEA">
     <section class="nav-group" data-nav-group><h2>Inicio</h2><div class="nav-links"><a href="#inicio"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>Panorama</a><a href="#actualidad"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4zM7 9h10M7 12h10M7 15h6"/></svg>Noticias</a><a href="#orientador"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2.2 4.8-4.8 2.2 2.2-4.8z"/></svg>&iquest;Por d&oacute;nde empiezo?</a></div></section>
     <section class="nav-group" data-nav-group><h2>Conocer la OEA</h2><div class="nav-links"><a href="#oea"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>Qu&eacute; es la OEA</a><a href="#organos"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M12 7v4M5 16l4-5m10 5-4-5M8 18h8"/></svg>&Oacute;rganos de la OEA</a><a href="#estados"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4h13l-3 4 3 4H5"/></svg>Estados</a><a href="#mapa"><svg class="nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 0 0 18M12 3a15 15 0 0 1 0 18"/></svg>Mapa de las Am&eacute;ricas</a></div></section>
@@ -69,6 +71,56 @@ if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
     <div class="study-resume" id="studyResume" hidden><div><span class="section-tag">TU AVANCE EN ESTE DISPOSITIVO</span><strong id="studyProgressText"></strong></div><a class="button secondary" id="resumeStudy" href="#recorrido">Retomar</a><button class="study-reset" id="resetStudy" type="button">Borrar avance</button></div>
   </div>
   <section class="home-news" aria-labelledby="homeNewsTitle"><div class="home-news-heading"><div><p class="section-tag">PANORAMA · OEA, CIDH Y CORTE</p><h2 id="homeNewsTitle">Lo que ocurre en las Am&eacute;ricas</h2><p>Actividad institucional y actualidad regional, con sus fuentes oficiales.</p></div><a class="home-news-all" href="#actualidad">Ver todas las noticias</a></div><div class="home-news-list" id="homeNews" aria-live="polite"></div></section>
+</section>
+
+<section id="english" lang="en" data-route-page class="page-section section-block">
+  <div class="section-heading"><div><p class="section-tag">ATLAS OEA ? ENGLISH GUIDE</p><h2>Follow a human rights petition through the Inter-American system</h2><p>Start with domestic remedies, follow the petition at the Commission and see how an eligible case can reach the Court.</p></div><a href="#inicio" hreflang="es" lang="es">Volver a la gu&iacute;a en espa&ntilde;ol</a></div>
+  <div class="english-guide">
+    <nav class="english-guide-links" aria-label="In this guide"><a href="#englishStages">18 stages</a><a href="#englishPractice">Try an example</a><a href="#englishSources">Official sources</a></nav>
+    <section aria-labelledby="englishStages"><h3 id="englishStages">The procedure in 18 stages</h3>
+  <div class="english-phase"><h3>Before the Commission</h3>
+    <ol start="1">
+      <li><h4>Record the facts</h4><p>Identify the people affected, the State conduct at issue, key dates and available evidence.</p><a href="#recorrido?paso=1" hreflang="es">Station 1 in Spanish &rarr;</a></li>
+      <li><h4>Review domestic remedies</h4><p>Check whether suitable and effective remedies were exhausted and whether an exception applies.</p><a href="#recorrido?paso=2" hreflang="es">Station 2 in Spanish &rarr;</a></li>
+    </ol></div>
+  <div class="english-phase"><h3>Inter-American Commission (IACHR)</h3>
+    <ol start="3">
+      <li><h4>File a petition</h4><p>An eligible person, group or organization can submit a petition to the Commission.</p><a href="#recorrido?paso=3" hreflang="es">Station 3 in Spanish &rarr;</a></li>
+      <li><h4>Initial review and transmission</h4><p>The Commission can ask for clarification and forward relevant parts of the petition to the State for a response.</p><a href="#recorrido?paso=4" hreflang="es">Station 4 in Spanish &rarr;</a></li>
+      <li><h4>Check the Commission&#x27;s competence</h4><p>Identify whose rights are at issue, where and when the facts occurred, and which instrument applies.</p><a href="#recorrido?paso=5" hreflang="es">Station 5 in Spanish &rarr;</a></li>
+      <li><h4>Assess admissibility</h4><p>Check exhaustion, timing, duplication and whether the allegations could disclose a violation.</p><a href="#recorrido?paso=6" hreflang="es">Station 6 in Spanish &rarr;</a></li>
+      <li><h4>Consider a friendly settlement</h4><p>The parties can seek a settlement by consent. The Commission can facilitate and monitor an approved agreement.</p><a href="#recorrido?paso=7" hreflang="es">Station 7 in Spanish &rarr;</a></li>
+      <li><h4>Examine the merits</h4><p>The Commission considers the facts, evidence and the State&#x27;s obligations.</p><a href="#recorrido?paso=8" hreflang="es">Station 8 in Spanish &rarr;</a></li>
+      <li><h4>Read the merits report</h4><p>The Commission sets out its conclusions and, where appropriate, recommendations.</p><a href="#recorrido?paso=9" hreflang="es">Station 9 in Spanish &rarr;</a></li>
+      <li><h4>Assess possible referral</h4><p>The Commission decides whether to submit the case to the Court under the applicable rules.</p><a href="#recorrido?paso=10" hreflang="es">Station 10 in Spanish &rarr;</a></li>
+    </ol></div>
+  <div class="english-phase"><h3>Inter-American Court (IACtHR)</h3>
+    <ol start="11">
+      <li><h4>Submission to the Court</h4><p>Check the Court&#x27;s jurisdiction and what is contained in the submission, including the identification of alleged victims.</p><a href="#recorrido?paso=11" hreflang="es">Station 11 in Spanish &rarr;</a></li>
+      <li><h4>Notice and representation</h4><p>The Court Registry notifies the participants. Record who received each notice and when.</p><a href="#recorrido?paso=12" hreflang="es">Station 12 in Spanish &rarr;</a></li>
+      <li><h4>Requests, arguments and evidence</h4><p>Alleged victims or their representatives provide their own written submissions. The Spanish guide calls this pleading the ESAP.</p><a href="#recorrido?paso=13" hreflang="es">Station 13 in Spanish &rarr;</a></li>
+      <li><h4>The State&#x27;s answer</h4><p>The State responds to the allegations and requested relief, offers evidence and can raise preliminary objections.</p><a href="#recorrido?paso=14" hreflang="es">Station 14 in Spanish &rarr;</a></li>
+      <li><h4>Preliminary objections</h4><p>Identify the rule, timing and procedural effect of each objection.</p><a href="#recorrido?paso=15" hreflang="es">Station 15 in Spanish &rarr;</a></li>
+      <li><h4>Prepare the evidence</h4><p>Identify the documents, statements or expert opinions that support each contested point.</p><a href="#recorrido?paso=16" hreflang="es">Station 16 in Spanish &rarr;</a></li>
+      <li><h4>Hearing and final arguments</h4><p>A hearing may be held. Follow the Court&#x27;s instructions for evidence, speaking turns and final submissions.</p><a href="#recorrido?paso=17" hreflang="es">Station 17 in Spanish &rarr;</a></li>
+      <li><h4>Judgment and compliance</h4><p>The Court issues its judgment and can order reparations. It then monitors compliance with its orders.</p><a href="#recorrido?paso=18" hreflang="es">Station 18 in Spanish &rarr;</a></li>
+    </ol></div>
+    </section>
+    <section class="english-exercise" aria-labelledby="englishPractice">
+      <h3 id="englishPractice">Try an example</h3>
+      <p>The Commission has declared a petition admissible. The petitioner wants to go straight to the Court. Which step comes next?</p>
+      <details><summary>File the case directly with the Court</summary><p>Review Articles 50 and 61 of the Convention. A petitioner does not submit a contentious case directly to the Court. An admissibility decision allows the Commission to examine the merits.</p></details>
+      <details><summary>Prepare the evidence and arguments for the merits</summary><p>Yes. The Commission examines the merits. If the applicable conditions are met, the Commission can later decide whether to submit the case to the Court.</p></details>
+    </section>
+    <section class="english-exercise" aria-labelledby="englishSources"><h3 id="englishSources">Official sources</h3>
+      <ul>
+        <li><a href="https://www.oas.org/dil/treaties_B-32_American_Convention_on_Human_Rights.htm">American Convention on Human Rights ? English</a></li>
+        <li><a href="https://www.oas.org/en/iachr/jsForm/?File=%2Fen%2Fiachr%2Fmandate%2Fbasics%2Frulesiachr.asp">Rules of Procedure of the IACHR ? English</a></li>
+        <li><a href="https://www.oas.org/en/iachr/mandate/basics/rulescourt.asp">Rules of Procedure of the Court ? English</a></li>
+      </ul>
+      <p>The interactive map, country profiles, case index and full simulator are available in Spanish.</p>
+    </section>
+  </div>
 </section>
 
 <section id="oea" data-route-page class="page-section section-block section-alt">
