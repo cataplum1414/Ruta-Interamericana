@@ -625,7 +625,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=224",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Mendoza y otros vs. Argentina",
@@ -737,7 +738,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=339",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Suárez Peralta vs. Ecuador",
@@ -885,7 +887,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal · Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=263",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "A, B y C vs. Irlanda",
