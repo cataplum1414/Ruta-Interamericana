@@ -389,8 +389,9 @@ window.RI_JURISPRUDENCIA=[
         "title":  "Escher y Otros vs. Brasil",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
-        "topic":  "Competencia y excepciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "topic":  "Derecho a la vida privada · Reparaciones",
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=277",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Escué Zapata vs. Colombia",
@@ -685,8 +686,9 @@ window.RI_JURISPRUDENCIA=[
         "title":  "Radilla Pacheco vs. México",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
-        "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "topic":  "Competencia temporal · Desaparición forzada · Reparaciones",
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=360",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Ramírez Escobar y otros vs. Guatemala",
@@ -743,8 +745,9 @@ window.RI_JURISPRUDENCIA=[
         "title":  "Tiu Tojín vs. Guatemala",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
-        "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "topic":  "Desaparición forzada · Niñez · Reparaciones",
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=245",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Torres Millacura y otros vs. Argentina",
@@ -758,7 +761,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones · Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=253",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Trujillo Oroza vs. Bolivia",
