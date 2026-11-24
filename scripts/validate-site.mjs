@@ -1,7 +1,7 @@
 import {access, readFile} from 'node:fs/promises';
 
 const html = await readFile('index.html', 'utf8');
-const app = await readFile('assets/app.js', 'utf8');
+const app = await readFile('assets/app-v22.js', 'utf8');
 const glossary = await readFile('assets/glosario.js', 'utf8');
 const styles = await readFile('assets/styles.css', 'utf8');
 const opinions = await readFile('assets/opiniones.js', 'utf8');
@@ -61,7 +61,7 @@ if ((html.match(/class="process-overview-link"/g) || []).length !== 4 || !app.in
 if (!glossary.includes("id:'comunicacion-interestatal'") || !glossary.includes('convencion-americana-derechos-humanos.pdf') || !app.includes('Petición individual y comunicación interestatal') || !app.includes('artículo 45') || !glossary.includes("id:'denuncia-convencion'") || !app.includes('Denuncia de la Convención y petición individual') || !app.includes('artículo 78 CADH')) {
   throw new Error('The glossary and practice must explain interstate communications and treaty denunciation with official legal sources.');
 }
-if (!html.includes('assets/styles.css?v=atlas-oea-16') || !html.includes('assets/glosario.js?v=editorial-6') || !html.includes('assets/app.js?v=atlas-oea-22') || !serviceWorker.includes('atlas-oea-shell-v41')) {
+if (!html.includes('assets/styles.css?v=atlas-oea-16') || !html.includes('assets/glosario.js?v=editorial-6') || !html.includes('assets/app-v22.js') || !serviceWorker.includes('atlas-oea-shell-v42') || !serviceWorker.includes('./assets/app-v22.js')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
 }
 if (!html.includes('id="atlasVisitCount" data-counter-state="pending"') || !html.includes('id="atlasVisitLabel"') || !app.includes("https://counterapi.com/api/cataplum1414.github.io/view/atlas-oea-home-v2") || !app.includes("referrerPolicy:'no-referrer'") || !app.includes('12*60*60*1000') || !app.includes('new URLSearchParams(location.search).has(\'sinvisita\')') || !app.includes('readOnly=true') || !app.includes("output.dataset.counterState='loading'") || !app.includes("output.dataset.counterState='ready'") || !app.includes("output.dataset.counterState='unavailable'") || !app.includes("value===1?'visita':'visitas'")) {
