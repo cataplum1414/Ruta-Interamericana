@@ -9,12 +9,26 @@
   const listTitle = document.getElementById('mapDirectoryTitle');
   const legend = document.getElementById('oasMapLegend');
   const description = document.getElementById('mapLayerDescription');
+  const timeline = document.getElementById('mapTimeline');
+  const timelineType = document.getElementById('mapTimelineType');
+  const timelineYear = document.getElementById('mapTimelineYear');
+  const timelineOutput = document.getElementById('mapTimelineOutput');
   if (!canvas || !detail || !search || !list) return;
 
   const members = window.RI_ESTADOS_OEA || [];
   const former = window.RI_ESTADOS_RETIRO || [];
   const states = [...members, ...former];
   const records = window.RI_JURISPRUDENCIA || [];
+  // Milestones from the 2025 CIDH annual report; the year of the act alone does not encode later denunciations.
+  const treatyMilestones = {
+    ARG:{convention:1984,court:1984},BRB:{convention:1981,court:2000},BOL:{convention:1979,court:1993},BRA:{convention:1992,court:1998},
+    CHL:{convention:1990,court:1990},COL:{convention:1973,court:1985},CRI:{convention:1970,court:1980},DMA:{convention:1993},
+    ECU:{convention:1977,court:1984},SLV:{convention:1978,court:1995},GRD:{convention:1978},GTM:{convention:1978,court:1987},
+    HTI:{convention:1977,court:1998},HND:{convention:1977,court:1981},JAM:{convention:1978},MEX:{convention:1981,court:1998},
+    NIC:{convention:1979,court:1991},PAN:{convention:1978,court:1990},PRY:{convention:1989,court:1993},PER:{convention:1978,court:1981},
+    DOM:{convention:1978,court:1999},SUR:{convention:1987,court:1987},TTO:{convention:1991,court:1991},URY:{convention:1985,court:1985},
+    VEN:{convention:2019,court:2019}
+  };
   const normalize = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   const aliases = {
     ARG:['argentina'], ATG:['antigua y barbuda'], BHS:['bahamas'], BRB:['barbados'], BLZ:['belice','belize'],
@@ -40,6 +54,14 @@
   let layer = 'membership';
 
   function setLegend() {
+    if (layer === 'timeline') {
+      const field = timelineType.value;
+      const label = field === 'court' ? 'la competencia de la Corte' : 'la Convenci?n';
+      legend.innerHTML = '<span><i class="legend-timeline"></i>Hito registrado hasta el a&ntilde;o elegido</span><span><i class="legend-other"></i>Sin fecha en esta tabla</span>';
+      description.textContent = `Color: Estados con hito de ${label} hasta ${timelineYear.value}, seg?n el Informe Anual CIDH 2025.`;
+      listTitle.textContent = `Hitos registrados hasta ${timelineYear.value}`;
+      return;
+    }
     if (layer === 'cases') {
       legend.innerHTML = '<span><i class="legend-cases"></i>País con decisiones citadas en esta guía</span><span><i class="legend-other"></i>Sin casos incorporados al índice</span>';
       description.textContent = 'Violeta: hay decisiones de ese país en el índice de esta guía. La selección no representa el total histórico de casos de la Corte.';
@@ -53,23 +75,28 @@
 
   function renderDirectory() {
     const query = normalize(search.value.trim());
-    const source = layer === 'cases' ? states.filter(state => caseCounts.get(state.code) > 0) : members;
+    const source = layer === 'cases' ? states.filter(state => caseCounts.get(state.code) > 0) : layer === 'timeline' ? states.filter(state => (treatyMilestones[state.code]?.[timelineType.value] || 9999) <= Number(timelineYear.value)) : members;
     const rows = source.filter(state => !query || normalize(`${state.name} ${state.region}`).includes(query));
     count.textContent = layer === 'cases' ? `${rows.length} países` : `${rows.length} de ${members.length} Estados`;
-    list.innerHTML = rows.length ? rows.map(state => `<button type="button" data-map-code="${state.code}"><span>${state.name}</span><small>${layer === 'cases' ? `${caseCounts.get(state.code)} ${caseCounts.get(state.code) === 1 ? 'caso citado' : 'casos citados'}` : state.region}</small></button>`).join('') : '<p class="oas-map-empty">No hay coincidencias en esta capa. Prueba con otro nombre.</p>';
+    list.innerHTML = rows.length ? rows.map(state => `<button type="button" data-map-code="${state.code}"><span>${state.name}</span><small>${layer === 'cases' ? `${caseCounts.get(state.code)} ${caseCounts.get(state.code) === 1 ? 'caso citado' : 'casos citados'}` : layer === 'timeline' ? `Hito: ${treatyMilestones[state.code][timelineType.value]}` : state.region}</small></button>`).join('') : '<p class="oas-map-empty">No hay coincidencias en esta capa. Prueba con otro nombre.</p>';
   }
 
   function applyLayer() {
     const svg = canvas.querySelector('svg');
     if (svg) {
       if (svg.dataset.layer !== layer) svg.dataset.layer = layer;
+      svg.dataset.timelineField = timelineType.value;
+      svg.dataset.timelineYear = timelineYear.value;
       svg.querySelectorAll('[data-code]').forEach(shape => {
         const n = caseCounts.get(shape.dataset.code) || 0;
         shape.classList.toggle('has-atlas-cases', n > 0);
         if (shape.dataset.atlasCaseCount !== String(n)) shape.dataset.atlasCaseCount = String(n);
+        const year = treatyMilestones[shape.dataset.code]?.[timelineType.value];
+        shape.dataset.milestone = year && year <= Number(timelineYear.value) ? 'yes' : 'no';
       });
     }
     setLegend();
+    timeline.hidden = layer !== 'timeline';
     renderDirectory();
   }
 
@@ -160,9 +187,15 @@
   }
 
   document.querySelectorAll('input[name="mapLayer"]').forEach(input => input.addEventListener('change', () => {
-    layer = input.value === 'cases' ? 'cases' : 'membership';
+    layer = ['cases','timeline'].includes(input.value) ? input.value : 'membership';
     applyLayer();
   }));
+  timelineType.addEventListener('change', applyLayer);
+  timelineYear.addEventListener('input', () => {
+    timelineOutput.value = timelineYear.value;
+    timelineOutput.textContent = timelineYear.value;
+    applyLayer();
+  });
   document.querySelectorAll('.map-pan button').forEach(button => button.addEventListener('click', () => {
     const svg = canvas.querySelector('svg');
     if (!svg) return;

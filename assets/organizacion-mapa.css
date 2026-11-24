@@ -17,3 +17,18 @@
 .oas-map-zoom{display:flex;flex-wrap:wrap;gap:8px}.oas-map-zoom button{min-height:42px;padding:8px 12px;color:var(--ink);background:var(--surface);border:1px solid var(--line-strong);border-radius:8px;font-size:12px;font-weight:750}.oas-map-zoom button:hover,.oas-map-zoom button:focus-visible{border-color:var(--cyan);outline:2px solid var(--cyan);outline-offset:1px}
 
 .map-search-results{display:grid;max-height:245px;overflow:auto;gap:4px;padding:5px;background:var(--surface);border:1px solid var(--line);border-radius:9px}.map-search-results[hidden]{display:none}.map-search-results button{display:flex;min-height:44px;justify-content:space-between;align-items:center;gap:12px;padding:8px 10px;color:var(--ink);text-align:left;background:transparent;border:0;border-radius:6px;cursor:pointer}.map-search-results button:hover,.map-search-results button:focus-visible{background:var(--panel-raised);outline:2px solid var(--cyan)}.map-search-results button span{font-size:13px;font-weight:750}.map-search-results button small{color:var(--muted);font-size:11px;text-align:right}
+
+/* Hitos de tratados: controles y lectura temporal del mapa */
+.oas-map-legend .legend-timeline{background:var(--cyan)}
+.map-timeline{display:grid;gap:10px;padding:14px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:12px}
+.map-timeline[hidden]{display:none}
+.map-timeline>label,.map-timeline-range>label{font-size:13px;font-weight:800}
+.map-timeline select{width:100%;min-height:46px;padding:9px 12px;color:var(--ink);background:var(--panel);border:1px solid var(--line-strong);border-radius:9px;font:inherit}
+.map-timeline-range{display:grid;grid-template-columns:1fr auto;gap:5px 10px;align-items:center}
+.map-timeline-range output{color:var(--cyan-soft);font-size:20px;font-weight:850}
+.map-timeline-range input{grid-column:1/-1;min-height:30px;padding:0;accent-color:var(--cyan)}
+.map-timeline-range>div{grid-column:1/-1;display:flex;justify-content:space-between;color:var(--muted);font-size:11px}
+.map-timeline>p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}
+.map-timeline>a{color:var(--cyan-soft);font-size:12px;font-weight:800;text-underline-offset:3px}
+.oas-map-canvas svg[data-layer="timeline"] path[data-milestone="yes"]{fill:var(--cyan)}
+.oas-map-canvas svg[data-layer="timeline"] path[data-milestone="yes"].is-selected{fill:var(--map-selected)}
