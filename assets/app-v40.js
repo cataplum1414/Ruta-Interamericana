@@ -433,6 +433,21 @@ let installPrompt=null;const installButton=el('installApp');window.addEventListe
 if('serviceWorker'in navigator){navigator.serviceWorker.register('./sw.js',{scope:'./'}).then(()=>navigator.serviceWorker.ready).then(()=>{const status=el('offlineStatus');if(status)status.textContent='Esta gu\u00eda est\u00e1 disponible sin conexi\u00f3n en este dispositivo. Consulta siempre la fuente oficial.';}).catch(()=>{});}
 
 
+const historyFilters = [...document.querySelectorAll('[data-history-filter]')];
+const historyEvents = [...document.querySelectorAll('[data-history-event]')];
+function filterHistory(topic) {
+  historyFilters.forEach(button => {
+    button.setAttribute('aria-pressed', String(button.dataset.historyFilter === topic));
+  });
+  historyEvents.forEach(event => {
+    event.hidden = topic !== 'all' && !event.dataset.historyEvent.split(' ').includes(topic);
+  });
+  const count = historyEvents.filter(event => !event.hidden).length;
+  el('historyCount').textContent = count + (count === 1 ? ' hito' : ' hitos');
+}
+historyFilters.forEach(button => button.addEventListener('click', () => filterHistory(button.dataset.historyFilter)));
+filterHistory('all');
+
 const routePages=[...document.querySelectorAll('main [data-route-page]')],sidebarLinks=[...document.querySelectorAll('#sideNav a[href^="#"]')],mobileLinks=[...document.querySelectorAll('[data-mobile-section]')];
 function markSection(id){sidebarLinks.forEach(a=>{if(a.hash==='#'+id)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});const quickAccess={inicio:['inicio','orientador'],mapa:['mapa','estados'],recorrido:['sistema','comision','corte','recorrido','reloj','arcadia']};const active=Object.entries(quickAccess).find(([,ids])=>ids.includes(id))?.[0];mobileLinks.forEach(a=>{if(a.dataset.mobileSection===active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});}
 function showFocusedPractice(id) {
