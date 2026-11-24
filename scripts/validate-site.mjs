@@ -61,10 +61,10 @@ if ((html.match(/class="process-overview-link"/g) || []).length !== 4 || !app.in
 if (!glossary.includes("id:'comunicacion-interestatal'") || !glossary.includes('convencion-americana-derechos-humanos.pdf') || !app.includes('Petición individual y comunicación interestatal') || !app.includes('artículo 45') || !glossary.includes("id:'denuncia-convencion'") || !app.includes('Denuncia de la Convención y petición individual') || !app.includes('artículo 78 CADH')) {
   throw new Error('The glossary and practice must explain interstate communications and treaty denunciation with official legal sources.');
 }
-if (!html.includes('assets/styles.css?v=atlas-oea-16') || !html.includes('assets/glosario.js?v=editorial-6') || !html.includes('assets/app.js?v=atlas-oea-20') || !serviceWorker.includes('atlas-oea-shell-v39')) {
+if (!html.includes('assets/styles.css?v=atlas-oea-16') || !html.includes('assets/glosario.js?v=editorial-6') || !html.includes('assets/app.js?v=atlas-oea-21') || !serviceWorker.includes('atlas-oea-shell-v40')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
 }
-if (!html.includes('id="atlasVisitCount" data-counter-state="pending"') || !app.includes("https://counterapi.com/api/cataplum1414.github.io/view/atlas-oea-home") || !app.includes("referrerPolicy:'no-referrer'") || !app.includes('12*60*60*1000') || !app.includes('readOnly=true') || !app.includes("output.dataset.counterState='ready'") || !app.includes("output.dataset.counterState='unavailable'")) {
+if (!html.includes('id="atlasVisitCount" data-counter-state="pending"') || !app.includes("https://counterapi.com/api/cataplum1414.github.io/view/atlas-oea-home") || !app.includes("referrerPolicy:'no-referrer'") || !app.includes('12*60*60*1000') || !app.includes('readOnly=true') || !app.includes("output.dataset.counterState='loading'") || !app.includes("output.dataset.counterState='ready'") || !app.includes("output.dataset.counterState='unavailable'")) {
   throw new Error('The Atlas OEA view counter must use a separate aggregate key, suppress referrers, and avoid repeat increments for 12 hours.');
 }
 if (!app.includes('16 de diciembre de 2026') || !app.includes('%2F2026%2F254.asp')) {
