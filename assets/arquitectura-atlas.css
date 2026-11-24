@@ -50,7 +50,6 @@ html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
 .hero-system-links{display:flex;flex-wrap:wrap;gap:4px 18px;margin:10px 0 0}
 .hero-system-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--cyan-soft);font-weight:700;text-underline-offset:.25em}
 
-@media(max-width:420px){.procedure-overview-heading{flex-wrap:wrap;gap:1px 12px}.procedure-overview-heading>a{min-height:34px}.procedure-entry{align-items:flex-start;flex-direction:column;justify-content:center;gap:2px}.procedure-handoff{grid-template-columns:minmax(12px,1fr) auto minmax(12px,1fr)}}
 
 .reasoning-map{max-width:var(--content);margin:27px auto 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .reasoning-map>summary{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:3px 18px;min-height:66px;cursor:pointer;list-style:none}
@@ -160,3 +159,47 @@ html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
 .case-sim-variant button[aria-pressed="true"]{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,var(--surface));box-shadow:inset 0 0 0 1px var(--accent)}
 .case-sim-variant button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 @media(max-width:520px){.case-sim-variant>div{display:grid;grid-template-columns:1fr}.case-sim-variant button{text-align:left}}
+
+/* Shell compartido de los atlas: el contenido y los destinos los define cada sitio. */
+:root{--atlas-reading-gutter:clamp(16px,3.34vw,48px)}
+.side-top{min-height:0;padding:0 0 20px;border:0}
+.side-identity{gap:4px;padding:0}
+.side-identity strong{font-size:25px;line-height:1.16;font-weight:800;letter-spacing:-.8px}
+.side-identity strong b{color:var(--cyan-soft)}
+.side-identity span{font-size:12px;line-height:1.28;font-weight:400;letter-spacing:1.2px}
+.hero.page-section{padding:55px var(--atlas-reading-gutter) 44px}
+.hero-copy{width:100%;max-width:none}
+.hero .section-tag{padding:0}
+.hero h1{max-width:900px;margin:8px 0 12px;font-size:clamp(30px,4.2vw,46px);line-height:1.1;letter-spacing:-.035em}
+.hero-lead{max-width:760px;margin:0;font-size:18px;line-height:1.65}
+.hero-easy-read{margin:18px 0 0;border:1px solid var(--line);border-left:4px solid var(--green);border-radius:12px;background:color-mix(in srgb,var(--green) 7%,var(--surface))}
+.hero-easy-read summary{min-height:48px;padding:11px 14px;font-size:16px}
+.hero .atlas-search{width:100%;max-width:none;margin:16px 0 0;padding:16px 18px 12px;border:1px solid var(--line);border-radius:20px;background:var(--panel)}
+.hero .atlas-search input{font-size:18px}
+.hero .atlas-search label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.hero .atlas-search .search-suggestions{flex-wrap:wrap;overflow:visible}
+.hero .atlas-search #atlasSearchGo{background:#6740E8;color:#fff;border-color:transparent}
+.hero .atlas-search #atlasSearchGo:hover{background:#5731D3}
+.hero-easy-read summary{font-weight:400}
+.side{overflow-y:auto}
+.side .nav-groups{flex:none;overflow:visible}
+.side .theme-picker button{border-radius:7px}
+.side .theme-picker button[aria-pressed="true"]{color:#10131C}
+.side .nav-group a{min-height:48px;border-radius:12px}
+.side .nav-group a:not([aria-current="page"]){color:var(--muted)}
+@media(min-width:801px){
+  .side{padding:28px 17px}
+}
+@media(max-width:800px){
+  :root{--top-height:56px;--atlas-reading-gutter:16px}
+  .appbar{gap:8px;height:calc(var(--top-height) + env(safe-area-inset-top));padding-inline:max(14px,env(safe-area-inset-left)) max(14px,env(safe-area-inset-right))}
+  .menu-toggle{min-width:99px;min-height:44px;margin-left:-8px}
+  .menu-toggle svg{width:22px;height:22px;flex-basis:22px;color:currentColor}
+  .menu-toggle span{font-size:16px}
+  .appbrand,.appbrand b{font-size:16px;letter-spacing:-.05em}
+  .side{width:min(86vw,330px);padding:calc(20px + env(safe-area-inset-top)) 14px calc(110px + env(safe-area-inset-bottom));border-radius:0}
+  .side-top{padding-bottom:16px}
+  .hero.page-section{padding-top:16px;padding-inline:var(--atlas-reading-gutter)}
+  .hero-lead{font-size:15.5px}
+  .hero .atlas-search{padding:14px 12px 10px}
+}
