@@ -13,7 +13,7 @@
 <script>
 (()=>{let choice='auto';try{choice=localStorage.getItem('ri-theme')||'auto'}catch(e){}if(!['auto','light','dark'].includes(choice))choice='auto';const media=matchMedia('(prefers-color-scheme: light)');const apply=()=>{const theme=choice==='auto'?(media.matches?'light':'dark'):choice;document.documentElement.dataset.theme=theme;document.documentElement.dataset.themeChoice=choice;const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=theme==='light'?'#F5F4F0':'#10131C';document.querySelector('meta[name="color-scheme"]').content=theme};window.riTheme={get:()=>choice,set:value=>{choice=['auto','light','dark'].includes(value)?value:'auto';try{choice==='auto'?localStorage.removeItem('ri-theme'):localStorage.setItem('ri-theme',choice)}catch(e){}apply()}};media.addEventListener?.('change',()=>{if(choice==='auto')apply()});apply()})();
 </script>
-<link rel="stylesheet" href="assets/styles-v19.css">
+<link rel="stylesheet" href="assets/styles-v20.css">
 <link rel="stylesheet" href="assets/organizacion-mapa.css?v=atlas-oea-1">
 <link rel="manifest" href="./manifest.webmanifest">
 </head>
@@ -225,6 +225,17 @@
     <div class="admissibility-controls"><button id="admissibilityNext" class="button primary" type="button" hidden>Continuar →</button><button id="admissibilityReset" class="button secondary" type="button">Reiniciar el expediente</button></div>
     <p class="admissibility-sources">Reglas aplicables: <a href="https://www.oas.org/es/CIDH/jsForm/?File=%2Fes%2Fcidh%2Fmandato%2Fbasicos%2Freglamentocidh.asp" target="_blank" rel="noopener noreferrer">Reglamento de la CIDH, arts. 31–34 ↗</a> · <a href="https://www.oas.org/dil/esp/tratados_B-32_convencion_americana_sobre_derechos_humanos.htm" target="_blank" rel="noopener noreferrer">Convención Americana, arts. 46–47 ↗</a></p>
   </section>
+  <details class="protection-lab" id="protectionMeasuresLab">
+    <summary>Pr&aacute;ctica opcional: &iquest;CIDH o Corte ante un riesgo urgente?</summary>
+    <div class="protection-lab-content">
+      <p>Resuelve tres decisiones breves para distinguir qui&eacute;n puede pedir una medida, cu&aacute;ndo puede intervenir la Corte y qu&eacute; condiciones debe valorar cada &oacute;rgano. Esta v&iacute;a de protecci&oacute;n no sustituye la petici&oacute;n ni declara responsabilidad.</p>
+      <p id="protectionProgress" class="small" aria-live="polite">Decisi&oacute;n 1 de 3</p>
+      <fieldset class="protection-question"><legend id="protectionPrompt"></legend><div class="scenario-actions" id="protectionChoices" role="group" aria-label="Elegir respuesta"></div></fieldset>
+      <p id="protectionFeedback" class="protection-feedback" aria-live="polite"></p>
+      <p class="protection-source">Fuente: <a id="protectionSource" target="_blank" rel="noopener noreferrer"></a></p>
+      <div class="protection-controls"><button id="protectionNext" class="button primary" type="button" hidden>Continuar</button><button id="protectionReset" class="button secondary" type="button">Reiniciar</button></div>
+    </div>
+  </details>
 </section>
 
 <section id="biblioteca" data-route-page class="page-section section-block section-alt">
@@ -245,6 +256,6 @@
 <script src="assets/glosario.js?v=editorial-7" defer></script>
 <script src="assets/organos.js" defer></script>
 <script src="assets/estados-oea.js" defer></script>
-<script src="assets/app-v29.js" defer></script>
+<script src="assets/app-v30.js" defer></script>
 </body>
 </html>
