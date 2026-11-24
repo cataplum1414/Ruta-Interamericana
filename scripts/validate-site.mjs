@@ -388,6 +388,11 @@ if (!styles.includes('.mobile-bar{position:fixed;z-index:60;right:0;bottom:0;lef
 if (!html.includes('id="homeNews"') || !html.includes('href="#actualidad">Ver todas las noticias</a>') || !html.includes('href="https://www.corteidh.or.cr/187POS-Brasilia/caso-1.html"') || !app.includes("dateValue:'2026-11-23'") || !app.includes("org:'OEA'") || !app.includes("'Todas','OEA','CIDH','Corte IDH'") || !app.includes("dateValue:'2026-03-20'") || !app.includes('215 observaciones escritas') || !app.includes('https://www.corteidh.or.cr/187POS-Brasilia/caso-1.html') || !app.includes("const featured=[recentNews.find(x=>x.org==='CIDH'),recentNews.find(x=>x.org==='Corte IDH'),recentNews.find(x=>x.org==='OEA')]") || app.includes("x.dateValue!=='2026-11-23'") || !app.includes('function renderHomeNews()')) {
   throw new Error('The overview must surface recent CIDH, Court and OAS news and filter the full list by institution.');
 }
+const newsRecords = app.match(/const newsItems=\[([\s\S]*?)\];let activeNewsOrg=/)?.[1];
+const newsRecordCount = (newsRecords?.match(/\{org:'/g) || []).length;
+if (newsRecordCount !== 10 || (newsRecords.match(/relatedId:/g) || []).length !== newsRecordCount || !html.includes('Selección editorial revisada el 24 de noviembre de 2026')) {
+  throw new Error('Each news item needs a visible review date and a contextual route into the Atlas.');
+}
 for (const id of ['oea', 'comision', 'corte', 'sistema']) {
   const page = html.match(new RegExp(`<section id=\"${id}\" data-route-page[\\s\\S]*?</section>`))?.[0];
   if (!page || !page.includes('section-index')) throw new Error(`The ${id} learning page is incomplete.`);
