@@ -40,3 +40,27 @@
 .org-detail-guide a{min-height:36px;display:inline-flex;align-items:center;color:var(--cyan-soft);font-size:13px;font-weight:750;text-underline-offset:3px}
 .org-detail-guide a:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 @media(max-width:520px){.org-detail-guide>div{display:grid;gap:2px}.org-detail-guide a{min-height:40px}}
+
+.state-explorer{display:grid;grid-template-columns:minmax(220px,.65fr) minmax(0,1.35fr);gap:24px;max-width:var(--content);margin:auto}
+.state-directory label{display:block;margin-bottom:8px;font-weight:750}
+.state-directory input{width:100%;min-height:48px;padding:10px 13px;border:1px solid var(--line-strong);border-radius:12px;background:var(--surface);color:var(--ink);font:inherit}
+#stateResultsCount{margin:10px 0;color:var(--muted);font-size:13px}
+#stateDirectory{max-height:440px;overflow:auto;list-style:none;margin:0;padding:0 5px 0 0}
+#stateDirectory li{display:flex;align-items:baseline;justify-content:space-between;gap:8px;border-bottom:1px solid var(--line)}
+#stateDirectory a{flex:1;min-height:44px;display:flex;align-items:center;padding:6px 8px;color:var(--ink);font-weight:700;text-underline-offset:3px}
+#stateDirectory a[aria-current="page"]{background:color-mix(in srgb,var(--cyan) 12%,var(--surface));color:var(--cyan-soft)}
+#stateDirectory small{color:var(--muted);text-align:right}
+#stateProfile{min-width:0;border-top:2px solid var(--cyan-soft);padding-top:16px}
+#stateProfileHeading{margin:0 0 8px;font-size:clamp(24px,3vw,34px);scroll-margin-top:calc(var(--top-height) + 12px)}
+#stateProfile>p{color:var(--muted);line-height:1.55}
+.state-facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:14px 0}
+.state-facts>div{border-bottom:1px solid var(--line);padding:0 8px 10px 0}
+.state-facts dt{color:var(--muted);font-size:13px}
+.state-facts dd{margin:5px 0 0;font-weight:700}
+.map-country-profile-link{padding:9px 0;border-bottom:1px solid var(--line)}
+#stateProfile>.map-route-link{display:flex}
+@media(max-width:760px){.state-explorer,.state-facts{grid-template-columns:minmax(0,1fr)}#stateDirectory{max-height:240px}.state-facts>div{padding-bottom:8px}}
+
+.oas-map-detail,.map-country-connections{min-width:0;grid-template-columns:minmax(0,1fr)}
+.map-country-connections a,.oas-map-detail>a{overflow-wrap:anywhere}
+@media(max-width:950px){.oas-map-layout{grid-template-columns:minmax(0,1fr)}}

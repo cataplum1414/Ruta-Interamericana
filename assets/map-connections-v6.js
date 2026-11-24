@@ -59,15 +59,15 @@
     if (timelineTimer) clearInterval(timelineTimer);
     timelineTimer = null;
     timelinePlay.setAttribute('aria-pressed','false');
-    timelinePlay.textContent = '? Animar la cronolog?a';
+    timelinePlay.textContent = '▶ Animar la cronología';
   }
 
   function setLegend() {
     if (layer === 'timeline') {
       const field = timelineType.value;
-      const label = field === 'court' ? 'la competencia de la Corte' : 'la Convenci?n';
+      const label = field === 'court' ? 'la competencia de la Corte' : 'la Convención';
       legend.innerHTML = '<span><i class="legend-timeline"></i>Hito registrado hasta el a&ntilde;o elegido</span><span><i class="legend-other"></i>Sin fecha en esta tabla</span>';
-      description.textContent = `Color: Estados con hito de ${label} hasta ${timelineYear.value}, seg?n el Informe Anual CIDH 2025.`;
+      description.textContent = `Color: Estados con hito de ${label} hasta ${timelineYear.value}, según el Informe Anual CIDH 2025.`;
       listTitle.textContent = `Hitos registrados hasta ${timelineYear.value}`;
       return;
     }
@@ -118,19 +118,97 @@
     return link;
   }
 
+  const stateProfile = document.getElementById('stateProfile');
+  const stateSearch = document.getElementById('stateSearch');
+  const stateDirectory = document.getElementById('stateDirectory');
+  const stateResultsCount = document.getElementById('stateResultsCount');
+  const stateIndex = new Map(states.map(state => [state.code, state]));
+  const profileHref = code => `#estados?estado=${code}`;
+  const hashState = () => new URLSearchParams(location.hash.split('?')[1]).get('estado');
+
+  function renderStateDirectory() {
+    const query = normalize(stateSearch.value.trim());
+    const selected = hashState();
+    const rows = states
+      .filter(state => normalize(`${state.name} ${state.region} ${state.code}`).includes(query))
+      .sort((a, b) => a.name.localeCompare(b.name, 'es'));
+    stateResultsCount.textContent = rows.length === 1 ? '1 Estado' : `${rows.length} Estados`;
+    const items = rows.map(state => {
+      const item = document.createElement('li');
+      const link = addLink(item, profileHref(state.code), state.name);
+      if (state.code === selected) link.setAttribute('aria-current', 'page');
+      const region = document.createElement('small');
+      region.textContent = state.status === 'former' ? 'Retiro de la OEA' : state.region;
+      item.append(region);
+      return item;
+    });
+    stateDirectory.replaceChildren(...items);
+  }
+
+  function renderStateProfile(moveFocus = false) {
+    const state = stateIndex.get(hashState());
+    const heading = document.createElement('h3');
+    heading.id = 'stateProfileHeading';
+    heading.tabIndex = -1;
+    heading.textContent = state?.name || 'Elige un Estado';
+    stateProfile.replaceChildren(heading);
+    if (!state) {
+      const hint = document.createElement('p');
+      hint.textContent = hashState() ? 'Ese Estado no está en el directorio. Elige uno de la lista.' : 'Busca un Estado para ver sus hitos y casos.';
+      stateProfile.append(hint);
+      return;
+    }
+    const facts = document.createElement('dl');
+    facts.className = 'state-facts';
+    const dates = treatyMilestones[state.code] || {};
+    [
+      ['Relación con la OEA', state.status === 'former' ? `Retiro efectivo el ${state.date}` : `Estado miembro · ${state.region}`],
+      ['Convención Americana', dates.convention ? `Hito registrado en ${dates.convention}` : 'Sin fecha en la tabla de hitos'],
+      ['Competencia contenciosa de la Corte', dates.court ? `Hito registrado en ${dates.court}` : 'Sin fecha en la tabla de hitos']
+    ].forEach(([label, value]) => {
+      const item = document.createElement('div');
+      const term = document.createElement('dt');
+      const description = document.createElement('dd');
+      term.textContent = label;
+      description.textContent = value;
+      item.append(term, description);
+      facts.append(item);
+    });
+    const note = document.createElement('p');
+    note.textContent = 'Los años son hitos históricos de la tabla del Atlas. Para conocer el alcance vigente, consulta también las reservas, declaraciones y retiros en las fuentes oficiales.';
+    stateProfile.append(facts, note);
+    const charter = addLink(stateProfile, 'https://www.oas.org/es/sla/ddi/tratados_multilaterales_interamericanos_A-41_carta_OEA_firmas.asp', 'Consultar la Carta de la OEA y su registro', 'map-route-link');
+    charter.target = '_blank';
+    charter.rel = 'noopener noreferrer';
+    addLink(stateProfile, `#mapa?estado=${state.code}`, 'Ver este Estado en el mapa', 'map-route-link');
+    stateProfile.append(buildConnections(state.code, state.name, true));
+    if (moveFocus) requestAnimationFrame(() => {
+      if (!heading.isConnected || stateProfile.closest('[hidden]')) return;
+      heading.scrollIntoView({block:'start'});
+      heading.focus({preventScroll:true});
+    });
+  }
+
   function renderConnections() {
     const selected = canvas.querySelector('svg [data-code].is-selected');
     const code = selected?.dataset.code;
     if (!code) {
       detail.querySelector('.map-country-connections')?.remove();
+      detail.querySelector('.map-country-profile-link')?.remove();
       delete detail.dataset.connectionCode;
       return;
     }
     if (detail.dataset.connectionCode === code && detail.querySelector('.map-country-connections')) return;
     detail.dataset.connectionCode = code;
     detail.querySelector('.map-country-connections')?.remove();
+    detail.querySelector('.map-country-profile-link')?.remove();
     const state = states.find(item => item.code === code);
     const name = state?.name || selected.dataset.name || code;
+    if (state) addLink(detail, profileHref(code), 'Abrir ficha completa del Estado', 'map-country-profile-link');
+    detail.append(buildConnections(code, name));
+  }
+
+  function buildConnections(code, name, fullProfile = false) {
     const panel = document.createElement('section');
     panel.className = 'map-country-connections';
     const heading = document.createElement('h4');
@@ -170,7 +248,7 @@
     if (matches.length) {
       const caseList = document.createElement('ul');
       caseList.className = 'map-country-cases';
-      matches.slice(0, 4).forEach(record => {
+      (fullProfile ? matches : matches.slice(0, 4)).forEach(record => {
         const item = document.createElement('li');
         const link = document.createElement('a');
         link.href = record.url;
@@ -181,7 +259,7 @@
         caseList.append(item);
       });
       panel.append(caseList);
-      if (matches.length > 4) {
+      if (!fullProfile && matches.length > 4) {
         const note = document.createElement('p');
         note.textContent = `Se muestran 4 de ${matches.length} referencias del Atlas; el catálogo es una selección de estudio.`;
         panel.append(note);
@@ -192,7 +270,7 @@
       panel.append(note);
     }
     addLink(panel, '#jurisprudencia', 'Abrir biblioteca de jurisprudencia', 'map-route-link');
-    detail.append(panel);
+    return panel;
   }
 
   layerSelect.addEventListener('change', () => {
@@ -215,7 +293,7 @@
     timelineOutput.value = timelineYear.value;
     timelineOutput.textContent = timelineYear.value;
     timelinePlay.setAttribute('aria-pressed','true');
-    timelinePlay.textContent = '? Pausar la cronolog?a';
+    timelinePlay.textContent = '⏸ Pausar la cronología';
     applyLayer();
     timelineTimer = setInterval(() => {
       const next = Number(timelineYear.value) + 1;
@@ -247,7 +325,28 @@
     const button = event.target.closest('[data-map-code]');
     if (button && typeof window.selectMapCountry === 'function') window.selectMapCountry(button.dataset.mapCode);
   });
+  let pendingMapCode = null;
+  function selectLinkedMapState() {
+    const svg = canvas.querySelector('svg');
+    if (!pendingMapCode || !svg) return;
+    const code = pendingMapCode;
+    pendingMapCode = null;
+    window.selectMapCountry(code);
+  }
+  function followStateRoute(moveFocus = false) {
+    const route = location.hash.split('?')[0];
+    pendingMapCode = route === '#mapa' && stateIndex.has(hashState()) ? hashState() : null;
+    selectLinkedMapState();
+    if (route === '#estados') {
+      renderStateDirectory();
+      renderStateProfile(moveFocus);
+    }
+  }
+  stateSearch.addEventListener('input', renderStateDirectory);
+  window.addEventListener('hashchange', () => followStateRoute(true));
+  followStateRoute();
   new MutationObserver(() => {
+    selectLinkedMapState();
     applyLayer();
     renderConnections();
   }).observe(canvas, {childList:true,subtree:true,attributes:true,attributeFilter:['class']});
