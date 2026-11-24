@@ -505,7 +505,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=314",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Heliodoro Portugal vs. Panamá",
@@ -536,7 +537,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=269",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "I.V vs. Bolivia",
@@ -589,7 +591,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento contencioso · Responsabilidad estatal · Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=334",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Manuela y otros vs. El Salvador",
@@ -618,7 +621,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=229",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Masacres de Río Negro vs. Guatemala",
@@ -633,7 +637,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento del caso",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=388",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Myrna Mack Chang vs. Guatemala",
