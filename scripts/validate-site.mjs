@@ -61,8 +61,14 @@ if ((html.match(/class="process-overview-link"/g) || []).length !== 4 || !app.in
 if (!glossary.includes("id:'comunicacion-interestatal'") || !glossary.includes('convencion-americana-derechos-humanos.pdf') || !app.includes('Petición individual y comunicación interestatal') || !app.includes('artículo 45') || !glossary.includes("id:'denuncia-convencion'") || !app.includes('Denuncia de la Convención y petición individual') || !app.includes('artículo 78 CADH')) {
   throw new Error('The glossary and practice must explain interstate communications and treaty denunciation with official legal sources.');
 }
-if (!html.includes('assets/styles.css?v=atlas-oea-14') || !html.includes('assets/glosario.js?v=editorial-6') || !html.includes('assets/app.js?v=atlas-oea-18') || !serviceWorker.includes('atlas-oea-shell-v37')) {
+if (!html.includes('assets/styles.css?v=atlas-oea-15') || !html.includes('assets/glosario.js?v=editorial-6') || !html.includes('assets/app.js?v=atlas-oea-19') || !serviceWorker.includes('atlas-oea-shell-v38')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
+}
+if (!html.includes('id="atlasVisitCount"') || !app.includes("https://counterapi.com/api/cataplum1414.github.io/view/atlas-oea-home") || !app.includes("referrerPolicy:'no-referrer'") || !app.includes('12*60*60*1000') || !app.includes('readOnly=true')) {
+  throw new Error('The Atlas OEA view counter must use a separate aggregate key, suppress referrers, and avoid repeat increments for 12 hours.');
+}
+if (!app.includes('16 de diciembre de 2026') || !app.includes('%2F2026%2F254.asp')) {
+  throw new Error('The news panorama must show the current official deadline for the CIDH public-hearing request.');
 }
 if (!html.includes('<strong>34</strong> Estados') || !html.includes('CIDH + Corte IDH') || !styles.includes('.hero.page-section{padding-top:22px}') || !styles.includes('.hero-overview{width:100%;justify-content:center;gap:5px;padding:6px 8px;overflow:visible;font-size:11px;white-space:normal;flex-wrap:wrap}')) {
   throw new Error('The mobile overview must keep its institutional context visible without blank space or clipped labels.');

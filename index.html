@@ -13,7 +13,7 @@
 <script>
 (()=>{let choice='auto';try{choice=localStorage.getItem('ri-theme')||'auto'}catch(e){}if(!['auto','light','dark'].includes(choice))choice='auto';const media=matchMedia('(prefers-color-scheme: light)');const apply=()=>{const theme=choice==='auto'?(media.matches?'light':'dark'):choice;document.documentElement.dataset.theme=theme;document.documentElement.dataset.themeChoice=choice;const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=theme==='light'?'#F5F4F0':'#10131C';document.querySelector('meta[name="color-scheme"]').content=theme};window.riTheme={get:()=>choice,set:value=>{choice=['auto','light','dark'].includes(value)?value:'auto';try{choice==='auto'?localStorage.removeItem('ri-theme'):localStorage.setItem('ri-theme',choice)}catch(e){}apply()}};media.addEventListener?.('change',()=>{if(choice==='auto')apply()});apply()})();
 </script>
-<link rel="stylesheet" href="assets/styles.css?v=atlas-oea-14">
+<link rel="stylesheet" href="assets/styles.css?v=atlas-oea-15">
 <link rel="stylesheet" href="assets/organizacion-mapa.css?v=atlas-oea-1">
 <link rel="manifest" href="./manifest.webmanifest">
 </head>
@@ -42,7 +42,7 @@
 
 <main id="contenido" class="atlas-main">
 <section id="inicio" data-route-page class="hero page-section">
-  <div class="hero-overview" aria-label="Contexto del Atlas OEA"><span><strong>34</strong> Estados</span><i aria-hidden="true"></i><span>4 pilares</span><i aria-hidden="true"></i><span>CIDH + Corte IDH</span></div>
+  <div class="hero-overview" aria-label="Contexto y visitas del Atlas OEA"><span><strong>34</strong> Estados</span><i aria-hidden="true"></i><span>4 pilares</span><i aria-hidden="true"></i><span>CIDH + Corte IDH</span><i aria-hidden="true"></i><span class="atlas-view-count"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg><strong id="atlasVisitCount" aria-live="polite">—</strong> visitas</span><a class="atlas-view-info" href="https://counterapi.com/" target="_blank" rel="noopener noreferrer" aria-label="Cómo funciona el contador externo" title="Información del servicio de conteo">i</a></div>
   <div class="hero-copy">
     <p class="section-tag">ATLAS DE LA ORGANIZACI&Oacute;N DE LOS ESTADOS AMERICANOS</p>
     <h1>Entiende el camino<br><span>del hecho a la sentencia.</span></h1>
@@ -241,6 +241,6 @@
 <script src="assets/glosario.js?v=editorial-6" defer></script>
 <script src="assets/organos.js" defer></script>
 <script src="assets/estados-oea.js" defer></script>
-<script src="assets/app.js?v=atlas-oea-18" defer></script>
+<script src="assets/app.js?v=atlas-oea-19" defer></script>
 </body>
 </html>
