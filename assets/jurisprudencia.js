@@ -150,8 +150,9 @@ window.RI_JURISPRUDENCIA=[
         "title":  "Bámaca Velásquez vs. Guatemala",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
-        "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "topic":  "Desaparición forzada · Reparaciones",
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=244",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Caballero Delgado y Santana vs. Colombia",
@@ -360,8 +361,9 @@ window.RI_JURISPRUDENCIA=[
         "title":  "de los Hermanos Gómez Paquiyauri vs. Perú",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
-        "topic":  "Responsabilidad estatal · Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "topic":  "Niñez · Detención · Reparaciones",
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=215",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "de los “Niños de la Calle” (Villagrán Morales y otros) vs. Guatemala",
@@ -440,15 +442,17 @@ window.RI_JURISPRUDENCIA=[
         "title":  "Godínez Cruz vs. Honduras",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
-        "topic":  "Responsabilidad estatal · Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "topic":  "Desaparición forzada · Responsabilidad estatal",
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=194",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Goiburú y otros vs. Paraguay",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
-        "topic":  "Responsabilidad estatal · Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "topic":  "Desaparición forzada · Reparaciones · Cumplimiento",
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=387",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Gomes Lund y otros (“Guerrilha do Araguaia”) vs. Brasil",
@@ -484,8 +488,9 @@ window.RI_JURISPRUDENCIA=[
         "title":  "Gutiérrez Soler vs. Colombia",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
-        "topic":  "Procedimiento contencioso · Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "topic":  "Tortura · Deber de investigar · Reparaciones",
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=306",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Gómez Palomino vs. Perú",
@@ -564,8 +569,9 @@ window.RI_JURISPRUDENCIA=[
         "title":  "Loayza Tamayo vs. Perú",
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
-        "topic":  "Responsabilidad estatal · Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "topic":  "Jurisdicción militar · Garantías judiciales · Reparaciones",
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=311",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Manuel Cepeda Vargas vs. Colombia",
