@@ -256,3 +256,29 @@ html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
 .english-exercise details{border-bottom:1px solid var(--line);padding:6px 0 8px}
 .english-exercise summary{min-height:44px;padding-block:10px;font-weight:750;cursor:pointer}
 @media(max-width:800px){.language-entry-mobile{display:inline-flex;flex:0 0 44px;min-width:44px}}
+
+.opinion-language-filter{display:flex;align-items:center;gap:9px;max-width:var(--content);min-height:44px;margin:0 auto 12px;color:var(--ink);font-size:14px;cursor:pointer}
+.opinion-language-filter input{width:18px;height:18px;flex:none;accent-color:var(--cyan-soft)}
+.opinion-source-links{display:flex;flex-wrap:wrap;gap:8px 16px}
+.opinion-source-links a,.opinion-request a{color:var(--cyan-soft);font-weight:750;text-underline-offset:3px}
+.opinion-request{max-width:var(--content);margin:24px auto 0;padding:14px 0;border-block:1px solid var(--line)}
+.opinion-request h3,.opinion-request p{margin:0 0 8px}
+.opinion-request p{max-width:76ch;color:var(--muted)}
+.opinion-request a{display:inline-flex;align-items:center;min-height:44px;margin-right:16px}
+
+@media(max-width:520px){
+  #recorrido .section-heading{flex-wrap:wrap}
+  #recorrido .section-heading>div:first-child{flex:1 1 100%;min-width:0}
+  #recorrido .step-counter{margin-top:4px}
+}
+
+@media(max-width:520px){
+  #reloj .deadline-list header{flex-wrap:wrap;gap:4px 12px}
+  #reloj .deadline-list header span{flex:0 1 auto;min-width:0;overflow-wrap:anywhere}
+}
+
+.orientation-followup{display:grid;gap:6px;min-width:0;margin:14px 0 0;padding:0;border:0}
+.orientation-followup legend{margin-bottom:7px;font-weight:750}
+.orientation-followup button{min-height:44px;padding:8px 10px;text-align:left;border:1px solid var(--line-strong);border-radius:8px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer}
+.orientation-followup button[aria-pressed="true"]{border-color:var(--cyan-soft);background:color-mix(in srgb,var(--cyan) 10%,var(--surface))}
+.orientation-next p{margin:12px 0 0}

@@ -1,3 +1,11 @@
+const opinionEnglishSources = {
+  11: {kind:'full', url:'https://www.corteidh.or.cr/docs/opiniones/seriea_11_ing.pdf'},
+  16: {kind:'full', url:'https://corteidh.or.cr/docs/opiniones/seriea_16_ing.pdf'},
+  18: {kind:'full', url:'https://www.corteidh.or.cr/docs/opiniones/seriea_18_ing.pdf'},
+  26: {kind:'summary', url:'https://www.corteidh.or.cr/docs/opiniones/resumen_seriea_26_eng.pdf'},
+  32: {kind:'full', url:'https://corteidh.or.cr/docs/opiniones/seriea_32_en.pdf'}
+};
+
 window.RI_OPINIONES = [
   [1,1982,'Otros tratados objeto de la función consultiva de la Corte','Alcance de la competencia consultiva del artículo 64 de la Convención.'],
   [2,1982,'El efecto de las reservas sobre la entrada en vigor de la Convención Americana','Reservas a tratados y momento en que producen efectos.'],
@@ -31,4 +39,4 @@ window.RI_OPINIONES = [
   [30,2025,'La responsabilidad de los Estados en materia de derechos humanos frente al tráfico ilícito de armas de fuego','Interpretación de los artículos 1, 2, 4, 5, 8 y 25 de la Convención y obligaciones estatales frente al tráfico ilícito de armas.'],
   [31,2025,'El contenido y alcance del derecho al cuidado y su interrelación con otros derechos','Derecho al cuidado, igualdad, corresponsabilidad y derechos sociales.'],
   [32,2025,'Emergencia climática y derechos humanos','Obligaciones estatales de protección frente a la emergencia climática.']
-].map(([number,year,title,topic])=>({number,year,title,topic,url:`https://www.corteidh.or.cr/docs/opiniones/seriea_${String(number).padStart(2,'0')}_esp.pdf`}));
+].map(([number,year,title,topic])=>({number,year,title,topic,english:opinionEnglishSources[number],url:`https://www.corteidh.or.cr/docs/opiniones/seriea_${String(number).padStart(2,'0')}_esp.pdf`}));

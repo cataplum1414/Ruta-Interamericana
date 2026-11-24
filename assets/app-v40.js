@@ -291,8 +291,27 @@ el('featuredCases').querySelectorAll('[data-open-step]').forEach(link=>link.addE
 const opinions=window.RI_OPINIONES||[],opinionSearch=el('opinionSearch'),opinionFilters=el('opinionFilters'),opinionGrid=el('opinionGrid'),opinionCount=el('opinionCount');
 const opinionPeriods=[['Todas',0,9999],['1982–1993',0,1993],['1994–2005',1994,2005],['2006–2017',2006,2017],['2018–2025',2018,2025]];let activeOpinionPeriod='Todas';
 function renderOpinionFilters(){opinionFilters.innerHTML=opinionPeriods.map(([label])=>'<button type="button" class="'+(label===activeOpinionPeriod?'active':'')+'" data-opinion-period="'+escape(label)+'" aria-pressed="'+(label===activeOpinionPeriod)+'">'+escape(label)+'</button>').join('');opinionFilters.querySelectorAll('[data-opinion-period]').forEach(b=>b.addEventListener('click',()=>{activeOpinionPeriod=b.dataset.opinionPeriod;renderOpinionFilters();renderOpinions();}));}
-function renderOpinions(){const q=opinionSearch.value.trim().toLocaleLowerCase('es'),period=opinionPeriods.find(x=>x[0]===activeOpinionPeriod)||opinionPeriods[0];const number=q.match(/^oc[-\s]*0*(\d+)$/)?.[1];const rows=opinions.filter(x=>x.year>=period[1]&&x.year<=period[2]&&(number?x.number===Number(number):!q||normalizeSearch('OC-'+x.number+' '+x.year+' '+x.title+' '+x.topic).includes(normalizeSearch(q))));opinionCount.textContent=rows.length+' de '+opinions.length+' opiniones consultivas emitidas.';opinionGrid.innerHTML=rows.map(x=>'<article class="opinion-card"><div class="opinion-card-top"><span>OC-'+String(x.number).padStart(2,'0')+'</span><time>'+x.year+'</time></div><h3>'+escape(x.title)+'</h3><p>'+escape(x.topic)+'</p><a href="'+escape(x.url)+'" target="_blank" rel="noopener noreferrer">Leer opinión oficial ↗</a></article>').join('')||'<p class="juris-empty">No hay coincidencias. Prueba con el número OC o con un tema.</p>';}
-renderOpinionFilters();renderOpinions();opinionSearch.addEventListener('input',renderOpinions);
+const opinionEnglishOnly = el('opinionEnglishOnly');
+
+function renderOpinions() {
+  const query = normalizeSearch(opinionSearch.value);
+  const number = query.match(/^oc[-\s]*0*(\d+)$/)?.[1];
+  const [, firstYear, lastYear] = opinionPeriods.find(period => period[0] === activeOpinionPeriod) || opinionPeriods[0];
+  const rows = opinions.filter(opinion => {
+    if (opinion.year < firstYear || opinion.year > lastYear) return false;
+    if (opinionEnglishOnly.checked && !opinion.english) return false;
+    if (number) return opinion.number === Number(number);
+    return !query || normalizeSearch('OC-' + opinion.number + ' ' + opinion.year + ' ' + opinion.title + ' ' + opinion.topic).includes(query);
+  });
+  opinionCount.textContent = rows.length + ' de ' + opinions.length + ' opiniones consultivas emitidas.';
+  opinionGrid.innerHTML = rows.map(opinion => {
+    const english = opinion.english;
+    const englishLink = english ? '<a href="' + escape(english.url) + '" hreflang="en" target="_blank" rel="noopener noreferrer">' + (english.kind === 'summary' ? 'Resumen oficial en ingl&eacute;s' : 'Texto completo en ingl&eacute;s') + ' &nearr;</a>' : '';
+    const studyLink = opinion.number === 11 ? '<a href="#recorrido?paso=2">Repasar agotamiento de recursos internos &rarr;</a>' : '';
+    return '<article class="opinion-card"><div class="opinion-card-top"><span>OC-' + String(opinion.number).padStart(2, '0') + '</span><time>' + opinion.year + '</time></div><h3>' + escape(opinion.title) + '</h3><p>' + escape(opinion.topic) + '</p><div class="opinion-source-links"><a href="' + escape(opinion.url) + '" target="_blank" rel="noopener noreferrer">Texto oficial en espa&ntilde;ol &nearr;</a>' + englishLink + studyLink + '</div></article>';
+  }).join('') || '<p class="juris-empty">No hay coincidencias. Prueba con otro n&uacute;mero, tema o filtro.</p>';
+}
+renderOpinionFilters();renderOpinions();opinionSearch.addEventListener('input',renderOpinions);opinionEnglishOnly.addEventListener('change',renderOpinions);
 
 const ATLAS_OEA_COUNTER='https://counterapi.com/api/cataplum1414.github.io/view/atlas-oea-home-v2';
 async function loadAtlasViewCount(){const output=el('atlasVisitCount'),label=el('atlasVisitLabel');if(!output)return;const display=data=>{if(typeof data.value!=='number')return false;const value=Math.max(0,Math.floor(data.value));output.textContent=value.toLocaleString('es');if(label)label.textContent=value===1?'visita':'visitas';output.dataset.counterState='ready';output.removeAttribute('title');return true;};output.dataset.counterState='loading';output.textContent='…';const key='atlas-oea-visit-counted-at';let countVisit=false;try{const last=Number(localStorage.getItem(key)||0);countVisit=Date.now()-last>=12*60*60*1000;}catch(e){countVisit=true;}if(location.protocol!=='https:'||new URLSearchParams(location.search).has('sinvisita')||navigator.webdriver)countVisit=false;const request=async count=>fetch(ATLAS_OEA_COUNTER+(count?'':'?readOnly=true'),{cache:'no-store',credentials:'omit',referrerPolicy:'no-referrer'});try{let response=await request(countVisit);if(!response.ok)throw new Error('counter unavailable');let data=await response.json();if(countVisit&&typeof data.value!=='number'){response=await request(false);if(!response.ok)throw new Error('counter unavailable');data=await response.json();}if(!display(data))throw new Error('invalid counter response');if(countVisit)try{localStorage.setItem(key,String(Date.now()));}catch(e){}}catch(e){output.dataset.counterState='unavailable';output.textContent='—';output.title='El conteo agregado no está disponible en este momento.';if(countVisit)try{const response=await request(false);if(response.ok)display(await response.json());}catch(_e){}}}
@@ -321,7 +340,52 @@ peticion:{title:'Comprueba los requisitos antes de preparar la petición',text:'
 comision:{title:'Ubica si la Comisión está examinando requisitos o el fondo',text:'La fase de admisibilidad pregunta si la petición puede estudiarse. La fase de fondo analiza si el Estado incumplió obligaciones. El informe de fondo todavía no es una sentencia judicial.',points:['Lee el último informe y la comunicación recibida.','Identifica qué escrito debe presentar cada parte y desde qué notificación corre su plazo.','Comprueba si existe una propuesta de solución amistosa o una decisión de sometimiento.'],step:5,label:'Ir a admisibilidad'},
 corte:{title:'Reconstruye la secuencia de escritos ante la Corte',text:'El sometimiento abre una etapa judicial. Distingue notificación, ESAP, contestación, excepciones preliminares, prueba, audiencia, sentencia y supervisión.',points:['Fija la fecha de cada notificación por separado.','Comprueba qué hechos y víctimas quedaron incluidos en el marco del caso.','Separa las objeciones procesales de la discusión sobre responsabilidad.'],step:10,label:'Ir al inicio de la fase ante la Corte'}
 };
-function renderOrientation(key){const d=orientationData[key];if(!d)return;document.querySelectorAll('[data-orient]').forEach(b=>{const active=b.dataset.orient===key;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});el('orientationResult').innerHTML='<p class="section-tag">SIGUIENTE PREGUNTA</p><h3>'+escape(d.title)+'</h3><p>'+escape(d.text)+'</p><ul class="result-points">'+d.points.map(x=>'<li>'+escape(x)+'</li>').join('')+'</ul><a class="next-link" href="#recorrido" data-open-step="'+d.step+'">'+escape(d.label)+' ·</a>';el('orientationResult').querySelector('[data-open-step]').addEventListener('click',e=>{e.preventDefault();openProceduralStep(e.currentTarget.dataset.openStep);});}
+const orientationFollowups = {
+  interno: [
+    ['Todav\u00eda estoy reuniendo los hechos', 1, 'Ordena fechas, personas, actuaciones del Estado y las pruebas que las respaldan.'],
+    ['Tengo una decisi\u00f3n interna o una dificultad para recurrir', 2, 'Comprueba qu\u00e9 recurso estaba disponible y si corresponde analizar una excepci\u00f3n.']
+  ],
+  peticion: [
+    ['Necesito preparar la petici\u00f3n', 3, 'Identifica qui\u00e9n puede presentarla, ante qu\u00e9 \u00f3rgano y con qu\u00e9 documentos.'],
+    ['Necesito comprobar los requisitos de admisi\u00f3n', 6, 'Revisa los criterios de admisibilidad y conecta cada uno con los hechos del expediente.']
+  ],
+  comision: [
+    ['La CIDH est\u00e1 examinando los requisitos', 6, 'Comprueba qu\u00e9 discuten las partes sobre la admisibilidad.'],
+    ['La CIDH pide observaciones sobre el fondo', 8, 'Prepara los hechos, la prueba y los argumentos sobre las obligaciones del Estado.'],
+    ['Ya existe un informe de fondo', 9, 'Lee las conclusiones y recomendaciones antes de revisar un posible paso a la Corte.']
+  ],
+  corte: [
+    ['La Corte notific\u00f3 el sometimiento', 12, 'Ubica la notificaci\u00f3n, sus destinatarios y la fecha desde la que cada parte debe actuar.'],
+    ['Debo preparar el ESAP', 13, 'Identifica las solicitudes, los argumentos y la prueba dentro del marco del caso.'],
+    ['El Estado contest\u00f3 y plante\u00f3 objeciones', 15, 'Distingue las excepciones preliminares de los argumentos sobre responsabilidad.'],
+    ['Ya hay sentencia', 18, 'Identifica las reparaciones ordenadas y las actuaciones de supervisi\u00f3n.']
+  ]
+};
+
+function renderOrientation(key) {
+  const guide = orientationData[key];
+  if (!guide) return;
+  document.querySelectorAll('[data-orient]').forEach(button => {
+    const active = button.dataset.orient === key;
+    button.classList.toggle('active', active);
+    button.setAttribute('aria-pressed', String(active));
+  });
+  const options = orientationFollowups[key];
+  const result = el('orientationResult');
+  result.innerHTML = '<p class="section-tag">SIGUIENTE PREGUNTA</p><h3>' + escape(guide.title) + '</h3><p>' + escape(guide.text) + '</p>' +
+    '<fieldset class="orientation-followup"><legend>Elige el punto que necesitas revisar</legend>' +
+    options.map(([label], index) => '<button type="button" data-orient-followup="' + index + '" aria-pressed="false">' + escape(label) + '</button>').join('') +
+    '</fieldset><div class="orientation-next" aria-live="polite"></div>' +
+    '<details><summary>Qu&eacute; conviene comprobar</summary><ul class="result-points">' + guide.points.map(point => '<li>' + escape(point) + '</li>').join('') + '</ul></details>';
+  const next = result.querySelector('.orientation-next');
+  next.innerHTML = '<a class="next-link" href="#recorrido?paso=' + (guide.step + 1) + '">' + escape(guide.label) + ' &rarr;</a>';
+  const choices = [...result.querySelectorAll('[data-orient-followup]')];
+  choices.forEach((button, index) => button.addEventListener('click', () => {
+    choices.forEach(choice => choice.setAttribute('aria-pressed', String(choice === button)));
+    const [, step, explanation] = options[index];
+    next.innerHTML = '<p>' + escape(explanation) + '</p><a class="next-link" href="#recorrido?paso=' + step + '">Ir a la estaci&oacute;n ' + step + ' &rarr;</a>';
+  }));
+}
 document.querySelectorAll('[data-orient]').forEach(b=>b.addEventListener('click',()=>renderOrientation(b.dataset.orient)));renderOrientation('interno');
 
 let activeStepPhase='Todas';const originalStage=stage;
@@ -360,6 +424,7 @@ function filterRouteTarget(page, params) {
     if (!opinions.some(item => item.number === number)) return null;
     opinionSearch.value = 'OC-' + String(number).padStart(2, '0');
     activeOpinionPeriod = 'Todas';
+    opinionEnglishOnly.checked = false;
     renderOpinionFilters();
     renderOpinions();
     return opinionGrid.querySelector('.opinion-card');
