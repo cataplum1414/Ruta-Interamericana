@@ -15,7 +15,7 @@
 </script>
 <link rel="stylesheet" href="assets/styles-v26.css">
 <link rel="stylesheet" href="assets/organizacion-mapa.css?v=atlas-oea-9">
-<link rel="stylesheet" href="assets/arquitectura-atlas-v24.css">
+<link rel="stylesheet" href="assets/arquitectura-atlas-v25.css">
 <link rel="manifest" href="./manifest.webmanifest">
 <script>
 if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
@@ -62,7 +62,7 @@ if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
     <h1>Entiende el camino del hecho a la sentencia.</h1>
     <p class="hero-lead">Una gu&iacute;a para seguir una petici&oacute;n: qu&eacute; examina la Comisi&oacute;n Interamericana, cu&aacute;ndo un caso puede llegar a la Corte y qu&eacute; ocurre despu&eacute;s.</p>
     <details class="easy-read hero-easy-read"><summary><strong>Lectura f&aacute;cil:</strong> Qu&eacute; es Atlas OEA</summary><ul><li>La petici&oacute;n individual empieza ante la Comisi&oacute;n Interamericana.</li><li>La Comisi&oacute;n analiza el caso y puede someterlo a la Corte si se cumplen las reglas aplicables.</li><li>La Corte realiza su propio procedimiento y puede dictar una sentencia.</li></ul></details>
-    <div class="atlas-search"><label for="atlasSearch">Busca una etapa, un pa&iacute;s o una referencia</label><div class="search-row"><input id="atlasSearch" type="search" placeholder="Ej.: Serie C 109, OC-11/90, Colombia" autocomplete="off"><button class="button primary" id="atlasSearchGo" type="button">Buscar</button><button class="button secondary" id="atlasSearchClear" type="button" hidden>Limpiar</button></div><div class="search-suggestions" aria-label="B&uacute;squedas de ejemplo"><span>Ejemplos:</span><button type="button" data-search-example="admisibilidad">admisibilidad</button><button type="button" data-search-example="ESAP">ESAP</button><button type="button" data-search-example="agotamiento">agotamiento</button><button type="button" data-search-example="Colombia">Colombia</button></div><div id="searchResults" class="search-results" aria-live="polite" hidden></div></div>
+    <div class="atlas-search"><label for="atlasSearch">Busca una etapa, un pa&iacute;s o una referencia</label><div class="search-row"><input id="atlasSearch" type="search" placeholder="Ej.: art. 46 CADH, Serie C 109, Colombia" autocomplete="off"><button class="button primary" id="atlasSearchGo" type="button">Buscar</button><button class="button secondary" id="atlasSearchClear" type="button" hidden>Limpiar</button></div><div class="search-suggestions" aria-label="B&uacute;squedas de ejemplo"><span>Ejemplos:</span><button type="button" data-search-example="admisibilidad">admisibilidad</button><button type="button" data-search-example="ESAP">ESAP</button><button type="button" data-search-example="agotamiento">agotamiento</button><button type="button" data-search-example="Colombia">Colombia</button></div><div id="searchResults" class="search-results" aria-live="polite" hidden></div></div>
     <div class="hero-actions"><a class="button primary" href="#recorrido">Seguir la ruta</a></div>
     <nav class="hero-system-links" aria-label="Explorar el Sistema Interamericano">
       <a href="#comision">Comisi&oacute;n</a>
@@ -412,6 +412,16 @@ if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
 
 <section id="biblioteca" data-route-page class="page-section section-block section-alt">
   <div class="section-heading"><div><p class="section-tag">NORMAS Y FUENTES OFICIALES</p><h2>Norma, artículo<br>y función</h2><p>Usa esta sección para volver al texto vigente y separar la regla escrita de la explicación didáctica.</p></div><span class="section-index">15</span></div>
+  <section class="norm-library" aria-labelledby="normLibraryTitle">
+    <h3 id="normLibraryTitle">Busca un artículo del recorrido</h3>
+    <p class="source-note">Selección de artículos vinculados al recorrido. Las fuentes abren el instrumento completo. Localiza allí el número indicado.</p>
+    <div class="norm-filters">
+      <div><label for="normQuery">Número, cita o tema</label><input id="normQuery" type="search" autocomplete="off" placeholder="Ej.: art. 46 CADH, ESAP, admisibilidad"></div>
+      <div><label for="normInstrument">Instrumento</label><select id="normInstrument"><option value="">Todos</option><option value="cadh">Convención Americana</option><option value="cidh">Reglamento de la CIDH</option><option value="corte">Reglamento de la Corte IDH</option></select></div>
+    </div>
+    <p id="normCount" role="status"></p>
+    <div id="normResults"></div>
+  </section>
   <div class="sources" id="sources"></div>
   <div class="independence-note"><strong>Sobre esta guía</strong><p>Proyecto editorial independiente de Sukima Labs. No es una publicación oficial ni está afiliado o avalado por la CIDH, la Corte Interamericana, la OEA, ONU Mujeres o la Universidad de Alcalá. Los documentos académicos locales no se publican.</p></div>
 </section>
@@ -523,7 +533,7 @@ if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
 <script src="assets/glosario.js?v=editorial-7" defer></script>
 <script src="assets/organos.js" defer></script>
 <script src="assets/estados-oea.js" defer></script>
-<script src="assets/app-v40.js" defer></script>
+<script src="assets/app-v41.js" defer></script>
 <script src="assets/audiencia-lab-v1.js" defer></script>
 <script src="assets/razonamiento-v1.js" defer></script>
 <script src="assets/map-connections-v6.js" defer></script>

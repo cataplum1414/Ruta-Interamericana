@@ -231,6 +231,97 @@ const resources=[
 ['Sistema Interamericano · OEA','Información general y documentos normativos básicos.','https://www.oas.org/es/cidh/mandato/documentos-basicos/']
 ];
 const el=id=>document.getElementById(id), escape=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const normInstruments = {
+  cadh: {label:'Convención Americana (CADH)', url:resources[0][2]},
+  cidh: {label:'Reglamento de la CIDH', url:'https://www.oas.org/es/cidh/jsForm/?File=%2Fes%2Fcidh%2Fmandato%2Fbasicos%2Freglamentocidh.asp'},
+  corte: {label:'Reglamento de la Corte IDH', url:resources[1][2]}
+};
+const normRecords = [
+  ['cadh',44,'Quién puede presentar una petición',[3]],
+  ['cadh',45,'Comunicaciones entre Estados',[5]],
+  ['cadh',46,'Agotamiento, plazo y otros requisitos de admisibilidad',[2,6]],
+  ['cadh',50,'Informe de fondo de la Comisión',[9]],
+  ['cadh',51,'Plazo después de la transmisión del informe de fondo',[9,10]],
+  ['cadh',61,'Quién puede someter un caso a la Corte',[10,11]],
+  ['cadh',62,'Reconocimiento de la competencia contenciosa',[11,15]],
+  ['cadh',63,'Reparaciones y medidas provisionales',[18]],
+  ['cadh',64,'Función consultiva de la Corte',[]],
+  ['cadh',67,'Carácter definitivo e interpretación de la sentencia',[18]],
+  ['cidh',25,'Solicitud de medidas cautelares',[]],
+  ['cidh',30,'Traslado inicial y observaciones del Estado',[4]],
+  ['cidh',31,'Agotamiento de recursos internos y excepciones',[2,6]],
+  ['cidh',32,'Plazo para presentar la petición',[3,6]],
+  ['cidh',37,'Observaciones sobre el fondo',[8]],
+  ['cidh',40,'Trámite de solución amistosa',[7]],
+  ['cidh',44,'Informe de fondo y posición del peticionario',[9,10]],
+  ['cidh',45,'Sometimiento del caso a la Corte',[10]],
+  ['cidh',48,'Seguimiento de acuerdos y recomendaciones',[9]],
+  ['corte',35,'Sometimiento e identificación de presuntas víctimas',[11,13]],
+  ['corte',38,'Subsanación de requisitos del sometimiento',[11]],
+  ['corte',39,'Notificación del caso y designación de agentes',[12]],
+  ['corte',40,'ESAP: solicitudes, argumentos y pruebas',[13]],
+  ['corte',41,'Contestación del Estado',[14]],
+  ['corte',42,'Excepciones preliminares',[15]],
+  ['corte',69,'Supervisión de cumplimiento de sentencia',[18]]
+].map(([instrument, article, title, steps]) => ({id:instrument + '-' + article, instrument, article, title, steps}));
+
+function parseNormCitation(value, allowNumber = false) {
+  const query = normalizeSearch(value);
+  const match = query.match(/^(?:art(?:iculo)?\.?\s*)?(\d+)(?:\.[\da-z]+)*\s*(.*)$/);
+  if (!match) return null;
+  const citation = match[2];
+  const instrument = /\b(cadh|convencion americana)\b/.test(citation) ? 'cadh'
+    : /\b(cidh|reglamento de la comision)\b/.test(citation) ? 'cidh'
+    : /\b(corte|reglamento corte)\b/.test(citation) ? 'corte' : '';
+  if (!instrument && (citation || (!allowNumber && !query.startsWith('art')))) return null;
+  return {article:Number(match[1]), instrument};
+}
+
+function normMatchesCitation(record, citation) {
+  return record.article === citation.article && (!citation.instrument || record.instrument === citation.instrument);
+}
+
+const normQuery = el('normQuery');
+const normInstrument = el('normInstrument');
+const normResults = el('normResults');
+
+function normTitle(record) {
+  return 'Art. ' + record.article + ' · ' + normInstruments[record.instrument].label;
+}
+
+function stationRuleLinks(step) {
+  const records = normRecords.filter(record => record.steps.includes(step));
+  if (!records.length) return '';
+  return '<div class="norm-links">' + records.map(record =>
+    '<a href="#biblioteca?norma=' + record.id + '">' + escape(normTitle(record)) + '</a>'
+  ).join('') + '</div>';
+}
+
+function renderNormLibrary() {
+  const query = normalizeSearch(normQuery.value);
+  const citation = parseNormCitation(query, true);
+  const terms = query.split(/\s+/).filter(Boolean);
+  const records = normRecords.filter(record => {
+    if (normInstrument.value && record.instrument !== normInstrument.value) return false;
+    if (citation) return normMatchesCitation(record, citation);
+    const haystack = normalizeSearch(normTitle(record) + ' ' + record.title);
+    return terms.every(term => haystack.includes(term));
+  });
+  el('normCount').textContent = records.length === 1 ? '1 artículo' : records.length + ' artículos';
+  normResults.innerHTML = records.length ? records.map(record => {
+    const links = record.steps.map(step => '<a href="#recorrido?paso=' + step + '">Estación ' + step + ' · ' + escape(stages[step - 1][0]) + '</a>');
+    if (record.id === 'cadh-64') links.push('<a href="#opiniones">Opiniones consultivas</a>');
+    if (record.id === 'cidh-25') links.push('<a href="#protectionMeasuresLab">Práctica de protección urgente</a>');
+    const officialUrl = normInstruments[record.instrument].url;
+    return '<article class="norm-row" id="norm-' + record.id + '">'
+      + '<h4>' + escape(record.title) + '</h4><p>' + escape(normTitle(record)) + '</p>'
+      + '<div class="norm-links"><a href="' + escape(officialUrl) + '">Consultar instrumento oficial ↗</a>' + links.join('') + '</div></article>';
+  }).join('') : '<p>Prueba con otro número o selecciona todos los instrumentos.</p>';
+}
+
+normQuery.addEventListener('input', renderNormLibrary);
+normInstrument.addEventListener('change', renderNormLibrary);
+renderNormLibrary();
 let current=0;
 const studyKey='ri-study-v1';
 function readStudy(){try{const v=JSON.parse(localStorage.getItem(studyKey)||'{}');return{current:Number.isInteger(v.current)&&v.current>=0&&v.current<stages.length?v.current:0,completed:Array.isArray(v.completed)?v.completed.filter(n=>Number.isInteger(n)&&n>=0&&n<stages.length):[]};}catch{return{current:0,completed:[]};}}
@@ -243,7 +334,7 @@ function stationPracticeLinks(station) {
   return '<nav class="station-practice" aria-label="Practicar esta estaci&oacute;n"><strong>Aplica la regla en Arcadia</strong>' +
     decisions.map(([id, node]) => '<a href="#arcadia?decision=' + id + '">' + escape(node.title) + ' &rarr;</a>').join('') + followup + '</nav>';
 }
-function stage(n){current=(n+stages.length)%stages.length;studyState.current=current;persistStudy();let a=stages[current],g=stationGuide[current];el('stepCount').textContent=String(current+1).padStart(2,'0');el('stepRail').innerHTML=stages.map((s,i)=>'<button type="button" class="'+(i===current?'active':'')+'" data-step="'+i+'"><span>'+String(i+1).padStart(2,'0')+'</span>'+escape(s[0])+'</button>').join('');el('stepDetail').innerHTML='<div class="eyebrow">'+escape(a[1])+' / ESTACIÓN '+String(current+1).padStart(2,'0')+'</div><h3>'+escape(a[2])+'</h3><p class="summary">'+escape(a[3])+'</p><div class="stage-facts" aria-label="Datos de esta etapa"><p><span>Quién actúa</span><strong>'+escape(a[4])+'</strong></p><p><span>Plazo orientativo</span><strong>'+escape(a[5])+'</strong></p><p><span>Regla aplicable</span><strong>'+escape(a[6])+'</strong></p></div><div class="stage-next"><div><span>Resultado</span><p>'+escape(g[0])+'</p></div><span class="stage-next-arrow" aria-hidden="true">↓</span><div><span>Después</span><p>'+escape(g[1])+'</p></div></div><div class="stage-application"><strong>En el caso Arcadia</strong><p>'+escape(a[7])+'</p><details><summary>Un matiz para recordar</summary><p>'+escape(a[8])+'</p></details></div>';const check=stageChecks[current];el('stepDetail').insertAdjacentHTML('beforeend','<fieldset class="stage-challenge"><legend>Comprueba tu comprensi&oacute;n</legend><p>'+escape(check.prompt)+'</p><div class="stage-challenge-options">'+check.options.map((option,index)=>'<button type="button" data-stage-answer="'+index+'" aria-pressed="false">'+escape(option)+'</button>').join('')+'</div><div class="stage-hint-row"><button class="stage-hint-button" type="button" data-stage-hint aria-expanded="false">Ver una pista</button><p class="stage-hint" data-stage-hint-text aria-live="polite" hidden></p></div><p class="stage-check-feedback" aria-live="polite">Elige una respuesta para ver por qu&eacute;.</p></fieldset>');let hintLevel=0;const hintButton=el('stepDetail').querySelector('[data-stage-hint]'),hintText=el('stepDetail').querySelector('[data-stage-hint-text]');hintButton.addEventListener('click',()=>{if(hintLevel>=check.hints.length){hintLevel=0;hintText.hidden=true;hintButton.setAttribute('aria-expanded','false');hintButton.textContent='Ver una pista';return;}hintText.textContent=check.hints[hintLevel++];hintText.hidden=false;hintButton.setAttribute('aria-expanded','true');hintButton.textContent=hintLevel<check.hints.length?'Ver otra pista':'Ocultar pistas';});el('stepDetail').querySelectorAll('[data-stage-answer]').forEach(button=>button.addEventListener('click',()=>{const correct=Number(button.dataset.stageAnswer)===check.answer;el('stepDetail').querySelectorAll('[data-stage-answer]').forEach(choice=>{choice.setAttribute('aria-pressed',String(choice===button));choice.classList.remove('is-correct','is-wrong');});button.classList.add(correct?'is-correct':'is-wrong');const feedback=el('stepDetail').querySelector('.stage-check-feedback');feedback.className='stage-check-feedback '+(correct?'is-correct':'is-wrong');feedback.textContent=(correct?'Correcto. ':'Vuelve a mirar la pregunta. ')+check.why;}));el('stepDetail').insertAdjacentHTML('beforeend',stationPracticeLinks(current));const studied=studyState.completed.includes(current);el('stepDetail').insertAdjacentHTML('beforeend','<div class="study-mark"><label><input id="stageStudied" type="checkbox" '+(studied?'checked':'')+'><span>Marcar esta estaci\u00f3n como estudiada</span></label><small>El avance se guarda solo en este dispositivo.</small></div>');el('stageStudied').addEventListener('change',e=>{studyState.completed=e.target.checked?[...new Set([...studyState.completed,current])]:studyState.completed.filter(n=>n!==current);persistStudy();refreshStudyStatus();});refreshStudyStatus();el('stepProgress').innerHTML=stages.map((_,i)=>'<i class="'+(i<=current?'active':'')+'"></i>').join('');document.querySelectorAll('[data-step]').forEach(b=>b.addEventListener('click',()=>stage(Number(b.dataset.step))));}
+function stage(n){current=(n+stages.length)%stages.length;studyState.current=current;persistStudy();let a=stages[current],g=stationGuide[current];el('stepCount').textContent=String(current+1).padStart(2,'0');el('stepRail').innerHTML=stages.map((s,i)=>'<button type="button" class="'+(i===current?'active':'')+'" data-step="'+i+'"><span>'+String(i+1).padStart(2,'0')+'</span>'+escape(s[0])+'</button>').join('');el('stepDetail').innerHTML='<div class="eyebrow">'+escape(a[1])+' / ESTACIÓN '+String(current+1).padStart(2,'0')+'</div><h3>'+escape(a[2])+'</h3><p class="summary">'+escape(a[3])+'</p><div class="stage-facts" aria-label="Datos de esta etapa"><p><span>Quién actúa</span><strong>'+escape(a[4])+'</strong></p><p><span>Plazo orientativo</span><strong>'+escape(a[5])+'</strong></p><p><span>Regla aplicable</span><strong>'+escape(a[6])+'</strong></p></div>'+stationRuleLinks(current+1)+'<div class="stage-next"><div><span>Resultado</span><p>'+escape(g[0])+'</p></div><span class="stage-next-arrow" aria-hidden="true">↓</span><div><span>Después</span><p>'+escape(g[1])+'</p></div></div><div class="stage-application"><strong>En el caso Arcadia</strong><p>'+escape(a[7])+'</p><details><summary>Un matiz para recordar</summary><p>'+escape(a[8])+'</p></details></div>';const check=stageChecks[current];el('stepDetail').insertAdjacentHTML('beforeend','<fieldset class="stage-challenge"><legend>Comprueba tu comprensi&oacute;n</legend><p>'+escape(check.prompt)+'</p><div class="stage-challenge-options">'+check.options.map((option,index)=>'<button type="button" data-stage-answer="'+index+'" aria-pressed="false">'+escape(option)+'</button>').join('')+'</div><div class="stage-hint-row"><button class="stage-hint-button" type="button" data-stage-hint aria-expanded="false">Ver una pista</button><p class="stage-hint" data-stage-hint-text aria-live="polite" hidden></p></div><p class="stage-check-feedback" aria-live="polite">Elige una respuesta para ver por qu&eacute;.</p></fieldset>');let hintLevel=0;const hintButton=el('stepDetail').querySelector('[data-stage-hint]'),hintText=el('stepDetail').querySelector('[data-stage-hint-text]');hintButton.addEventListener('click',()=>{if(hintLevel>=check.hints.length){hintLevel=0;hintText.hidden=true;hintButton.setAttribute('aria-expanded','false');hintButton.textContent='Ver una pista';return;}hintText.textContent=check.hints[hintLevel++];hintText.hidden=false;hintButton.setAttribute('aria-expanded','true');hintButton.textContent=hintLevel<check.hints.length?'Ver otra pista':'Ocultar pistas';});el('stepDetail').querySelectorAll('[data-stage-answer]').forEach(button=>button.addEventListener('click',()=>{const correct=Number(button.dataset.stageAnswer)===check.answer;el('stepDetail').querySelectorAll('[data-stage-answer]').forEach(choice=>{choice.setAttribute('aria-pressed',String(choice===button));choice.classList.remove('is-correct','is-wrong');});button.classList.add(correct?'is-correct':'is-wrong');const feedback=el('stepDetail').querySelector('.stage-check-feedback');feedback.className='stage-check-feedback '+(correct?'is-correct':'is-wrong');feedback.textContent=(correct?'Correcto. ':'Vuelve a mirar la pregunta. ')+check.why;}));el('stepDetail').insertAdjacentHTML('beforeend',stationPracticeLinks(current));const studied=studyState.completed.includes(current);el('stepDetail').insertAdjacentHTML('beforeend','<div class="study-mark"><label><input id="stageStudied" type="checkbox" '+(studied?'checked':'')+'><span>Marcar esta estaci\u00f3n como estudiada</span></label><small>El avance se guarda solo en este dispositivo.</small></div>');el('stageStudied').addEventListener('change',e=>{studyState.completed=e.target.checked?[...new Set([...studyState.completed,current])]:studyState.completed.filter(n=>n!==current);persistStudy();refreshStudyStatus();});refreshStudyStatus();el('stepProgress').innerHTML=stages.map((_,i)=>'<i class="'+(i<=current?'active':'')+'"></i>').join('');document.querySelectorAll('[data-step]').forEach(b=>b.addEventListener('click',()=>stage(Number(b.dataset.step))));}
 el('resumeStudy').addEventListener('click',e=>{e.preventDefault();stage(Number(e.currentTarget.dataset.openStep)||0);});el('resetStudy').addEventListener('click',()=>{studyState={current:0,completed:[]};persistStudy();stage(0);});
 el('prevStep').addEventListener('click',()=>stage(current-1));el('nextStep').addEventListener('click',()=>stage(current+1));stage(studyState.current);
 document.querySelectorAll('#processOverview [data-open-step]').forEach(link=>link.addEventListener('click',event=>{event.preventDefault();openProceduralStep(link.dataset.openStep);}));
@@ -483,6 +574,14 @@ function showFocusedPractice(id) {
 }
 
 function filterRouteTarget(page, params) {
+  if (page.id === 'biblioteca' && params.has('norma')) {
+    const record = normRecords.find(item => item.id === params.get('norma'));
+    if (!record) return null;
+    normQuery.value = 'Art. ' + record.article;
+    normInstrument.value = record.instrument;
+    renderNormLibrary();
+    return el('norm-' + record.id).querySelector('h4');
+  }
   if (page.id === 'recorrido' && /^\d+$/.test(params.get('paso') || '')) {
     const step = Number(params.get('paso')) - 1;
     if (step < 0 || step >= stages.length) return null;
@@ -511,7 +610,7 @@ function filterRouteTarget(page, params) {
   }
   return null;
 }
-function showRouteFromHash(fromNavigation=false){const [hash, query]=location.hash.slice(1).split('?');let target=hash?document.getElementById(hash):null;let page=target?.matches('[data-route-page]')?target:target?.closest('[data-route-page]');if(!page)page=document.getElementById('inicio');routePages.forEach(section=>{section.hidden=section!==page;});const params=new URLSearchParams(query);const focused=showFocusedPractice(page.id==='arcadia'?params.get('decision'):null);if(focused)target=focused;else if(query)target=filterRouteTarget(page,params)||target;markSection(page.id);const matchingMenuLink=sidebarLinks.find(a=>a.hash==='#'+page.id)||sidebarLinks.find(a=>a.hash==='#'+hash);if(matchingMenuLink){const activeGroup=matchingMenuLink.closest('[data-nav-group]');document.querySelectorAll('[data-nav-group]').forEach(group=>{group.open=group===activeGroup;});}setMenu(false,false);requestAnimationFrame(()=>{if(target&&target!==page)target.scrollIntoView({block:'start'});else window.scrollTo({top:0,behavior:'auto'});if(fromNavigation){const heading=target&&target!==page?(target.matches('h1,h2,h3')?target:target.querySelector('h1,h2,h3')):page.querySelector('h1,h2,h3');if(heading){if(!heading.hasAttribute('tabindex'))heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});}}if(pendingSearchFocus){const input=el('atlasSearch');input?.scrollIntoView({block:'center',behavior:'smooth'});input?.focus({preventScroll:true});pendingSearchFocus=false;}});}
+function showRouteFromHash(fromNavigation=false){const [hash, query]=location.hash.slice(1).split('?');let target=hash?document.getElementById(hash):null;let page=target?.matches('[data-route-page]')?target:target?.closest('[data-route-page]');if(!page)page=document.getElementById('inicio');routePages.forEach(section=>{section.hidden=section!==page;});const params=new URLSearchParams(query);const focused=showFocusedPractice(page.id==='arcadia'?params.get('decision'):null);if(focused)target=focused;else if(query)target=filterRouteTarget(page,params)||target;markSection(page.id);const matchingMenuLink=sidebarLinks.find(a=>a.hash==='#'+page.id)||sidebarLinks.find(a=>a.hash==='#'+hash);if(matchingMenuLink){const activeGroup=matchingMenuLink.closest('[data-nav-group]');document.querySelectorAll('[data-nav-group]').forEach(group=>{group.open=group===activeGroup;});}setMenu(false,false);requestAnimationFrame(()=>{if(target&&target!==page)target.scrollIntoView({block:'start'});else window.scrollTo({top:0,behavior:'auto'});if(fromNavigation){const heading=target&&target!==page?(target.matches('h1,h2,h3,h4')?target:target.querySelector('h1,h2,h3,h4')):page.querySelector('h1,h2,h3,h4');if(heading){if(!heading.hasAttribute('tabindex'))heading.setAttribute('tabindex','-1');heading.focus({preventScroll:true});}}if(pendingSearchFocus){const input=el('atlasSearch');input?.scrollIntoView({block:'center',behavior:'smooth'});input?.focus({preventScroll:true});pendingSearchFocus=false;}});}
 function selectProceduralStep(stepIndex){activeStepPhase='Todas';document.querySelectorAll('[data-phase]').forEach(button=>{const active=button.dataset.phase==='Todas';button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});stage(Number(stepIndex));}
 function openProceduralStep(stepIndex){selectProceduralStep(stepIndex);const go=()=>requestAnimationFrame(()=>el('stepDetail').scrollIntoView({behavior:'smooth',block:'start'}));if(location.hash==='#recorrido'){go();return;}window.addEventListener('hashchange',go,{once:true});location.hash='recorrido';}
 window.addEventListener('hashchange',()=>showRouteFromHash(true));showRouteFromHash();
@@ -532,6 +631,7 @@ function makeSearchIndex(){return[
 ...newsItems.map(x=>({type:'Noticias y novedades',title:x.title,detail:x.org+' · '+x.date+' · '+x.type,url:'#actualidad',haystack:[x.title,x.org,x.date,x.type,x.summary].join(' ')})),
 ...deadlines.map((x,i)=>({type:'Plazos',title:x[0],detail:x[1]+' '+x[2]+' - '+x[3],url:'#reloj',deadlineIndex:i,haystack:x.join(' ')})),
 ...resources.map((x,i)=>({type:'Fuentes oficiales',title:x[0],detail:x[1],url:'#biblioteca',resourceIndex:i,haystack:x.join(' ')})),
+...normRecords.map(record=>({type:'Artículos del recorrido',norm:record,title:normTitle(record),detail:record.title,url:'#biblioteca?norma='+record.id,haystack:normTitle(record)+' '+record.title})),
 ...questions.map((x,i)=>({type:'Pr\u00e1ctica',title:x[0],detail:'Pregunta de repaso: '+x[3],url:'#laboratorio',quizIndex:i,haystack:x.join(' ')})),
 ...contrasts.map(x=>({type:'Conceptos clave',title:x[0],detail:x[1],url:'#sistema',haystack:x.join(' ')}))
 
@@ -553,6 +653,8 @@ function exactSearchResult(result, query) {
 }
 function searchType(x){return x.type||(x.step!==undefined?'Estaciones':x.caseIndex!==undefined?'Caso de pr\u00e1ctica':x.termId?'Diccionario y siglas':'Jurisprudencia');}
 function findAtlasResults(query) {
+  const normCitation = parseNormCitation(query);
+  if (normCitation) return searchIndex.filter(result => result.norm && normMatchesCitation(result.norm, normCitation));
   const citation = parseDocumentCitation(query);
   if (citation?.kind === 'opinion') return searchIndex.filter(result => result.opinion && citationMatchesOpinion(citation, result.opinion));
   if (citation?.kind === 'judgment') return searchIndex.filter(result => result.series && Number(result.series) === citation.number);
