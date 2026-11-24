@@ -31,6 +31,10 @@ if (countRows(stages) !== 18 || countRows(stationGuide) !== 18) {
 if ((stageChecks?.match(/\{prompt:/g) || []).length !== 18 || !app.includes('stage-check-feedback') || !styles.includes('.stage-challenge-options button.is-correct')) {
   throw new Error('Each procedural station needs an interactive decision with explanatory feedback.');
 }
+const progressiveHints = [...(stageChecks || '').matchAll(/hints:\['([^']+)',\s*'([^']+)'\]/g)];
+if (progressiveHints.length !== 18 || progressiveHints.some(([, first, second]) => !first.trim() || !second.trim()) || !app.includes('data-stage-hint-text') || !app.includes("hintLevel<check.hints.length?'Ver otra pista':'Ocultar pistas'") || !styles.includes('.stage-hint-button:focus-visible')) {
+  throw new Error('Each procedural station needs two progressive, accessible hints before its explanatory feedback.');
+}
 const simulationNodes = app.match(/const caseScenarioNodes=\{([\s\S]*?)\r?\n\};\r?\nconst caseScenarioPaths=/)?.[1];
 const simulationNodeIds = [...(simulationNodes || '').matchAll(/^ ([A-Za-z]+):\{phase:/gm)].map(match => match[1]);
 const simulationPaths = [...app.matchAll(/^ (cidh|court):\[(.*?)\],?$/gm)].map(match => ({name: match[1], nodes: [...match[2].matchAll(/'([A-Za-z]+)'/g)].map(item => item[1])}));

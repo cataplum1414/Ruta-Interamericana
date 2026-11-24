@@ -31,7 +31,11 @@ El recorrido ya contiene 18 estaciones con una pregunta por etapa, comparación 
 | --- | --- | --- |
 | [H5P Branching Scenario](https://github.com/h5p/h5p-branching-scenario) | Las elecciones determinan el siguiente contenido de un escenario. | Separar rutas y explicar la consecuencia procesal de cada decisión. Mantener rutas CIDH y Corte como entradas diferentes. |
 | [Learn Git Branching](https://github.com/pcottle/learnGitBranching) | El estudiante actúa, ve el estado cambiar y puede deshacer o reiniciar. | Mostrar el expediente como un recorrido modificable, guardar decisiones localmente y permitir corregir una respuesta sin perder el progreso. |
-| [PhET Interactive Simulations](https://github.com/phetsims) | Manipular variables y observar resultados inmediatos en varias representaciones. | En futuras etapas: cambiar fechas, acto notificado u órgano y mostrar cómo cambia el cómputo o la etapa, siempre con la regla y los límites a la vista. |
+| [Khan Exercises](https://github.com/Khan/khan-exercises/wiki/Exercise-Markup) | Los ejercicios pueden ofrecer pistas en secuencia a petición del estudiante. El repositorio está archivado; se toma como referencia de interacción, no como base técnica. | Cada estación ofrece dos pistas progresivas antes de mostrar la explicación de la respuesta. |
+| [The Odin Project Curriculum](https://github.com/TheOdinProject/curriculum) | Intercala lecciones con proyectos para aplicar lo leído. | En futuras etapas: cerrar cada módulo con un producto procesal breve, como una cronología, un mapa de competencia o una matriz de prueba. |
+| [freeCodeCamp Curriculum](https://github.com/freeCodeCamp/curriculum/blob/dev/docs/CONTRIBUTING.md) | Organiza desafíos y práctica dentro de una ruta formativa. | Mantener módulos conectados a ejercicios y a una señal de avance revisable por el estudiante. |
+| [PhET Interactive Description](https://github.com/phetsims/phet-info/blob/main/doc/interactive-description-technical-guide.md) | Describe el estado de una simulación y anuncia cómo cambia después de una interacción; contempla teclado, móvil y lectores de pantalla. | En futuras etapas: anunciar el efecto de cambiar una fecha o seleccionar un órgano, con alternativa textual y la regla visible. |
+| [Anki](https://github.com/ankitects/anki) | Repite contenidos según el estado de revisión y el tiempo transcurrido. | Explorar tarjetas de recuperación sobre distinciones procesales, sin adoptar un algoritmo ni guardar datos personales en un servidor. |
 | [Loopy](https://github.com/ncase/loopy) | Representar relaciones y efectos dentro de un sistema. | Construir un mapa causal sencillo para conectar hecho, obligación, atribución, violación, daño, reparación y cumplimiento. No sustituye el análisis judicial. |
 | [Atlas ONU: documentación de diseño](https://github.com/sukima-labs/atlasonu) | Exploradores conectados, lectura clara, mapas y componentes consistentes. | Reutilizar la gramática editorial de Sukima, adaptar el contenido a la OEA y mantener Comisión y Corte como recorridos separados. |
 
@@ -40,6 +44,8 @@ Estos repositorios son referencias de interacción, no autoridades jurídicas. L
 ## Mejora implementada
 
 La simulación de caso ahora conserva un historial visual por sesión: cada respuesta queda marcada como correcta o pendiente de repaso; se puede regresar a una decisión contestada, leer otra vez su explicación y cambiarla; el cierre indica el resultado y enlaza cada error con el punto exacto que se puede revisar. La pantalla no bloquea el aprendizaje por fallar: invita a intentarlo de nuevo y deja visible la explicación jurídica.
+
+Las 18 estaciones incorporan ahora dos pistas progresivas, solicitadas de forma voluntaria. La primera orienta hacia la pregunta jurídica; la segunda ayuda a localizar la distinción o regla relevante. La respuesta y su fundamento aparecen al contestar, y el avance sigue guardándose solo en el dispositivo.
 
 El registro existe solo en memoria durante la sesión, no crea perfiles ni envía respuestas. La ruta conserva su orden procesal: la interacción ayuda a explorar, pero no altera la regla ni afirma que la elección del estudiante modifique el procedimiento real.
 
