@@ -12,7 +12,7 @@
 <script>
 (()=>{let choice='auto';try{choice=localStorage.getItem('ri-theme')||'auto'}catch(e){}if(!['auto','light','dark'].includes(choice))choice='auto';const media=matchMedia('(prefers-color-scheme: light)');const apply=()=>{const theme=choice==='auto'?(media.matches?'light':'dark'):choice;document.documentElement.dataset.theme=theme;document.documentElement.dataset.themeChoice=choice;const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=theme==='light'?'#F5F4F0':'#10131C';document.querySelector('meta[name="color-scheme"]').content=theme};window.riTheme={get:()=>choice,set:value=>{choice=['auto','light','dark'].includes(value)?value:'auto';try{choice==='auto'?localStorage.removeItem('ri-theme'):localStorage.setItem('ri-theme',choice)}catch(e){}apply()}};media.addEventListener?.('change',()=>{if(choice==='auto')apply()});apply()})();
 </script>
-<link rel="stylesheet" href="assets/styles.css?v=atlas-oea-8">
+<link rel="stylesheet" href="assets/styles.css?v=atlas-oea-9">
 <link rel="stylesheet" href="assets/organizacion-mapa.css?v=atlas-oea-1">
 <link rel="manifest" href="./manifest.webmanifest">
 </head>
@@ -56,6 +56,7 @@
     <p>El Sistema Interamericano de Derechos Humanos es la v&iacute;a regional de protecci&oacute;n que desarrollan la Comisi&oacute;n y la Corte.</p>
   </div>
   <div class="hero-bottom"><span>34 Estados miembros | 4 pilares | &oacute;rganos y tratados</span><span>Lectura clara | fuentes oficiales | rutas conectadas</span></div>
+  <section class="home-news" aria-labelledby="homeNewsTitle"><div class="home-news-heading"><div><p class="section-tag">PANORAMA</p><h2 id="homeNewsTitle">Actualidad interamericana</h2><p>Noticias recientes para ubicar qu&eacute; ocurre y c&oacute;mo funciona el sistema.</p></div><a class="home-news-all" href="#actualidad">Ver todas las noticias</a></div><div class="home-news-list" id="homeNews" aria-live="polite"></div></section>
 </section>
 
 <section class="principle-strip" aria-label="Regla clave"><p><strong>Dos órganos, dos momentos.</strong> La admisibilidad no decide si hubo una violación. El informe de fondo de la Comisión no es una sentencia de la Corte.</p><a href="#sistema">Entender la diferencia</a></section>
@@ -233,6 +234,6 @@
 <script src="assets/glosario.js?v=editorial-2" defer></script>
 <script src="assets/organos.js" defer></script>
 <script src="assets/estados-oea.js" defer></script>
-<script src="assets/app.js?v=atlas-oea-9" defer></script>
+<script src="assets/app.js?v=atlas-oea-10" defer></script>
 </body>
 </html>
