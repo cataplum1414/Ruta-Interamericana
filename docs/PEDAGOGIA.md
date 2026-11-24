@@ -72,12 +72,14 @@ El comparador de plazos de la etapa final de la CIDH separa dos fechas que no de
 
 ## Próximas piezas prioritarias
 
-1. Mapa de relaciones entre OEA, órganos políticos, CIDH y Corte, con capas activables y una alternativa en lista.
-2. Simulador de competencia/admisibilidad implementado en el laboratorio; falta ampliarlo con casos alternativos y práctica de causas de inadmisibilidad.
-3. Línea de tiempo donde el usuario cambia una fecha de notificación y ve qué plazo se está calculando, cuál es su regla y qué datos faltan.
-4. Grafo de razonamiento para alegaciones y reparaciones del caso hipotético; cada relación debe abrir su fuente.
-5. Glosario transversal con enlaces bidireccionales desde órganos, etapas, jurisprudencia y preguntas.
-6. Casos y opiniones consultivas completos, buscables por problema jurídico y derecho, con fecha, tipo de decisión, órgano y enlace oficial. Evitar presentar casos como si fueran frecuentes o intercambiables.
+La versión actual ya incluye el mapa institucional y regional con capas, la práctica ramificada de la CIDH y de la Corte, el comparador de fechas, el mapa de razonamiento, el glosario conectado y catálogos buscables de jurisprudencia y opiniones consultivas. La siguiente iteración debe profundizar la aplicación y el control de calidad, no volver a proponer esos componentes como si faltaran.
+
+1. Añadir variantes al expediente didáctico para practicar qué cambia cuando varía un hecho, una notificación, una objeción o el tipo de prueba; mantener cada ruta separada entre CIDH y Corte.
+2. Incorporar una práctica específica de preparación de audiencia: decidir qué declaración aporta a qué hecho, distinguir documento, testimonio, peritaje y amicus, y ordenar preguntas sin anticipar la valoración de la Corte.
+3. Revisar las explicaciones y enlaces del recorrido de la Corte contra el Reglamento vigente, en particular notificaciones, prueba, declaraciones, audiencia, alegatos finales y supervisión.
+4. Mejorar la devolución pedagógica de los ejercicios: mostrar qué premisa llevó a una respuesta, qué dato falta y cuál es el siguiente recurso de la guía para estudiar.
+5. Mantener la actualidad de noticias, jurisprudencia y opiniones con fecha de verificación y enlaces a fichas oficiales; distinguir opiniones emitidas de solicitudes pendientes y no sugerir que los casos sean frecuentes o intercambiables.
+6. Seguir refinando la presentación móvil y la navegación persistente, comprobando el resultado desplegado después de cada publicación y evitando que el caché del navegador o de la PWA oculte cambios recientes.
 
 ## Privacidad y alcance de las clases
 
