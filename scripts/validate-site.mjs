@@ -3,7 +3,7 @@ import {access, readFile} from 'node:fs/promises';
 const html = await readFile('index.html', 'utf8');
 const app = await readFile('assets/app-v38.js', 'utf8');
 const glossary = await readFile('assets/glosario.js', 'utf8');
-const styles = await readFile('assets/styles-v25.css', 'utf8');
+const styles = await readFile('assets/styles-v26.css', 'utf8');
 const opinions = await readFile('assets/opiniones.js', 'utf8');
 const manifest = JSON.parse(await readFile('manifest.webmanifest', 'utf8'));
 const serviceWorker = await readFile('sw.js', 'utf8');
@@ -56,8 +56,11 @@ if (simulationPaths.some(path => startCounts[path.name] !== path.nodes.length)) 
 if (!html.includes('id="caseSimulationTitle"') || !html.includes('id="caseSimTrail"') || !app.includes('caseSimRetry') || !app.includes('drawCaseTrail') || !app.includes('data-review-step') || !app.includes('Decisiones del procedimiento') || !styles.includes('.case-sim-options button.is-correct') || !styles.includes('.case-sim-trail button.current')) {
   throw new Error('The case simulator needs retry, explanatory feedback, a reviewable decision trail, search integration, and visible decision states.');
 }
-if ((html.match(/class="process-overview-number"/g) || []).length !== 4 || !html.includes('id="processOverview"') || !html.includes('puede someter el caso a la Corte cuando se cumplen las reglas') || !html.includes('reglamentocidh.asp') || !html.includes('reglamento.cfm?lang=es')) {
+if ((html.match(/class="process-overview-number"/g) || []).length !== 4 || !html.includes('<details class="process-overview" id="processOverview">') || !html.includes('class="process-overview-summary"') || !html.includes('Petici&oacute;n &rarr; an&aacute;lisis CIDH &rarr; eventual caso ante la Corte') || html.includes('<details class="process-overview" id="processOverview" open') || !html.includes('puede someter el caso a la Corte cuando se cumplen las reglas') || !html.includes('reglamentocidh.asp') || !html.includes('reglamento.cfm?lang=es')) {
   throw new Error('The route needs a four-moment procedure overview with official Commission and Court sources.');
+}
+if (!html.includes('class="oea-competence-note"') || !html.includes('Carta le confiere expresamente') || !html.includes('no ampl&iacute;a por s&iacute; sola las competencias de la OEA') || !html.includes('https://api.icj-cij.org/sites/default/files/case-related/4/004-19490411-ADV-01-00-EN.pdf') || !styles.includes('.oea-competence-note')) {
+  throw new Error('OEA competence must distinguish the OAS Charter limit from the ICJ doctrine applied to the United Nations.');
 }
 if ((html.match(/class="process-overview-link"/g) || []).length !== 4 || !app.includes("#processOverview [data-open-step]") || !app.includes("el('stepDetail').scrollIntoView")) {
   throw new Error('Each overview moment must open the matching interactive station.');
@@ -67,9 +70,9 @@ if (!glossary.includes("id:'comunicacion-interestatal'") || !glossary.includes('
 }
 const protectionExercise = app.match(/const protectionSteps=\[([\s\S]*?)\r?\n\];/)?.[1];
 if ((protectionExercise?.match(/\{prompt:/g)||[]).length !== 3 || (protectionExercise?.match(/source:'https:\/\//g)||[]).length !== 3) throw new Error('The urgent-protection practice needs three sourced procedural decisions.');
-if (!html.includes('id="protectionMeasuresLab"') || !app.includes('protectionSteps') || !app.includes('art\\u00edculo 25') || !app.includes('27.3') || !app.includes('dataset.result') || !serviceWorker.includes('./assets/styles-v25.css')) throw new Error('The optional urgent-protection practice must compare CIDH and Court routes with official rules and a cached stylesheet.');
+if (!html.includes('id="protectionMeasuresLab"') || !app.includes('protectionSteps') || !app.includes('art\\u00edculo 25') || !app.includes('27.3') || !app.includes('dataset.result') || !serviceWorker.includes('./assets/styles-v26.css')) throw new Error('The optional urgent-protection practice must compare CIDH and Court routes with official rules and a cached stylesheet.');
 if (!app.includes("courtCompetence:{phase:'CORTE IDH'") || !app.includes("stage:14,source:'https://www.oas.org/es/cidh/mandato/basicos/convencion.asp'") || !app.includes("court:['courtCompetence','courtNotification'")) throw new Error('Missing the interactive Court jurisdiction decision.');
-if (!html.includes('assets/styles-v25.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v38.js') || !serviceWorker.includes('atlas-oea-shell-v61') || !serviceWorker.includes('./assets/styles-v25.css') || !serviceWorker.includes('./assets/app-v38.js')) {
+if (!html.includes('assets/styles-v26.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v38.js') || !serviceWorker.includes('atlas-oea-shell-v62') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/app-v38.js') || !styles.includes('.process-overview-summary')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
 }
 if (!html.includes('id="jurisTopicFilter"') || !app.includes('const jurisTopics=') || !app.includes("jurisTopicFilter.addEventListener('change',renderJurisprudencia)")) {

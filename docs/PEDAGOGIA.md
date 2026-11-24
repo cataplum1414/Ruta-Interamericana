@@ -13,13 +13,14 @@ La agenda y los materiales de curso organizan una secuencia concentrada en: intr
 Temas que deben reflejarse en el recorrido, con explicaciones propias y vínculos a normas y sentencias oficiales:
 
 1. Mapa institucional de la OEA y lugar de la CIDH y la Corte.
-2. Diferencia entre función promotora y cuasi jurisdiccional de la CIDH, y función jurisdiccional de la Corte.
-3. Competencia por materia, persona, tiempo y territorio; reconocimiento de competencia contenciosa.
-4. Petición, agotamiento y excepciones, plazo, duplicidad, admisibilidad y análisis de fondo.
-5. Solución amistosa, informe de fondo, recomendaciones y sometimiento a la Corte.
-6. Notificación, escrito de solicitudes, argumentos y pruebas (ESAP), contestación, excepciones, prueba, audiencia, sentencia e interpretación.
-7. Obligaciones estatales, atribución, derechos alegados, daño, reparaciones y supervisión de cumplimiento.
-8. Medidas cautelares de la CIDH y medidas provisionales de la Corte, con sus autoridades y umbrales diferenciados.
+2. Competencias derivadas de la Carta y alcance de la doctrina de facultades implícitas: la opinión sobre reparaciones examinó a la ONU, por lo que no se traslada automáticamente a la OEA.
+3. Diferencia entre función promotora y cuasi jurisdiccional de la CIDH, y función jurisdiccional de la Corte.
+4. Competencia por materia, persona, tiempo y territorio; reconocimiento de competencia contenciosa.
+5. Petición, agotamiento y excepciones, plazo, duplicidad, admisibilidad y análisis de fondo.
+6. Solución amistosa, informe de fondo, recomendaciones y sometimiento a la Corte.
+7. Notificación, escrito de solicitudes, argumentos y pruebas (ESAP), contestación, excepciones, prueba, audiencia, sentencia e interpretación.
+8. Obligaciones estatales, atribución, derechos alegados, daño, reparaciones y supervisión de cumplimiento.
+9. Medidas cautelares de la CIDH y medidas provisionales de la Corte, con sus autoridades y umbrales diferenciados.
 
 La agenda es una hoja de ruta docente, no una fuente jurídica. En caso de divergencia, la explicación debe enlazar la norma o decisión oficial y señalar límites, excepciones y cambios de reglamento. Los documentos académicos entregados sirven para ubicar debates y casos, no para reemplazar las fuentes primarias.
 
@@ -35,6 +36,10 @@ El recorrido ya contiene 18 estaciones con una pregunta por etapa, comparación 
 | [Learn Git Branching](https://github.com/pcottle/learnGitBranching) | El estudiante actúa, ve el estado cambiar y puede deshacer o reiniciar. | Mostrar el expediente como un recorrido modificable, guardar decisiones localmente y permitir corregir una respuesta sin perder el progreso. |
 | [Khan Exercises](https://github.com/Khan/khan-exercises/wiki/Exercise-Markup) | Los ejercicios pueden ofrecer pistas en secuencia a petición del estudiante. El repositorio está archivado; se toma como referencia de interacción, no como base técnica. | Cada estación ofrece dos pistas progresivas antes de mostrar la explicación de la respuesta. |
 | [The Odin Project Curriculum](https://github.com/TheOdinProject/curriculum) | Intercala lecciones con proyectos para aplicar lo leído. | En futuras etapas: cerrar cada módulo con un producto procesal breve, como una cronología, un mapa de competencia o una matriz de prueba. |
+| [Learning Python: From Blocks to Code](https://github.com/dmccreary/learning-python) | Pide predecir un resultado, ejecutar una acción y observar retroalimentación inmediata; conecta conceptos previos y posteriores. | Plantear la decisión de cada estación antes de revelar la explicación y vincularla con la estación anterior o siguiente. |
+| [Simulation Without a Black Box](https://github.com/ILABUTK/courseware_simulation_public) | Construye el aprendizaje con casos de estudio por fases y una simulación que deja visibles sus supuestos. | Usar Arcadia como expediente progresivo: cada paso cambia qué se debe resolver, pero no simula una decisión real ni oculta las reglas aplicables. |
+| [All Science Sims](https://github.com/listyantidewi1/all-science-sims) | Acompaña cada simulación con explicación clara, diagrama, vocabulario, errores comunes, relación con la vida real y preguntas de comprobación; carga detalles cuando se abre cada práctica. | Mantener juntos mecanismo, conceptos relacionados y autoevaluación sin llenar de paneles la página inicial ni cargar prácticas fuera de su sección. |
+| [World Map](https://github.com/ShazMoghaddam/world-map) | Combina capas y filtros con navegación por teclado, preferencias visuales y enlaces que preservan la selección. | Hacer que las capas institucionales y los filtros por fase del mapa sean accesibles por teclado y enlazables sin confundir la ruta de la Comisión con la de la Corte. |
 | [freeCodeCamp Curriculum](https://github.com/freeCodeCamp/curriculum/blob/dev/docs/CONTRIBUTING.md) | Organiza desafíos y práctica dentro de una ruta formativa. | Mantener módulos conectados a ejercicios y a una señal de avance revisable por el estudiante. |
 | [PhET Interactive Description](https://github.com/phetsims/phet-info/blob/main/doc/interactive-description-technical-guide.md) | Describe el estado de una simulación y anuncia cómo cambia después de una interacción; contempla teclado, móvil y lectores de pantalla. | En futuras etapas: anunciar el efecto de cambiar una fecha o seleccionar un órgano, con alternativa textual y la regla visible. |
 | [Anki](https://github.com/ankitects/anki) | Repite contenidos según el estado de revisión y el tiempo transcurrido. | Explorar tarjetas de recuperación sobre distinciones procesales, sin adoptar un algoritmo ni guardar datos personales en un servidor. |
