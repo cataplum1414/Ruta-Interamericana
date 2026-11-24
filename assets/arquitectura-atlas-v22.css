@@ -304,6 +304,17 @@ html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
 .followup-record dd{margin:4px 0 0;color:var(--muted)}
 .followup-record summary{min-height:44px;padding:9px 0;cursor:pointer;font-weight:750}
 .followup-record details{border-bottom:1px solid var(--line)}
+.data-quality{max-width:var(--content);margin:auto}
+.data-quality section{margin-block:20px;padding-top:14px;border-top:1px solid var(--line)}
+.data-quality h3{margin-top:0}
+.data-quality p{max-width:76ch;color:var(--muted);line-height:1.6}
+.data-quality ul{list-style:none;margin:0;padding:0}
+.data-quality li{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:44px;padding:7px 0;border-bottom:1px solid var(--line)}
+.data-quality a{color:var(--cyan-soft);text-underline-offset:3px}
+.data-quality dl{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 14px;max-width:640px}
+.data-quality dd{margin:0;font-weight:750}
+.data-quality-links{display:flex;flex-wrap:wrap;gap:8px 16px}
+.data-quality-links a{display:inline-flex;align-items:center;min-height:44px}
 @media(max-width:680px){
   .followup-record dl{grid-template-columns:minmax(0,1fr);gap:0}
   .followup-record dl>div+div{border-top:0}

@@ -23,11 +23,11 @@ Se recorrieron por teclado las 22 vistas internas del menú de Atlas ONU y las 1
 | Simula una asamblea | [Caso guiado](https://cataplum1414.github.io/Ruta-Interamericana/#arcadia) y [Practicar](https://cataplum1414.github.io/Ruta-Interamericana/#laboratorio) | Adoptar la entrada por objetivos y roles de la simulación. Priorizar una secuencia de decisiones antes, durante y después de la audiencia. |
 | Siglas y códigos | [Siglas y diccionario](https://cataplum1414.github.io/Ruta-Interamericana/#diccionario) | Ya hay enlaces contextuales. Mejorar la agrupación por órgano, actuación y documento. |
 | Recuperar documentos | [Buscador](https://cataplum1414.github.io/Ruta-Interamericana/#inicio) y [Casos y jurisprudencia](https://cataplum1414.github.io/Ruta-Interamericana/#jurisprudencia) | Primera adaptación: abrir la ficha con una cita de Serie C o una OC con su año. Sigue pendiente ampliar el inventario de identificadores y ofrecer filtros por año e instrumento. |
-| Datos y calidad | Sin vista propia | Publicar alcance de los índices, fechas de corte y criterios de verificación. Separar esto de la explicación jurídica. |
+| Datos y calidad | [Datos, calidad y descargas](https://cataplum1414.github.io/Ruta-Interamericana/#datos) | Ya muestra recuentos de esta edición y distingue fichas, PDF de sentencias y otras fuentes. Quedan pendientes fechas de corte por conjunto y un registro de revisiones de enlaces. |
 | Alertas de verificación | Sin vista propia | Mostrar enlaces que requieren revisión y datos con reservas junto al índice correspondiente. |
 | Qué falta y qué viene | Esta auditoría y documentación del repositorio | Registrar el estado de cada adaptación y usar comprobaciones reproducibles como evidencia. |
 | DIGNITYOS | Enlace externo | Mantenerlo fuera de la comparación de pantallas. |
-| Descargas | Sin vista propia | Evaluar exportar el índice público con su procedencia y fecha de corte. |
+| Descargas | [Datos, calidad y descargas](https://cataplum1414.github.io/Ruta-Interamericana/#datos) | Exporta en JSON los metadatos públicos de jurisprudencia, opiniones y Estados con sus enlaces. |
 | Fuentes y alcance | [Normas y fuentes](https://cataplum1414.github.io/Ruta-Interamericana/#biblioteca) | Conservar autoría y alcance. Diferenciar documento oficial, selección editorial y material de práctica. |
 
 ## Correcciones derivadas de la revisión
