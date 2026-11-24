@@ -64,6 +64,7 @@ const contrasts=[
 ['Declaración y Convención','La CIDH puede conocer de obligaciones relacionadas con la Declaración Americana en Estados miembros de la OEA no partes de la CADH. En este atlas seguimos la vía de la Convención; para llegar a la Corte se exige además aceptación de su jurisdicción.'],
 ['Presentar y someter','La ONG o persona presenta la petición ante la CIDH (art. 44). En el procedimiento individual es la CIDH quien somete el caso a la Corte (art. 61).'],
 ['Admisibilidad y fondo','La admisibilidad verifica si se puede examinar el caso; el fondo evalúa si hubo incumplimiento de derechos.'],
+ ['Comisión de la verdad y CIDH','Una comisión de la verdad es un mecanismo nacional, temporal y no judicial que investiga hechos de un período; la CIDH es un órgano permanente de la OEA que tramita peticiones bajo las reglas interamericanas. Sus mandatos no se sustituyen.'],
 ['Informe y sentencia','El informe de la Comisión puede contener recomendaciones; la sentencia de la Corte es una decisión judicial obligatoria para el Estado condenado.'],
 ['Víctima y peticionario','La persona denunciante no tiene por qué coincidir con quien sufrió la lesión. La identificación de presuntas víctimas ante la Corte tiene reglas propias (art. 35).'],
 ['Cautelares y provisionales','Las medidas cautelares se solicitan ante la CIDH; las provisionales corresponden a la Corte bajo las condiciones del art. 63.2 CADH. No son la petición principal.'],
