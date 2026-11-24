@@ -487,7 +487,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=231",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Gutiérrez Soler vs. Colombia",
@@ -606,7 +607,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Procedimiento contencioso · Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=237",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Masacres de El Mozote y lugares aledaños vs. El Salvador",
@@ -657,7 +659,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=219",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Niñas Yean y Bosico vs. República Dominicana",
