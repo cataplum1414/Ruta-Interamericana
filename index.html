@@ -195,6 +195,25 @@
 <section id="arcadia" data-route-page class="page-section section-block case-section">
   <div class="section-heading"><div><p class="section-tag">APRENDER APLICANDO</p><h2>Un caso para<br>poner la ruta a prueba</h2><p>Emilio Acosta vs. Arcadia es un expediente académico ficticio. Sigue sus hitos y decide qué pregunta debe resolverse en cada etapa.</p></div><span class="section-index">09</span></div>
   <div class="case-layout"><nav class="case-list" id="caseList" aria-label="Hitos del caso"></nav><article class="case-detail" id="caseDetail" aria-live="polite"></article></div>
+  <details class="reasoning-map" id="reasoningMap">
+    <summary><strong>Mapa interactivo: de los hechos a las reparaciones</strong><span>Practica c&oacute;mo conectar alegaciones, evidencia y medidas solicitadas.</span></summary>
+    <div class="reasoning-map-content">
+      <p class="reasoning-map-intro">Usa las etapas para ordenar una explicaci&oacute;n del expediente. No son requisitos autom&aacute;ticos ni una f&oacute;rmula que pruebe responsabilidad: vuelve a las fuentes y revisa los hechos de Arcadia.</p>
+      <p class="reasoning-map-progress" id="reasoningProgress" aria-live="polite">Relaci&oacute;n 1 de 6 · 0 resueltas</p>
+      <nav class="reasoning-track-nav" aria-label="Relaciones del an&aacute;lisis">
+        <ol class="reasoning-track">
+          <li><button type="button" data-reason-node="0" aria-pressed="true"><span>01</span><strong>Hechos</strong></button></li>
+          <li><button type="button" data-reason-node="1" aria-pressed="false"><span>02</span><strong>Obligaci&oacute;n</strong></button></li>
+          <li><button type="button" data-reason-node="2" aria-pressed="false"><span>03</span><strong>Conducta</strong></button></li>
+          <li><button type="button" data-reason-node="3" aria-pressed="false"><span>04</span><strong>Evidencia</strong></button></li>
+          <li><button type="button" data-reason-node="4" aria-pressed="false"><span>05</span><strong>Da&ntilde;o</strong></button></li>
+          <li><button type="button" data-reason-node="5" aria-pressed="false"><span>06</span><strong>Reparaci&oacute;n</strong></button></li>
+        </ol>
+      </nav>
+      <article class="reasoning-focus" id="reasoningFocus" aria-live="polite"></article>
+      <div class="reasoning-map-footer"><p>Las medidas dependen de la violaci&oacute;n que la Corte establezca y de las consecuencias acreditadas. La gu&iacute;a organiza preguntas; no anticipa el resultado de un caso.</p><a href="#recorrido">Volver a las 18 estaciones</a></div>
+    </div>
+  </details>
   <section class="case-simulation" aria-labelledby="caseSimulationTitle"><div class="case-simulation-intro"><p class="section-tag">PR&Aacute;CTICA DE PROCEDIMIENTO</p><h3 id="caseSimulationTitle">Elige por d&oacute;nde empezar</h3><p>Sigue el expediente desde la CIDH o entra a la fase de la Corte. Cada decisi&oacute;n muestra qu&eacute; puede ocurrir, por qu&eacute; y en qu&eacute; etapa conviene repasar la regla.</p></div><div class="case-sim-progress" aria-label="Avance del caso"><span id="caseSimProgressText">Elige una ruta para comenzar</span><div class="case-sim-progress-track"><span id="caseSimProgressBar"></span></div></div><nav id="caseSimTrail" class="case-sim-trail" aria-label="Tu recorrido por las decisiones" hidden></nav><article id="caseSimCard" class="case-sim-card" aria-live="polite"></article><div class="case-sim-controls"><button id="caseSimReset" class="button secondary" type="button">Reiniciar el caso</button><button id="caseSimRetry" class="button secondary" type="button" hidden>Revisar la decisi&oacute;n</button><a id="caseSimStageLink" class="button secondary" href="#recorrido" hidden>Repasar esta estaci&oacute;n</a><button id="caseSimNext" class="button primary" type="button" disabled hidden>Continuar</button></div></section>
   <div class="case-warning"><strong>Lee la cronología con cuidado.</strong><span>El material presenta discrepancias entre la fecha de sometimiento y la de notificación, y entre el número de excepciones anunciado y enumerado. La guía las señala sin inventar datos para resolverlas.</span></div>
 </section>
@@ -275,6 +294,7 @@
 <script src="assets/organos.js" defer></script>
 <script src="assets/estados-oea.js" defer></script>
 <script src="assets/app-v40.js" defer></script>
+<script src="assets/razonamiento-v1.js" defer></script>
 <script src="assets/map-connections-v6.js" defer></script>
 </body>
 </html>

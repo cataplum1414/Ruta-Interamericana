@@ -66,6 +66,8 @@ De las 125 referencias jurisprudenciales actuales, 100 abren una ficha técnica 
 
 El registro existe solo en memoria durante la sesión, no crea perfiles ni envía respuestas. La ruta conserva su orden procesal: la interacción ayuda a explorar, pero no altera la regla ni afirma que la elección del estudiante modifique el procedimiento real.
 
+El expediente Arcadia incluye un mapa de razonamiento desplegable. Seis preguntas conectan hechos, obligaciones, conducta estatal, evidencia, daño y reparación. El estudiante elige una respuesta por relación, recibe explicación y abre la norma o decisión oficial. La vista aclara que la secuencia sirve para organizar argumentos y no es una prueba automática de responsabilidad; las respuestas se conservan solo mientras la página permanece abierta.
+
 ## Próximas piezas prioritarias
 
 1. Mapa de relaciones entre OEA, órganos políticos, CIDH y Corte, con capas activables y una alternativa en lista.

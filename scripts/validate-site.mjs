@@ -2,6 +2,7 @@ import {access, readFile} from 'node:fs/promises';
 
 const html = await readFile('index.html', 'utf8');
 const app = await readFile('assets/app-v40.js', 'utf8');
+const reasoning = await readFile('assets/razonamiento-v1.js', 'utf8');
 const glossary = await readFile('assets/glosario.js', 'utf8');
 const styles = await readFile('assets/styles-v26.css', 'utf8');
 const atlasShell = await readFile('assets/arquitectura-atlas.css', 'utf8');
@@ -74,7 +75,7 @@ const protectionExercise = app.match(/const protectionSteps=\[([\s\S]*?)\r?\n\];
 if ((protectionExercise?.match(/\{prompt:/g)||[]).length !== 3 || (protectionExercise?.match(/source:'https:\/\//g)||[]).length !== 3) throw new Error('The urgent-protection practice needs three sourced procedural decisions.');
 if (!html.includes('id="protectionMeasuresLab"') || !app.includes('protectionSteps') || !app.includes('art\\u00edculo 25') || !app.includes('27.3') || !app.includes('dataset.result') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/arquitectura-atlas.css')) throw new Error('The optional urgent-protection practice must compare CIDH and Court routes with official rules and a cached stylesheet.');
 if (!app.includes("courtCompetence:{phase:'CORTE IDH'") || !app.includes("stage:14,source:'https://www.oas.org/es/cidh/mandato/basicos/convencion.asp'") || !app.includes("court:['courtCompetence','courtNotification'")) throw new Error('Missing the interactive Court jurisdiction decision.');
-if (!html.includes('assets/styles-v26.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v40.js') || !serviceWorker.includes('atlas-oea-shell-v74') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/arquitectura-atlas.css?v=6') || !serviceWorker.includes('./assets/app-v40.js') || !serviceWorker.includes('./assets/map-connections-v6.js') || !styles.includes('.process-overview-summary')) {
+if (!html.includes('assets/styles-v26.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v40.js') || !serviceWorker.includes('atlas-oea-shell-v75') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/arquitectura-atlas.css?v=6') || !serviceWorker.includes('./assets/app-v40.js') || !serviceWorker.includes('./assets/razonamiento-v1.js') || !serviceWorker.includes('./assets/map-connections-v6.js') || !styles.includes('.process-overview-summary')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
 }
 if (!html.includes('id="mapLayerSelect"') || !html.includes('value="membership"') || !html.includes('value="cases"') || !html.includes('Lectura f&aacute;cil: c&oacute;mo se conecta un pa&iacute;s con el sistema') || !html.includes('data-pan-x=') || !html.includes('aria-label="Mapa seleccionable') || !mapConnections.includes('const casesFor') || !mapConnections.includes('Sigue la relaci') || !mapConnections.includes('La membres\u00eda en la OEA no determina por s\u00ed sola') || !mapConnections.includes("'#comision'") || !mapConnections.includes("'#corte'") || !mapConnections.includes('La selecci\u00f3n no representa el total hist\u00f3rico') || !mapConnections.includes('https://www.oas.org/es/cidh/mandato/Basicos/convratif.asp') || !mapConnections.includes('ArrowLeft') || !html.includes('id="mapTimelineYear"') || !mapConnections.includes('treatyMilestones') || !mapConnections.includes('timeline') || !mapConnections.includes('Pausar la cronolog') || !html.includes('<details class="oas-map-directory">') || !html.includes('assets/arquitectura-atlas.css') || !html.includes('<section class="nav-group" data-nav-group>')) {
@@ -124,6 +125,10 @@ if (routeCount < 17 || !html.includes('href="#oea"') || !html.includes('href="#o
 const homeProcedure = html.match(/<ol class="procedure-path"[\s\S]*?<\/ol>/)?.[0] || '';
 if ((homeProcedure.match(/class="procedure-path-number"/g) || []).length !== 4 || !homeProcedure.includes('href="#comision"') || !homeProcedure.includes('href="#corte"') || !html.includes('El paso entre la Comisi&oacute;n y la Corte es eventual, no autom&aacute;tico') || !atlasShell.includes('.procedure-path li:not(:last-child):after')) {
   throw new Error('The home panorama must show four linked procedural moments and make the Commission-to-Court handoff explicitly conditional.');
+}
+const reasoningLabels = ['Hechos', 'Obligaci&oacute;n', 'Conducta', 'Evidencia', 'Da&ntilde;o', 'Reparaci&oacute;n'];
+if (!html.includes('id="reasoningMap"') || reasoningLabels.some(label => !html.includes('>' + label + '</strong>')) || (reasoning.match(/correct:\s*\d/g) || []).length !== 6 || !reasoning.includes('artículo 63.1') || !reasoning.includes('aria-live="polite"') || !reasoning.includes('Velásquez Rodríguez')) {
+  throw new Error('The Arcadia reasoning map must connect six accessible, interactive questions to official legal sources and repair doctrine.');
 }
 
 const jurisprudencia = await readFile('assets/jurisprudencia.js', 'utf8');
