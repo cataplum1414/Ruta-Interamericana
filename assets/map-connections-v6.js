@@ -29,7 +29,7 @@
     HTI:{convention:1977,court:1998},HND:{convention:1977,court:1981},JAM:{convention:1978},MEX:{convention:1981,court:1998},
     NIC:{convention:1979,court:1991},PAN:{convention:1978,court:1990},PRY:{convention:1989,court:1993},PER:{convention:1978,court:1981},
     DOM:{convention:1978,court:1999},SUR:{convention:1987,court:1987},TTO:{convention:1991,court:1991},URY:{convention:1985,court:1985},
-    VEN:{convention:2019,court:2019}
+    VEN:{convention:1977,court:1981}
   };
   const normalize = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   const aliases = {
@@ -67,7 +67,7 @@
       const field = timelineType.value;
       const label = field === 'court' ? 'la competencia de la Corte' : 'la Convención';
       legend.innerHTML = '<span><i class="legend-timeline"></i>Hito registrado hasta el a&ntilde;o elegido</span><span><i class="legend-other"></i>Sin fecha en esta tabla</span>';
-      description.textContent = `Color: Estados con hito de ${label} hasta ${timelineYear.value}, según el Informe Anual CIDH 2025.`;
+      description.textContent = `Color: Estados con hito de ${label} hasta ${timelineYear.value}, según el registro de hitos del Atlas y el registro oficial B-32. Para Venezuela se muestra el hito inicial; la ficha distingue actos posteriores.`;
       listTitle.textContent = `Hitos registrados hasta ${timelineYear.value}`;
       return;
     }
@@ -75,8 +75,8 @@
       legend.innerHTML = [
         ['1', '1'], ['2', '2&ndash;4'], ['3', '5&ndash;9'], ['4', '10 o m&aacute;s'], ['0', 'Sin casos indexados']
       ].map(([band, label]) => '<span><i class="legend-case-band" data-case-band="' + band + '"></i>' + label + '</span>').join('');
-      description.textContent = 'El color distingue cuántos casos de cada país aparecen en esta guía. La selección no representa el total histórico de casos de la Corte.';
-      listTitle.textContent = 'Países con casos citados en esta guía';
+      description.textContent = 'El color distingue cuántas referencias de cada país aparecen en esta guía. La selección no representa el total histórico de casos de la Corte. Varias referencias pueden corresponder a un mismo expediente.';
+      listTitle.textContent = 'Países con referencias citadas en esta guía';
       return;
     }
     legend.innerHTML = '<span><i class="legend-member"></i>Estado miembro</span><span><i class="legend-former"></i>Retiro efectivo en 2023</span><span><i class="legend-other"></i>Otro pa&iacute;s o territorio</span>';
@@ -89,7 +89,7 @@
     const source = layer === 'cases' ? states.filter(state => caseCounts.get(state.code) > 0) : layer === 'timeline' ? states.filter(state => (treatyMilestones[state.code]?.[timelineType.value] || 9999) <= Number(timelineYear.value)) : members;
     const rows = source.filter(state => !query || normalize(`${state.name} ${state.region}`).includes(query));
     count.textContent = layer !== 'membership' ? `${rows.length} Estados` : `${rows.length} de ${members.length} Estados`;
-    list.innerHTML = rows.length ? rows.map(state => `<button type="button" data-map-code="${state.code}"><span>${state.name}</span><small>${layer === 'cases' ? `${caseCounts.get(state.code)} ${caseCounts.get(state.code) === 1 ? 'caso citado' : 'casos citados'}` : layer === 'timeline' ? `Hito: ${treatyMilestones[state.code][timelineType.value]}` : state.region}</small></button>`).join('') : '<p class="oas-map-empty">No hay coincidencias en esta capa. Prueba con otro nombre.</p>';
+    list.innerHTML = rows.length ? rows.map(state => `<button type="button" data-map-code="${state.code}"><span>${state.name}</span><small>${layer === 'cases' ? `${caseCounts.get(state.code)} ${caseCounts.get(state.code) === 1 ? 'referencia citada' : 'referencias citadas'}` : layer === 'timeline' ? `Hito: ${treatyMilestones[state.code][timelineType.value]}` : state.region}</small></button>`).join('') : '<p class="oas-map-empty">No hay coincidencias en esta capa. Prueba con otro nombre.</p>';
   }
 
   function applyLayer() {
@@ -164,6 +164,7 @@
     const facts = document.createElement('dl');
     facts.className = 'state-facts';
     const dates = treatyMilestones[state.code] || {};
+    if(state.code==='VEN'){const history=document.createElement('p');history.textContent='Venezuela: depósito inicial en 1977; reconocimiento de la Corte en 1981; denuncia de la Convención notificada en 2012, efectiva en 2013; nuevo depósito de ratificación registrado en 2019. Estos eventos no resuelven por sí solos la competencia sobre un período concreto: consulta el registro B-32 y las declaraciones.';stateProfile.append(history);}
     [
       ['Relación con la OEA', state.status === 'former' ? `Retiro efectivo el ${state.date}` : `Estado miembro · ${state.region}`],
       ['Convención Americana', dates.convention ? `Hito registrado en ${dates.convention}` : 'Sin fecha en la tabla de hitos'],

@@ -18,7 +18,7 @@ window.RI_OPINIONES = [
   [9,1987,'Garantías judiciales en estados de emergencia','Debido proceso y garantías judiciales no suspendibles.'],
   [10,1989,'Interpretación de la Declaración Americana de los Derechos y Deberes del Hombre','Relación entre la Declaración Americana y las facultades de la CIDH.'],
   [11,1990,'Excepciones al agotamiento de los recursos internos','Aplicación de las excepciones del artículo 46.2.'],
-  [12,1991,'Compatibilidad de un proyecto de ley con el artículo 8.2.h de la Convención','Consulta sobre garantías judiciales y recurso.'],
+  [12,1991,'Compatibilidad de un proyecto de ley con el artículo 8.2.h de la Convención','Decisión de no responder la consulta de Costa Rica; no contiene una respuesta sustantiva a la pregunta planteada (párr. 31).'],
   [13,1993,'Ciertas atribuciones de la Comisión Interamericana de Derechos Humanos','Facultades de la CIDH en la etapa prevista por el artículo 51.'],
   [14,1994,'Responsabilidad internacional por expedición y aplicación de leyes violatorias de la Convención','Efectos internacionales de leyes incompatibles con derechos humanos.'],
   [15,1997,'Informes de la Comisión Interamericana de Derechos Humanos (artículo 51)','Alcance y efectos de los informes de la CIDH.'],
@@ -39,4 +39,4 @@ window.RI_OPINIONES = [
   [30,2025,'La responsabilidad de los Estados en materia de derechos humanos frente al tráfico ilícito de armas de fuego','Interpretación de los artículos 1, 2, 4, 5, 8 y 25 de la Convención y obligaciones estatales frente al tráfico ilícito de armas.'],
   [31,2025,'El contenido y alcance del derecho al cuidado y su interrelación con otros derechos','Derecho al cuidado, igualdad, corresponsabilidad y derechos sociales.'],
   [32,2025,'Emergencia climática y derechos humanos','Obligaciones estatales de protección frente a la emergencia climática.']
-].map(([number,year,title,topic])=>({number,year,title,topic,english:opinionEnglishSources[number],url:`https://www.corteidh.or.cr/docs/opiniones/seriea_${String(number).padStart(2,'0')}_esp.pdf`}));
+].map(([number,year,title,topic])=>({number,year,title,topic,english:opinionEnglishSources[number],url:number===19?'https://www.corteidh.or.cr/docs/opiniones/seriea_19_esp1.pdf':`https://www.corteidh.or.cr/docs/opiniones/seriea_${String(number).padStart(2,'0')}_esp.pdf`}));

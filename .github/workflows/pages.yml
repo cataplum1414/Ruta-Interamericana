@@ -29,6 +29,7 @@ jobs:
           node scripts/validate-site.mjs
           node scripts/test-deadline-clock.mjs
           node scripts/test-glossary-search.mjs
+          node scripts/test-methodology.mjs
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
         with:

@@ -14,8 +14,8 @@
     return 'other';
   }
 
-  const cases = (window.RI_JURISPRUDENCIA || []).map(({title, jurisdiction, series, topic, url}) =>
-    ({title, jurisdiction, series, topic, url, sourceKind:caseSourceKind(url)}));
+  const cases = (window.RI_JURISPRUDENCIA || []).map(({title, jurisdiction, series, topic, url, caseKey, verification, readingDecision}) =>
+    ({title, jurisdiction, series, topic, url, caseKey, verification, readingDecision, sourceKind:caseSourceKind(url)}));
   const opinions = (window.RI_OPINIONES || []).map(({number, year, title, topic, url, english}) =>
     ({number, year, title, topic, url, ...(english && {english:{kind:english.kind, url:english.url}})}));
   const states = [...(window.RI_ESTADOS_OEA || []), ...(window.RI_ESTADOS_RETIRO || [])].map(({code, name, region, status, date}) =>
@@ -50,7 +50,7 @@
   }
 
   download.addEventListener('click', () => {
-    const index = {schemaVersion:1, project:'Atlas OEA', cases, opinions, states};
+    const index = {schemaVersion:2, project:'Atlas OEA', generatedAt:new Date().toISOString(), scope:'Índices selectivos; null y pendientes no equivalen a ausencia jurídica. Consultar verification y readingDecision por registro.', cases, opinions, states};
     const blob = new Blob([JSON.stringify(index, null, 2) + '\n'], {type:'application/json'});
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');

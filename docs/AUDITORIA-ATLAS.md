@@ -81,3 +81,7 @@ La arquitectura base ya es reconocible como una plataforma hermana: rutas indepe
 - El catálogo de Opiniones separa el expediente OC-33 y distingue textos completos y resúmenes oficiales en inglés. La Corte limitó las descargas directas durante la comprobación, por lo que el inventario de 32 entradas en español no equivale a verificar 32 archivos descargables.
 - El orden de trabajo pedagógico es Orientador, Procedimiento, Caso guiado y Practicar. Luego conviene conectar los documentos y los casos con la etapa que ilustran. La comparación se repite en móvil y escritorio y debe probar el recorrido, además de la apariencia.
 - Las 18 estaciones ya permiten abrir una decisión de Arcadia, revisar la respuesta y volver a la regla. La práctica de una estación tiene su propio enlace y conserva el avance del simulador completo.
+
+## Implementación posterior
+
+La [matriz de traslado y estado actual](SEGUIMIENTO-AUDITORIA-2026-11-24.md) identifica la fuente de Atlas ONU, los patrones reutilizados y las diferencias deliberadas por materia. Esta auditoría comparativa se conserva como diagnóstico; no certifica identidad visual entre todas las pantallas ni equivalencia de datos o mecanismos.

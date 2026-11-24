@@ -104,3 +104,7 @@ La práctica «Sigue el camino de una declaración» ya cubre la lista definitiv
 ## Privacidad y alcance de las clases
 
 No se incorpora al repositorio contenido de Plaud, nombres de participantes, atribuciones, audios ni transcripciones. Para ampliar el contenido se usan la agenda y los documentos que están en la carpeta local, convertidos en explicaciones generales y corroboradas con fuentes oficiales. Esta página pública describe el diseño pedagógico, no reproduce clases privadas.
+
+## Estado posterior al diagnóstico
+
+Consultar [correcciones y pendientes del 24-11-2026](SEGUIMIENTO-AUDITORIA-2026-11-24.md). El inventario inicial se mantiene como evidencia histórica y no debe confundirse con el estado actual.

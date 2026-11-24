@@ -9,6 +9,11 @@
 .glossary-fulltext input{width:20px;height:20px;accent-color:var(--cyan-soft)}
 #glossaryFilters{display:flex;align-items:center;gap:12px}
 #glossaryCategory{max-width:100%;min-height:44px;padding:8px;background:var(--surface);color:var(--ink);font:inherit;border:1px solid var(--line);border-radius:8px}
+.atlas-method-guide{margin:18px auto;max-width:var(--content);font-size:14px}
+#competenceAnalysis,#competenceAdvanced{margin:18px 0;padding:16px;border:1px solid var(--line);border-radius:var(--radius-control)}
+#competenceAnalysis label,#competenceAdvanced label,#tallerArgumentacion label{display:block;margin:12px 0 6px;font-weight:700}
+#competenceAnalysis select,#competenceAdvanced textarea,#tallerArgumentacion select,#tallerArgumentacion textarea{width:100%;max-width:100%;min-height:44px;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font:inherit}
+#competenceAdvanced textarea,#tallerArgumentacion textarea{resize:vertical}
 html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
 .nav-group h2{margin:0;padding:14px 12px 7px;color:var(--muted);font-size:13px;font-weight:750;letter-spacing:.025em}
 .nav-group a[aria-current="page"]{border-left-color:var(--cyan);background:color-mix(in srgb,var(--cyan) 12%,var(--panel));font-weight:750}

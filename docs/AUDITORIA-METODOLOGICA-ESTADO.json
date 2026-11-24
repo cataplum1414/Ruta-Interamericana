@@ -1,0 +1,121 @@
+{
+  "auditedCommit": "a7b9e92e77c2f1182f8e9e4b2996d17f702dc3ab",
+  "workingTree": true,
+  "auditDate": "2026-11-24",
+  "scope": "Inventario del árbol local actual, incluido orden de opciones en ejecución; no certifica exhaustividad jurídica ni aprendizaje. El inventario histórico original se conserva separado.",
+  "routes": [
+    "inicio",
+    "english",
+    "oea",
+    "organos",
+    "estados",
+    "mapa",
+    "orientador",
+    "comision",
+    "corte",
+    "sistema",
+    "recorrido",
+    "seguimiento",
+    "reloj",
+    "arcadia",
+    "jurisprudencia",
+    "opiniones",
+    "actualidad",
+    "diccionario",
+    "laboratorio",
+    "biblioteca",
+    "relatorias",
+    "historia",
+    "elecciones",
+    "datos",
+    "competencia"
+  ],
+  "counts": {
+    "glossary": 113,
+    "jurisprudenceReferences": 125,
+    "advisoryRecords": 32,
+    "organs": 10,
+    "stationChecks": 18,
+    "caseDecisions": 21
+  },
+  "assessment": {
+    "stationAnswerPositions": [
+      1,
+      0,
+      2,
+      1,
+      2,
+      2,
+      1,
+      0,
+      2,
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      1,
+      2,
+      2
+    ],
+    "caseAnswerPositions": {
+      "facts": 0,
+      "remedies": 2,
+      "petition": 1,
+      "transmission": 0,
+      "commissionCompetence": 2,
+      "admissibility": 1,
+      "friendly": 0,
+      "merits": 2,
+      "report": 1,
+      "referral": 0,
+      "courtCompetence": 2,
+      "courtNotification": 1,
+      "victimIdentification": 1,
+      "esap": 2,
+      "contestation": 1,
+      "objections": 0,
+      "evidence": 2,
+      "hearing": 1,
+      "judgment": 0,
+      "reparations": 2,
+      "compliance": 1
+    },
+    "caseFirstOptionCorrect": 6
+  },
+  "documentaryMetadata": {
+    "referencesWithoutDecisionDate": 125,
+    "referencesWithoutParagraphField": 125,
+    "sharedUrls": [
+      {
+        "url": "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=269",
+        "titles": [
+          "Hilaire, Constantine y Benjamin y otros vs. Trinidad y Tobago",
+          "Hilaire vs. Trinidad y Tobago"
+        ]
+      },
+      {
+        "url": "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=251",
+        "titles": [
+          "Valle Jaramillo vs. Colombia",
+          "Valle Jaramillo y otros vs. Colombia"
+        ]
+      },
+      {
+        "url": "https://hudoc.echr.coe.int/",
+        "titles": [
+          "A, B y C vs. Irlanda",
+          "Cruz Varas vs. Suecia",
+          "Dickson vs. Reino Unido",
+          "Evans vs. Reino Unido",
+          "Paton vs. Reino Unido",
+          "Vo vs. Francia"
+        ]
+      }
+    ]
+  },
+  "glossarySourceMissing": [
+    "arcadia"
+  ]
+}

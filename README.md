@@ -67,10 +67,10 @@ El modo sin conexión y la instalación requieren servir la guía por `localhost
 - `index.html`: estructura y contenido de la guía.
 - `assets/styles-v26.css`: identidad visual, navegación adaptable, vistas móviles y estados accesibles.
 - `assets/app-v41.js`: recorrido, caso, reloj, práctica, búsquedas, contador independiente y enlaces contextuales del diccionario.
-- `assets/map-connections-v4.js`: capas del mapa geográfico y enlaces entre Estados, procedimiento y jurisprudencia.
+- `assets/map-connections-v6.js`: capas del mapa geográfico y enlaces entre Estados, procedimiento y jurisprudencia.
 - `assets/glosario.js`: siglas y conceptos con explicaciones claras, relaciones internas y fuentes oficiales.
 - `assets/jurisprudencia.js`: referencias jurisprudenciales estructuradas.
-- `assets/opiniones.js`: catálogo de opiniones consultivas emitidas con enlaces a las Series A oficiales.
+- `assets/opiniones.js`: índice seleccionado de expedientes consultivos, incluida una decisión de no responder con enlaces a las Series A oficiales.
 - `manifest.webmanifest` y `sw.js`: instalación y caché local para lectura sin conexión.
 - `scripts/validate-site.mjs`: verifica rutas internas, número de estaciones, preguntas y archivos de la caché.
 - `.github/workflows/pages.yml`: publicación en GitHub Pages.
@@ -113,3 +113,22 @@ Las opiniones emitidas están separadas de las solicitudes en curso. Las noticia
 La [auditoría metodológica integral](docs/AUDITORIA-METODOLOGICA-INTEGRAL.md) registra errores, omisiones y tareas de corrección en las 25 rutas. Incluye un [inventario reproducible](docs/AUDITORIA-METODOLOGICA-INVENTARIO.json); la revisión no certifica el cotejo íntegro de todos los documentos jurídicos externos.
 
 `docs/PEDAGOGIA.md` resume qué mecánicas educativas públicas se revisaron, cómo se adaptan a las rutas CIDH y Corte, qué se añadió al simulador y qué módulos conviene construir después. No contiene notas, nombres ni transcripciones de clase.
+
+## Seguimiento de la auditoría del 24-11-2026
+
+El [registro de correcciones y pendientes](docs/SEGUIMIENTO-AUDITORIA-2026-11-24.md) distingue lo corregido, lo parcial y lo que requiere cotejo jurídico documental. La [auditoría original](docs/AUDITORIA-METODOLOGICA-INTEGRAL.md) se conserva como diagnóstico histórico; no describe por sí sola el estado publicado actual.
+
+Esta revisión incorpora guías de propósito, uso, tarea y alcance en las 25 pantallas; corrige reglas de excepciones, recusación, reparaciones, prórrogas y resultados CIDH; diferencia los tres niveles de competencia y añade escritura argumentativa con pautas de autoevaluación. Se documentan los patrones adaptados de Atlas ONU y sus límites. No se ha cotejado íntegramente cada una de las 125 referencias jurisprudenciales.
+
+Archivos nuevos: `assets/pedagogia-v1.js` (orden de opciones conservando identidad) y `assets/guia-metodologica-v1.js` (guías por ruta, mecanismos y talleres). Los niveles avanzados no califican automáticamente la calidad del argumento escrito.
+
+Verificación reproducible:
+
+```sh
+node scripts/validate-site.mjs
+node scripts/test-deadline-clock.mjs
+node scripts/test-glossary-search.mjs
+node scripts/test-methodology.mjs
+```
+
+Con un servidor HTTP activo, Playwright y Chromium disponibles externamente, `node scripts/browser-methodology.cjs` prueba navegación de las 25 vistas, contexto del explorador, niveles, ejercicios y exportación en 390 y 1280 px. Configuración opcional: `ATLAS_PLAYWRIGHT_MODULE`, `ATLAS_CHROMIUM_PATH` y `ATLAS_TEST_URL`. No se añaden dependencias al sitio estático.

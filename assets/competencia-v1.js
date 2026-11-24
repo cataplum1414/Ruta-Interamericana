@@ -17,7 +17,7 @@
       matters: 'Derechos económicos, sociales y culturales.',
       direct: 'El artículo 19.6 prevé peticiones individuales únicamente para los derechos sindicales del artículo 8.a y el derecho a la educación del artículo 13.',
       cidh: 'El artículo 19.6 limita las peticiones individuales a los artículos 8.a y 13, con arreglo a los procedimientos aplicables.',
-      court: 'No se debe inferir una jurisdicción contenciosa autónoma sobre todo el Protocolo. Analiza el artículo 19.6 y las disposiciones de jurisdicción aceptadas.',
+      court: 'El artículo 19.6 limita la vía individual del Protocolo. Es distinta la protección de DESCA desarrollada bajo el artículo 26 CADH, entre otros en Lagos del Campo (2017). No debe deducirse de la restricción del Protocolo que todos los demás derechos sociales sean ajenos a la competencia de la Corte.',
       un: 'El Comité de los Derechos del Niño no supervisa este tratado.',
       citation: 'Protocolo de San Salvador, artículo 19.6.',
       url: 'https://www.oas.org/es/cidh/mandato/Basicos/sansalvador.asp'
@@ -28,7 +28,7 @@
       matters: 'Prevención, sanción y erradicación de la violencia contra la mujer.',
       direct: 'El artículo 12 limita las peticiones individuales ante la CIDH a presuntas violaciones del artículo 7 por un Estado parte.',
       cidh: 'El artículo 12 abre peticiones ante la Comisión respecto del artículo 7.',
-      court: 'El artículo 11 permite solicitudes de opinión consultiva. El artículo 12 prevé peticiones ante la CIDH, no una atribución contenciosa autónoma a la Corte.',
+      court: 'Campo Algodonero (2009), párrafo 80, reconoce competencia material de la Corte sobre el artículo 7 de Belém do Pará, no sobre sus artículos 8 y 9. Deben verificarse además el Estado, el período y los demás requisitos jurisdiccionales.',
       un: 'El Comité de los Derechos del Niño no supervisa este tratado.',
       citation: 'Convención de Belém do Pará, artículos 11–12.',
       url: 'https://www.oas.org/es/cidh/mandato/basicos/belemdopara.asp'
@@ -45,17 +45,19 @@
       url: 'https://www.oas.org/es/cidh/mandato/Basicos/desaparicion.asp'
     },
     crc: {
-      name: 'Convención sobre los Derechos del Niño y Protocolo facultativo de comunicaciones',
-      dates: 'Convención adoptada el 20 de noviembre de 1989. El Protocolo facultativo de comunicaciones entró en vigor el 14 de abril de 2014.',
-      matters: 'El Protocolo facultativo crea un procedimiento separado de comunicaciones ante el Comité de los Derechos del Niño, sujeto a que el Estado sea parte del Protocolo y a sus requisitos.',
+      name: 'Convención sobre los Derechos del Niño',
+      dates: 'Adoptada el 20 de noviembre de 1989. En vigor desde el 2 de septiembre de 1990.',
+      matters: 'Derechos de niñas, niños y adolescentes reconocidos en la Convención. Su supervisión corresponde al Comité conforme a los artículos 43–45; el procedimiento individual deriva de un protocolo separado.',
       direct: 'La CDN puede servir de contexto interpretativo en el sistema interamericano. Eso no atribuye automáticamente jurisdicción contenciosa para declarar una violación autónoma de la CDN.',
       cidh: 'La pertinencia interpretativa de la CDN no reemplaza la identificación del instrumento que atribuye competencia a la CIDH.',
       court: 'La jurisdicción contenciosa de la Corte se define por los instrumentos interamericanos aplicables y la aceptación correspondiente, no por la sola referencia interpretativa a la CDN.',
-      un: 'El Comité puede recibir comunicaciones conforme al Protocolo facultativo, en relación con Estados partes y derechos comprendidos en él.',
-      citation: 'Protocolo facultativo de comunicaciones, artículos 5–7.',
-      url: 'https://www.ohchr.org/sites/default/files/Documents/HRBodies/CRC/ModelCommunicationForm_en.pdf'
+      un: 'El Comité examina informes estatales conforme a la CDN. Para comunicaciones individuales, selecciona el Protocolo facultativo y verifica separadamente que el Estado sea parte.',
+      citation: 'CDN, artículos 1–4 y 43–45; CADH, artículos 19, 29 y 62.',
+      url: 'https://www.ohchr.org/en/instruments-mechanisms/instruments/convention-rights-child'
     }
   };
+  treaties.opic={name:'Protocolo facultativo de la CDN relativo a un procedimiento de comunicaciones',dates:'Adoptado el 19 de diciembre de 2011. En vigor desde el 14 de abril de 2014.',matters:'Comunicaciones sobre los derechos cubiertos por el Protocolo y los instrumentos aplicables al Estado, bajo sus condiciones.',direct:'La vía ante el Comité requiere que el Estado sea parte y que se cumplan los requisitos de los artículos 5–7; no es un procedimiento ante la Corte IDH.',cidh:'No atribuye una nueva vía a la CIDH. Analiza separadamente el instrumento interamericano pertinente.',court:'No atribuye competencia contenciosa autónoma sobre el Protocolo a la Corte IDH.',un:'El Comité de los Derechos del Niño recibe comunicaciones conforme al Protocolo, sujeto a sus requisitos.',citation:'Protocolo, artículos 1, 5–7 y 19.',url:'https://www.ohchr.org/en/instruments-mechanisms/instruments/optional-protocol-convention-rights-child-communications-procedure'};
+  const sourceNotes={belem:['Campo Algodonero, párr. 80','https://corteidh.or.cr/docs/casos/articulos/seriec_205_esp.pdf'],san:['Lagos del Campo, sentencia de 31 de agosto de 2017','https://www.corteidh.or.cr/docs/casos/articulos/seriec_340_esp.pdf']};
   const byId = id => document.getElementById(id);
   const treatySelect = byId('competenceTreaty');
   const organSelect = byId('competenceOrgan');
@@ -69,7 +71,7 @@
       + '<div><dt>Materia supervisada</dt><dd>' + item.matters + '</dd></div>'
       + '<div><dt>Aplicación o uso interpretativo</dt><dd>' + item.direct + '</dd></div>'
       + '<div><dt>Fundamento normativo</dt><dd>' + item.citation + '</dd></div></dl>'
-      + '<p><a href="' + item.url + '" target="_blank" rel="noopener noreferrer">Consultar fuente oficial ↗</a></p>';
+      + '<p><a href="' + item.url + '" target="_blank" rel="noopener noreferrer">Consultar fuente oficial ↗</a></p>'+(sourceNotes[treatySelect.value]?'<p><a href="'+sourceNotes[treatySelect.value][1]+'" target="_blank" rel="noopener noreferrer">'+sourceNotes[treatySelect.value][0]+' ↗</a></p>':'');
   }
   treatySelect.addEventListener('change', renderTreaty);
   organSelect.addEventListener('change', renderTreaty);
@@ -102,20 +104,25 @@
     }
   };
 
-  byId('competenceScenario').addEventListener('change', () => {
-    byId('competenceFeedback').textContent = '';
-    document.querySelectorAll('[name="competenceAnswer"]').forEach(input => { input.checked = false; });
+  const tasks={
+    women:{facts:'Hipótesis ficticia: Estado parte de Belém do Pará desde 2000; hechos de 2024 bajo su jurisdicción. Se alega incumplimiento del artículo 7. Se consulta inicialmente la vía ante la CIDH, sin dar por cumplida la admisibilidad.',treaty:'belem',ground:'belem12',limit:'material'},
+    education:{facts:'Hipótesis ficticia: Estado parte del Protocolo desde 2001; hechos de 2024. Se alega afectación del artículo 13 por actuación estatal. Se pregunta por la vía inicial ante la CIDH; agotamiento y demás requisitos deben analizarse por separado.',treaty:'san',ground:'san196',limit:'material'},
+    child:{facts:'Solo se sabe que se alega violación de la CDN. No constan Estado, fechas, aceptación del Protocolo de comunicaciones ni derecho interamericano invocado. Debes identificar qué falta antes de concluir.',treaty:'crc',ground:'missing',limit:'personal'},
+    time:{facts:'Se afirma que unos hechos precedieron a la aceptación de competencia. Faltan las fechas exactas, la declaración, el derecho aplicable y si se alega una violación continuada o solo efectos posteriores.',treaty:'cadh',ground:'cadh62',limit:'temporal'}
+  };
+  function levelChanged(){const level=byId('competenceLevel').selectedIndex;byId('competenceAnalysis').hidden=level<1;byId('competenceAdvanced').hidden=level<2;byId('competenceFeedback').replaceChildren();}
+  function scenarioChanged(){for(const field of ['Treaty','Ground','Limit'])byId('competenceTask'+field).value='';for(const field of ['For','Against','Evidence'])byId('competenceArgument'+field).value='';byId('competenceCaseFacts').textContent=tasks[byId('competenceScenario').value].facts;byId('competenceFeedback').replaceChildren();document.querySelectorAll('[name="competenceAnswer"]').forEach(input=>{input.checked=false;});}
+  byId('competenceScenario').addEventListener('change',scenarioChanged);
+  byId('competenceLevel').addEventListener('change',levelChanged);
+  byId('competenceCheck').addEventListener('click',()=>{
+    const choice=document.querySelector('[name="competenceAnswer"]:checked'), feedback=byId('competenceFeedback'), key=byId('competenceScenario').value, task=tasks[key], scenario=scenarios[key], level=byId('competenceLevel').selectedIndex;
+    if(!choice){feedback.textContent='Elige una conclusión inicial para contrastarla.';return;}
+    const selections=level>0?['Treaty','Ground','Limit'].map(field=>byId('competenceTask'+field).value):[];
+    if(level>0&&selections.some(value=>!value)){feedback.textContent='Selecciona instrumento, fundamento y limitación. El ejercicio necesita los tres elementos del análisis.';return;}
+    if(level>1&&['For','Against','Evidence'].some(field=>!byId('competenceArgument'+field).value.trim())){feedback.textContent='Formula un argumento a favor, uno en contra y el dato o documento pendiente. Después podrás contrastarlos con la rúbrica.';return;}
+    const matched=choice.value===scenario.answer;
+    const checks=level>0?'<p><strong>Contraste de selecciones:</strong> instrumento '+(selections[0]===task.treaty?'compatible':'a revisar')+'; fundamento '+(selections[1]===task.ground?'compatible':'a revisar')+'; límite '+(selections[2]===task.limit?'compatible':'a revisar')+'. Las dimensiones pueden concurrir: aquí se identifica el problema destacado en el supuesto.</p>':'';
+    feedback.innerHTML='<strong>'+(matched?'Conclusión inicial compatible con los supuestos.':'Revisa tu conclusión inicial.')+'</strong><p><strong>Argumento a favor:</strong> '+scenario.support+'</p><p><strong>Límite o contraargumento:</strong> '+scenario.limits+'</p>'+checks+'<p><strong>Fundamento:</strong> '+scenario.source+'</p><a href="'+treaties[task.treaty].url+'" target="_blank" rel="noopener noreferrer">Abrir instrumento oficial ↗</a>'+(level>1?'<h4>Autoevaluación de la argumentación</h4><p>El Atlas contrasta las selecciones anteriores; no califica automáticamente la calidad jurídica del texto que escribiste. Comprueba:</p><ol>'+window.RI_PEDAGOGIA.rubric.map(item=>'<li>'+item+'</li>').join('')+'</ol><p>Explica qué hecho apoya cada argumento y qué cambiaría si el dato pendiente resultara distinto.</p>':'');
   });
-  byId('competenceCheck').addEventListener('click', () => {
-    const choice = document.querySelector('[name="competenceAnswer"]:checked');
-    const feedback = byId('competenceFeedback');
-    if (!choice) {
-      feedback.textContent = 'Selecciona una conclusión para revisar el razonamiento.';
-      return;
-    }
-    const scenario = scenarios[byId('competenceScenario').value];
-    const level = byId('competenceLevel').value;
-    feedback.innerHTML = '<strong>' + (choice.value === scenario.answer ? 'La respuesta es compatible con el escenario.' : 'Revisa el alcance antes de concluir.')
-      + ' Nivel: ' + level + '.</strong><p><strong>Argumento a favor</strong> ' + scenario.support + '</p><p><strong>Límite o contraargumento</strong> ' + scenario.limits + '</p><p><strong>Fundamento para verificar</strong> ' + scenario.source + '</p>';
-  });
+  scenarioChanged();levelChanged();
 })();

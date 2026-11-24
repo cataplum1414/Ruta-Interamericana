@@ -27,6 +27,7 @@
       {text:'La audiencia reemplaza los alegatos finales y nunca pueden presentarse por escrito.',correct:false,hint:'El Reglamento contempla una fase final escrita posterior a la audiencia.'}
     ]}
   ];
+  steps.forEach((step,i)=>{step.options=window.RI_PEDAGOGIA.order(step.options,i);});
   const byId=id=>document.getElementById(id);
   const card=byId('hearingLabCard'),progress=byId('hearingLabProgress'),bar=byId('hearingLabProgressBar');
   if(!card||!progress||!bar)return;
