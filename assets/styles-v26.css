@@ -208,6 +208,7 @@ h1 span{color:var(--cyan-soft)}
 .deadline-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-top:12px}
 .deadline-list article{padding:16px;background:var(--panel);border:1px solid var(--line)}
 .deadline-list header{display:flex;justify-content:space-between;gap:12px;font-size:13px;font-weight:750}
+.deadline-list header strong{flex:1 1 auto;min-width:0;overflow-wrap:anywhere;color:inherit}
 .deadline-list header span{flex:0 0 auto;color:var(--cyan-soft)}
 .deadline-list p{margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.6}
 .case-section{background:#0D111B}
