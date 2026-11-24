@@ -51,6 +51,9 @@ if (!html.includes('id="caseSimulationTitle"') || !html.includes('id="caseSimTra
 if (!glossary.includes("id:'comision-verdad'") || !glossary.includes('RuleoflawTruthCommissionsen.pdf') || !app.includes('Comisión de la verdad y CIDH')) {
   throw new Error('The glossary must distinguish a national truth commission from the Inter-American Commission using a primary source.');
 }
+if (!html.includes('assets/glosario.js?v=editorial-3') || !html.includes('assets/app.js?v=atlas-oea-11') || !serviceWorker.includes('atlas-oea-shell-v29')) {
+  throw new Error('The offline cache and versioned scripts must expose the current glossary and procedural comparisons.');
+}
 if (countRows(questions) !== 10) throw new Error('The expected 10 practice questions were not found.');
 const opinionNumbers = [...opinions.matchAll(/^  \[(\d+),/gm)].map(match => Number(match[1]));
 const opinionCount = opinionNumbers.length;
