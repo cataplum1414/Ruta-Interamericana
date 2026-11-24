@@ -12,7 +12,7 @@
 <script>
 (()=>{let choice='auto';try{choice=localStorage.getItem('ri-theme')||'auto'}catch(e){}if(!['auto','light','dark'].includes(choice))choice='auto';const media=matchMedia('(prefers-color-scheme: light)');const apply=()=>{const theme=choice==='auto'?(media.matches?'light':'dark'):choice;document.documentElement.dataset.theme=theme;document.documentElement.dataset.themeChoice=choice;const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=theme==='light'?'#F5F4F0':'#10131C';document.querySelector('meta[name="color-scheme"]').content=theme};window.riTheme={get:()=>choice,set:value=>{choice=['auto','light','dark'].includes(value)?value:'auto';try{choice==='auto'?localStorage.removeItem('ri-theme'):localStorage.setItem('ri-theme',choice)}catch(e){}apply()}};media.addEventListener?.('change',()=>{if(choice==='auto')apply()});apply()})();
 </script>
-<link rel="stylesheet" href="assets/styles.css?v=atlas-oea-10">
+<link rel="stylesheet" href="assets/styles.css?v=atlas-oea-11">
 <link rel="stylesheet" href="assets/organizacion-mapa.css?v=atlas-oea-1">
 <link rel="manifest" href="./manifest.webmanifest">
 </head>
@@ -52,7 +52,7 @@
     <div class="study-resume" id="studyResume" hidden><div><span class="section-tag">TU AVANCE EN ESTE DISPOSITIVO</span><strong id="studyProgressText"></strong></div><a class="button secondary" id="resumeStudy" href="#recorrido">Retomar</a><button class="study-reset" id="resetStudy" type="button">Borrar avance</button></div>
   </div>
   <p class="hero-route-summary">Una petici&oacute;n no pasa autom&aacute;ticamente a la Corte. <a href="#comision">La Comisi&oacute;n examina el asunto</a> y puede someterlo al tribunal cuando se cumplen las reglas.</p>
-  <section class="home-news" aria-labelledby="homeNewsTitle"><div class="home-news-heading"><div><p class="section-tag">PANORAMA</p><h2 id="homeNewsTitle">Actualidad interamericana</h2><p>Noticias recientes para ubicar qu&eacute; ocurre y c&oacute;mo funciona el sistema.</p></div><a class="home-news-all" href="#actualidad">Ver todas las noticias</a></div><div class="home-news-list" id="homeNews" aria-live="polite"></div></section>
+  <section class="home-news" aria-labelledby="homeNewsTitle"><div class="home-news-heading"><div><p class="section-tag">PANORAMA · OEA, CIDH Y CORTE</p><h2 id="homeNewsTitle">Lo que ocurre en las Am&eacute;ricas</h2><p>Actividad institucional y actualidad regional, con sus fuentes oficiales.</p></div><a class="home-news-all" href="#actualidad">Ver todas las noticias</a></div><div class="home-news-list" id="homeNews" aria-live="polite"></div></section>
 </section>
 
 <section class="principle-strip" aria-label="Regla clave"><p><strong>Dos órganos, dos momentos.</strong> La admisibilidad no decide si hubo una violación. El informe de fondo de la Comisión no es una sentencia de la Corte.</p><a href="#sistema">Entender la diferencia</a></section>
@@ -192,7 +192,7 @@
 </section>
 
 <section id="actualidad" data-route-page class="page-section section-block">
-  <div class="section-heading"><div><p class="section-tag">ACTUALIDAD INTERAMERICANA</p><h2>Noticias que ayudan<br>a entender el sistema</h2><p>Una selección breve de novedades institucionales y procesales. Las noticias explican lo que está pasando; no sustituyen una sentencia, una opinión consultiva ni la norma aplicable.</p></div><span class="section-index">12</span></div>
+  <div class="section-heading"><div><p class="section-tag">PANORAMA · FUENTES OFICIALES</p><h2>Lo que ocurre en<br>la OEA y el sistema</h2><p>Noticias de la OEA, la Comisión y la Corte. Cada una ayuda a ubicar qué institución actúa y en qué contexto; no sustituye una sentencia, una opinión consultiva ni la norma aplicable.</p></div><span class="section-index">12</span></div>
   <div class="news-guidance"><strong>Cómo leer esta sección</strong><span>Identifica el órgano, la fecha y el acto procesal. Si una noticia anuncia que un caso fue presentado ante la Corte, eso inicia la fase contenciosa: todavía no es una sentencia.</span></div>
   <div class="news-filters" id="newsFilters" role="group" aria-label="Filtrar novedades por órgano"></div>
   <div class="news-grid" id="newsGrid"></div>

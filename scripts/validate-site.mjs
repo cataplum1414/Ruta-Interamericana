@@ -188,6 +188,12 @@ for (const [title, series] of directJudgments) {
     throw new Error(`The case index needs the verified official Serie C ${series} judgment for ${title}.`);
   }
 }
+for (const [title, ficha] of [['Fábrica de Fuegos', '333'], ['Liakat Ali Alibux', '435']]) {
+  const row = jurisprudenciaRows.find(item => item.title.includes(title));
+  if (!row?.url.includes(`nId_Ficha=${ficha}`) || row.sourceLabel !== 'Abrir ficha oficial del caso') {
+    throw new Error(`The case index needs the official technical sheet ${ficha} cited in the course materials for ${title}.`);
+  }
+}
 const sourceCounts = jurisprudenciaRows.reduce((counts, row) => {
   const url = row.url.toLowerCase();
   if (url.includes('ver_ficha_tecnica')) counts.officialSheets++;
@@ -196,7 +202,7 @@ const sourceCounts = jurisprudenciaRows.reduce((counts, row) => {
   else counts.otherSources++;
   return counts;
 }, {officialSheets: 0, serieCPdfs: 0, generalCatalog: 0, otherSources: 0});
-if (jurisprudenciaRows.length !== 123 || sourceCounts.officialSheets !== 98 || sourceCounts.serieCPdfs !== 18 || sourceCounts.generalCatalog !== 0 || sourceCounts.otherSources !== 7) {
+if (jurisprudenciaRows.length !== 125 || sourceCounts.officialSheets !== 100 || sourceCounts.serieCPdfs !== 18 || sourceCounts.generalCatalog !== 0 || sourceCounts.otherSources !== 7) {
   throw new Error(`Unexpected jurisprudence source audit: ${JSON.stringify(sourceCounts)} across ${jurisprudenciaRows.length} records.`);
 }
 if (!styles.includes('.nav-group a[aria-current="page"]') || !styles.includes('.mobile-bar a[aria-current="page"]')) {
@@ -224,8 +230,8 @@ if (!styles.includes('.principle-strip .glossary-trigger{color:inherit;text-deco
 if (!styles.includes('.mobile-bar{position:fixed;z-index:60;right:0;bottom:0;left:0;') || !styles.includes('height:calc(68px + env(safe-area-inset-bottom))') || !styles.includes('body{padding-bottom:calc(68px + env(safe-area-inset-bottom))}') || !html.includes('viewport-fit=cover')) {
   throw new Error('The mobile navigation must stay fixed, keep its labels visible, and respect the device safe area.');
 }
-if (!html.includes('id="homeNews"') || !html.includes('href="#actualidad">Ver todas las noticias</a>') || !app.includes('recentNews.slice(0,3)') || !app.includes("dateValue:'2026-11-20'") || !app.includes('function renderHomeNews()')) {
-  throw new Error('The overview must surface the latest official news and link to the complete, date-sorted news page.');
+if (!html.includes('id="homeNews"') || !html.includes('href="#actualidad">Ver todas las noticias</a>') || !app.includes("dateValue:'2026-11-23'") || !app.includes("org:'OEA'") || !app.includes("'Todas','OEA','CIDH','Corte IDH'") || !app.includes('function renderHomeNews()')) {
+  throw new Error('The overview must surface recent CIDH, Court and OAS news and filter the full list by institution.');
 }
 for (const id of ['oea', 'comision', 'corte', 'sistema']) {
   const page = html.match(new RegExp(`<section id=\"${id}\" data-route-page[\\s\\S]*?</section>`))?.[0];

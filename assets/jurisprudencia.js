@@ -408,6 +408,14 @@ window.RI_JURISPRUDENCIA=[
         "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
+        "title":  "Empleados de la Fábrica de Fuegos en Santo Antônio de Jesus y sus familiares vs. Brasil",
+        "jurisdiction":  "Corte Interamericana",
+        "series":  null,
+        "topic":  "Derechos laborales · Niñez · Discriminación estructural · Reparaciones",
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=333",
+        "sourceLabel":  "Abrir ficha oficial del caso"
+    },
+    {
         "title":  "Extrabajadores del Organismo Judicial vs. Guatemala",
         "jurisdiction":  "Corte Interamericana",
         "series":  "445",
@@ -596,6 +604,14 @@ window.RI_JURISPRUDENCIA=[
         "series":  null,
         "topic":  "Procedimiento contencioso · Responsabilidad estatal · Reparaciones",
         "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=334",
+        "sourceLabel":  "Abrir ficha oficial del caso"
+    },
+    {
+        "title":  "Liakat Ali Alibux vs. Surinam",
+        "jurisdiction":  "Corte Interamericana",
+        "series":  null,
+        "topic":  "Excepciones preliminares · Derecho a recurrir el fallo · Circulación",
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=435",
         "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
