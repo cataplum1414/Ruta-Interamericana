@@ -15,7 +15,7 @@
 </script>
 <link rel="stylesheet" href="assets/styles-v26.css">
 <link rel="stylesheet" href="assets/organizacion-mapa.css?v=atlas-oea-6">
-<link rel="stylesheet" href="assets/arquitectura-atlas.css?v=12">
+<link rel="stylesheet" href="assets/arquitectura-atlas.css?v=13">
 <link rel="manifest" href="./manifest.webmanifest">
 </head>
 <body>
@@ -49,18 +49,13 @@
     <h1>Entiende el camino<br><span>del hecho a la sentencia.</span></h1>
     <p class="hero-lead">Una gu&iacute;a para seguir una petici&oacute;n: qu&eacute; examina la Comisi&oacute;n Interamericana, cu&aacute;ndo un caso puede llegar a la Corte y qu&eacute; ocurre despu&eacute;s.</p>
     <details class="easy-read hero-easy-read"><summary>Lectura f&aacute;cil: qu&eacute; explica esta gu&iacute;a</summary><ul><li>La petici&oacute;n individual empieza ante la Comisi&oacute;n Interamericana.</li><li>La Comisi&oacute;n analiza el caso y puede someterlo a la Corte si se cumplen las reglas aplicables.</li><li>La Corte realiza su propio procedimiento y puede dictar una sentencia.</li></ul></details>
-    <div class="atlas-search"><label for="atlasSearch">Busca una etapa, una sigla o una pregunta</label><div class="search-row"><input id="atlasSearch" type="search" placeholder="Ej.: admisibilidad, plazo de dos meses, ESAP" autocomplete="off"><button class="button primary" id="atlasSearchGo" type="button">Buscar</button><button class="button secondary" id="atlasSearchClear" type="button" hidden>Limpiar</button></div><div class="search-suggestions" aria-label="B&uacute;squedas de ejemplo"><span>Ejemplos:</span><button type="button" data-search-example="admisibilidad">admisibilidad</button><button type="button" data-search-example="ESAP">ESAP</button><button type="button" data-search-example="agotamiento">agotamiento</button><button type="button" data-search-example="reparaciones">reparaciones</button></div><div id="searchResults" class="search-results" aria-live="polite" hidden></div><p class="search-hint">Escribe tu pregunta con tus propias palabras. La b&uacute;squeda conecta etapas, plazos, conceptos, casos y fuentes.</p></div>
-    <div class="hero-actions"><a class="button primary" href="#recorrido">Seguir la ruta</a><a class="button secondary" href="#comision">Ver la funci&oacute;n de la CIDH</a></div>
-    <section class="procedure-overview" aria-labelledby="procedureOverviewTitle">
-      <div class="procedure-overview-heading"><h2 id="procedureOverviewTitle">Dos &oacute;rganos, dos procedimientos</h2><a href="#recorrido">Seguir las 18 estaciones</a></div>
-      <div class="procedure-entry"><span>El recorrido comienza aqu&iacute;</span><a href="#recorrido">Petici&oacute;n individual ante la CIDH</a></div>
-      <div class="procedure-branches" aria-label="La ruta ante la Comisi&oacute;n y el posible paso a la Corte">
-        <article class="procedure-branch procedure-branch-cidh"><p class="procedure-branch-label">Primero ? Comisi&oacute;n Interamericana</p><h3>La CIDH tramita la petici&oacute;n</h3><p>Examina competencia y admisibilidad, analiza el fondo y puede formular recomendaciones. El procedimiento puede concluir aqu&iacute;.</p><a href="#comision">Qu&eacute; hace la CIDH</a></article>
-        <div class="procedure-handoff" aria-label="Sometimiento eventual del caso"><span></span><strong>Paso eventual</strong><small>El caso puede someterse a la Corte seg&uacute;n las reglas aplicables</small><span></span></div>
-        <article class="procedure-branch procedure-branch-court"><p class="procedure-branch-label">Si llega a la Corte ? procedimiento propio</p><h3>La Corte IDH conoce el caso</h3><p>Inicia un proceso contencioso distinto. Puede dictar sentencia y ordenar reparaciones; despu&eacute;s supervisa su cumplimiento.</p><a href="#corte">Qu&eacute; hace la Corte IDH</a></article>
-      </div>
-      <p class="procedure-path-note">La Corte no recibe autom&aacute;ticamente todas las peticiones. El sometimiento depende de la Convenci&oacute;n, la competencia aceptada y las actuaciones procesales.</p>
-    </section>
+    <div class="atlas-search"><label for="atlasSearch">Busca una etapa, una sigla o una pregunta</label><div class="search-row"><input id="atlasSearch" type="search" placeholder="Ej.: admisibilidad, plazo de dos meses, ESAP" autocomplete="off"><button class="button primary" id="atlasSearchGo" type="button">Buscar</button><button class="button secondary" id="atlasSearchClear" type="button" hidden>Limpiar</button></div><div class="search-suggestions" aria-label="B&uacute;squedas de ejemplo"><span>Ejemplos:</span><button type="button" data-search-example="admisibilidad">admisibilidad</button><button type="button" data-search-example="ESAP">ESAP</button><button type="button" data-search-example="agotamiento">agotamiento</button><button type="button" data-search-example="reparaciones">reparaciones</button></div><div id="searchResults" class="search-results" aria-live="polite" hidden></div></div>
+    <div class="hero-actions"><a class="button primary" href="#recorrido">Seguir la ruta</a></div>
+    <nav class="hero-system-links" aria-label="Explorar el Sistema Interamericano">
+      <a href="#comision">Comisi&oacute;n</a>
+      <a href="#corte">Corte</a>
+      <a href="#sistema">C&oacute;mo se conectan</a>
+    </nav>
     <div class="study-resume" id="studyResume" hidden><div><span class="section-tag">TU AVANCE EN ESTE DISPOSITIVO</span><strong id="studyProgressText"></strong></div><a class="button secondary" id="resumeStudy" href="#recorrido">Retomar</a><button class="study-reset" id="resetStudy" type="button">Borrar avance</button></div>
   </div>
   <section class="home-news" aria-labelledby="homeNewsTitle"><div class="home-news-heading"><div><p class="section-tag">PANORAMA · OEA, CIDH Y CORTE</p><h2 id="homeNewsTitle">Lo que ocurre en las Am&eacute;ricas</h2><p>Actividad institucional y actualidad regional, con sus fuentes oficiales.</p></div><a class="home-news-all" href="#actualidad">Ver todas las noticias</a></div><div class="home-news-list" id="homeNews" aria-live="polite"></div></section>
