@@ -13,10 +13,12 @@ window.RI_ORGANOS = [
 
 window.RI_ORGANOS.find(item=>item.id==='cidh').atlasLinks=[
   {label:'Conocer la funci\u00f3n de la CIDH',href:'#comision'},
+  {label:'Analizar la competencia de la CIDH',href:'#competencia'},
   {label:'Empezar el recorrido desde una petici\u00f3n',href:'#recorrido',step:2}
 ];
 window.RI_ORGANOS.find(item=>item.id==='corte').atlasLinks=[
   {label:'Conocer la funci\u00f3n de la Corte',href:'#corte'},
+  {label:'Analizar la jurisdicci\u00f3n de la Corte',href:'#competencia'},
   {label:'Ir al inicio de la fase ante la Corte',href:'#recorrido',step:10},
   {label:'Explorar las opiniones consultivas',href:'#opiniones'}
 ];
