@@ -454,7 +454,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=342",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "González y otras (“Campo Algodonero”) vs. México",
@@ -511,7 +512,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=209",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Hilaire vs. Trinidad y Tobago",
@@ -618,7 +620,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Reparaciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=287",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Mémoli vs. Argentina",
@@ -632,7 +635,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Responsabilidad estatal",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=226",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Neira Alegría y otros vs. Perú",
@@ -646,7 +650,8 @@ window.RI_JURISPRUDENCIA=[
         "jurisdiction":  "Corte Interamericana",
         "series":  null,
         "topic":  "Competencia y excepciones",
-        "url":  "https://www.corteidh.or.cr/casos_sentencias.cfm"
+        "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=289",
+        "sourceLabel":  "Abrir ficha oficial del caso"
     },
     {
         "title":  "Nogueira de Carvalho y otros vs. Brasil",
