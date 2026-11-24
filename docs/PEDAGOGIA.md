@@ -72,6 +72,8 @@ El comparador de plazos de la etapa final de la CIDH separa dos fechas que no de
 
 ## Próximas piezas prioritarias
 
+La [auditoría integral de metodología del 24-11-2026](AUDITORIA-METODOLOGICA-INTEGRAL.md) contiene el registro vigente de 36 hallazgos y su orden de corrección. Examina las 25 rutas, distingue errores jurídicos, omisiones, debilidades de evaluación y verificación insuficiente, y fija criterios de aceptación. Los avances descritos en este documento no significan que esas incidencias estén corregidas. El inventario reproducible está en `AUDITORIA-METODOLOGICA-INVENTARIO.json` y se genera con `node scripts/audit-methodology.mjs`.
+
 La versión actual ya incluye el mapa institucional y regional con capas, la práctica ramificada de la CIDH y de la Corte, el comparador de fechas, el mapa de razonamiento, el glosario conectado y catálogos buscables de jurisprudencia y opiniones consultivas. Las fichas de jurisprudencia ahora enlazan sus temas con la estación procesal relacionada, de modo que se puede pasar de una referencia al recorrido sin volver a buscar la etapa. La siguiente iteración debe profundizar la aplicación y el control de calidad, no volver a proponer esos componentes como si faltaran.
 
 ### Informe, recomendaciones y período del artículo 51
