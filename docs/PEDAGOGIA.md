@@ -58,7 +58,7 @@ Las 18 estaciones incorporan ahora dos pistas progresivas, solicitadas de forma 
 
 La lectura de cada estación se simplificó: actor, plazo y regla comparten una franja; el resultado conduce visualmente al paso siguiente; el ejemplo del expediente sigue visible y el matiz se abre cuando hace falta. Se reducen los paneles sucesivos sin quitar la explicación ni las pistas.
 
-El mapa de cuatro momentos queda plegado al inicio del recorrido para dejar visible antes la práctica de las 18 estaciones. La fase que conecta los dos órganos se etiqueta directamente como «Paso a la Corte», y el mapa se conserva disponible con sus explicaciones y enlaces a reglas oficiales.
+La portada separa visualmente la ruta ante la CIDH del procedimiento propio de la Corte. La conexi?n se muestra como un paso eventual y enlaza directamente con las p?ginas de cada ?rgano; as? se evita presentar las cuatro etapas como una secuencia autom?tica.
 
 El glosario y la práctica distinguen ahora la denuncia de la Convención Americana de una petición individual ante la CIDH y del retiro de la Carta de la OEA. La pregunta explica el plazo del artículo 78 y la continuidad de obligaciones por hechos anteriores a la fecha efectiva, con enlaces al texto oficial de la Convención y a la [Opinión Consultiva OC-26/20](https://www.corteidh.or.cr/docs/opiniones/seriea_26_esp.pdf).
 
