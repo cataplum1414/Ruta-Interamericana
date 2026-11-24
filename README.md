@@ -36,6 +36,8 @@ Atlas OEA es un proyecto educativo independiente, editado por Sukima Labs. No es
 - Diccionario buscable de siglas y conceptos conectado con las explicaciones, las etapas y las fuentes oficiales.
 - Orientador «¿En qué momento está el caso?» con rutas hacia los pasos relevantes.
 - Recorrido guiado por el procedimiento interamericano con 18 decisiones interactivas y explicaciones inmediatas, filtros por fase y un patrón común: qué pasa, quién actúa, documento, plazo y siguiente paso.
+- La escalera explica el informe del artículo 50, las recomendaciones, su transmisión al Estado y el período de tres meses del artículo 51.1; distingue este período del mes de la posición del peticionario e indica cuándo la CIDH puede considerar suspenderlo bajo el artículo 46 de su Reglamento.
+- El diccionario enlaza el informe preliminar, las recomendaciones, el período del artículo 51, su posible suspensión y el informe definitivo con sus fuentes oficiales y las etapas relacionadas.
 - Páginas independientes para la CIDH y la Corte IDH, además de una página puente que explica cómo puede pasar un asunto de un órgano al otro.
 - Reloj de plazos orientativos.
 - Caso académico ficticio con hitos procesales.

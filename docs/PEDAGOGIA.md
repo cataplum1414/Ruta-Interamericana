@@ -74,6 +74,14 @@ El comparador de plazos de la etapa final de la CIDH separa dos fechas que no de
 
 La versión actual ya incluye el mapa institucional y regional con capas, la práctica ramificada de la CIDH y de la Corte, el comparador de fechas, el mapa de razonamiento, el glosario conectado y catálogos buscables de jurisprudencia y opiniones consultivas. Las fichas de jurisprudencia ahora enlazan sus temas con la estación procesal relacionada, de modo que se puede pasar de una referencia al recorrido sin volver a buscar la etapa. La siguiente iteración debe profundizar la aplicación y el control de calidad, no volver a proponer esos componentes como si faltaran.
 
+### Informe, recomendaciones y período del artículo 51
+
+La escalera procesal separa ahora tres actos que suelen confundirse: la transmisión al Estado del informe previsto en el artículo 50 de la Convención, la notificación al peticionario (que abre su plazo de un mes para presentar posición en los casos aplicables) y el período de tres meses del artículo 51.1 contado desde la transmisión a los Estados. La página de plazos compara visualmente las dos fechas iniciales.
+
+El módulo explica que el Reglamento de la CIDH (art. 46) no establece una prórroga automática: a solicitud del Estado, la Comisión puede considerar suspender el período si se demuestran acciones concretas e idóneas para cumplir las recomendaciones y el Estado acepta expresa e irrevocablemente la suspensión y la renuncia a objetar preliminarmente el plazo si el asunto llega a la Corte. La CIDH determina el período considerando, entre otros factores, la complejidad, las medidas adoptadas y la posición del peticionario. El artículo 47 regula el posible informe definitivo posterior, su transmisión y la decisión sobre publicación.
+
+El diccionario conecta «informe preliminar», «recomendaciones de la CIDH», «período de tres meses del artículo 51.1», «suspensión del período» e «informe definitivo» entre sí, con la escalera, el reloj y el texto oficial de la Convención y del Reglamento. Así se puede seguir qué recomienda la Comisión, qué debe informar el Estado y qué decisión puede venir después.
+
 1. Añadir variantes al expediente didáctico para practicar qué cambia cuando varía un hecho, una notificación, una objeción o el tipo de prueba; mantener cada ruta separada entre CIDH y Corte.
 2. Ampliar la práctica de audiencia con ejercicios para distinguir documento, testimonio, peritaje y amicus, relacionar cada elemento con un hecho y formular preguntas dentro del objeto fijado.
 3. Revisar las explicaciones y enlaces del recorrido de la Corte contra el Reglamento vigente, en particular notificaciones, prueba, declaraciones, audiencia, alegatos finales y supervisión.
