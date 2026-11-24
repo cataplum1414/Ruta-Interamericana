@@ -78,19 +78,27 @@
   const scenarios = {
     women: {
       answer: 'cidh',
-      reason: 'El artículo 12 de Belém do Pará prevé peticiones ante la CIDH por presuntas violaciones del artículo 7. Verifica que el Estado sea parte y analiza persona, tiempo y jurisdicción. La fase ante la Corte tiene requisitos propios.'
+      support: 'El artículo 12 de Belém do Pará prevé peticiones ante la CIDH por presuntas violaciones del artículo 7. Si los hechos alegados encajan en ese derecho y el Estado es parte, existe una base material expresa.',
+      limits: 'La competencia no se presume para otros artículos de Belém do Pará. Hay que comprobar responsabilidad estatal, jurisdicción territorial o extraterritorial y vigencia para el Estado. La fase ante la Corte tiene requisitos propios.',
+      source: 'Convención de Belém do Pará, artículos 7 y 12.'
     },
     education: {
       answer: 'cidh',
-      reason: 'El artículo 19.6 del Protocolo de San Salvador incluye expresamente el artículo 13 en la vía de peticiones individuales. Comprueba el estatus del Estado y las demás dimensiones. El mecanismo no se extiende por ello a todos los derechos del Protocolo.'
+      support: 'El artículo 19.6 del Protocolo de San Salvador menciona expresamente el artículo 13. Una alegación sobre educación puede entrar en la vía individual prevista.',
+      limits: 'Debe verificarse que el Estado sea parte, que la alegación corresponda al alcance del artículo 13 y que se cumplan los demás requisitos. El mecanismo no se extiende por ello a todos los derechos del Protocolo.',
+      source: 'Protocolo de San Salvador, artículos 13 y 19.6.'
     },
     child: {
       answer: 'review',
-      reason: 'La CDN puede orientar la interpretación interamericana, pero no confiere por sí sola jurisdicción contenciosa sobre la CDN. Su Protocolo facultativo establece una vía separada ante el Comité, si el Estado lo ha aceptado.'
+      support: 'La CDN puede orientar la interpretación interamericana de derechos de niñas y niños. Si el Estado ratificó el Protocolo facultativo de comunicaciones, puede existir además una vía separada ante el Comité.',
+      limits: 'La pertinencia interpretativa de la CDN no atribuye por sí sola jurisdicción contenciosa a la Corte para declarar una violación autónoma de ese tratado. La vía ante el Comité exige verificar aceptación del Protocolo y sus requisitos.',
+      source: 'Convención Americana, artículos 61–64; Protocolo facultativo de la CDN sobre comunicaciones.'
     },
     time: {
       answer: 'review',
-      reason: 'Compara las fechas de los hechos, la entrada en vigor del tratado para el Estado y la aceptación de jurisdicción. Si hay hechos continuados, sepáralos temporalmente. Sin identificar el Estado y su declaración no se puede cerrar el análisis.'
+      support: 'Los hechos posteriores a la entrada en vigor del instrumento y de la aceptación de jurisdicción pueden aportar una base temporal para examinar la competencia.',
+      limits: 'Los hechos anteriores no quedan automáticamente cubiertos. En hechos continuados separa actos y efectos, identifica cuándo ocurrieron y verifica las condiciones de aceptación estatal. Sin Estado, fechas e instrumento no cabe concluir.',
+      source: 'Convención Americana, artículos 62 y 62.2; ficha oficial de ratificaciones y declaraciones de la CIDH.'
     }
   };
 
@@ -107,7 +115,7 @@
     }
     const scenario = scenarios[byId('competenceScenario').value];
     const level = byId('competenceLevel').value;
-    feedback.textContent = (choice.value === scenario.answer ? 'La respuesta es compatible con el escenario. ' : 'Revisa el alcance antes de concluir. ')
-      + scenario.reason + ' Nivel seleccionado: ' + level + '.';
+    feedback.innerHTML = '<strong>' + (choice.value === scenario.answer ? 'La respuesta es compatible con el escenario.' : 'Revisa el alcance antes de concluir.')
+      + ' Nivel: ' + level + '.</strong><p><strong>Argumento a favor</strong> ' + scenario.support + '</p><p><strong>Límite o contraargumento</strong> ' + scenario.limits + '</p><p><strong>Fundamento para verificar</strong> ' + scenario.source + '</p>';
   });
 })();
