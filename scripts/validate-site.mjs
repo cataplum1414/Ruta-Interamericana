@@ -1,7 +1,7 @@
 import {access, readFile} from 'node:fs/promises';
 
 const html = await readFile('index.html', 'utf8');
-const app = await readFile('assets/app-v38.js', 'utf8');
+const app = await readFile('assets/app-v39.js', 'utf8');
 const glossary = await readFile('assets/glosario.js', 'utf8');
 const styles = await readFile('assets/styles-v26.css', 'utf8');
 const opinions = await readFile('assets/opiniones.js', 'utf8');
@@ -72,8 +72,11 @@ const protectionExercise = app.match(/const protectionSteps=\[([\s\S]*?)\r?\n\];
 if ((protectionExercise?.match(/\{prompt:/g)||[]).length !== 3 || (protectionExercise?.match(/source:'https:\/\//g)||[]).length !== 3) throw new Error('The urgent-protection practice needs three sourced procedural decisions.');
 if (!html.includes('id="protectionMeasuresLab"') || !app.includes('protectionSteps') || !app.includes('art\\u00edculo 25') || !app.includes('27.3') || !app.includes('dataset.result') || !serviceWorker.includes('./assets/styles-v26.css')) throw new Error('The optional urgent-protection practice must compare CIDH and Court routes with official rules and a cached stylesheet.');
 if (!app.includes("courtCompetence:{phase:'CORTE IDH'") || !app.includes("stage:14,source:'https://www.oas.org/es/cidh/mandato/basicos/convencion.asp'") || !app.includes("court:['courtCompetence','courtNotification'")) throw new Error('Missing the interactive Court jurisdiction decision.');
-if (!html.includes('assets/styles-v26.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v38.js') || !serviceWorker.includes('atlas-oea-shell-v62') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/app-v38.js') || !styles.includes('.process-overview-summary')) {
+if (!html.includes('assets/styles-v26.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v39.js') || !serviceWorker.includes('atlas-oea-shell-v63') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/app-v39.js') || !styles.includes('.process-overview-summary')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
+}
+if (!html.includes('data-phase="PASO A LA CORTE"') || html.includes('data-phase="TRANSICIÓN"') || !app.includes("phase:'PASO A LA CORTE'") || app.includes('TRANSICI\\u00d3N')) {
+  throw new Error('The inter-organ phase should be named directly as the step to the Court.');
 }
 if (!html.includes('id="jurisTopicFilter"') || !app.includes('const jurisTopics=') || !app.includes("jurisTopicFilter.addEventListener('change',renderJurisprudencia)")) {
   throw new Error('The 125 jurisprudence references must be filterable by their legal topics.');
