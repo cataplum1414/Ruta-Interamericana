@@ -98,3 +98,7 @@ La escala de espaciado, radios y componentes no está definida por el manual de 
 La aplicación muestra una vista temática a la vez: Panorama, OEA, Orientador, Sistema, Procedimiento, Plazos, Caso guiado, Casos clave, Opiniones consultivas, Noticias, Diccionario, Practicar y Fuentes. La barra lateral conserva el menú completo y la barra móvil prioriza las rutas que se usan con más frecuencia.
 
 Las opiniones emitidas están separadas de las solicitudes en curso. Las noticias enlazan al comunicado original y explican su relevancia procesal. La selección de casos es para estudiar; el buscador oficial sigue siendo el catálogo completo de sentencias.
+
+### Guía de patrones didácticos
+
+`docs/PEDAGOGIA.md` resume qué mecánicas educativas públicas se revisaron, cómo se adaptan a las rutas CIDH y Corte, qué se añadió al simulador y qué módulos conviene construir después. No contiene notas, nombres ni transcripciones de clase.

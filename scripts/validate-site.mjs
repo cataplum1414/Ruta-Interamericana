@@ -40,8 +40,8 @@ if (simulationNodeIds.length !== 18 || simulationNodeIds.some(id => (simulationN
 if (simulationPaths.length !== 2 || simulationPaths.some(path => path.nodes.length !== (path.name === 'cidh' ? 18 : 9) || path.nodes.some(id => !simulationNodeIds.includes(id)))) {
   throw new Error('The case simulator needs complete CIDH and Court routes that only reference existing decision nodes.');
 }
-if (!html.includes('id="caseSimulationTitle"') || !app.includes('caseSimRetry') || !app.includes('Decisiones del procedimiento') || !styles.includes('.case-sim-options button.is-correct')) {
-  throw new Error('The case simulator needs retry, explanatory feedback, search integration, and visible decision states.');
+if (!html.includes('id="caseSimulationTitle"') || !html.includes('id="caseSimTrail"') || !app.includes('caseSimRetry') || !app.includes('drawCaseTrail') || !app.includes('data-review-step') || !app.includes('Decisiones del procedimiento') || !styles.includes('.case-sim-options button.is-correct') || !styles.includes('.case-sim-trail button.current')) {
+  throw new Error('The case simulator needs retry, explanatory feedback, a reviewable decision trail, search integration, and visible decision states.');
 }
 if (countRows(questions) !== 10) throw new Error('The expected 10 practice questions were not found.');
 const opinionNumbers = [...opinions.matchAll(/^  \[(\d+),/gm)].map(match => Number(match[1]));
