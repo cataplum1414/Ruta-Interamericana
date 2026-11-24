@@ -33,7 +33,7 @@ html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
 .button[hidden]{display:none!important}
 @media(max-width:420px){
   .hero-overview{gap:8px;padding-inline:10px;font-size:12px}
-  .hero-overview span:nth-of-type(2),.hero-overview .atlas-view-info{display:none}
+  .hero-overview .atlas-view-info{display:none}
 }
 
 .map-layer-select{display:grid;gap:7px}
@@ -202,4 +202,25 @@ html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
   .hero.page-section{padding-top:16px;padding-inline:var(--atlas-reading-gutter)}
   .hero-lead{font-size:15.5px}
   .hero .atlas-search{padding:14px 12px 10px}
+}
+
+.hero .hero-overview{width:100%;min-height:42px;display:flex;align-items:center;justify-content:flex-start;gap:clamp(14px,3vw,36px);margin:0 0 18px;padding:0 12px;background:none;border:0;box-shadow:none;overflow:visible}
+.atlas-overview-item{display:grid;min-width:0;gap:2px;color:var(--ink);font-size:15px;font-weight:750;white-space:nowrap}
+.atlas-overview-item small{display:block;color:var(--muted);font-size:10px;line-height:1.25;letter-spacing:.06em;text-transform:uppercase}
+.hero-overview .atlas-view-count{display:flex;gap:8px;align-items:flex-start}
+.hero-overview .atlas-view-count svg{margin-top:3px}
+.hero-overview .atlas-view-info{margin-left:auto}
+@media(max-width:800px){
+  .hero .hero-overview{gap:6px 12px;min-height:40px;padding:8px 11px;border:1px solid var(--line);border-radius:999px;background:var(--panel)}
+  .atlas-overview-item{font-size:12px}
+  .atlas-overview-item small{display:none}
+  .hero-overview .atlas-view-count svg{margin-top:0}
+}
+@media(max-width:360px){.hero .hero-overview{gap:4px 9px}.atlas-overview-item{font-size:11px}}
+
+@media(max-width:360px){
+  .hero h1{font-size:26px;line-height:1.1}
+  .hero-lead{font-size:14px;line-height:1.55}
+  .hero-easy-read summary{font-size:14px}
+  .hero .atlas-search #atlasSearchGo{min-height:48px}
 }

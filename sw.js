@@ -1,17 +1,17 @@
-const CACHE_NAME = 'atlas-oea-shell-v88';
+const CACHE_NAME = 'atlas-oea-shell-v89';
 const APP_SHELL = [
   './',
   './index.html',
   './manifest.webmanifest',
   './assets/styles-v26.css',
   './assets/organizacion-mapa.css?v=atlas-oea-8',
-  './assets/arquitectura-atlas.css?v=14',
+  './assets/arquitectura-atlas-v15.css',
   './assets/app-v40.js',
   './assets/audiencia-lab-v1.js',
   './assets/razonamiento-v1.js',
   './assets/map-connections-v6.js',
   './assets/plazos-comparador-v1.js',
-  './assets/glosario.js',
+  './assets/glosario.js?v=editorial-7',
   './assets/jurisprudencia.js',
   './assets/opiniones.js',
   './assets/organos.js',
@@ -27,8 +27,11 @@ const APP_SHELL = [
 ];
 
 self.addEventListener('install', event => {
-  event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)));
-  self.skipWaiting();
+  event.waitUntil((async () => {
+    const cache = await caches.open(CACHE_NAME);
+    await cache.addAll(APP_SHELL.map(url => new Request(url, {cache:'reload'})));
+    await self.skipWaiting();
+  })());
 });
 
 self.addEventListener('activate', event => {
@@ -39,21 +42,19 @@ self.addEventListener('activate', event => {
 });
 
 self.addEventListener('fetch', event => {
-  const request = event.request;
+  const {request} = event;
   if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) return;
-  if (request.mode === 'navigate') {
-    event.respondWith(fetch(request).then(response => {
-      const copy = response.clone();
-      caches.open(CACHE_NAME).then(cache => cache.put('./index.html', copy));
-      return response;
-    }).catch(() => caches.match('./index.html')));
-    return;
-  }
-  event.respondWith(caches.match(request, {ignoreSearch: true}).then(cached => {
+  event.respondWith((async () => {
+    const cache = await caches.open(CACHE_NAME);
+    if (request.mode === 'navigate') {
+      try {
+        return await fetch(request, {cache:'no-cache'});
+      } catch {
+        return (await cache.match('./index.html')) || Response.error();
+      }
+    }
+    const cached = await cache.match(request);
     if (cached) return cached;
-    return fetch(request).then(response => {
-      if (response.ok) caches.open(CACHE_NAME).then(cache => cache.put(request, response.clone()));
-      return response;
-    });
-  }));
+    return fetch(request);
+  })());
 });
