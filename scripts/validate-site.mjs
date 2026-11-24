@@ -1,7 +1,7 @@
 import {access, readFile} from 'node:fs/promises';
 
 const html = await readFile('index.html', 'utf8');
-const app = await readFile('assets/app-v24.js', 'utf8');
+const app = await readFile('assets/app-v25.js', 'utf8');
 const glossary = await readFile('assets/glosario.js', 'utf8');
 const styles = await readFile('assets/styles-v18.css', 'utf8');
 const opinions = await readFile('assets/opiniones.js', 'utf8');
@@ -61,7 +61,7 @@ if ((html.match(/class="process-overview-link"/g) || []).length !== 4 || !app.in
 if (!glossary.includes("id:'comunicacion-interestatal'") || !glossary.includes('convencion-americana-derechos-humanos.pdf') || !app.includes('Petición individual y comunicación interestatal') || !app.includes('artículo 45') || !glossary.includes("id:'denuncia-convencion'") || !app.includes('Denuncia de la Convención y petición individual') || !app.includes('artículo 78 CADH')) {
   throw new Error('The glossary and practice must explain interstate communications and treaty denunciation with official legal sources.');
 }
-if (!html.includes('assets/styles-v18.css') || !html.includes('assets/glosario.js?v=editorial-6') || !html.includes('assets/app-v24.js') || !serviceWorker.includes('atlas-oea-shell-v45') || !serviceWorker.includes('./assets/styles-v18.css') || !serviceWorker.includes('./assets/app-v24.js')) {
+if (!html.includes('assets/styles-v18.css') || !html.includes('assets/glosario.js?v=editorial-7') || !html.includes('assets/app-v25.js') || !serviceWorker.includes('atlas-oea-shell-v46') || !serviceWorker.includes('./assets/styles-v18.css') || !serviceWorker.includes('./assets/app-v25.js')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
 }
 if (!html.includes('id="atlasVisitCount" data-counter-state="pending"') || !html.includes('id="atlasVisitLabel"') || !app.includes("https://counterapi.com/api/cataplum1414.github.io/view/atlas-oea-home-v2") || !app.includes("referrerPolicy:'no-referrer'") || !app.includes('12*60*60*1000') || !app.includes('new URLSearchParams(location.search).has(\'sinvisita\')') || !app.includes('readOnly=true') || !app.includes("output.dataset.counterState='loading'") || !app.includes("output.dataset.counterState='ready'") || !app.includes("output.dataset.counterState='unavailable'") || !app.includes("value===1?'visita':'visitas'")) {
@@ -277,6 +277,9 @@ const admissionIds = [...(app.match(/const admissibilitySteps=\[([\s\S]*?)\n\];/
 const requiredAdmissionIds = ['competence', 'remedies', 'sixMonths', 'reasonableTime', 'risk', 'duplication', 'characterization'];
 if (!html.includes('id="admissibilityLab"') || !html.includes('id="admissibilityChoices"') || !html.includes('id="admissibilityNext"') || requiredAdmissionIds.some(id => !admissionIds.includes(id)) || !app.includes("admissibilityState.route==='exception'?'reasonableTime'") || !app.includes("admissibilityState.route==='exhausted'?'sixMonths'") || !app.includes('data-open-clock') || !app.includes("el('clockStart').value='2024-01-15'")) {
   throw new Error('The CIDH admissibility practice must include both deadline routes, explicit steps, and a working next-step control.');
+}
+if (!glossary.includes("id:'caracterizacion'") || !glossary.includes('Caracterización de una posible violación') || !glossary.includes('caracterización de los hechos') || !app.includes('caracterización de los hechos')) {
+  throw new Error('The admissibility practice must connect initial characterization to a searchable glossary entry.');
 }
 if (!manifest.start_url || !manifest.scope || !serviceWorker.includes("'./index.html'")) {
   throw new Error('PWA start page or offline shell is incomplete.');
