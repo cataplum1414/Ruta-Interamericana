@@ -57,8 +57,11 @@ if ((html.match(/class="process-overview-link"/g) || []).length !== 4 || !app.in
 if (!glossary.includes("id:'comunicacion-interestatal'") || !glossary.includes('convencion-americana-derechos-humanos.pdf') || !app.includes('Petición individual y comunicación interestatal') || !app.includes('artículo 45')) {
   throw new Error('The glossary and procedure contrasts must explain individual and interstate communications with the American Convention as a source.');
 }
-if (!html.includes('assets/styles.css?v=atlas-oea-13') || !html.includes('assets/glosario.js?v=editorial-5') || !html.includes('assets/app.js?v=atlas-oea-15') || !serviceWorker.includes('atlas-oea-shell-v33')) {
+if (!html.includes('assets/styles.css?v=atlas-oea-14') || !html.includes('assets/glosario.js?v=editorial-5') || !html.includes('assets/app.js?v=atlas-oea-15') || !serviceWorker.includes('atlas-oea-shell-v34')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
+}
+if (!html.includes('<strong>34</strong> Estados') || !html.includes('CIDH + Corte IDH') || !styles.includes('.hero.page-section{padding-top:22px}') || !styles.includes('.hero-overview{width:100%;justify-content:center;gap:5px;padding:6px 8px;overflow:visible;font-size:11px;white-space:normal;flex-wrap:wrap}')) {
+  throw new Error('The mobile overview must keep its institutional context visible without blank space or clipped labels.');
 }
 if (countRows(questions) !== 10) throw new Error('The expected 10 practice questions were not found.');
 const opinionNumbers = [...opinions.matchAll(/^  \[(\d+),/gm)].map(match => Number(match[1]));

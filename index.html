@@ -12,7 +12,7 @@
 <script>
 (()=>{let choice='auto';try{choice=localStorage.getItem('ri-theme')||'auto'}catch(e){}if(!['auto','light','dark'].includes(choice))choice='auto';const media=matchMedia('(prefers-color-scheme: light)');const apply=()=>{const theme=choice==='auto'?(media.matches?'light':'dark'):choice;document.documentElement.dataset.theme=theme;document.documentElement.dataset.themeChoice=choice;const meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.content=theme==='light'?'#F5F4F0':'#10131C';document.querySelector('meta[name="color-scheme"]').content=theme};window.riTheme={get:()=>choice,set:value=>{choice=['auto','light','dark'].includes(value)?value:'auto';try{choice==='auto'?localStorage.removeItem('ri-theme'):localStorage.setItem('ri-theme',choice)}catch(e){}apply()}};media.addEventListener?.('change',()=>{if(choice==='auto')apply()});apply()})();
 </script>
-<link rel="stylesheet" href="assets/styles.css?v=atlas-oea-13">
+<link rel="stylesheet" href="assets/styles.css?v=atlas-oea-14">
 <link rel="stylesheet" href="assets/organizacion-mapa.css?v=atlas-oea-1">
 <link rel="manifest" href="./manifest.webmanifest">
 </head>
@@ -22,7 +22,7 @@
   <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú" aria-controls="sideNav" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menú</span></button>
   <a class="appbrand" href="#inicio" aria-label="Atlas OEA, inicio">ATLAS <b>OEA</b></a>
   <div class="appbar-context">Organizaci&oacute;n de los Estados Americanos</div>
-  <label class="theme-compact"><svg class="theme-symbol" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg><select id="themeSelect" aria-label="Modo de color"><option value="auto">Automático</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></label>
+  <label class="theme-compact"><svg class="theme-symbol" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg><select id="themeSelect" aria-label="Modo de color"><option value="auto">Auto</option><option value="light">Claro</option><option value="dark">Oscuro</option></select></label>
 </header>
 
 <aside class="side" id="sideNav" aria-label="Menú principal">
@@ -41,7 +41,7 @@
 
 <main id="contenido" class="atlas-main">
 <section id="inicio" data-route-page class="hero page-section">
-  <div class="hero-overview" aria-label="Contexto del Atlas OEA"><span><strong>34</strong> Estados miembros</span><i aria-hidden="true"></i><span>4 pilares</span><i aria-hidden="true"></i><span>Comisi&oacute;n <b aria-hidden="true">&rarr;</b> Corte</span></div>
+  <div class="hero-overview" aria-label="Contexto del Atlas OEA"><span><strong>34</strong> Estados</span><i aria-hidden="true"></i><span>4 pilares</span><i aria-hidden="true"></i><span>CIDH + Corte IDH</span></div>
   <div class="hero-copy">
     <p class="section-tag">ATLAS DE LA ORGANIZACI&Oacute;N DE LOS ESTADOS AMERICANOS</p>
     <h1>Entiende el camino<br><span>del hecho a la sentencia.</span></h1>

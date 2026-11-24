@@ -673,3 +673,7 @@ main [data-route-page][hidden]{display:none!important}
 
 .process-overview-link{display:inline-block;margin-top:5px;color:var(--cyan-soft);font-size:12px;font-weight:800;text-underline-offset:3px}
 .process-overview-link:hover{text-decoration-thickness:2px}
+
+/* El contenido ya empieza debajo del encabezado fijo en tablet y móvil. */
+@media(max-width:1080px){.hero.page-section{padding-top:22px}}
+@media(max-width:420px){.hero-overview{width:100%;justify-content:center;gap:5px;padding:6px 8px;overflow:visible;font-size:11px;white-space:normal;flex-wrap:wrap}.hero-overview span{white-space:nowrap}}
