@@ -2,7 +2,7 @@ window.RI_JURISPRUDENCIA=[
     {
         "title":  "19 Comerciantes vs. Colombia",
         "jurisdiction":  "Corte Interamericana",
-        "series":  null,
+        "series":  "109",
         "topic":  "Procedimiento contencioso · Responsabilidad estatal · Reparaciones",
         "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=274",
         "sourceLabel":  "Abrir ficha oficial del caso"
@@ -212,7 +212,7 @@ window.RI_JURISPRUDENCIA=[
     {
         "title":  "Cayara vs. Perú",
         "jurisdiction":  "Corte Interamericana",
-        "series":  null,
+        "series":  "14",
         "topic":  "Competencia y excepciones · Medidas de protección",
         "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=230",
         "sourceLabel":  "Abrir ficha oficial del caso"
@@ -861,7 +861,7 @@ window.RI_JURISPRUDENCIA=[
     {
         "title":  "Velásquez Rodríguez vs. Honduras",
         "jurisdiction":  "Corte Interamericana",
-        "series":  null,
+        "series":  "4",
         "topic":  "Competencia y excepciones · Responsabilidad estatal",
         "url":  "https://www.corteidh.or.cr/ver_ficha_tecnica.cfm?lang=es&nId_Ficha=189",
         "sourceLabel":  "Abrir ficha oficial del caso"
