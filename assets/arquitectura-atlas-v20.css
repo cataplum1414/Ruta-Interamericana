@@ -282,3 +282,11 @@ html[data-theme="dark"]{--cyan-soft:#14C6D4;--focus:#14C6D4}
 .orientation-followup button{min-height:44px;padding:8px 10px;text-align:left;border:1px solid var(--line-strong);border-radius:8px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer}
 .orientation-followup button[aria-pressed="true"]{border-color:var(--cyan-soft);background:color-mix(in srgb,var(--cyan) 10%,var(--surface))}
 .orientation-next p{margin:12px 0 0}
+
+.station-practice,.focused-practice-links{display:flex;flex-wrap:wrap;gap:4px 16px}
+.station-practice{margin-top:16px;padding-top:12px;border-top:1px solid var(--line)}
+.station-practice strong{flex:1 0 100%}
+.station-practice a,.focused-practice-links a{display:inline-flex;min-height:44px;align-items:center;color:var(--cyan-soft);font-weight:750;text-underline-offset:3px}
+.focused-practice{max-width:var(--content);margin:24px auto;padding-block:16px;border-block:1px solid var(--line);scroll-margin-top:calc(var(--top-height) + 12px)}
+.focused-practice h3{margin:6px 0;font-size:clamp(23px,3vw,30px)}
+.focused-practice>p:not(.section-tag){max-width:74ch;color:var(--muted);line-height:1.6}
