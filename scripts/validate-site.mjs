@@ -50,7 +50,10 @@ if (!html.includes('id="caseSimulationTitle"') || !html.includes('id="caseSimTra
 if ((html.match(/class="process-overview-number"/g) || []).length !== 4 || !html.includes('id="processOverview"') || !html.includes('puede someter el caso a la Corte cuando se cumplen las reglas') || !html.includes('reglamentocidh.asp') || !html.includes('reglamento.cfm?lang=es')) {
   throw new Error('The route needs a four-moment procedure overview with official Commission and Court sources.');
 }
-if (!html.includes('assets/styles.css?v=atlas-oea-12') || !html.includes('assets/app.js?v=atlas-oea-13') || !serviceWorker.includes('atlas-oea-shell-v31')) {
+if ((html.match(/class="process-overview-link"/g) || []).length !== 4 || !app.includes("#processOverview [data-open-step]") || !app.includes("el('stepDetail').scrollIntoView")) {
+  throw new Error('Each overview moment must open the matching interactive station.');
+}
+if (!html.includes('assets/styles.css?v=atlas-oea-13') || !html.includes('assets/app.js?v=atlas-oea-14') || !serviceWorker.includes('atlas-oea-shell-v32')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
 }
 if (countRows(questions) !== 10) throw new Error('The expected 10 practice questions were not found.');

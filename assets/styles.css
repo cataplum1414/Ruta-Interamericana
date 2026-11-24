@@ -670,3 +670,6 @@ main [data-route-page][hidden]{display:none!important}
 .process-overview-sources{margin:12px 0 0;color:var(--muted);font-size:12px;line-height:1.8}
 .process-overview-sources a{font-weight:700}
 @media(max-width:680px){.process-overview li{grid-template-columns:38px minmax(0,1fr);gap:10px;padding:14px 0}.process-overview-actor{grid-column:2;grid-row:2;padding:0;text-align:left}.process-overview h3{font-size:16px}.process-overview-sources{font-size:12px}}
+
+.process-overview-link{display:inline-block;margin-top:5px;color:var(--cyan-soft);font-size:12px;font-weight:800;text-underline-offset:3px}
+.process-overview-link:hover{text-decoration-thickness:2px}
