@@ -3,6 +3,8 @@ import vm from 'node:vm';
 import assert from 'node:assert/strict';
 
 const source=await readFile('assets/app-v41.js','utf8');
+const html=await readFile('index.html','utf8');
+const glossary=await readFile('assets/glosario.js','utf8');
 const nodes=new Map();
 const el=id=>{if(!nodes.has(id))nodes.set(id,{value:'',textContent:'',innerHTML:'',disabled:false});return nodes.get(id);};
 const context=vm.createContext({el,escape:String,Date,Intl});
@@ -24,4 +26,7 @@ calculate(4,'2026-01-15');
 assert.equal(el('clockDate').textContent,'15 de abril de 2026');
 assert.match(el('clockRule').innerHTML,/Informe preliminar: informar cumplimiento/);
 assert.match(el('deadlineList').innerHTML,/<header><strong>Informe preliminar/);
+assert.match(html,/Resolución 4\/26/);
+assert.match(html,/no aplica calendario de feriados ni determina por sí solo un vencimiento jurídico/);
+assert.match(glossary,/id:'computo-plazos-cidh'.*res-4-26\.pdf/);
 console.log('Deadline clock: variable CIDH periods, suspension, petitioner month and three-month period passed.');

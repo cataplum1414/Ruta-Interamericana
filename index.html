@@ -310,6 +310,7 @@ if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
   <div class="section-heading"><div><p class="section-tag">PLAZOS Y ESCRITOS</p><h2>¿Qué reloj está<br>corriendo?</h2><p>Un plazo empieza por un acto procesal concreto: una decisión, una notificación, un traslado o la recepción de un escrito. Distingue el plazo para actuar del tiempo que tarda todo el procedimiento.</p></div><span class="section-index">08</span></div>
   <div class="clock"><div class="clock-inputs"><label for="clockRule">Selecciona la actuación</label><select id="clockRule"></select><label for="clockStart">Fecha del acto que activa el plazo</label><input id="clockStart" type="date" value="2026-11-23"><button id="clockGo" class="button primary" type="button">Ver cálculo orientativo</button><p class="small muted">Herramienta de aprendizaje. Usa días naturales y meses calendario como aproximación; no resuelve notificaciones, suspensiones, prórrogas ni reglas especiales. No calcula vencimientos reales.</p></div><div class="clock-result" aria-live="polite"><p class="section-tag">RESULTADO ORIENTATIVO</p><strong id="clockDate">—</strong><h3 id="clockTitle"></h3><p id="clockExplanation"></p><p class="clock-authority" id="clockAuthority"></p></div></div>
   <div class="deadline-list" id="deadlineList"></div>
+  <details class="method-note"><summary>Regla de cómputo de la CIDH: Resolución 4/26</summary><p>Para los plazos expresados en días, la CIDH aclaró que se cuentan todos los días corridos. La contabilización comienza el día del envío oficial de la comunicación y vence a las 24:00, hora de Washington, D. C.; si cae en día inhábil, vence el siguiente día hábil. En expedientes con informe de fondo pendientes de decisión sobre remisión a la Corte o publicación, se deben seguir las fechas señaladas en las notas de la CIDH. Esta regla ayuda a leer las comunicaciones, pero el resultado del reloj de arriba sigue siendo didáctico: no aplica calendario de feriados ni determina por sí solo un vencimiento jurídico. El período de tres meses del artículo 51.1 comienza con la transmisión del informe a los Estados, y una suspensión requiere una decisión conforme al artículo 46 del Reglamento.</p><a href="https://www.oas.org/es/cidh/decisiones/pdf/2026/res-4-26.pdf" target="_blank" rel="noopener noreferrer">Leer la Resolución 4/26 (texto oficial) ↗</a></details>
   <section class="clock-compare" aria-labelledby="clockCompareTitle">
     <div class="clock-compare-heading"><p class="section-tag">DOS ACTOS, DOS RELOJES</p><h3 id="clockCompareTitle">¿Qué fecha activa cada plazo?</h3><p>La oportunidad del peticionario para opinar sobre el sometimiento y el período del artículo 51.1 de la Convención no empiezan necesariamente el mismo día. Introduce cada fecha por separado.</p></div>
     <div class="clock-compare-grid">
@@ -555,7 +556,7 @@ if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
 
 <script src="assets/jurisprudencia.js" defer></script>
 <script src="assets/opiniones.js" defer></script>
-<script src="assets/glosario.js?v=editorial-8" defer></script>
+<script src="assets/glosario.js?v=editorial-9" defer></script>
 <script src="assets/organos.js" defer></script>
 <script src="assets/estados-oea.js" defer></script>
 <script src="assets/app-v41.js" defer></script>
