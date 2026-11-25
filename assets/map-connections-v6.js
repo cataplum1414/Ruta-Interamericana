@@ -143,7 +143,11 @@
     const rows = states
       .filter(state => normalize(`${state.name} ${state.region} ${state.code}`).includes(query))
       .sort((a, b) => a.name.localeCompare(b.name, 'es'));
-    stateResultsCount.textContent = rows.length === 1 ? '1 Estado' : `${rows.length} Estados`;
+    const retired = rows.filter(state => state.status === 'former').length;
+    const current = rows.length - retired;
+    stateResultsCount.textContent = query
+      ? `${rows.length} ${rows.length === 1 ? 'perfil' : 'perfiles'} · ${current} ${current === 1 ? 'miembro actual' : 'miembros actuales'}${retired ? ` · ${retired} ficha de retiro` : ''}`
+      : `${members.length} Estados miembros actuales${former.length ? ` · ${former.length} ficha histórica de retiro` : ''}`;
     const items = rows.map(state => {
       const item = document.createElement('li');
       const link = addLink(item, profileHref(state.code), state.name);
