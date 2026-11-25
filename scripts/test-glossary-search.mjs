@@ -13,6 +13,10 @@ assert.equal(search(entries,'¿Qué es un hecho?')[0].id,'hecho');
 assert.equal(search(entries,'informe preliminar').length,1);
 assert.ok(search(entries,'hecho probado').some(x=>x.id==='hecho-probado'));
 assert.equal(search(entries,'informe preliminar')[0].id,'informe-preliminar');
+for (const id of ['informe-sobre-fondo-cidh','periodo-recomendaciones-estado','notificacion-peticionario-informe','remision-caso-corte','mayoria-absoluta-cidh','deber-buena-fe-recomendaciones','solicitud-suspension-articulo-51']) assert.ok(entries.some(x=>x.id===id),`missing glossary concept: ${id}`);
+assert.equal(search(entries,'plazo para informar sobre recomendaciones')[0].id,'periodo-recomendaciones-estado');
+assert.equal(search(entries,'notificación al peticionario del informe preliminar')[0].id,'notificacion-peticionario-informe');
+assert.ok(search(entries,'tres meses desde transmisión del informe preliminar').some(x=>x.id==='periodo-articulo-51'));
 assert.ok(search(entries,'notificacion').some(x=>x.id==='notificacion'));
 const incidental={id:'incidental',label:'Otro concepto',aliases:[],definition:'menciona CIDH',use:'',category:'Otro'};
 assert.equal(search([incidental],'CIDH').length,0);
@@ -25,4 +29,7 @@ assert.equal(search([{...incidental,label:'Niñez'},{...incidental,label:'Ñand�
 const all=search(entries);
 assert.equal(all.length,entries.length);
 assert.ok(all.every((x,i)=>!i||all[i-1].label.localeCompare(x.label,'es')<=0));
+const ids=new Set(entries.map(x=>x.id));
+assert.equal(ids.size,entries.length,'glossary ids must be unique');
+assert.ok(entries.every(x=>(x.source||x.category==='Caso de práctica')&&x.related.every(id=>ids.has(id))),'every legal glossary record needs a source and valid cross-links; fictional practice entries may be source-free');
 console.log('Glossary: exact match priority, aliases, accents, alphabet, combined filters, full-text opt-in and empty results passed.');
