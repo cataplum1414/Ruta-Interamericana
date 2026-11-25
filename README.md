@@ -67,7 +67,7 @@ El modo sin conexión y la instalación requieren servir la guía por `localhost
 - `index.html`: estructura y contenido de la guía.
 - `assets/styles-v26.css`: identidad visual, navegación adaptable, vistas móviles y estados accesibles.
 - `assets/app-v41.js`: recorrido, caso, reloj, práctica, búsquedas, contador independiente y enlaces contextuales del diccionario.
-- `assets/map-connections-v6.js`: capas del mapa geográfico y enlaces entre Estados, procedimiento y jurisprudencia.
+- `assets/map-connections-v6.js`: capas del mapa regional, escala temporal por década para hitos registrados y enlaces entre Estados, procedimiento y jurisprudencia.
 - `assets/glosario.js`: siglas y conceptos con explicaciones claras, relaciones internas y fuentes oficiales.
 - `assets/jurisprudencia.js`: referencias jurisprudenciales estructuradas.
 - `assets/opiniones.js`: índice seleccionado de expedientes consultivos, incluida una decisión de no responder con enlaces a las Series A oficiales.
@@ -113,6 +113,8 @@ Las opiniones emitidas están separadas de las solicitudes en curso. Las noticia
 La [auditoría metodológica integral](docs/AUDITORIA-METODOLOGICA-INTEGRAL.md) registra errores, omisiones y tareas de corrección en las 25 rutas. Incluye un [inventario reproducible](docs/AUDITORIA-METODOLOGICA-INVENTARIO.json); la revisión no certifica el cotejo íntegro de todos los documentos jurídicos externos.
 
 `docs/PEDAGOGIA.md` resume qué mecánicas educativas públicas se revisaron, cómo se adaptan a las rutas CIDH y Corte, qué se añadió al simulador y qué módulos conviene construir después.
+
+El [mapa temporal](docs/MAPA-TEMPORAL-INTERACTIVO.md) explica las décadas, los hitos posteriores al año seleccionado y el tratamiento explícito de las fechas sin verificar.
 
 ## Seguimiento de la auditoría del 24-11-2026
 

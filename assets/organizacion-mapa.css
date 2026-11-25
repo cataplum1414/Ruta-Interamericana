@@ -17,8 +17,18 @@
 
 .map-search-results{display:grid;max-height:245px;overflow:auto;gap:4px;padding:5px;background:var(--surface);border:1px solid var(--line);border-radius:9px}.map-search-results[hidden]{display:none}.map-search-results button{display:flex;min-height:44px;justify-content:space-between;align-items:center;gap:12px;padding:8px 10px;color:var(--ink);text-align:left;background:transparent;border:0;border-radius:6px;cursor:pointer}.map-search-results button:hover,.map-search-results button:focus-visible{background:var(--panel-raised);outline:2px solid var(--cyan)}.map-search-results button span{font-size:13px;font-weight:750}.map-search-results button small{color:var(--muted);font-size:11px;text-align:right}
 
-/* Hitos de tratados: controles y lectura temporal del mapa */
-.oas-map-legend .legend-timeline{background:var(--cyan)}
+/* Hitos de tratados: la escala distingue décadas y datos ausentes. */
+.oas-map-legend .timeline-early{background:#075c66}
+.oas-map-legend .timeline-80s{background:#0d8992}
+.oas-map-legend .timeline-90s{background:#22b7c0}
+.oas-map-legend .timeline-recent{background:#8adfe2}
+.oas-map-legend .timeline-after{background:#666d7c}
+.oas-map-legend .timeline-unknown{background:var(--map-land)}
+html[data-theme="light"] .oas-map-legend .timeline-early{background:#d5f0ef}
+html[data-theme="light"] .oas-map-legend .timeline-80s{background:#9cdedd}
+html[data-theme="light"] .oas-map-legend .timeline-90s{background:#53bfc4}
+html[data-theme="light"] .oas-map-legend .timeline-recent{background:#087782}
+.map-timeline .oas-map-legend{display:flex;flex-wrap:wrap}
 .map-timeline{display:grid;gap:10px;padding:14px;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:12px}
 .map-timeline[hidden]{display:none}
 .map-timeline>label,.map-timeline-range>label{font-size:13px;font-weight:800}
@@ -29,8 +39,18 @@
 .map-timeline-range>div{grid-column:1/-1;display:flex;justify-content:space-between;color:var(--muted);font-size:11px}
 .map-timeline>p{margin:0;color:var(--muted);font-size:12px;line-height:1.55}
 .map-timeline>a{color:var(--cyan-soft);font-size:12px;font-weight:800;text-underline-offset:3px}
-.oas-map-canvas svg[data-layer="timeline"] path[data-milestone="yes"]{fill:var(--cyan)}
-.oas-map-canvas svg[data-layer="timeline"] path[data-milestone="yes"].is-selected{fill:var(--map-selected)}
+.oas-map-canvas svg[data-layer="timeline"] path[data-milestone-band="early"]{fill:#075c66}
+.oas-map-canvas svg[data-layer="timeline"] path[data-milestone-band="80s"]{fill:#0d8992}
+.oas-map-canvas svg[data-layer="timeline"] path[data-milestone-band="90s"]{fill:#22b7c0}
+.oas-map-canvas svg[data-layer="timeline"] path[data-milestone-band="recent"]{fill:#8adfe2}
+.oas-map-canvas svg[data-layer="timeline"] path[data-milestone-band="after"]{fill:#666d7c}
+.oas-map-canvas svg[data-layer="timeline"] path[data-milestone-band="unknown"]{fill:var(--map-land)}
+html[data-theme="light"] .oas-map-canvas svg[data-layer="timeline"] path[data-milestone-band="early"]{fill:#d5f0ef}
+html[data-theme="light"] .oas-map-canvas svg[data-layer="timeline"] path[data-milestone-band="80s"]{fill:#9cdedd}
+html[data-theme="light"] .oas-map-canvas svg[data-layer="timeline"] path[data-milestone-band="90s"]{fill:#53bfc4}
+html[data-theme="light"] .oas-map-canvas svg[data-layer="timeline"] path[data-milestone-band="recent"]{fill:#087782}
+.oas-map-canvas svg[data-layer="timeline"] path[data-milestone-band="after"]{stroke-dasharray:2 2}
+.oas-map-canvas svg[data-layer="timeline"] path.is-selected{fill:var(--map-selected)}
 
 /* From the institutional map, jump directly to each organ's role in the procedure. */
 .org-detail-guide{display:grid;gap:7px;margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}

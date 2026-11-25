@@ -66,9 +66,16 @@
     if (layer === 'timeline') {
       const field = timelineType.value;
       const label = field === 'court' ? 'la competencia de la Corte' : 'la Convención';
-      legend.innerHTML = '<span><i class="legend-timeline"></i>Hito registrado hasta el a&ntilde;o elegido</span><span><i class="legend-other"></i>Sin fecha en esta tabla</span>';
-      description.textContent = `Color: Estados con hito de ${label} hasta ${timelineYear.value}, según el registro de hitos del Atlas y el registro oficial B-32. Para Venezuela se muestra el hito inicial; la ficha distingue actos posteriores.`;
+      legend.innerHTML = [
+        ['timeline-early', 'Antes de 1980'],
+        ['timeline-80s', '1980–1989'],
+        ['timeline-90s', '1990–1999'],
+        ['timeline-recent', '2000 en adelante'],
+        ['timeline-after', 'Después del año elegido'],
+        ['timeline-unknown', 'Sin fecha verificada en esta tabla']
+      ].map(([className, legendLabel]) => `<span><i class="${className}"></i>${legendLabel}</span>`).join('');
       listTitle.textContent = `Hitos registrados hasta ${timelineYear.value}`;
+      description.textContent = `Color: década del primer hito registrado de ${label}. El año filtra el mapa; «sin fecha» indica un dato no verificado.`;
       return;
     }
     if (layer === 'cases') {
@@ -105,6 +112,7 @@
         if (shape.dataset.atlasCaseCount !== String(n)) shape.dataset.atlasCaseCount = String(n);
         const year = treatyMilestones[shape.dataset.code]?.[timelineType.value];
         shape.dataset.milestone = year && year <= Number(timelineYear.value) ? 'yes' : 'no';
+        shape.dataset.milestoneBand = !year ? 'unknown' : year > Number(timelineYear.value) ? 'after' : year < 1980 ? 'early' : year < 1990 ? '80s' : year < 2000 ? '90s' : 'recent';
       });
     }
     setLegend();
