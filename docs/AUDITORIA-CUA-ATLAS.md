@@ -20,23 +20,23 @@ La ronda inspecciona las dos páginas publicadas en el mismo navegador y escrito
 | Explorar mandatos | `#comision` y `#corte` | Revisado en CUA: ONU explora mandatos temáticos y OEA separa los dos órganos del SIDH. No son registros equivalentes; se mantienen destinos separados y guías por función. |
 | Relatores y relatoras | `#relatorias` | Revisado en CUA: ONU es directorio de titulares; OEA presenta relatorías temáticas/especiales y monitoreo. Objeto de consulta distinto. |
 | Países | `#estados` | Revisado en CUA: ONU cruza país con tratados, mecanismos y documentos en tabla; OEA ofrece lista/ficha regional. Hallazgo: OEA mostraba `35 Estados` como si fueran miembros. Se corrige a 34 miembros actuales y 1 ficha histórica de retiro, incluidos filtro y resultados. |
-| Mapa del mundo | `#mapa` | Revisado en CUA. ONU ofrece capas globales, selector de país, zoom, animación y ficha; OEA ofrece búsqueda regional, selección en mapa y capas propias. Revisar si los controles equivalentes quedan igual de descubribles y si la capa temporal expone todo el rango. |
+| Mapa del mundo | `#mapa` | Revisado en CUA: ONU ofrece capas globales, selector de país, zoom, animación y ficha; OEA ofrece búsqueda regional, selección por teclado, capas de membresía/casos/hitos, comparación de tratados, año, animación y ficha. Escala regional y variables no intercambiables. |
 | Seguimiento de recomendaciones | `#seguimiento` | Revisado en CUA: ONU muestra seguimiento EPU; OEA diferencia recomendaciones CIDH y cumplimiento de sentencias Corte. Tarea afín, mecanismos no equivalentes. |
-| Tratados y comités | `#competencia` y `#biblioteca` | Comparación CUA parcial: ONU presenta tratados y comités; OEA enlaza biblioteca y norma/función dentro de Competencia. Falta terminar de revisar selectores y fuentes de ambos. |
-| Tengo un caso | `#orientador` | Comparación CUA parcial: OEA ofrece orientación según etapa/problema; el destino ONU no quedó confirmado en esta pasada. Pendiente verificación exacta del menú ONU. |
-| Otros mecanismos | `#sistema` y `#opiniones` | Comparación CUA parcial: OEA separa trámite CIDH, sometimiento, Corte, opiniones y mecanismos de protección. Falta revisar destino ONU exacto y cotejar controles. |
-| Arqueología documental | `#jurisprudencia` | Pendiente de inspección en esta ronda. |
-| Cómo funciona la ONU | `#organos` | Pendiente de inspección en esta ronda. |
+| Tratados y comités | `#competencia` y `#biblioteca` | Revisado en CUA: ONU conecta nueve tratados principales, comités, texto y ratificaciones; OEA ofrece un buscador de artículos del recorrido y un módulo separado sobre atribución de competencia. La Biblioteca debe leerse como selección aplicada, no como catálogo íntegro. |
+| Tengo un caso | `#orientador` | Revisado en CUA: ONU orienta según país, aceptación estatal, plazo y requisitos de vías de tratados; OEA conduce desde la etapa procesal a la pregunta y destino siguiente. La elección OEA es pedagógica y no sustituye asesoría. |
+| Otros mecanismos | `#sistema` y `#opiniones` | Revisado en CUA: ONU distingue órganos de tratados de procedimientos especiales; OEA explica la relación CIDH/Corte y conserva opiniones consultivas y protección como rutas separadas. No son mecanismos equivalentes. |
+| Arqueología documental | `#jurisprudencia` | Revisado en CUA: ONU rastrea acto de creación, renovaciones, métodos e informes y separa referencia de fuente cotejada; OEA ofrece jurisprudencia selectiva por caso/tema con enlace a la fuente oficial. Son tareas distintas; hacer visible que el índice de casos no es un rastreador documental exhaustivo. |
+| Cómo funciona la ONU | `#organos` y `#oea` | Revisado en CUA: ONU dispone de mapa de órganos, familia de agencias y orientador; OEA ofrece mapa de órganos y separación entre Organización y SIDH. Mantener entidades y dependencias propias, y hacer explícita la relación funcional CIDH/Corte. |
 | Su historia | `#historia` | Revisado en CUA. Ambos tienen épocas, temas, año, búsqueda, selección y recorrido. OEA acota expresamente sus siete hitos a 1948–1988; ampliar la cobertura es una mejora editorial pendiente, no una corrección de estilo. |
-| Simula una asamblea | `#laboratorio` | Pendiente de inspección; analogía funcional no establecida. |
-| Siglas y códigos | `#diccionario` | Pendiente de inspección en esta ronda. |
-| Recuperar documentos | `#biblioteca` | Pendiente de inspección en esta ronda. |
-| Datos y calidad | `#datos` | Pendiente de inspección en esta ronda. |
-| Alertas de verificación | `#datos` | Pendiente de inspección en esta ronda. |
-| Qué falta y qué viene | `#datos` | Pendiente de inspección en esta ronda. |
+| Simula una asamblea | `#laboratorio`, `#arcadia` | Revisado en CUA: ONU ofrece simulación de delegación para clase (datos de país, tratados, votaciones y EPU); OEA ofrece preguntas procesales y un expediente hipotético. No llamar a estos ejercicios el mismo tipo de simulación. |
+| Siglas y códigos | `#diccionario` | Revisado en CUA: ambos tienen búsqueda y alfabeto. ONU expone filtros de tipo y 241 siglas/términos; OEA conecta fichas a ruta, norma y términos de la guía, con 113 entradas actuales. El tamaño por sí solo no mide calidad, pero la cobertura OEA sigue siendo una tarea editorial activa. |
+| Recuperar documentos | `#inicio`, `#jurisprudencia` y `#biblioteca` | Revisado en CUA: ONU reconstruye documentos por símbolo/tipo y distingue original, informe y método; OEA permite buscar artículos del recorrido y consulta jurisprudencia oficial. No es herramienta de recuperación equivalente; preservar esa limitación y señalar clase de fuente. |
+| Datos y calidad | `#datos` | Revisado en CUA: OEA publica cobertura, interpretación de enlaces, límites y exportación JSON. Declara “no registrada” la fecha de corte y “no realizada” la comprobación sistemática de enlaces. Esa transparencia es clara; conviene hacerla más visible junto a cada conjunto, como ONU hace en sus fichas. |
+| Alertas de verificación | `#datos` | Revisado en CUA: ONU tiene destino separado de alertas; OEA no. OEA declara límites en la vista de calidad y advierte en fichas, pero no agrupa alertas concretas. No inventar alertas; decidir si se necesita un índice de alertas basado en verificaciones reales. |
+| Qué falta y qué viene | Documentación de auditoría | Revisado en CUA: ONU muestra una hoja de ruta pública con estados y límites; OEA registra pendientes principalmente en documentación del repositorio. Falta decidir y publicar un resumen editorial de cobertura en `#datos`. |
 | DIGNITYOS | Sin equivalente | No se traslada como contenido de OEA. |
-| Descargas | `#datos` | Pendiente |
-| Fuentes y alcance | `#biblioteca` | Pendiente |
+| Descargas | `#datos` | Revisado en CUA: ambos ofrecen descargas; ONU separa licencia y versión por archivo; OEA descarga índices JSON de casos, opiniones y Estados. Documentar versión/fecha en el archivo OEA y explicar licencias de contenido de terceros. |
+| Fuentes y alcance | `#biblioteca`, `#datos` y pie | Revisado en CUA: ONU tiene sección explícita de fuentes, autoría y límites; OEA distribuye fuentes normativas en Biblioteca y límites/licencia en Datos y repositorio. Conviene enlazar y agrupar esas piezas para que el lector no tenga que inferirlas. |
 
 La revisión y mejora de las rutas OEA propias —procedimiento, escritos, plazos, opiniones, práctica y caso guiado— se añadirá al mismo ciclo aunque no tengan una pantalla ONU equivalente. La comparación visual no decide por sí sola la corrección jurídica; cada cambio metodológico debe sostenerse con fuente oficial y conservar los límites de datos declarados por el Atlas.
 
@@ -44,7 +44,38 @@ La revisión y mejora de las rutas OEA propias —procedimiento, escritos, plazo
 
 La inspección CUA de 25 de noviembre comparó las pantallas de Países en los sitios publicados. La tabla ONU expone país, región, tratados, mandatos y atajos a la ficha; OEA ofrece búsqueda regional y un directorio de fichas. Su cabecera de contexto dice `34 Estados`, mientras el recuento de la lista decía `35 Estados`: mezcla membresía vigente y ficha histórica de retiro. Esa inconsistencia se corrige en la lista, filtros, conteo inicial y caché sin conexión.
 
-La misma pasada inspeccionó en OEA la biblioteca/competencia, el Sistema y el orientador. El contenido visible confirma rutas de búsqueda de normas, trámite y etapa del caso; las rutas ONU correspondientes todavía no se han confirmado mediante el enlace exacto del menú. Esos pares siguen abiertos y no cuentan como homologados.
+La misma pasada inspeccionó en OEA la biblioteca/competencia, el Sistema, el orientador, el laboratorio, la jurisprudencia y la página de datos; y abrió las entradas correspondientes del menú ONU cuando existían. El contenido visible confirma que varias pantallas comparten tareas generales —orientar, buscar fuentes, practicar o consultar datos— pero usan instrumentos y coberturas distintas. Estas rutas requieren conservar sus límites de alcance y no cuentan como homologadas en contenido.
+
+## Ciclo 6: procedimiento y páginas propias de OEA
+
+La escalera muestra 18 estaciones y permite filtrar por fase. En la inspección CUA, la estación 9 se identifica como “Informe preliminar de fondo (art. 50)” y la 10 como “Remisión al Estado: tres meses y suspensión”. El texto de la segunda separa el plazo de tres meses desde la transmisión al Estado del mes para la posición del peticionario desde su notificación, y califica la suspensión como no automática y sujeta a condiciones. El reloj de plazos complementa esta secuencia; son vistas distintas que deben mantener vínculos bidireccionales. Deben probarse esos enlaces después de cada cambio a la secuencia.
+
+La vista de Historia ofrece filtros de períodos y temas, búsqueda, control anual, hitos seleccionables y recorrido guiado. El mapa OEA tiene tres capas; su capa de hitos permite filtrar por año, animar y comparar hitos de ratificación/adhesión. También explica datos sin fecha verificada y ofrece una lista alternativa. La diferencia con el mapa ONU está en el alcance y las variables, no en la ausencia de dimensión temporal.
+
+## Inventario de pantallas OEA
+
+Se comprobaron mediante lectura semántica CUA las 24 pantallas públicas en español. El contenido de la ayuda, controles y rutas se revisó por pantalla; el inventario de 25 rutas del sitio incluye además una guía en inglés parcial, que no constituye una traducción de toda la plataforma.
+
+| Grupo de menú | Rutas inspeccionadas | Revisión / hallazgo principal |
+| --- | --- | --- |
+| Inicio | `#inicio`, `#actualidad`, `#orientador` | Portada y búsqueda; noticias con filtro por órgano, búsqueda y enlace de origen; orientador por situación procesal. |
+| Conocer la OEA | `#oea`, `#organos`, `#historia`, `#elecciones`, `#estados`, `#mapa` | Cuatro pilares; mapa institucional; cronología acotada; procesos electorales diferentes por órgano; ficha regional de Estados; mapa por capas y año. |
+| Ruta interamericana | `#sistema`, `#competencia`, `#comision`, `#relatorias`, `#corte`, `#recorrido`, `#reloj`, `#seguimiento`, `#arcadia` | CIDH y Corte diferenciadas; competencia con siete apartados y laboratorio; etapas guiadas; plazos con eventos iniciales; seguimiento por órgano; expediente hipotético con hitos. |
+| Casos y actualidad | `#jurisprudencia`, `#opiniones` | Índice selectivo de casos que remite a decisiones oficiales; 32 expedientes consultivos e identificación de la OC-12/91 como decisión de no responder. |
+| Consulta | `#diccionario`, `#laboratorio`, `#biblioteca` | 113 fichas alfabéticas con búsqueda ampliada opcional; práctica procesal; selección de 37 artículos conectados a la ruta. |
+| Sobre | `#datos` | Cobertura, clasificación de enlaces, límites de actualización, descargas JSON y licencias; no hay pantalla de alertas independiente ni fecha de corte global registrada. |
+
+El marco de navegación comparte menú por grupos, estado activo, franja de contexto, jerarquía tipográfica, controles accesibles, colores, y ruta independiente por pantalla. Mantenerlo homogéneo no significa agregar idiomas, filtros, capas o datos que OEA no tiene. Las diferencias relevantes que quedan son de alcance y cobertura: cronología histórica OEA, número y alcance de fichas jurídicas, registro de alertas y cobertura de vocabulario. No se deben resolver con números o contenidos inventados.
+
+## Próximas verificaciones, sin declararlas hechas
+
+- Repetir `scripts/browser-family.cjs` en un equipo con Playwright instalado para validar las 25 rutas en tres anchos y ambos temas. En este equipo el módulo falta, por lo que la ejecución no empezó.
+- Probar con interacción real cada resultado del mapa, filtros de diccionario, estados vacíos, descargas y enlaces de estación después de los cambios; la inspección semántica confirma etiquetas y controles, no que todos los caminos funcionen.
+- Determinar una política de fecha de corte por conjunto y un canal de corrección de enlaces; `#datos` hoy declara explícitamente que aún no se registran/no se hace esa verificación sistemática.
+- Continuar ampliando el diccionario por cobertura de conceptos de las etapas y documentos, verificando cada ficha y alias contra la norma oficial.
+- Completar revisión jurídica de cada ficha de caso, recomendación, opinión consultiva y plazo antes de describir el corpus como exhaustivamente cotejado.
+
+El laboratorio OEA es práctica de preguntas procesales; Arcadia es un caso hipotético por hitos. Ninguno reproduce la simulación diplomática de ONU. “Competencia”, “recorrido”, “reloj”, “Comisión”, “Corte”, “seguimiento” y “caso guiado” son destinos propios OEA; su homogeneidad se evalúa por el marco visual compartido y la continuidad del procedimiento, no por buscarles una pantalla ONU artificial.
 
 ## Ciclo 2: Noticias
 
