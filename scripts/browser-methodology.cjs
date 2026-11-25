@@ -11,11 +11,25 @@ const url=process.env.ATLAS_TEST_URL||'http://127.0.0.1:8769/';
   assert.equal(routes.length,25);
   for(const route of routes){await page.evaluate(id=>{location.hash=id;},route);await page.waitForFunction(id=>!document.getElementById(id).hidden,route);assert.equal(await page.locator('#'+route+' [data-method-guide="'+route+'"]').count(),1);}
   await page.evaluate(()=>{location.hash='competencia';});await page.waitForSelector('#competenceScenario');
+  assert.equal(await page.locator('#competenceScenario option').count(),10,'The lab covers ten distinct competence examples.');
   await page.locator('#competenceTreaty').selectOption('belem');await page.locator('#competenceOrgan').selectOption('court');assert.match(await page.locator('#competenceDetail').textContent(),/Campo Algodonero/);
   await page.locator('#competenceTreaty').selectOption('opic');assert.match(await page.locator('#competenceDetail').textContent(),/2011/);assert.equal(await page.locator('#competenceOrgan').inputValue(),'court');
   await page.locator('#competenceLevel').selectOption({index:1});assert.ok(await page.locator('#competenceAnalysis').isVisible());assert.equal(await page.locator('#competenceAdvanced').isVisible(),false);
   await page.locator('[name="competenceAnswer"][value="cidh"]').check();await page.locator('#competenceCheck').click();assert.match(await page.locator('#competenceFeedback').textContent(),/Selecciona instrumento/);
   await page.locator('#competenceTaskTreaty').selectOption('belem');await page.locator('#competenceTaskGround').selectOption('belem12');await page.locator('#competenceTaskLimit').selectOption('material');await page.locator('#competenceCheck').click();assert.match(await page.locator('#competenceFeedback').textContent(),/Contraste de selecciones/);
+  for(const example of [
+   {id:'petitioner',answer:'cidh',treaty:'cadh',ground:'cadh44',limit:'personal',proof:/distinto de la presunta víctima/},
+   {id:'advisory',answer:'consultative',treaty:'cadh',ground:'cadh64',limit:'function',proof:/opinión consultiva/},
+   {id:'locus',answer:'review',treaty:'cadh',ground:'oc23',limit:'territorial',proof:/control efectivo/},
+   {id:'belemScope',answer:'review',treaty:'belem',ground:'belem12',limit:'material',proof:/artículos 8 y 9/},
+   {id:'blake',answer:'review',treaty:'cadh',ground:'cadh62',limit:'temporal',proof:/Blake/}
+  ]){
+   await page.locator('#competenceScenario').selectOption(example.id);await page.locator('[name="competenceAnswer"][value="'+example.answer+'"]').check();
+   await page.locator('#competenceTaskTreaty').selectOption(example.treaty);await page.locator('#competenceTaskGround').selectOption(example.ground);await page.locator('#competenceTaskLimit').selectOption(example.limit);
+   await page.locator('#competenceCheck').click();assert.match(await page.locator('#competenceFeedback').textContent(),example.proof,example.id+' gives reasoned feedback');assert.ok(await page.locator('#competenceFeedback a').count()>=2,example.id+' links the treaty and case source');
+  }
+  await page.locator('#competenceScenario').selectOption('women');await page.locator('[name="competenceAnswer"][value="cidh"]').check();
+  await page.locator('#competenceTaskTreaty').selectOption('belem');await page.locator('#competenceTaskGround').selectOption('belem12');await page.locator('#competenceTaskLimit').selectOption('material');
   await page.locator('#competenceLevel').selectOption({index:2});await page.locator('#competenceCheck').click();assert.match(await page.locator('#competenceFeedback').textContent(),/Formula un argumento/);
   for(const field of ['For','Against','Evidence'])await page.locator('#competenceArgument'+field).fill('Argumento de práctica: revisar norma, hechos y documento.');
   await page.locator('#competenceCheck').click();assert.match(await page.locator('#competenceFeedback').textContent(),/Autoevaluación/);

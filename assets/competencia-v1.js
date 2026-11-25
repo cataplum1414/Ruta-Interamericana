@@ -78,6 +78,48 @@
   renderTreaty();
 
   const scenarios = {
+    petitioner: {
+      answer: 'cidh',
+      support: 'El artículo 44 CADH permite que una persona, grupo o entidad no gubernamental reconocida en un Estado miembro presente una petición. Quien la presenta puede ser distinto de la presunta víctima.',
+      limits: 'La regla de presentación no prueba por sí sola competencia sobre el Estado ni el cumplimiento de admisibilidad. Identifica presuntas víctimas, hechos, Estado y tratado aplicable.',
+      source: 'Convención Americana, artículo 44.',
+      sourceUrl: 'https://www.oas.org/es/cidh/mandato/basicos/convencion.asp'
+    },
+    courtAccess: {
+      answer: 'cidh',
+      support: 'La persona no somete directamente un caso contencioso a la Corte. La vía individual empieza ante la CIDH; el artículo 61 prevé que la Comisión o un Estado parte sometan casos a la Corte.',
+      limits: 'Además, comprueba el reconocimiento de competencia contenciosa conforme al artículo 62 y los demás requisitos. Presentar una petición ante la CIDH no garantiza que el asunto llegue a la Corte.',
+      source: 'Convención Americana, artículos 44, 61 y 62.',
+      sourceUrl: 'https://www.oas.org/es/cidh/mandato/basicos/convencion.asp'
+    },
+    advisory: {
+      answer: 'consultative',
+      support: 'El artículo 64 permite a los Estados miembros de la OEA consultar a la Corte sobre la interpretación de la Convención u otros tratados de derechos humanos, y sobre compatibilidad de leyes internas.',
+      limits: 'Una opinión consultiva interpreta normas; no resuelve una petición contenciosa ni declara la responsabilidad de un Estado en un caso individual. No la confundas con el reconocimiento contencioso del artículo 62.',
+      source: 'Convención Americana, artículos 62 y 64.',
+      sourceUrl: 'https://www.oas.org/es/cidh/mandato/basicos/convencion.asp'
+    },
+    locus: {
+      answer: 'review',
+      support: 'La OC-23/17 reconoce que el artículo 1.1 puede abarcar situaciones fuera del territorio cuando el Estado ejerce autoridad o control efectivo sobre las personas; para daño transfronterizo examina también el control de la actividad de origen.',
+      limits: 'El efecto al otro lado de una frontera o la ubicación geográfica por sí solos no bastan. Se necesitan hechos sobre control, actividad, causalidad y personas afectadas; la opinión consultiva no determina automáticamente un caso hipotético.',
+      source: 'Corte IDH, OC-23/17, párrafos 95–103.',
+      sourceUrl: 'https://www.corteidh.or.cr/docs/opiniones/seriea_23_esp.pdf'
+    },
+    belemScope: {
+      answer: 'review',
+      support: 'El artículo 12 de Belém do Pará prevé peticiones ante la CIDH por presuntas violaciones del artículo 7. En Campo Algodonero, párrafo 80, la Corte reconoció competencia sobre el artículo 7, no sobre los artículos 8 y 9.',
+      limits: 'Distingue qué disposición se alega, ante qué órgano y bajo qué instrumento. La conclusión sobre esos artículos no elimina posibles alegaciones independientes bajo la CADH ni sustituye el examen completo de competencia.',
+      source: 'Belém do Pará, artículos 7 y 12; Corte IDH, Campo Algodonero, párrafo 80.',
+      sourceUrl: 'https://corteidh.or.cr/docs/casos/articulos/seriec_205_esp.pdf'
+    },
+    blake: {
+      answer: 'review',
+      support: 'En Blake vs. Guatemala, la Corte consideró que la detención de 1985 precedía al reconocimiento de competencia de 1987 y no podía juzgar ese hecho como violación del artículo 7; sí examinó efectos y hechos posteriores dentro de los límites fijados.',
+      limits: 'No generalices que todo efecto posterior convierte un hecho previo en competente. Delimita los actos y efectos posteriores y aplica la decisión concreta sobre la declaración estatal.',
+      source: 'Corte IDH, Blake, excepciones preliminares y sentencia de fondo.',
+      sourceUrl: 'https://www.corteidh.or.cr/docs/casos/fundamentos/jseriec27.pdf'
+    },
     women: {
       answer: 'cidh',
       support: 'El artículo 12 de Belém do Pará prevé peticiones ante la CIDH por presuntas violaciones del artículo 7. Si los hechos alegados encajan en ese derecho y el Estado es parte, existe una base material expresa.',
@@ -105,6 +147,12 @@
   };
 
   const tasks={
+    petitioner:{facts:'Hipótesis ficticia: una organización no gubernamental reconocida presenta ante la CIDH una petición en nombre de varias personas. No se informa todavía qué Estado habría actuado ni qué derechos se alegan.',treaty:'cadh',ground:'cadh44',limit:'personal'},
+    courtAccess:{facts:'Hipótesis ficticia: una presunta víctima envía directamente a la Corte una demanda contenciosa. El Estado es parte de la Convención, pero no se aporta información sobre su declaración del artículo 62 ni sobre una actuación previa de la CIDH.',treaty:'cadh',ground:'cadh61',limit:'personal'},
+    advisory:{facts:'Hipótesis ficticia: un Estado miembro de la OEA pide a la Corte que interprete una norma interamericana para aclarar su alcance general. No plantea hechos de una víctima ni solicita declarar responsabilidad estatal.',treaty:'cadh',ground:'cadh64',limit:'function'},
+    locus:{facts:'Hipótesis ficticia: una actividad autorizada y regulada por el Estado A causa contaminación que llega al Estado B. Se alega afectación de personas en B. Aún deben acreditarse control estatal, actividad, causalidad y demás requisitos.',treaty:'cadh',ground:'oc23',limit:'territorial'},
+    belemScope:{facts:'Hipótesis ficticia: una petición invoca únicamente los artículos 8 y 9 de Belém do Pará. No se especifica si también se alegan derechos de la Convención Americana ni cuál órgano ha recibido el asunto.',treaty:'belem',ground:'belem12',limit:'material'},
+    blake:{facts:'Caso histórico: en Blake vs. Guatemala, la detención ocurrió en 1985 y Guatemala reconoció la competencia de la Corte en 1987. La Corte separó la detención de los hechos y efectos posteriores vinculados al esclarecimiento.',treaty:'cadh',ground:'cadh62',limit:'temporal'},
     women:{facts:'Hipótesis ficticia: Estado parte de Belém do Pará desde 2000; hechos de 2024 bajo su jurisdicción. Se alega incumplimiento del artículo 7. Se consulta inicialmente la vía ante la CIDH, sin dar por cumplida la admisibilidad.',treaty:'belem',ground:'belem12',limit:'material'},
     education:{facts:'Hipótesis ficticia: Estado parte del Protocolo desde 2001; hechos de 2024. Se alega afectación del artículo 13 por actuación estatal. Se pregunta por la vía inicial ante la CIDH; agotamiento y demás requisitos deben analizarse por separado.',treaty:'san',ground:'san196',limit:'material'},
     child:{facts:'Solo se sabe que se alega violación de la CDN. No constan Estado, fechas, aceptación del Protocolo de comunicaciones ni derecho interamericano invocado. Debes identificar qué falta antes de concluir.',treaty:'crc',ground:'missing',limit:'personal'},
@@ -122,7 +170,7 @@
     if(level>1&&['For','Against','Evidence'].some(field=>!byId('competenceArgument'+field).value.trim())){feedback.textContent='Formula un argumento a favor, uno en contra y el dato o documento pendiente. Después podrás contrastarlos con la rúbrica.';return;}
     const matched=choice.value===scenario.answer;
     const checks=level>0?'<p><strong>Contraste de selecciones:</strong> instrumento '+(selections[0]===task.treaty?'compatible':'a revisar')+'; fundamento '+(selections[1]===task.ground?'compatible':'a revisar')+'; límite '+(selections[2]===task.limit?'compatible':'a revisar')+'. Las dimensiones pueden concurrir: aquí se identifica el problema destacado en el supuesto.</p>':'';
-    feedback.innerHTML='<strong>'+(matched?'Conclusión inicial compatible con los supuestos.':'Revisa tu conclusión inicial.')+'</strong><p><strong>Argumento a favor:</strong> '+scenario.support+'</p><p><strong>Límite o contraargumento:</strong> '+scenario.limits+'</p>'+checks+'<p><strong>Fundamento:</strong> '+scenario.source+'</p><a href="'+treaties[task.treaty].url+'" target="_blank" rel="noopener noreferrer">Abrir instrumento oficial ↗</a>'+(level>1?'<h4>Autoevaluación de la argumentación</h4><p>El Atlas contrasta las selecciones anteriores; no califica automáticamente la calidad jurídica del texto que escribiste. Comprueba:</p><ol>'+window.RI_PEDAGOGIA.rubric.map(item=>'<li>'+item+'</li>').join('')+'</ol><p>Explica qué hecho apoya cada argumento y qué cambiaría si el dato pendiente resultara distinto.</p>':'');
+    feedback.innerHTML='<strong>'+(matched?'Conclusión inicial compatible con los supuestos.':'Revisa tu conclusión inicial.')+'</strong><p><strong>Argumento a favor:</strong> '+scenario.support+'</p><p><strong>Límite o contraargumento:</strong> '+scenario.limits+'</p>'+checks+'<p><strong>Fundamento:</strong> '+scenario.source+'</p><a href="'+treaties[task.treaty].url+'" target="_blank" rel="noopener noreferrer">Abrir instrumento oficial ↗</a>'+(scenario.sourceUrl?'<a href="'+scenario.sourceUrl+'" target="_blank" rel="noopener noreferrer">Abrir fuente del ejemplo ↗</a>':'')+(level>1?'<h4>Autoevaluación de la argumentación</h4><p>El Atlas contrasta las selecciones anteriores; no califica automáticamente la calidad jurídica del texto que escribiste. Comprueba:</p><ol>'+window.RI_PEDAGOGIA.rubric.map(item=>'<li>'+item+'</li>').join('')+'</ol><p>Explica qué hecho apoya cada argumento y qué cambiaría si el dato pendiente resultara distinto.</p>':'');
   });
   scenarioChanged();levelChanged();
 })();
