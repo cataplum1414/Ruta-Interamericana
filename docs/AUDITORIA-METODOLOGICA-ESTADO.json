@@ -1,5 +1,5 @@
 {
-  "auditedCommit": "0812be996260b656e19285cb6c9d1457d3dc5944",
+  "auditedCommit": "b83b3992cbc8addf915425bc68eef088ba0f4069",
   "workingTree": true,
   "auditDate": "2026-11-24",
   "scope": "Inventario del árbol local actual, incluido orden de opciones en ejecución; no certifica exhaustividad jurídica ni aprendizaje. El inventario histórico original se conserva separado.",
@@ -31,7 +31,7 @@
     "competencia"
   ],
   "counts": {
-    "glossary": 120,
+    "glossary": 137,
     "jurisprudenceReferences": 125,
     "advisoryRecords": 32,
     "organs": 10,
