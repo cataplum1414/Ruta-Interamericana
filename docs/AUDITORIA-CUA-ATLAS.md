@@ -67,10 +67,11 @@ Se comprobaron mediante lectura semántica CUA las 24 pantallas públicas en esp
 
 El marco de navegación comparte menú por grupos, estado activo, franja de contexto, jerarquía tipográfica, controles accesibles, colores, y ruta independiente por pantalla. Mantenerlo homogéneo no significa agregar idiomas, filtros, capas o datos que OEA no tiene. Las diferencias relevantes que quedan son de alcance y cobertura: cronología histórica OEA, número y alcance de fichas jurídicas, registro de alertas y cobertura de vocabulario. No se deben resolver con números o contenidos inventados.
 
-## Próximas verificaciones, sin declararlas hechas
+## Verificación automatizada y trabajo restante
 
-- Repetir `scripts/browser-family.cjs` en un equipo con Playwright instalado para validar las 25 rutas en tres anchos y ambos temas. En este equipo el módulo falta, por lo que la ejecución no empezó.
-- Probar con interacción real cada resultado del mapa, filtros de diccionario, estados vacíos, descargas y enlaces de estación después de los cambios; la inspección semántica confirma etiquetas y controles, no que todos los caminos funcionen.
+Se instaló Playwright en una carpeta temporal fuera del repositorio y se ejecutaron `scripts/browser-family.cjs` y `scripts/browser-methodology.cjs` con el Chromium ya instalado. Pasaron las 25 rutas en 360, 390 y 1440 px, en modo claro y oscuro, y los recorridos metodológicos en 390 y 1280 px. La prueba familiar comprobó marco común, desbordamiento, historia, mapa, diccionario, navegación móvil e idioma; la metodológica comprobó guías, niveles, ejercicios y exportación. No se añadió una dependencia al sitio.
+
+Las pruebas comprueban rutas, mapa por año, búsqueda alfabética, enlace de jurisprudencia a su estación procesal, noticias, opiniones y descarga JSON. No equivalen a probar todas las combinaciones de filtros ni cada enlace externo.
 - Determinar una política de fecha de corte por conjunto y un canal de corrección de enlaces; `#datos` hoy declara explícitamente que aún no se registran/no se hace esa verificación sistemática.
 - Continuar ampliando el diccionario por cobertura de conceptos de las etapas y documentos, verificando cada ficha y alias contra la norma oficial.
 - Completar revisión jurídica de cada ficha de caso, recomendación, opinión consultiva y plazo antes de describir el corpus como exhaustivamente cotejado.
