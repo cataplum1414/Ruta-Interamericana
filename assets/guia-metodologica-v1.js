@@ -37,8 +37,8 @@
  for(const [id,[goal,how,product,source,scope]] of Object.entries(purpose)){
    const page=document.getElementById(id);if(!page)continue;
    const details=document.createElement('details');details.className='method-note atlas-method-guide';details.dataset.methodGuide=id;
-   details.innerHTML='<summary><strong>'+(id==='english'?'Purpose and scope':'Para qué sirve')+'</strong></summary><p><strong>'+esc(goal)+'</strong></p><p><strong>'+(id==='english'?'How to use it':'Cómo usarla')+':</strong> '+esc(how)+'</p><p><strong>'+(id==='english'?'Learning task':'Qué debes poder hacer')+':</strong> '+esc(product)+'</p><p><strong>'+(id==='english'?'Scope':'Alcance')+':</strong> '+esc(scope)+'</p><p><a href="'+source+'" target="_blank" rel="noopener noreferrer">'+(id==='english'?'Official reference':'Fuente primaria de referencia')+' ↗</a></p>';
-   const heading=page.querySelector('.section-heading,.hero-copy');if(id==='inicio')page.append(details);else heading?heading.after(details):page.prepend(details);
+   details.innerHTML='<summary><strong>'+(id==='english'?'Purpose and scope':id==='inicio'?'Para qué sirve esta pantalla':'Para qué sirve')+'</strong></summary><p><strong>'+esc(goal)+'</strong></p><p><strong>'+(id==='english'?'How to use it':'Cómo usarla')+':</strong> '+esc(how)+'</p><p><strong>'+(id==='english'?'Learning task':'Qué debes poder hacer')+':</strong> '+esc(product)+'</p><p><strong>'+(id==='english'?'Scope':'Alcance')+':</strong> '+esc(scope)+'</p><p><a href="'+source+'" target="_blank" rel="noopener noreferrer">'+(id==='english'?'Official reference':'Fuente primaria de referencia')+' ↗</a></p>';
+   const heading=page.querySelector('.section-heading,.hero-copy');if(id==='inicio'){const homeHeading=page.querySelector('.home-entry-heading');if(homeHeading)homeHeading.after(details);else page.append(details);}else heading?heading.after(details):page.prepend(details);
  }
  const commission=document.getElementById('comision');
  const outcomes=document.createElement('details');outcomes.className='method-note';outcomes.id='cidhResultados';

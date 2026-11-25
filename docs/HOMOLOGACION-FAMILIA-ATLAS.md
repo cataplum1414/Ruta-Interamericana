@@ -4,6 +4,10 @@ Revisión del 24-11-2026 posterior al seguimiento metodológico. Referencia: [At
 
 La revisión no declara identidad visual ni equivalencia de instituciones. Adapta patrones que resuelven tareas parecidas; las normas, datos y ejercicios siguen siendo interamericanos. No se incorporó código fuente de Atlas ONU al sitio.
 
+## Ampliación de Panorama
+
+La portada ahora incluye diez accesos editoriales a las secciones OEA, actualidad, una efeméride del Sistema Interamericano enlazada con su año en la línea de tiempo, búsqueda guiada por situación y Estado, orientación para instalar la PWA y procedencia del proyecto. Las cifras corresponden a la edición OEA: 34 Estados miembros actuales, cuatro pilares, 18 estaciones y 32 opiniones consultivas catalogadas. No se incorporan etiquetas ni funciones propias de ONU o DIGNITYOS.
+
 ## Criterio común
 
 - **Identidad:** DejaVu Sans local, grafito `#10131C`, marfil `#F5F4F0`, cian `#14C6D4` y violeta `#7148F5`. Acción principal violeta con texto blanco; contraste de acentos ajustado por tema.

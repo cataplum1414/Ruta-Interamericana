@@ -819,3 +819,31 @@ main [data-route-page][hidden]{display:none!important}
  .hero .search-row{grid-template-columns:minmax(0,1fr)}
  .hero .atlas-search #atlasSearchGo{width:100%}
 }
+
+
+/* Portada Panorama: orientaci?n y actualidad en una jerarqu?a editorial com?n. */
+.home-entry,.home-discovery,.home-install{width:100%;max-width:1000px;margin:34px 0 0}
+.home-entry{padding-top:24px;border-top:1px solid var(--line)}
+.home-entry-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:12px}
+.home-entry-heading h2,.home-guide h2,.home-install h2{margin:4px 0 6px;font-size:clamp(23px,3vw,31px);line-height:1.2;letter-spacing:-.035em}
+.home-entry-heading>div>p:last-child,.home-guide>p:not(.section-tag),.home-install>div>p:not(.section-tag){max-width:68ch;margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+.home-entry-links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px;border-top:1px solid var(--line)}
+.home-entry-links>a{min-width:0;display:grid;grid-template-columns:32px minmax(0,1fr) 18px;align-items:center;gap:11px;padding:13px 3px;border-bottom:1px solid var(--line);color:var(--ink);text-decoration:none}
+.home-entry-links>a>span{color:var(--cyan-soft);font-size:12px;font-weight:800;font-variant-numeric:tabular-nums}
+.home-entry-links>a div{display:grid;gap:3px}.home-entry-links strong{font-size:15px;line-height:1.35}.home-entry-links small{color:var(--muted);font-size:12px;line-height:1.45}.home-entry-links b{color:var(--cyan-soft);font-size:18px}.home-entry-links>a:hover strong{text-decoration:underline;text-underline-offset:3px}
+.home-entry-menu{margin:10px 0 0;color:var(--muted);font-size:12px}
+.home-stats{display:flex;flex-wrap:wrap;gap:9px 20px;margin-top:16px;padding:12px 0;border-block:1px solid var(--line);color:var(--muted);font-size:12px}.home-stats span{display:flex;align-items:baseline;gap:5px}.home-stats strong{color:var(--cyan-soft);font-size:18px}
+.home-discovery{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px;margin-top:32px}
+.home-moment,.home-guide{min-width:0;padding-top:18px;border-top:2px solid var(--cyan)}
+.home-moment-date{margin:12px 0 4px;color:var(--cyan-soft);font-size:13px;font-weight:800;letter-spacing:.03em;text-transform:capitalize}
+.home-moment h3{max-width:28ch;margin:4px 0 8px;font-size:clamp(21px,2.4vw,27px);line-height:1.23;letter-spacing:-.025em}
+.home-moment>div>p:not(.home-moment-date){margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+.home-moment-links{display:flex;flex-wrap:wrap;gap:12px 20px;margin-top:14px}.home-moment-links a,.home-guide-result a{color:var(--cyan-soft);font-size:13px;font-weight:750;text-underline-offset:3px}
+.home-moment-next{min-height:40px;margin-top:8px;padding:7px 0;border:0;background:transparent;color:var(--muted);font-size:13px;font-weight:700;cursor:pointer}.home-moment-next span{color:var(--cyan-soft)}
+.home-guide form{display:grid;grid-template-columns:minmax(0,1fr);gap:7px;margin-top:14px}.home-guide form label{margin-top:5px;font-size:13px;font-weight:750}.home-guide form select,.home-guide form input{width:100%;min-width:0;min-height:46px;padding:10px 12px;border:1px solid var(--line-strong);border-radius:12px;background:var(--panel);color:var(--ink)}.home-guide form .button{justify-self:start;margin-top:6px}.home-guide-result{margin-top:12px;padding:12px 14px;border-left:3px solid var(--green);background:color-mix(in srgb,var(--green) 7%,var(--panel))}.home-guide-result p{margin:0 0 7px;font-size:13px}.home-guide-result a{display:block;margin:6px 0}.home-guide-note{margin:11px 0 0!important;font-size:12px!important}
+.home-install{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:30px;padding:17px 0;border-block:1px solid var(--line)}.home-install details{margin-top:6px}.home-install details p{margin:5px 0;color:var(--muted);font-size:12px;line-height:1.5}.home-install .button[hidden]{display:none}
+.atlas-footer nav{display:flex;flex-wrap:wrap;gap:8px 18px}.atlas-footer nav a{color:var(--cyan-soft);font-size:13px}
+@media(max-width:760px){.home-entry,.home-discovery,.home-install{margin-top:24px}.home-entry-heading{align-items:flex-start;flex-direction:column;gap:6px}.home-entry-links{grid-template-columns:minmax(0,1fr)}.home-entry-links>a{padding:11px 2px}.home-stats{gap:8px 14px}.home-discovery{grid-template-columns:minmax(0,1fr);gap:20px}.home-moment h3{max-width:none}.home-install{align-items:flex-start;flex-direction:column;gap:8px}.home-install .button{width:100%}}
+@media(prefers-reduced-motion:reduce){.home-entry-links>a{scroll-behavior:auto}}
+
+.home-entry>.atlas-method-guide{margin:10px 0 18px}

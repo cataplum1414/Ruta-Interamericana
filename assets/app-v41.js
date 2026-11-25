@@ -546,7 +546,7 @@ function syncThemeControls(){const choice=window.riTheme?.get?.()||'auto';themeS
 themeSelect.addEventListener('change',()=>window.riTheme.set(themeSelect.value));
 themeButtons.forEach(b=>b.addEventListener('click',()=>window.riTheme.set(b.dataset.themeChoice)));
 syncThemeControls();refreshStudyStatus();
-let installPrompt=null;const installButton=el('installApp');window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;if(installButton)installButton.hidden=false;});installButton?.addEventListener('click',async()=>{if(!installPrompt)return;installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;installButton.hidden=true;});window.addEventListener('appinstalled',()=>{if(installButton)installButton.hidden=true;});
+// Los botones de instalación se gestionan desde home-panorama-v1.js.
 if('serviceWorker'in navigator){navigator.serviceWorker.register('./sw.js',{scope:'./'}).then(()=>navigator.serviceWorker.ready).then(()=>{const status=el('offlineStatus');if(status)status.textContent='Esta gu\u00eda est\u00e1 disponible sin conexi\u00f3n en este dispositivo. Consulta siempre la fuente oficial.';}).catch(()=>{});}
 
 
@@ -587,6 +587,14 @@ function showFocusedPractice(id) {
 }
 
 function filterRouteTarget(page, params) {
+  if (page.id === 'historia' && /^\d{4}$/.test(params.get('anio') || '')) {
+    const year = Number(params.get('anio'));
+    const slider = document.getElementById('historyYear');
+    if (!slider || year < Number(slider.min) || year > Number(slider.max)) return null;
+    slider.value = String(year);
+    slider.dispatchEvent(new Event('input', { bubbles: true }));
+    return document.getElementById('historyDetail')?.querySelector('h3');
+  }
   if (page.id === 'biblioteca' && params.has('norma')) {
     const record = normRecords.find(item => item.id === params.get('norma'));
     if (!record) return null;
