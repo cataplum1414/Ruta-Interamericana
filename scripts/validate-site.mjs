@@ -6,6 +6,7 @@ const app = await readFile('assets/app-v41.js', 'utf8');
 const competence = await readFile('assets/competencia-v1.js', 'utf8');
 const deadlineCompare = await readFile('assets/plazos-comparador-v1.js', 'utf8');
 const reasoning = await readFile('assets/razonamiento-v1.js', 'utf8');
+const familyAtlas = await readFile('assets/familia-atlas-v1.js', 'utf8');
 const glossary = await readFile('assets/glosario.js', 'utf8');
 const glossaryContext = {window:{}};
 vm.runInNewContext(glossary, glossaryContext);
@@ -93,7 +94,7 @@ if (!html.includes('id="protectionMeasuresLab"') || !app.includes('protectionSte
 if (!html.includes('id="petitionerNoticeDate"') || !html.includes('id="reportTransmissionDate"') || !html.includes('id="petitionerNoticeResult"') || !html.includes('id="reportTransmissionResult"') || !deadlineCompare.includes('months: 1') || !deadlineCompare.includes('months: 3') || !deadlineCompare.includes('addCalendarMonths') || !serviceWorker.includes('./assets/plazos-comparador-v1.js')) throw new Error('The two distinct Article 44.3 and 51.1 trigger dates must have separate calendar controls, calculations, and an offline-cached script.');
 if (!app.includes("'<article><header><strong>'+escape(x[0])+'</strong><span>'+escape(deadlineDuration(x))") || !styles.includes('.deadline-list header strong{flex:1 1 auto;min-width:0;overflow-wrap:anywhere')) throw new Error('Deadline titles must stay grouped when glossary terms become inline buttons.');
 if (!app.includes("courtCompetence:{phase:'CORTE IDH'") || !app.includes("stage:14,source:'https://www.oas.org/es/cidh/mandato/basicos/convencion.asp'") || !app.includes("court:['courtCompetence','courtNotification'")) throw new Error('Missing the interactive Court jurisdiction decision.');
-if (!html.includes('assets/styles-v26.css') || !html.includes('assets/arquitectura-atlas-v25.css') || !html.includes('assets/organizacion-mapa.css?v=atlas-oea-10') || !html.includes('assets/glosario.js?v=editorial-11') || !html.includes('assets/app-v41.js') || !html.includes('assets/competencia-v1.js') || !html.includes('assets/audiencia-lab-v1.js') || !serviceWorker.includes('atlas-oea-shell-v117') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/arquitectura-atlas-v25.css') || !serviceWorker.includes('./assets/organizacion-mapa.css?v=atlas-oea-10') || !serviceWorker.includes('./assets/app-v41.js') || !serviceWorker.includes('./assets/competencia-v1.js') || !serviceWorker.includes('./assets/audiencia-lab-v1.js') || !serviceWorker.includes('./assets/razonamiento-v1.js') || !serviceWorker.includes('./assets/map-connections-v6.js') || !styles.includes('.process-overview-summary')) {
+if (!html.includes('assets/styles-v26.css') || !html.includes('assets/arquitectura-atlas-v25.css') || !html.includes('assets/organizacion-mapa.css?v=atlas-oea-10') || !html.includes('assets/glosario.js?v=editorial-11') || !html.includes('assets/app-v41.js') || !html.includes('assets/competencia-v1.js') || !html.includes('assets/audiencia-lab-v1.js') || !serviceWorker.includes('atlas-oea-shell-v118') || !serviceWorker.includes('./assets/styles-v26.css') || !serviceWorker.includes('./assets/arquitectura-atlas-v25.css') || !serviceWorker.includes('./assets/organizacion-mapa.css?v=atlas-oea-10') || !serviceWorker.includes('./assets/app-v41.js') || !serviceWorker.includes('./assets/competencia-v1.js') || !serviceWorker.includes('./assets/audiencia-lab-v1.js') || !serviceWorker.includes('./assets/razonamiento-v1.js') || !serviceWorker.includes('./assets/map-connections-v6.js') || !styles.includes('.process-overview-summary')) {
   throw new Error('The current route overview must be available in the installed offline shell.');
 }
 
@@ -173,7 +174,7 @@ if (!app.includes("params.get('paso')") || !app.includes("params.get('oc')") || 
 }
 const english = html.match(/<section id="english" lang="en" data-route-page[\s\S]+?(?=<section id="oea")/)?.[0] || '';
 const englishSteps = [...english.matchAll(/href="#recorrido\?paso=(\d+)"/g)].map(match => Number(match[1]));
-if (englishSteps.length !== 18 || englishSteps.some((step, index) => step !== index + 1) || !english.includes('id="englishPractice"') || !html.includes('class="language-entry language-entry-mobile"')) {
+if (englishSteps.length !== 18 || englishSteps.some((step, index) => step !== index + 1) || !english.includes('id="englishPractice"') || !html.includes('class="language-entry language-entry-mobile"') || !html.includes('data-atlas-language-choice="es"') || !html.includes('data-atlas-language-choice="en"') || !html.includes('title="Guía introductoria parcial en inglés"') || !html.includes('role="group" aria-label="Idioma y guía disponible"') || !familyAtlas.includes("document.querySelectorAll('[data-atlas-language-choice]')") || !familyAtlas.includes("button.addEventListener('click'")) {
   throw new Error('The English guide needs all 18 stations, a practice activity and a mobile entry.');
 }
 if (!html.includes('id="opinionEnglishOnly"') || !html.includes('id="opinionRequestTitle"') || !app.includes("english.kind === 'summary'") || !opinions.includes('resumen_seriea_26_eng.pdf')) {

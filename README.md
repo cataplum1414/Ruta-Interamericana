@@ -118,6 +118,8 @@ El [mapa temporal](docs/MAPA-TEMPORAL-INTERACTIVO.md) explica las décadas, los 
 
 La [historia y su línea del tiempo](docs/HISTORIA-Y-LINEA-TIEMPO.md) documenta el orden visual y la interacción comparados con Atlas ONU, junto con el límite de los siete hitos seleccionados.
 
+La [ronda comparativa CUA](docs/AUDITORIA-CUA-ATLAS.md) lleva el ciclo visual y metodológico por cada destino del menú de la familia Atlas, con diferencias observadas y estado de corrección.
+
 ## Seguimiento de la auditoría del 24-11-2026
 
 El [registro de correcciones y pendientes](docs/SEGUIMIENTO-AUDITORIA-2026-11-24.md) distingue lo corregido, lo parcial y lo que requiere cotejo jurídico documental. La [auditoría original](docs/AUDITORIA-METODOLOGICA-INTEGRAL.md) se conserva como diagnóstico histórico; no describe por sí sola el estado publicado actual.
